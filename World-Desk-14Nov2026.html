@@ -230,9 +230,9 @@
   <!-- RUMOUR -->
   <section>
     <div class="card rumour">
-      <span class="tag" style="background:#c62828">UNCONFIRMED</span>
-      <h2 style="font-size:17px;margin-top:8px">One website says a ship engine failed and the flight was cut to 3 hours</h2>
-      <p style="margin:4px 0 0;font-size:14px;color:var(--ink2)">Only one live blog (drohnen.de) says this. Wikipedia's page, edited at 12:16 UTC on 14 Nov, says the ship is still in orbit with both early checks passed, and CNN reported the ship in good working order. Treat it as a rumour until SpaceX or a major outlet says it.</p>
+      <span class="tag" style="background:#2e7d32">CONTRADICTED</span>
+      <h2 style="font-size:17px;margin-top:8px">One website said a ship engine failed and the flight was cut to 3 hours</h2>
+      <p style="margin:4px 0 0;font-size:14px;color:var(--ink2)">Only one live blog (drohnen.de) said this, and it turned out wrong. CNBC reports the ship circled the Earth 14 times, about 22 and a half hours, before the tower caught it.</p>
     </div>
   </section>
 
@@ -299,7 +299,7 @@
   ];
   // RESULT: fill this in once the outcome is known from a major outlet or SpaceX, for example
   // { short: 'Caught', text: 'Ship 42 caught by the tower at 4:21 pm Eastern', ok: true, steps: { 6: 'done', 7: 'done', 8: 'done', 9: 'done' }, src: 'https://...' }
-  var RESULT = null;
+  var RESULT = { short: 'Caught', text: 'Ship 42 caught by the tower at about 4:20 pm Eastern', ok: true, steps: { 6: 'done', 7: 'done', 8: 'done', 9: 'done' } };
   var CATCH = T0 + hms(22, 32, 34);
   var INSERT = T0 + hms(0, 26, 30);
   var PERIOD = 90.5 * 60 * 1000;

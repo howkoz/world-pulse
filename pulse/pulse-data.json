@@ -1,6 +1,6 @@
 {
   "about": "World Pulse data. One entry per running story (thread), each with a dated log of updates. Add to it, never rewrite history: new facts go in as a new update. Run build_pulse.py after editing.",
-  "updated_utc": "2026-11-14T13:50:00Z",
+  "updated_utc": "2026-11-14T21:58:00Z",
   "categories": {
     "space": {"label": "Space", "color": "#e67e00", "glow": "#ffb300"},
     "tech": {"label": "Tech", "color": "#1f6fb5", "glow": "#4fc3ff"},
@@ -20,7 +20,7 @@
   },
   "threads": [
     {
-      "id": "starship-flight-15", "title": "Starship Flight 15", "cat": "space", "status": "developing",
+      "id": "starship-flight-15", "title": "Starship Flight 15", "cat": "space", "status": "settled",
       "place": "Starbase, Texas", "lat": 25.99, "lon": -97.15, "first": "2026-11-13",
       "next": {"what": "Planned tower catch of Ship 42", "utc": "2026-11-14T21:20:10Z"},
       "updates": [
@@ -32,7 +32,13 @@
          "src": [["Wikipedia", "https://en.wikipedia.org/wiki/Starship_flight_15"], ["CNN", "https://www.cnn.com/2026/11/13/science/live-news/spacex-starship-flight-15-ship-catch"]]},
         {"ed": "2026-11-14", "when": "14 Nov morning", "tag": "UNPROVEN",
          "text": "One live blog (drohnen.de) says a ship engine failed and the flight was cut to 3 hours. Nobody else reports it.",
-         "src": [["drohnen.de", "https://www.drohnen.de/97929/starship-flight-15-live-ship-catch-en/"]]}
+         "src": [["drohnen.de", "https://www.drohnen.de/97929/starship-flight-15-live-ship-catch-en/"]]},
+        {"ed": "2026-11-14", "when": "14 Nov, about 4:20 pm Eastern", "tag": "RESULT",
+         "text": "Ship 42 came home and was caught by the tower's arms at Starbase. It is the first time SpaceX has caught a Starship upper stage back from orbit. The flight lasted about 22 and a half hours.",
+         "src": [["CNBC", "https://www.cnbc.com/2026/11/14/spacex-plans-to-try-first-ever-catch-of-starship-rocket-from-orbit.html"], ["Starlust", "https://starlust.org/spacex-scripts-history-by-catching-starships-upper-stage-using-launch-tower-for-the-first-time/"]]},
+        {"ed": "2026-11-14", "when": "14 Nov, afternoon", "tag": "UPDATED",
+         "text": "The drohnen.de claim of a ship engine failure and a 3 hour flight is contradicted. CNBC reports the ship circled the Earth 14 times before landing on the tower.",
+         "src": [["CNBC", "https://www.cnbc.com/2026/11/14/spacex-plans-to-try-first-ever-catch-of-starship-rocket-from-orbit.html"]]}
       ]
     },
     {
@@ -197,7 +203,7 @@
      "headline": "Microsoft outage, a nationwide US flight halt and Iran pressing on US bases",
      "links": [["What is not normal (picture)", "timelines/World-Events-Not-Normal-12-13Nov2026.svg"], ["Timeline 9 to 13 Nov (picture)", "timelines/World-Events-Timeline-9-13Nov2026.svg"]]},
     {"date": "2026-11-14", "scan": "14 Nov, 7:13 am Eastern",
-     "headline": "Starship Flight 15: booster lost, ship in orbit heading for a tower catch",
+     "headline": "Starship Flight 15: booster lost, ship caught by the tower",
      "links": [["World Desk page", "World-Desk-14Nov2026.html"], ["Timeline 9 to 14 Nov (picture)", "timelines/World-Events-Timeline-Update-14Nov2026.svg"]]}
   ]
 }
