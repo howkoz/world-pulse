@@ -275,7 +275,7 @@
       });
 
       // optional spacecraft and its orbit
-      if (o.orbit && (!o.orbit.showUntil || now < o.orbit.showUntil) && now > o.orbit.t0) {
+      if (o.orbit && (o.orbit.showUntil == null || now < o.orbit.showUntil) && now > o.orbit.t0) {
         var u = shipU(now), alt = 1 + (o.orbit.drawAlt || 0.12);
         ctx.lineWidth = 1.6 * (W / 420);
         for (var j = 0; j < 160; j++) {
