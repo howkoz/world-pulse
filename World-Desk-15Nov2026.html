@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>World Desk</title>
+<style>
+  :root {
+    --ink: #13202f; --ink2: #3c4a5a; --muted: #6b7887; --line: #dbe2ea; --bg: #f6f8fb; --card: #ffffff;
+    --blue: #1f6fb5; --red: #b3261e; --grey: #6b6b6b; --purple: #6a3fb5; --amber: #c77700; --teal: #00796b;
+    --green: #2e7d32; --navy: #0d2b4e; --sky: #e8f1fb;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Segoe UI", Arial, Helvetica, sans-serif; line-height: 1.45; }
+  a { color: var(--blue); }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 16px; }
+
+  .mast { background: var(--navy); color: #fff; padding: 18px 0 14px; }
+  .mast .wrap { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px; }
+  .brand { font-size: 28px; font-weight: 800; letter-spacing: .5px; }
+  .brand small { font-size: 13px; font-weight: 500; opacity: .75; margin-left: 10px; letter-spacing: 0; }
+  .clock { font-size: 13px; opacity: .9; font-variant-numeric: tabular-nums; }
+  .ticker { background: #0a2240; color: #cfe0f5; font-size: 13px; overflow: hidden; white-space: nowrap; border-top: 1px solid #1d3b60; }
+  .ticker span { display: inline-block; padding: 7px 0; animation: tick 80s linear infinite; }
+  .ticker b { color: #fff; margin: 0 6px 0 28px; }
+  @keyframes tick { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  .hero { background: linear-gradient(180deg, #0d2b4e 0%, #163d6b 100%); color: #fff; padding: 26px 0 30px; }
+  .kicker { display: inline-block; background: #ffb300; color: #13202f; font-weight: 800; font-size: 12px; letter-spacing: 1px; padding: 3px 9px; border-radius: 4px; }
+  .hero h1 { font-size: 34px; margin: 10px 0 6px; line-height: 1.15; }
+  .hero p.dek { font-size: 16px; opacity: .92; margin: 0 0 18px; max-width: 860px; }
+  .hero-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 18px; }
+  @media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr; } .hero h1 { font-size: 26px; } }
+  .panel { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.16); border-radius: 12px; padding: 14px; }
+  .panel h3 { margin: 0 0 8px; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; color: #9cc3ec; }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 12px; }
+  @media (max-width: 560px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+  .stat { background: rgba(255,255,255,.08); border-radius: 10px; padding: 10px; }
+  .stat .n { font-size: 22px; font-weight: 800; }
+  .stat .l { font-size: 11.5px; opacity: .85; }
+  .btn { cursor: pointer; border: 1px solid rgba(255,255,255,.4); background: transparent; color: #fff; border-radius: 6px; padding: 5px 10px; font-size: 12px; font-weight: 600; }
+  .btn.on { background: #fff; color: var(--navy); }
+  .cap { font-size: 13px; min-height: 40px; margin-top: 8px; background: rgba(255,255,255,.08); border-radius: 8px; padding: 8px 10px; }
+  svg text { font-family: "Segoe UI", Arial, sans-serif; }
+
+  section { padding: 26px 0 6px; }
+  h2 { font-size: 22px; margin: 0 0 4px; }
+  .sub { color: var(--muted); font-size: 13.5px; margin: 0 0 14px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 860px) { .two { grid-template-columns: 1fr; } }
+
+  .tl { position: relative; height: 120px; margin: 10px 8px 0; }
+  .tl .rail { position: absolute; left: 0; right: 0; top: 54px; height: 8px; background: #e3e9f0; border-radius: 4px; }
+  .tl .dot { position: absolute; top: 49px; width: 18px; height: 18px; margin-left: -9px; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 0 0 1px #aab6c3; cursor: pointer; }
+  .tl .dot.mil { background: var(--red); } .tl .dot.claim { background: #fff; box-shadow: 0 0 0 2px #c62828; } .tl .dot.talk { background: var(--blue); }
+  .tl .dot.next { background: #ffb300; animation: pulse 1.6s infinite; }
+  .tl .dot.sel { transform: scale(1.3); }
+  @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(255,179,0,.6); } 100% { box-shadow: 0 0 0 12px rgba(255,179,0,0); } }
+  .tl .lab { position: absolute; font-size: 11px; color: var(--ink2); transform: translateX(-50%); white-space: nowrap; }
+  .tl .lab.up { top: 18px; } .tl .lab.down { top: 76px; }
+  .tip { margin-top: 12px; background: var(--sky); border-left: 4px solid var(--blue); padding: 10px 12px; border-radius: 6px; font-size: 14px; min-height: 44px; }
+  @media (max-width: 640px) { .tl .lab { font-size: 9.5px; } }
+
+  .count { font-size: 40px; font-weight: 800; font-variant-numeric: tabular-nums; letter-spacing: 1px; color: var(--navy); }
+  .agenda { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  .ag { cursor: pointer; border: 1px solid var(--line); background: #fff; border-radius: 8px; padding: 6px 12px; font-size: 13px; font-weight: 600; }
+  .ag.on { background: var(--navy); color: #fff; border-color: var(--navy); }
+
+  .rumour { border: 2px dashed #c62828; background: #fff6f5; }
+  .tag { display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: .5px; padding: 2px 8px; border-radius: 999px; color: #fff; }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 14px; }
+  .chip { cursor: pointer; border: 1px solid var(--line); background: #fff; border-radius: 999px; padding: 5px 12px; font-size: 13px; font-weight: 600; color: var(--ink2); }
+  .chip.on { background: var(--ink); color: #fff; border-color: var(--ink); }
+  .chip i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+  .story { background: #fff; border: 1px solid var(--line); border-left: 6px solid var(--blue); border-radius: 10px; padding: 14px; cursor: pointer; transition: transform .2s, box-shadow .2s; opacity: 0; transform: translateY(12px); }
+  .story.in { opacity: 1; transform: none; }
+  .story:hover { box-shadow: 0 6px 18px rgba(16,40,70,.12); transform: translateY(-2px); }
+  .story h4 { margin: 6px 0 4px; font-size: 16px; }
+  .story p { margin: 0; font-size: 13.5px; color: var(--ink2); }
+  .story .more { max-height: 0; overflow: hidden; transition: max-height .4s; font-size: 13px; color: var(--ink2); }
+  .story.open .more { max-height: 360px; }
+  .story .more ul { margin: 8px 0 4px; padding-left: 18px; }
+  .story .meta { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+  .story .cat { font-size: 11px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; }
+  .story .hint { font-size: 11.5px; color: var(--muted); margin-top: 8px; }
+
+  .strip { position: relative; height: 210px; }
+  .strip .day { position: absolute; top: 0; bottom: 22px; border-left: 1px solid var(--line); font-size: 11.5px; color: var(--muted); padding-left: 4px; }
+  .strip .ev { position: absolute; height: 12px; border-radius: 6px; cursor: pointer; }
+  .strip .ev.approx { opacity: .45; }
+  .strip .ev:hover { outline: 2px solid var(--ink); }
+  .striptip { font-size: 13px; color: var(--ink2); min-height: 20px; }
+
+  footer { margin: 34px 0 0; padding: 18px 0 30px; border-top: 1px solid var(--line); font-size: 12.5px; color: var(--muted); }
+  footer ul { padding-left: 18px; margin: 6px 0; columns: 2; }
+  @media (max-width: 700px) { footer ul { columns: 1; } }
+</style>
+</head>
+<body>
+
+<div class="mast">
+  <div class="wrap">
+    <div class="brand">World Desk <small>Howard's personal news, checked against the sources &middot; <a href="World-Pulse.html" style="color:#ffd36b">World Pulse home</a></small></div>
+    <div class="clock" id="clock">loading clock</div>
+  </div>
+</div>
+<div class="ticker"><span id="ticker"></span></div>
+
+<!-- HERO: BAHRAIN -->
+<div class="hero">
+  <div class="wrap">
+    <span class="kicker">HEADLINE &middot; IRAN AND THE MILITARY</span>
+    <h1>Iran says it sent six drones at a US base in Bahrain, its second attack on the island in three days</h1>
+    <p class="dek">Early Sunday, Bahrain sounded its first nationwide alert since September and told people to find shelter. Iran's Revolutionary Guards say they aimed at a US air defence radar at the Al-Riffa helicopter base. Bahrain says its air defences shot the attack down. Nobody has reported damage or injuries, and the US has not commented yet.</p>
+
+    <div class="hero-grid">
+      <div class="panel">
+        <h3 style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap">Replay the two attacks (drawing, not to scale)
+          <span><button class="btn" id="pFri">Friday 13 Nov</button> <button class="btn on" id="pSun">Sunday 15 Nov</button></span></h3>
+        <svg id="gulf" viewBox="0 0 520 300" width="100%" style="display:block;border-radius:8px">
+          <rect x="0" y="0" width="520" height="300" fill="#7fb3e0"/>
+          <path d="M0 0 L520 0 L520 120 L470 128 L430 92 L380 70 L320 58 L250 40 L170 22 L90 10 L0 6 Z" fill="#d9c9a3"/>
+          <text x="330" y="36" font-size="15" font-weight="700" fill="#5a4a2a">IRAN</text>
+          <path d="M0 300 L0 120 L60 140 L120 175 L150 200 L175 175 L190 150 L205 160 L210 200 L250 230 L330 225 L400 200 L450 175 L470 150 L480 160 L470 200 L440 240 L420 300 Z" fill="#e3d6b5"/>
+          <text x="40" y="250" font-size="14" font-weight="700" fill="#5a4a2a">SAUDI ARABIA</text>
+          <text x="196" y="215" font-size="11" fill="#5a4a2a">QATAR</text>
+          <text x="330" y="250" font-size="11" fill="#5a4a2a">UAE (United Arab Emirates)</text>
+          <ellipse cx="158" cy="160" rx="6" ry="10" fill="#e3d6b5" stroke="#8a7a55"/>
+          <text x="110" y="150" font-size="11.5" font-weight="700" fill="#13202f">BAHRAIN</text>
+          <circle cx="158" cy="164" r="4" fill="#b3261e"/>
+          <text x="100" y="186" font-size="10.5" fill="#13202f">Al-Riffa base</text>
+          <path d="M470 128 L480 160" stroke="#ffb300" stroke-width="2" stroke-dasharray="3 3"/>
+          <text x="440" y="118" font-size="10.5" font-weight="700" fill="#7a4b00">Strait of Hormuz</text>
+          <g id="drones"></g>
+          <text id="gcap" x="260" y="290" font-size="12.5" font-weight="700" fill="#13202f" text-anchor="middle"></text>
+        </svg>
+        <div style="margin-top:8px;display:flex;gap:8px;align-items:center;flex-wrap:wrap"><button class="btn" id="play">&#9654; Play</button><span style="font-size:11.5px;color:#9cc3ec">Where the drones were launched from is not published. The paths are a drawing.</span></div>
+        <div class="cap" id="hcap">Pick a day and press play.</div>
+        <div class="stats">
+          <div class="stat"><div class="n">2</div><div class="l">attacks on Bahrain in 3 days</div></div>
+          <div class="stat"><div class="n">6</div><div class="l">drones Iran says it sent on Sunday (Iran's figure)</div></div>
+          <div class="stat"><div class="n">0</div><div class="l">damage or injuries reported</div></div>
+          <div class="stat"><div class="n">1st</div><div class="l">nationwide alert in Bahrain since September</div></div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3>Where it is: the Gulf on the real globe</h3>
+        <canvas id="globe" style="width:100%;max-width:420px;aspect-ratio:1/1;display:block;margin:0 auto;cursor:grab" aria-label="Realistic globe centred on the Persian Gulf"></canvas>
+        <div style="text-align:center;font-size:11px;color:#9cc3ec;opacity:.85">Real coastlines and today's real day and night line. Red: Bahrain. Amber: Strait of Hormuz. Blue: Riyadh. Drag to spin.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- THREE DAYS -->
+  <section>
+    <h2>Three days in the Gulf, step by step</h2>
+    <p class="sub">Red = an attack, hollow red = a claim nobody has verified, blue = politics, amber = the next known moment. Steps are evenly spaced, not to scale. Click any dot. Times in Eastern.</p>
+    <div class="card">
+      <div class="tl" id="tl"><div class="rail"></div></div>
+      <div class="tip" id="tltip">Click a dot to see what happened.</div>
+    </div>
+  </section>
+
+  <!-- WHAT NEXT + UNCONFIRMED -->
+  <section>
+    <div class="two">
+      <div class="card">
+        <h2 style="font-size:18px">What happens next: Trump, Xi and Putin meet on Thursday</h2>
+        <p class="sub">The White House and the Kremlin both confirm a three-way meeting on 19 November in Shenzhen, China, beside the Asia-Pacific Economic Cooperation (APEC) summit. The hour has not been announced, so this counts down to the start of that day in China.</p>
+        <div class="count" id="cd">--</div>
+        <div style="font-size:13px;color:var(--ink2)" id="cdw"></div>
+        <div class="agenda" id="agenda"></div>
+        <div class="tip" id="agtip">Click a topic to see what is known.</div>
+      </div>
+      <div class="card rumour">
+        <span class="tag" style="background:#c62828">UNCONFIRMED</span>
+        <h2 style="font-size:17px;margin-top:8px">Iran says three oil tankers hit sea mines in the Strait of Hormuz</h2>
+        <p style="margin:4px 0 8px;font-size:14px;color:var(--ink2)">The claim comes only from Iran's Revolutionary Guards. The ships were not named and nobody has verified it. The US says it has cleared the main shipping routes of mines.</p>
+        <span class="tag" style="background:#c62828">UNCONFIRMED</span>
+        <h2 style="font-size:17px;margin-top:8px">Did Friday's attack hit a US radar?</h2>
+        <p style="margin:4px 0 0;font-size:14px;color:var(--ink2)">Iran says yes. US Central Command (CENTCOM) says it shot down both drones with no damage.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OTHER STORIES -->
+  <section>
+    <h2>The rest of the world today</h2>
+    <p class="sub">From this morning's scan (15 Nov, 11:49 UTC). Filter by topic, click a card for what changed and the source.</p>
+    <div class="chips" id="chips"></div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <!-- WEEK STRIP -->
+  <section>
+    <h2>The week at a glance</h2>
+    <p class="sub">Each bar is one story, placed on the day it happened. Faded bars: only the day is known. Hover a bar. <a href="timelines/World-Events-Timeline-Update-15Nov2026.svg">Open the full timeline picture</a>.</p>
+    <div class="card">
+      <div class="strip" id="strip"></div>
+      <div class="striptip" id="striptip">&nbsp;</div>
+    </div>
+  </section>
+
+  <footer>
+    <b>Key:</b> UTC = Coordinated Universal Time. US = United States. UAE = United Arab Emirates. CENTCOM = US Central Command. APEC = Asia-Pacific Economic Cooperation. NATO = North Atlantic Treaty Organization. FAA = Federal Aviation Administration. NTSB = National Transportation Safety Board. ECDC = European Centre for Disease Prevention and Control. DC = District of Columbia. RAF = Royal Air Force. USGS = United States Geological Survey.<br>
+    <b>Sources:</b>
+    <ul>
+      <li><a href="https://www.thenationalnews.com/news/gulf/2026/11/15/bahrain-issues-first-nationwide-alert-in-months-as-iran-claims-attack-on-base-hosting-us-helicopters/">The National: Bahrain alert</a></li>
+      <li><a href="https://france24.com/en/middle-east/20261115-iran-claims-attack-on-us-military-airbase-in-bahrain">France 24: Iran claims attack in Bahrain</a></li>
+      <li><a href="https://www.cbsnews.com/live-updates/us-iran-war-trump-nuclear-material-no-deal/">CBS News: Iran war live updates</a></li>
+      <li><a href="https://www.aljazeera.com/news/2026/11/13/iran-says-it-struck-us-radar-site-in-bahrain">Al Jazeera: Friday's attack</a></li>
+      <li><a href="https://financefeeds.com/brent-crude-oil-price-95-84-sunday-futures-open-week-ahead-iran-mine-claims-bull-98-bear-91/">FinanceFeeds: Brent price</a></li>
+      <li><a href="https://www.bloomberg.com/news/articles/2026-11-13/trump-to-meet-with-xi-putin-nov-19-in-china-white-house-says">Bloomberg: Trump, Xi, Putin on 19 Nov</a></li>
+      <li><a href="https://www.aljazeera.com/news/2026/11/14/trump-xi-and-putin-to-hold-first-three-way-summit-in-china">Al Jazeera: three-way summit</a></li>
+      <li><a href="https://www.cnn.com/2026/11/14/europe/us-ukraine-zelensky-nato-intl">CNN: Donbas for NATO idea</a></li>
+      <li><a href="https://www.space.com/space-exploration/launches-spacecraft/spacex-starship-flight-15-chopsticks-double-catch-super-heavy-ship">Space.com: Starship Flight 15</a></li>
+      <li><a href="https://www.cnbc.com/2026/11/14/root-cause-of-nationwide-ground-stop-is-unknown-faa-says.html">CNBC: FAA root cause unknown</a></li>
+      <li><a href="https://www.npr.org/2026/11/14/nx-s1-6040952/faa-ground-stop-airplane-travel">NPR: FAA ground stop</a></li>
+      <li><a href="https://coindesk.com/markets/2026/11/14/bitcoin-drifts-back-to-usd65-000-deep-value-zone-says-analyst">CoinDesk: Bitcoin</a></li>
+      <li><a href="https://www.ecdc.europa.eu/en/public-health-events/2026-eip-00026/2026-11-12">ECDC: Ebola figures</a></li>
+      <li><a href="https://www.washingtonpost.com/world/2026/11/15/congo-ebola-six-months/c9672498-e0b1-11f1-912c-4fbb80d73f7f_story.html">Washington Post: Ebola six months on</a></li>
+      <li><a href="https://www.abc.net.au/news/2026-11-15/tanker-cruise-ship-collison-investigation-new-orleans/107387198">ABC Australia: New Orleans investigation</a></li>
+      <li><a href="https://www.cbsnews.com/news/washington-dc-shooting-gym-vida/">CBS News: DC gym shooting</a></li>
+      <li><a href="https://weather.com/2026/11/14/forecast/regional/storms-50-foot-waves-mountain-snow-heavy-rain-west">The Weather Channel: West Coast storms</a></li>
+      <li><a href="https://earthquake.usgs.gov/earthquakes/map/">USGS: earthquakes (none of magnitude 6 or more in the last day)</a></li>
+    </ul>
+    Facts checked 15 Nov 2026 about 12:00 UTC. The page works out times live from your clock, but it does not fetch news: once the summit day begins it cannot know what happened there.
+  </footer>
+</div>
+
+<script src="pulse/world-land.js"></script>
+<script src="pulse/globe.js"></script>
+<script>
+(function () {
+  var ET = 'America/New_York';
+  function fmt(ms, opts) { return new Date(ms).toLocaleString('en-US', Object.assign({ timeZone: ET }, opts)); }
+
+  // globe
+  try {
+    WorldGlobe(document.getElementById('globe'), { lat: 26, lon: 52, spin: 0,
+      markers: [
+        { lat: 26.13, lon: 50.55, color: '#ff5252', title: 'Bahrain: Al-Riffa base', label: 'Bahrain' },
+        { lat: 26.57, lon: 56.25, color: '#ffb300', title: 'Strait of Hormuz', label: 'Hormuz' },
+        { lat: 24.71, lon: 46.68, color: '#4fa3e8', title: 'Riyadh, Saudi Arabia', label: 'Riyadh' }
+      ] });
+  } catch (e) { /* globe is a bonus; the page works without it */ }
+
+  // replay
+  var SVGNS = 'http://www.w3.org/2000/svg', day = 'sun', running = false;
+  var DAYS = {
+    fri: { n: 2, who: 'US forces', steps: ['Friday 13 Nov: two drones head for Bahrain', 'Iran says it is aiming at a US early warning radar', 'US Central Command shoots down both drones', 'No damage, no casualties (US account)'] },
+    sun: { n: 6, who: 'Bahrain', steps: ['Sunday 15 Nov, early: sirens and a nationwide alert in Bahrain', 'Iran says six drones are aimed at a US air defence radar at Al-Riffa', 'Bahrain says its air defences intercepted the attack', 'No damage or casualties reported; no US statement yet'] }
+  };
+  function pick(d) { day = d; document.getElementById('pFri').classList.toggle('on', d === 'fri'); document.getElementById('pSun').classList.toggle('on', d === 'sun'); document.getElementById('drones').innerHTML = ''; document.getElementById('gcap').textContent = ''; document.getElementById('hcap').textContent = 'Press play to replay ' + (d === 'fri' ? 'Friday' : 'Sunday') + '.'; }
+  document.getElementById('pFri').onclick = function () { if (!running) pick('fri'); };
+  document.getElementById('pSun').onclick = function () { if (!running) pick('sun'); };
+  document.getElementById('play').onclick = function () {
+    if (running) return; running = true;
+    var D = DAYS[day], g = document.getElementById('drones'), cap = document.getElementById('hcap'), gcap = document.getElementById('gcap');
+    g.innerHTML = ''; var ds = [];
+    for (var i = 0; i < D.n; i++) {
+      var sx = 250 + i * 22, sy = 44 + (i % 2) * 8, ex = 170 + (i % 3) * 6, ey = 150 + (i % 2) * 8;
+      var path = document.createElementNS(SVGNS, 'line'); path.setAttribute('x1', sx); path.setAttribute('y1', sy); path.setAttribute('x2', sx); path.setAttribute('y2', sy);
+      path.setAttribute('stroke', '#b3261e'); path.setAttribute('stroke-width', '1.5'); path.setAttribute('stroke-dasharray', '3 3'); g.appendChild(path);
+      var c = document.createElementNS(SVGNS, 'circle'); c.setAttribute('r', 4); c.setAttribute('fill', '#13202f'); c.setAttribute('cx', sx); c.setAttribute('cy', sy); g.appendChild(c);
+      ds.push({ sx: sx, sy: sy, ex: ex, ey: ey, c: c, l: path, stop: 0.62 + (i % 3) * 0.08 });
+    }
+    cap.textContent = D.steps[0]; gcap.textContent = '';
+    setTimeout(function () { cap.textContent = D.steps[1]; }, 900);
+    var start = null;
+    function step(ts) {
+      if (!start) start = ts;
+      var k = Math.min(1, (ts - start) / 3200);
+      ds.forEach(function (d) {
+        var kk = Math.min(k, d.stop), x = d.sx + (d.ex - d.sx) * kk, y = d.sy + (d.ey - d.sy) * kk;
+        d.c.setAttribute('cx', x); d.c.setAttribute('cy', y); d.l.setAttribute('x2', x); d.l.setAttribute('y2', y);
+        if (k >= d.stop && !d.hit) {
+          d.hit = true; d.c.setAttribute('fill', '#ff7a00'); d.c.setAttribute('r', 9);
+          setTimeout(function () { d.c.setAttribute('r', 0); }, 350);
+          cap.textContent = D.steps[2]; gcap.textContent = 'Intercepted by ' + D.who;
+        }
+      });
+      if (k < 1) requestAnimationFrame(step);
+      else { cap.textContent = D.steps[3]; running = false; }
+    }
+    setTimeout(function () { requestAnimationFrame(step); }, 600);
+  };
+  pick('sun');
+
+  // three days timeline
+  var STEPS = [
+    { k: 'mil', name: 'Fri: 2 drones', when: 'Fri 13 Nov', d: 'Iran sends two drones at Bahrain, saying it is aiming at a US early warning radar. US Central Command shoots both down; no damage or casualties.' },
+    { k: 'claim', name: 'Fri: "radar hit"', when: 'Fri 13 Nov', d: 'Iran claims it hit the radar and calls it payback for a US strike in southern Iran. The US denies the radar was hit. Not verified.' },
+    { k: 'talk', name: 'Fri: Gulf demand', when: 'Fri 13 Nov', d: 'Gulf Arab states demand Iran pay compensation for thousands of missile and drone attacks since February and ask the United Nations Security Council to hold Tehran to account.' },
+    { k: 'claim', name: 'Sat: mines claim', when: 'Sat 14 Nov', d: 'Iran says three oil tankers hit sea mines in the Strait of Hormuz and caught fire. Ships not named; not verified. The US says the main routes are clear of mines.' },
+    { k: 'mil', name: 'Sun: 6 drones', when: 'Sun 15 Nov, early', d: 'Bahrain sounds its first nationwide alert since September. Iran says six drones were aimed at a US radar at Al-Riffa. Bahrain says it intercepted the attack.' },
+    { k: 'mil', name: 'Sun: Riyadh', when: 'Sun 15 Nov', d: 'Saudi Arabia reports intercepting two ballistic missiles fired by the Houthis in Yemen at Riyadh, plus three drones in its Eastern Province.' },
+    { k: 'next', name: 'Thu: summit', when: 'Thu 19 Nov (China)', d: 'Trump, Xi and Putin meet in Shenzhen. A US official says the Iran war may come up; do not expect a deal.' }
+  ];
+  var tl = document.getElementById('tl'), dots = [];
+  STEPS.forEach(function (s, i) {
+    var x = 5 + i * (90 / (STEPS.length - 1));
+    var dot = document.createElement('div'); dot.className = 'dot ' + s.k; dot.style.left = x + '%'; tl.appendChild(dot);
+    var lab = document.createElement('div'); lab.className = 'lab ' + (i % 2 ? 'down' : 'up'); lab.style.left = x + '%'; lab.textContent = s.name; tl.appendChild(lab);
+    dot.addEventListener('click', function () {
+      dots.forEach(function (o) { o.classList.remove('sel'); }); dot.classList.add('sel');
+      document.getElementById('tltip').innerHTML = '<b>' + s.when + '</b> &middot; ' + s.d + (s.k === 'claim' ? ' <span class="tag" style="background:#c62828">UNPROVEN</span>' : '');
+    });
+    dots.push(dot);
+  });
+
+  // summit countdown (start of 19 Nov in China = 16:00 UTC on 18 Nov)
+  var SUMMIT = Date.UTC(2026, 10, 18, 16, 0, 0), SUMMIT_END = Date.UTC(2026, 10, 19, 16, 0, 0);
+  document.getElementById('cdw').textContent = 'Start of Thursday 19 Nov in Shenzhen = ' + fmt(SUMMIT, { weekday: 'long', hour: 'numeric', minute: '2-digit' }) + ' Eastern.';
+  var AG = {
+    'Nuclear weapons': 'Trump says it is a chance for all three to reach a deal on nuclear stockpiles. A US official calls it a first step and plays down hopes of an agreement.',
+    'Iran war': 'Could come up, say several outlets. Trump has said he might stop attacking Iran if there are no new provocations, while keeping the naval blockade on Iranian ports.',
+    'Ukraine': 'Analysts say Putin may use the meeting to look strong while keeping Ukraine off the table. Separately, Zelenskyy says the US floated swapping Donbas for NATO membership; the US has not confirmed.',
+    'North Korea': 'Listed as a possible topic by reporters; nothing official.',
+    'Who else is there': 'The full APEC leaders summit runs 18 to 19 November in Shenzhen. Japan\'s Prime Minister Takaichi is due to attend.'
+  };
+  var agEl = document.getElementById('agenda');
+  Object.keys(AG).forEach(function (k) {
+    var b = document.createElement('button'); b.className = 'ag'; b.textContent = k;
+    b.onclick = function () { agEl.querySelectorAll('.ag').forEach(function (x) { x.classList.remove('on'); }); b.classList.add('on'); document.getElementById('agtip').textContent = AG[k]; };
+    agEl.appendChild(b);
+  });
+
+  function hms(ms) { var s = Math.max(0, Math.floor(ms / 1000)), d = Math.floor(s / 86400); return (d ? d + 'd ' : '') + String(Math.floor(s % 86400 / 3600)).padStart(2, '0') + ':' + String(Math.floor(s % 3600 / 60)).padStart(2, '0') + ':' + String(s % 60).padStart(2, '0'); }
+  function tick() {
+    var now = Date.now();
+    document.getElementById('clock').textContent = fmt(now, { weekday: 'long', day: 'numeric', month: 'long', hour: 'numeric', minute: '2-digit', second: '2-digit' }) + ' Eastern';
+    var cd = document.getElementById('cd');
+    if (now < SUMMIT) cd.textContent = hms(SUMMIT - now);
+    else if (now < SUMMIT_END) cd.textContent = 'Summit day has begun: what happened is not on this page';
+    else cd.textContent = 'Summit day is over: check World Pulse for the result';
+    if (now >= SUMMIT) cd.style.fontSize = '20px';
+  }
+  tick(); setInterval(tick, 1000);
+
+  // stories
+  var CATS = {
+    space: ['#3949ab', 'Space'], tech: ['#1f6fb5', 'Tech'], mil: ['#b3261e', 'Iran and military'], war: ['#6b6b6b', 'Wars'],
+    money: ['#6a3fb5', 'Money'], health: ['#c77700', 'Health'], acc: ['#00796b', 'Accidents and weather'], world: ['#0d2b4e', 'World politics']
+  };
+  var STATUS = { upd: ['#1f6fb5', 'UPDATED'], neu: ['#2e7d32', 'NEW'], un: ['#c62828', 'UNPROVEN'], same: ['#8a96a3', 'NO CHANGE'] };
+  var STORIES = [
+    { c: 'world', s: 'upd', h: 'Confirmed: Trump, Xi and Putin meet Thursday in Shenzhen', p: 'The White House and the Kremlin both confirm the first three-way meeting, on 19 November.', more: ['Beside the APEC summit (18 to 19 Nov).', 'Trump wants to talk about nuclear weapons; a US official says not to expect a deal.', 'Kremlin spokesman Peskov calls it "extremely significant".'], d: [13, 18, 14, 12, 1] },
+    { c: 'mil', s: 'un', h: 'Iran claims 3 tankers hit mines in Hormuz', p: 'Only Iran says so. Ships not named. The US says the main routes are cleared.', more: ['Brent crude closed Friday at $95.84 a barrel.', 'Traders react when oil futures reopen Sunday evening.'], d: [14, 10, 15, 0, 1] },
+    { c: 'war', s: 'upd', h: 'Zelenskyy: US floated giving up Donbas in return for NATO', p: 'He says it is the first time the two have been linked. The US has not confirmed.', more: ['He says any land deal would go to a national vote, and only with a full package of guarantees and money.', 'The Kremlin has not answered.', 'Russia sent 117 drones at Ukraine overnight, killing at least two.'], d: [14, 8, 14, 18, 1] },
+    { c: 'space', s: 'upd', h: 'Starship: ship caught, booster lost, no date for Flight 16', p: 'Ship 42 was caught by the tower after 14 orbits, about 22 hours 33 minutes after liftoff.', more: ['A first: an upper stage caught back from orbit.', 'Booster 22 called off its catch and came down in the Gulf of Mexico; SpaceX is looking into why.', 'No Flight 16 date announced.'], d: [13, 17.8, 14, 16.4, 0] },
+    { c: 'tech', s: 'upd', h: 'Flight halt: FAA says root cause still unknown', p: 'The Transportation Secretary points at contractor work moving copper phone lines to fiber.', more: ['Contractor L3Harris says it is helping the investigation.', 'Officials say there is no sign of a cyberattack.', 'Saturday cancellations passed 5,000.'], d: [13, 15.9, 13, 20.25, 0] },
+    { c: 'money', s: 'upd', h: 'Bitcoin touches about $63,300', p: 'Lowest since mid-August, on track for a sixth weekly fall.', more: ['US 10-year bond rate ended Friday near 5.13%.', 'Coverage links it to a hot inflation report and bets on a rate rise.'], d: [14, 0, 15, 0, 1] },
+    { c: 'health', s: 'upd', h: 'Ebola in Congo passes 11,000 cases', p: 'About 5,430 deaths. Six months in, still out of control.', more: ['European Centre for Disease Prevention and Control figures to 10 Nov.', 'No approved vaccine for this strain (Bundibugyo).', 'The Washington Post says it could pass the West Africa outbreak\'s death toll.'], d: [10, 0, 15, 0, 1] },
+    { c: 'acc', s: 'upd', h: 'New Orleans crash: data recorder recovered', p: 'National Transportation Safety Board team on site for about a week. Too early for a cause.', more: ['The Coast Guard mentions a possible loss of steering (not a finding).', 'All 197 people survived; 32 went to hospital.', 'The port has sued to hold the tanker, Atlantic Asphalt.'], d: [13, 12.5, 13, 13, 0] },
+    { c: 'acc', s: 'neu', h: 'West Coast: atmospheric river storms', p: 'Rain, mountain snow and big waves. Flood risk near wildfire burn scars.', more: ['Northwest Washington flagged for local flooding.', 'No damage reports found yet.'], d: [14, 0, 16, 0, 1] },
+    { c: 'acc', s: 'upd', h: 'DC gym shooting: gunman named', p: 'Police name Matt Wade Lambert, 55, who lived in the building. He was found dead.', more: ['The man killed was building manager James Stuart, 46.', 'Outlets still differ on four or five hurt.'], d: [12, 13, 12, 17, 1] },
+    { c: 'tech', s: 'same', h: 'Microsoft 365: no new word on the cause', p: 'Services are back; nothing new from Microsoft in major outlets.', more: ['Earlier reports differed between a network change and a capacity upgrade.'], d: [12, 11.3, 13, 12.8, 0] },
+    { c: 'money', s: 'same', h: 'Nvidia: nothing new this weekend', p: 'Jensen Huang resigned on 12 Nov; the board inquiry continues.', more: ['Finance chief Colette Kress is interim chief executive.'], d: null },
+    { c: 'tech', s: 'un', h: 'Fedwire and 911 problems: still claims only', p: 'Each still rests on a single source.', more: ['No official or major outlet confirms either.'], d: null },
+    { c: 'acc', s: 'same', h: 'No big earthquakes', p: 'Nothing of magnitude 6 or more in the last day. Largest: 5.5 near Fiji.', more: ['From the United States Geological Survey (USGS) feed, checked about 12:00 UTC.'], d: null }
+  ];
+  var chips = document.getElementById('chips'), grid = document.getElementById('grid'), active = 'all';
+  function chip(key, label, col) {
+    var b = document.createElement('button'); b.className = 'chip' + (key === 'all' ? ' on' : '');
+    b.innerHTML = (col ? '<i style="background:' + col + '"></i>' : '') + label;
+    b.onclick = function () { active = key; chips.querySelectorAll('.chip').forEach(function (c) { c.classList.remove('on'); }); b.classList.add('on'); render(); };
+    chips.appendChild(b);
+  }
+  chip('all', 'All');
+  Object.keys(CATS).forEach(function (k) { chip(k, CATS[k][1], CATS[k][0]); });
+  function render() {
+    grid.innerHTML = '';
+    STORIES.filter(function (s) { return active === 'all' || s.c === active; }).forEach(function (s, i) {
+      var el = document.createElement('div'); el.className = 'story'; el.style.borderLeftColor = CATS[s.c][0];
+      el.innerHTML = '<div class="meta"><span class="cat" style="color:' + CATS[s.c][0] + '">' + CATS[s.c][1] + '</span>' +
+        '<span class="tag" style="background:' + STATUS[s.s][0] + '">' + STATUS[s.s][1] + '</span></div>' +
+        '<h4>' + s.h + '</h4><p>' + s.p + '</p><div class="more"><ul><li>' + s.more.join('</li><li>') + '</li></ul></div>' +
+        '<div class="hint">Click for details</div>';
+      el.onclick = function () { el.classList.toggle('open'); el.querySelector('.hint').textContent = el.classList.contains('open') ? 'Click to close' : 'Click for details'; };
+      grid.appendChild(el);
+      setTimeout(function () { el.classList.add('in'); }, 60 * i);
+    });
+  }
+  render();
+
+  var tick2 = document.getElementById('ticker'), tt = [{ h: 'Iran says 6 drones aimed at a US base in Bahrain; Bahrain says it shot them down' }].concat(STORIES).map(function (s) { return '<b>&#9679;</b>' + s.h; }).join('');
+  tick2.innerHTML = tt + tt;
+
+  // week strip
+  var strip = document.getElementById('strip'), D0 = 10, D1 = 16, rowY = 22;
+  for (var d = D0; d <= D1; d++) {
+    var dv = document.createElement('div'); dv.className = 'day'; dv.style.left = ((d - D0) / (D1 - D0) * 100) + '%';
+    dv.textContent = d < D1 ? new Date(Date.UTC(2026, 10, d)).toLocaleDateString('en-US', { weekday: 'short', timeZone: 'UTC' }) + ' ' + d : ''; strip.appendChild(dv);
+  }
+  var row = 0, items = STORIES.filter(function (s) { return s.d; }).concat([
+    { c: 'mil', h: 'Iran drones at Bahrain (Friday)', d: [13, 5, 13, 12, 1] },
+    { c: 'mil', h: 'Iran drones at Bahrain (Sunday)', d: [15, 0, 15, 8, 1] }]);
+  items.sort(function (a, b) { return (a.d[0] * 24 + a.d[1]) - (b.d[0] * 24 + b.d[1]); });
+  items.forEach(function (s) {
+    var a = ((s.d[0] - D0) * 24 + s.d[1]) / ((D1 - D0) * 24) * 100, b = ((s.d[2] - D0) * 24 + s.d[3]) / ((D1 - D0) * 24) * 100;
+    a = Math.max(0, a);
+    var ev = document.createElement('div'); ev.className = 'ev' + (s.d[4] ? ' approx' : '');
+    ev.style.left = a + '%'; ev.style.width = Math.max(0.8, b - a) + '%'; ev.style.top = (rowY + row * 13) + 'px'; ev.style.background = CATS[s.c][0];
+    ev.onmouseenter = function () { document.getElementById('striptip').innerHTML = '<b style="color:' + CATS[s.c][0] + '">' + CATS[s.c][1] + ':</b> ' + s.h + (s.d[4] ? ' <i>(only the day is known)</i>' : ''); };
+    strip.appendChild(ev); row++;
+  });
+  strip.style.height = (rowY + row * 13 + 30) + 'px';
+})();
+</script>
+<style id="theme-toggle-style">/* theme-toggle-v2 */
+html.dark { filter: invert(1) hue-rotate(180deg); background: #ffffff; }
+html.dark body { background: #ffffff; }
+html.dark img, html.dark video, html.dark picture, html.dark canvas { filter: invert(1) hue-rotate(180deg); }
+#theme-toggle { position: fixed; top: 12px; right: 12px; z-index: 2147483000; padding: 6px 12px;
+  border: 1px solid #94a3b8; border-radius: 8px; background: #ffffff; color: #1e3a8a;
+  font: 600 12px 'Segoe UI', Arial, sans-serif; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,.12); }
+#theme-toggle:hover { background: #eef3ff; }
+@media print { #theme-toggle { display: none; } }
+</style>
+<button id="theme-toggle" type="button" aria-label="Switch between light and dark">Dark</button>
+<script id="theme-toggle-script">
+(function () {
+  var root = document.documentElement, key = 'theme:' + location.pathname;
+  var btn = document.getElementById('theme-toggle');
+  function set(dark) {
+    root.classList.toggle('dark', dark);
+    if (btn) { btn.textContent = dark ? 'Light' : 'Dark'; }
+  }
+  try { set(localStorage.getItem(key) === 'dark'); } catch (e) { set(false); }
+  if (btn) {
+    btn.addEventListener('click', function () {
+      var dark = !root.classList.contains('dark');
+      set(dark);
+      try { localStorage.setItem(key, dark ? 'dark' : 'light'); } catch (e) {}
+    });
+  }
+})();
+</script>
+</body>
+</html>

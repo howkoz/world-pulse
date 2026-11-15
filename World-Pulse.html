@@ -280,7 +280,7 @@
   T.forEach(function (t) { if (t.id === 'starship-flight-15') ship = t; });
   var orbit = null;
   if (ship) {
-    var T0 = Date.UTC(2026, 10, 13, 22, 47, 36), INS = T0 + 1590000, CATCH = Date.parse(ship.next.utc);
+    var T0 = Date.UTC(2026, 10, 13, 22, 47, 36), INS = T0 + 1590000, CATCH = ship.next ? Date.parse(ship.next.utc) : Date.UTC(2026, 10, 14, 21, 20, 10);
     orbit = { t0: INS, period: 90.5 * 60000, incl: 26.5, startLat: 24, startLon: -88, label: 'Ship 42', showUntil: CATCH };
   }
   var globe = WorldGlobe(document.getElementById('globe'), { lat: 22, lon: -60, spin: 5, markers: markers, orbit: orbit,
