@@ -1,0 +1,127 @@
+<svg width="100%" height="100%" data-fixed-size="1260 772" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1260 772" font-family="Arial, Helvetica, sans-serif">
+<style id="theme-toggle-style">/* theme-toggle-v2 */
+:root.dark { filter: invert(1) hue-rotate(180deg); background-color: #121212; }
+.theme-toggle { cursor: pointer; }
+.theme-toggle rect { fill: #ffffff; stroke: #94a3b8; }
+.theme-toggle text { fill: #1e3a8a; font: 600 12px 'Segoe UI', Arial, sans-serif; }
+.theme-toggle:hover rect { fill: #eef3ff; }
+@media print { .theme-toggle { display: none; } }
+</style>
+<rect x="0" y="0" width="1260" height="772" fill="#FFFFFF"/>
+<text x="24" y="40" font-size="24" font-weight="700" fill="#1A1A1A">What is going on in the US: afternoon scan, Monday 16 November 2026</text>
+<text x="24" y="64" font-size="13" fill="#4A4A4A">Checked about 4:30 pm Eastern. Each fact is from a major outlet; links are on World Pulse. The day strip shows when each story happened.</text>
+<line x1="70" y1="112" x2="1190" y2="112" stroke="#B0B7C3" stroke-width="3"/>
+<text x="210" y="98" font-size="13" font-weight="700" fill="#333333" text-anchor="middle">Fri 13 Nov</text>
+<text x="490" y="98" font-size="13" font-weight="700" fill="#333333" text-anchor="middle">Sat 14 Nov</text>
+<line x1="350" y1="104" x2="350" y2="120" stroke="#B0B7C3" stroke-width="2"/>
+<text x="770" y="98" font-size="13" font-weight="700" fill="#333333" text-anchor="middle">Sun 15 Nov</text>
+<line x1="630" y1="104" x2="630" y2="120" stroke="#B0B7C3" stroke-width="2"/>
+<text x="1050" y="98" font-size="13" font-weight="700" fill="#333333" text-anchor="middle">Mon 16 Nov</text>
+<line x1="910" y1="104" x2="910" y2="120" stroke="#B0B7C3" stroke-width="2"/>
+<circle cx="255" cy="112" r="8" fill="#1565C0" stroke="#FFFFFF" stroke-width="2"/>
+<text x="255" y="136" font-size="11" fill="#333333" text-anchor="middle">Ground stop</text>
+<circle cx="154" cy="112" r="8" fill="#2E7D32" stroke="#FFFFFF" stroke-width="2"/>
+<text x="154" y="136" font-size="11" fill="#333333" text-anchor="middle">Alaska result</text>
+<circle cx="596" cy="112" r="8" fill="#E65100" stroke="#FFFFFF" stroke-width="2"/>
+<text x="596" y="136" font-size="11" fill="#333333" text-anchor="middle">Miami collision</text>
+<circle cx="476" cy="112" r="8" fill="#6A1B9A" stroke="#FFFFFF" stroke-width="2"/>
+<text x="476" y="136" font-size="11" fill="#333333" text-anchor="middle">Measles news</text>
+<circle cx="770" cy="112" r="8" fill="#1565C0" stroke="#FFFFFF" stroke-width="2"/>
+<text x="770" y="136" font-size="11" fill="#333333" text-anchor="middle">Router cause named</text>
+<circle cx="1016" cy="112" r="8" fill="#C62828" stroke="#FFFFFF" stroke-width="2"/>
+<text x="1016" y="136" font-size="11" fill="#333333" text-anchor="middle">Banks down</text>
+<rect x="24" y="160" width="1212" height="150" rx="10" fill="#FFF4F3" stroke="#D5DBE5"/>
+<rect x="24" y="160" width="8" height="150" rx="4" fill="#C62828"/>
+<rect x="44" y="174" width="90" height="20" rx="10" fill="#C62828"/>
+<text x="52" y="188" font-size="11" font-weight="700" fill="#FFFFFF">RIGHT NOW</text>
+<text x="144" y="188" font-size="12" fill="#555555">Monday, from about 9 am Eastern</text>
+<text x="44" y="216" font-size="17" font-weight="700" fill="#1A1A1A">Bank apps and websites down across the US</text>
+<text x="44" y="240" font-size="13" fill="#2B2B2B">Chase, Bank of America, Wells Fargo, U.S. Bank and Truist customers cannot get into online banking. Chase has the most complaints:</text>
+<text x="44" y="259" font-size="13" fill="#2B2B2B">nearly 4,800 on the outage tracker Downdetector by 2 pm. Chase says a software bug in its own hardware, not a cyberattack.</text>
+<text x="44" y="278" font-size="13" fill="#2B2B2B">Wells Fargo says use cash machines, branches or phone banking. Zelle says its network is fine; delays come from the banks.</text>
+<text x="44" y="297" font-size="13" fill="#2B2B2B">Capital One says it is not affected. Not fixed as of 4:28 pm; Chase aims for end of day. No bank says they share one cause.</text>
+<rect x="24" y="330" width="396" height="196" rx="10" fill="#F7F9FC" stroke="#D5DBE5"/>
+<rect x="24" y="330" width="8" height="196" rx="4" fill="#1565C0"/>
+<rect x="44" y="344" width="74" height="20" rx="10" fill="#1565C0"/>
+<text x="52" y="358" font-size="11" font-weight="700" fill="#FFFFFF">UPDATED</text>
+<text x="128" y="358" font-size="12" fill="#555555">Fri 13 to Mon 16 Nov</text>
+<text x="44" y="386" font-size="17" font-weight="700" fill="#1A1A1A">Flights after Friday's ground stop</text>
+<text x="44" y="410" font-size="13" fill="#2B2B2B">Friday: every US departure halted for about 4 hours.</text>
+<text x="44" y="429" font-size="13" fill="#2B2B2B">Federal Aviation Administration (FAA) review points</text>
+<text x="44" y="448" font-size="13" fill="#2B2B2B">to new routers in El Dorado, Arkansas and Amarillo,</text>
+<text x="44" y="467" font-size="13" fill="#2B2B2B">Texas. No sign of an attack. Since Friday: about</text>
+<text x="44" y="486" font-size="13" fill="#2B2B2B">18,520 flights cancelled. Monday 7 am: 284 cancelled.</text>
+<rect x="432" y="330" width="396" height="196" rx="10" fill="#F7F9FC" stroke="#D5DBE5"/>
+<rect x="432" y="330" width="8" height="196" rx="4" fill="#E65100"/>
+<rect x="452" y="344" width="42" height="20" rx="10" fill="#E65100"/>
+<text x="460" y="358" font-size="11" font-weight="700" fill="#FFFFFF">NEW</text>
+<text x="504" y="358" font-size="12" fill="#555555">Sat 14 Nov, about 9:15 pm</text>
+<text x="452" y="386" font-size="17" font-weight="700" fill="#1A1A1A">Two planes collide taxiing in Miami</text>
+<text x="452" y="410" font-size="13" fill="#2B2B2B">A Copa Airlines Boeing 737 wingtip hit the nose of a</text>
+<text x="452" y="429" font-size="13" fill="#2B2B2B">UPS Boeing 767 cargo jet. 166 passengers aboard</text>
+<text x="452" y="448" font-size="13" fill="#2B2B2B">the Copa plane; 2 people with minor injuries. FAA:</text>
+<text x="452" y="467" font-size="13" fill="#2B2B2B">the UPS crew had been told to give way. The National</text>
+<text x="452" y="486" font-size="13" fill="#2B2B2B">Transportation Safety Board (NTSB) is investigating.</text>
+<rect x="840" y="330" width="396" height="196" rx="10" fill="#F7F9FC" stroke="#D5DBE5"/>
+<rect x="840" y="330" width="8" height="196" rx="4" fill="#6A1B9A"/>
+<rect x="860" y="344" width="42" height="20" rx="10" fill="#6A1B9A"/>
+<text x="868" y="358" font-size="11" font-weight="700" fill="#FFFFFF">NEW</text>
+<text x="912" y="358" font-size="12" fill="#555555">Reported 14 to 16 Nov</text>
+<text x="860" y="386" font-size="17" font-weight="700" fill="#1A1A1A">US loses measles elimination status</text>
+<text x="860" y="410" font-size="13" fill="#2B2B2B">The Pan American Health Organization (PAHO) found</text>
+<text x="860" y="429" font-size="13" fill="#2B2B2B">measles has spread in the US for over a year without</text>
+<text x="860" y="448" font-size="13" fill="#2B2B2B">a break. First loss of the status in 26 years (held</text>
+<text x="860" y="467" font-size="13" fill="#2B2B2B">since 2000). Cases more than double last year.</text>
+<text x="860" y="486" font-size="13" fill="#2B2B2B">Deaths: 6 confirmed federally, 10 or more by states.</text>
+<rect x="24" y="544" width="396" height="176" rx="10" fill="#F7F9FC" stroke="#D5DBE5"/>
+<rect x="24" y="544" width="8" height="176" rx="4" fill="#2E7D32"/>
+<rect x="44" y="558" width="42" height="20" rx="10" fill="#2E7D32"/>
+<text x="52" y="572" font-size="11" font-weight="700" fill="#FFFFFF">NEW</text>
+<text x="96" y="572" font-size="12" fill="#555555">Fri 13 Nov</text>
+<text x="44" y="600" font-size="17" font-weight="700" fill="#1A1A1A">Alaska elects a Democratic governor</text>
+<text x="44" y="624" font-size="13" fill="#2B2B2B">Jonathan Kreiss-Tomkins wins outright with 50.8% of</text>
+<text x="44" y="643" font-size="13" fill="#2B2B2B">first-choice votes; Trump-backed Bernadette Wilson</text>
+<text x="44" y="662" font-size="13" fill="#2B2B2B">28.1%, conceded. First Democrat since 1998; at 37</text>
+<text x="44" y="681" font-size="13" fill="#2B2B2B">the youngest governor in Alaska history.</text>
+<rect x="432" y="544" width="396" height="176" rx="10" fill="#F7F9FC" stroke="#D5DBE5"/>
+<rect x="432" y="544" width="8" height="176" rx="4" fill="#00838F"/>
+<rect x="452" y="558" width="106" height="20" rx="10" fill="#00838F"/>
+<text x="460" y="572" font-size="11" font-weight="700" fill="#FFFFFF">STILL GOING</text>
+<text x="568" y="572" font-size="12" fill="#555555">This week</text>
+<text x="452" y="600" font-size="17" font-weight="700" fill="#1A1A1A">West Coast storms</text>
+<text x="452" y="624" font-size="13" fill="#2B2B2B">Back-to-back atmospheric rivers (long bands of moist</text>
+<text x="452" y="643" font-size="13" fill="#2B2B2B">air) soaking Oregon and Washington. Coastal flood</text>
+<text x="452" y="662" font-size="13" fill="#2B2B2B">advisories for Olympia, Seattle and Everett. No</text>
+<text x="452" y="681" font-size="13" fill="#2B2B2B">major flood damage reported so far.</text>
+<rect x="840" y="544" width="396" height="176" rx="10" fill="#F7F9FC" stroke="#D5DBE5"/>
+<rect x="840" y="544" width="8" height="176" rx="4" fill="#455A64"/>
+<rect x="860" y="558" width="50" height="20" rx="10" fill="#455A64"/>
+<text x="868" y="572" font-size="11" font-weight="700" fill="#FFFFFF">ALSO</text>
+<text x="920" y="572" font-size="12" fill="#555555">Morning scan, 6:56 am</text>
+<text x="860" y="600" font-size="17" font-weight="700" fill="#1A1A1A">Already on World Pulse today</text>
+<text x="860" y="624" font-size="13" fill="#2B2B2B">Starship Ship 42 caught by the tower (Saturday).</text>
+<text x="860" y="643" font-size="13" fill="#2B2B2B">Vulcan rocket failed; 40 Amazon satellites lost.</text>
+<text x="860" y="662" font-size="13" fill="#2B2B2B">Trump, Xi and Putin summit confirmed for</text>
+<text x="860" y="681" font-size="13" fill="#2B2B2B">Thursday 19 November in Shenzhen, China.</text>
+<text x="24" y="750" font-size="12" fill="#555555">Sources: CBS News, NBC News, Forbes, Fox Business, CNN, PBS NewsHour, WBUR, Alaska Public Media. Live site: howkoz.github.io/world-pulse</text>
+<g class="theme-toggle" id="theme-toggle" role="button" aria-label="Switch between light and dark"><rect x="1182" y="10" width="66" height="26" rx="7" stroke-width="1"/><text id="theme-toggle-label" x="1215" y="27" text-anchor="middle">Dark</text></g>
+<script id="theme-toggle-script"><![CDATA[
+(function () {
+  var root = document.documentElement, key = 'theme:' + location.pathname;
+  var label = document.getElementById('theme-toggle-label');
+  function set(dark) {
+    if (dark) { root.classList.add('dark'); } else { root.classList.remove('dark'); }
+    if (label) { label.textContent = dark ? 'Light' : 'Dark'; }
+  }
+  try { set(localStorage.getItem(key) === 'dark'); } catch (e) { set(false); }
+  var btn = document.getElementById('theme-toggle');
+  if (btn) {
+    btn.addEventListener('click', function () {
+      var dark = !root.classList.contains('dark');
+      set(dark);
+      try { localStorage.setItem(key, dark ? 'dark' : 'light'); } catch (e) {}
+    });
+  }
+})();
+]]></script>
+</svg>
