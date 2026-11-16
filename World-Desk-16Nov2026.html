@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>World Desk</title>
+<style>
+  :root {
+    --ink: #13202f; --ink2: #3c4a5a; --muted: #6b7887; --line: #dbe2ea; --bg: #f6f8fb; --card: #ffffff;
+    --blue: #1f6fb5; --red: #b3261e; --grey: #6b6b6b; --purple: #6a3fb5; --amber: #c77700; --teal: #00796b;
+    --green: #2e7d32; --navy: #0d2b4e; --sky: #e8f1fb;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Segoe UI", Arial, Helvetica, sans-serif; line-height: 1.45; }
+  a { color: var(--blue); }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 16px; }
+
+  .mast { background: var(--navy); color: #fff; padding: 18px 0 14px; }
+  .mast .wrap { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px; }
+  .brand { font-size: 28px; font-weight: 800; letter-spacing: .5px; }
+  .brand small { font-size: 13px; font-weight: 500; opacity: .75; margin-left: 10px; letter-spacing: 0; }
+  .clock { font-size: 13px; opacity: .9; font-variant-numeric: tabular-nums; }
+  .ticker { background: #0a2240; color: #cfe0f5; font-size: 13px; overflow: hidden; white-space: nowrap; border-top: 1px solid #1d3b60; }
+  .ticker span { display: inline-block; padding: 7px 0; animation: tick 80s linear infinite; }
+  .ticker b { color: #fff; margin: 0 6px 0 28px; }
+  @keyframes tick { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  .hero { background: linear-gradient(180deg, #0d2b4e 0%, #163d6b 100%); color: #fff; padding: 26px 0 30px; }
+  .kicker { display: inline-block; background: #ffb300; color: #13202f; font-weight: 800; font-size: 12px; letter-spacing: 1px; padding: 3px 9px; border-radius: 4px; }
+  .hero h1 { font-size: 34px; margin: 10px 0 6px; line-height: 1.15; }
+  .hero p.dek { font-size: 16px; opacity: .92; margin: 0 0 18px; max-width: 860px; }
+  .hero-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 18px; }
+  @media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr; } .hero h1 { font-size: 26px; } }
+  .panel { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.16); border-radius: 12px; padding: 14px; }
+  .panel h3 { margin: 0 0 8px; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; color: #9cc3ec; }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 12px; }
+  @media (max-width: 560px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+  .stat { background: rgba(255,255,255,.08); border-radius: 10px; padding: 10px; }
+  .stat .n { font-size: 22px; font-weight: 800; }
+  .stat .l { font-size: 11.5px; opacity: .85; }
+  .btn { cursor: pointer; border: 1px solid rgba(255,255,255,.4); background: transparent; color: #fff; border-radius: 6px; padding: 5px 10px; font-size: 12px; font-weight: 600; }
+  .btn.on { background: #fff; color: var(--navy); }
+  .cap { font-size: 13px; min-height: 40px; margin-top: 8px; background: rgba(255,255,255,.08); border-radius: 8px; padding: 8px 10px; }
+  svg text { font-family: "Segoe UI", Arial, sans-serif; }
+
+  section { padding: 26px 0 6px; }
+  h2 { font-size: 22px; margin: 0 0 4px; }
+  .sub { color: var(--muted); font-size: 13.5px; margin: 0 0 14px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 860px) { .two { grid-template-columns: 1fr; } }
+
+  .tl { position: relative; height: 120px; margin: 10px 8px 0; }
+  .tl .rail { position: absolute; left: 0; right: 0; top: 54px; height: 8px; background: #e3e9f0; border-radius: 4px; }
+  .tl .dot { position: absolute; top: 49px; width: 18px; height: 18px; margin-left: -9px; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 0 0 1px #aab6c3; cursor: pointer; }
+  .tl .dot.mil { background: var(--red); } .tl .dot.claim { background: #fff; box-shadow: 0 0 0 2px #c62828; } .tl .dot.talk { background: var(--blue); }
+  .tl .dot.next { background: #ffb300; animation: pulse 1.6s infinite; }
+  .tl .dot.sel { transform: scale(1.3); }
+  @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(255,179,0,.6); } 100% { box-shadow: 0 0 0 12px rgba(255,179,0,0); } }
+  .tl .lab { position: absolute; font-size: 11px; color: var(--ink2); transform: translateX(-50%); white-space: nowrap; }
+  .tl .lab.up { top: 18px; } .tl .lab.down { top: 76px; }
+  .tip { margin-top: 12px; background: var(--sky); border-left: 4px solid var(--blue); padding: 10px 12px; border-radius: 6px; font-size: 14px; min-height: 44px; }
+  @media (max-width: 640px) { .tl .lab { font-size: 9.5px; } }
+
+  .count { font-size: 40px; font-weight: 800; font-variant-numeric: tabular-nums; letter-spacing: 1px; color: var(--navy); }
+  .agenda { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  .ag { cursor: pointer; border: 1px solid var(--line); background: #fff; border-radius: 8px; padding: 6px 12px; font-size: 13px; font-weight: 600; }
+  .ag.on { background: var(--navy); color: #fff; border-color: var(--navy); }
+
+  .rumour { border: 2px dashed #c62828; background: #fff6f5; }
+  .tag { display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: .5px; padding: 2px 8px; border-radius: 999px; color: #fff; }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 14px; }
+  .chip { cursor: pointer; border: 1px solid var(--line); background: #fff; border-radius: 999px; padding: 5px 12px; font-size: 13px; font-weight: 600; color: var(--ink2); }
+  .chip.on { background: var(--ink); color: #fff; border-color: var(--ink); }
+  .chip i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+  .story { background: #fff; border: 1px solid var(--line); border-left: 6px solid var(--blue); border-radius: 10px; padding: 14px; cursor: pointer; transition: transform .2s, box-shadow .2s; opacity: 0; transform: translateY(12px); }
+  .story.in { opacity: 1; transform: none; }
+  .story:hover { box-shadow: 0 6px 18px rgba(16,40,70,.12); transform: translateY(-2px); }
+  .story h4 { margin: 6px 0 4px; font-size: 16px; }
+  .story p { margin: 0; font-size: 13.5px; color: var(--ink2); }
+  .story .more { max-height: 0; overflow: hidden; transition: max-height .4s; font-size: 13px; color: var(--ink2); }
+  .story.open .more { max-height: 360px; }
+  .story .more ul { margin: 8px 0 4px; padding-left: 18px; }
+  .story .meta { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+  .story .cat { font-size: 11px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; }
+  .story .hint { font-size: 11.5px; color: var(--muted); margin-top: 8px; }
+
+  .strip { position: relative; height: 210px; }
+  .strip .day { position: absolute; top: 0; bottom: 22px; border-left: 1px solid var(--line); font-size: 11.5px; color: var(--muted); padding-left: 4px; }
+  .strip .ev { position: absolute; height: 12px; border-radius: 6px; cursor: pointer; }
+  .strip .ev.approx { opacity: .45; }
+  .strip .ev:hover { outline: 2px solid var(--ink); }
+  .striptip { font-size: 13px; color: var(--ink2); min-height: 20px; }
+
+  footer { margin: 34px 0 0; padding: 18px 0 30px; border-top: 1px solid var(--line); font-size: 12.5px; color: var(--muted); }
+  footer ul { padding-left: 18px; margin: 6px 0; columns: 2; }
+  @media (max-width: 700px) { footer ul { columns: 1; } }
+</style>
+</head>
+<body>
+<style>
+  .nx { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+  .nx button { cursor: pointer; border: 1px solid var(--line); background: #fff; border-radius: 10px; padding: 8px 12px; font-size: 13px; font-weight: 700; color: var(--ink); text-align: left; }
+  .nx button span { display: block; font-size: 11px; font-weight: 600; color: var(--muted); }
+  .nx button.on { background: var(--navy); color: #fff; border-color: var(--navy); }
+  .nx button.on span { color: #cfe0f5; }
+</style>
+
+<div class="mast">
+  <div class="wrap">
+    <div class="brand">World Desk <small>Howard's personal news, checked against the sources &middot; <a href="World-Pulse.html" style="color:#ffd36b">World Pulse home</a></small></div>
+    <div class="clock" id="clock">loading clock</div>
+  </div>
+</div>
+<div class="ticker"><span id="ticker"></span></div>
+
+<!-- HERO: VULCAN -->
+<div class="hero">
+  <div class="wrap">
+    <span class="kicker">HEADLINE &middot; SPACE</span>
+    <h1>A Vulcan rocket failed 10 minutes into flight and 40 Amazon internet satellites were lost</h1>
+    <p class="dek">United Launch Alliance (ULA) launched Vulcan from Cape Canaveral, Florida at 12:40 pm Eastern on Sunday. ULA says something went wrong about 10 minutes in and the satellites never reached orbit. It is the first total failure for ULA since the company began in 2006. Nobody knows the cause yet.</p>
+
+    <div class="hero-grid">
+      <div class="panel">
+        <h3 style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap">Replay the flight (drawing, not to scale)
+          <span><button class="btn on" id="mPlan">What was planned</button> <button class="btn" id="mReal">What happened</button></span></h3>
+        <svg id="fly" viewBox="0 0 520 300" width="100%" style="display:block;border-radius:8px">
+          <defs>
+            <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#05122a"/><stop offset=".55" stop-color="#1b3f73"/><stop offset="1" stop-color="#7fb3e0"/></linearGradient>
+          </defs>
+          <rect x="0" y="0" width="520" height="300" fill="url(#sky)"/>
+          <path d="M0 300 Q260 262 520 300 Z" fill="#3b6e3b"/>
+          <line x1="0" y1="62" x2="520" y2="62" stroke="#9cc3ec" stroke-width="1" stroke-dasharray="4 4" opacity=".6"/>
+          <text x="512" y="56" font-size="11" fill="#cfe0f5" text-anchor="end">orbit, where the satellites were going</text>
+          <text x="22" y="292" font-size="11" fill="#ffffff">Cape Canaveral</text>
+          <path id="plan" d="M40 280 C 70 200, 120 120, 230 86 S 420 64, 500 62" fill="none" stroke="#9cc3ec" stroke-width="2" stroke-dasharray="5 5" opacity=".8"/>
+          <path id="trail" d="" fill="none" stroke="#ffb300" stroke-width="3"/>
+          <g id="rk"><circle r="6" fill="#ffffff"/><circle r="3" fill="#ffb300"/></g>
+          <g id="marks"></g>
+          <text id="tclock" x="14" y="24" font-size="18" font-weight="800" fill="#ffffff">T+0:00</text>
+          <text id="fcap" x="260" y="290" font-size="12.5" font-weight="700" fill="#ffffff" text-anchor="middle"></text>
+        </svg>
+        <div style="margin-top:8px;display:flex;gap:8px;align-items:center;flex-wrap:wrap"><button class="btn" id="play">&#9654; Play</button><span style="font-size:11.5px;color:#9cc3ec">ULA has not published the exact flight path or the time of every step. The curve is a drawing.</span></div>
+        <div class="cap" id="hcap">Pick a version and press play.</div>
+        <div class="stats">
+          <div class="stat"><div class="n">40</div><div class="l">Amazon Leo satellites lost</div></div>
+          <div class="stat"><div class="n">~10 min</div><div class="l">into flight when it went wrong (ULA)</div></div>
+          <div class="stat"><div class="n">1st</div><div class="l">total ULA failure since 2006</div></div>
+          <div class="stat"><div class="n">38</div><div class="l">Vulcan launches Amazon has booked</div></div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3>Where it is: Florida on the real globe</h3>
+        <canvas id="globe" style="width:100%;max-width:420px;aspect-ratio:1/1;display:block;margin:0 auto;cursor:grab" aria-label="Realistic globe centred on Florida"></canvas>
+        <div style="text-align:center;font-size:11px;color:#9cc3ec;opacity:.85">Real coastlines and today's real day and night line. Red: Cape Canaveral, where Vulcan launched. Amber: Starbase, Texas, home of Starship. Drag to spin.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- FLIGHT STEPS -->
+  <section>
+    <h2>The flight and the day after, step by step</h2>
+    <p class="sub">Blue = went as planned, red = something went wrong, hollow red = an early account nobody has confirmed, amber = still to come. Steps are evenly spaced, not to scale. Click any dot. Times in Eastern.</p>
+    <div class="card">
+      <div class="tl" id="tl"><div class="rail"></div></div>
+      <div class="tip" id="tltip">Click a dot to see what happened.</div>
+    </div>
+  </section>
+
+  <!-- WHAT NEXT -->
+  <section>
+    <h2>What happens next</h2>
+    <p class="sub">Click a part to see what is known. Nothing here is a forecast; it is what the companies and the reports say so far.</p>
+    <div class="card">
+      <div class="nx" id="nx"></div>
+      <div class="tip" id="nxtip">Click a part.</div>
+    </div>
+  </section>
+
+  <!-- SUMMIT + UNCONFIRMED -->
+  <section>
+    <div class="two">
+      <div class="card">
+        <h2 style="font-size:18px">Coming up: Trump, Xi and Putin meet on Thursday</h2>
+        <p class="sub">Now confirmed by all three governments: 19 November in Shenzhen, China, beside the Asia-Pacific Economic Cooperation (APEC) summit. The hour is not announced, so this counts down to the start of that day in China.</p>
+        <div class="count" id="cd">--</div>
+        <div style="font-size:13px;color:var(--ink2)" id="cdw"></div>
+        <div class="agenda" id="agenda"></div>
+        <div class="tip" id="agtip">Click a topic to see what is known.</div>
+      </div>
+      <div class="card rumour">
+        <span class="tag" style="background:#c62828">UNCONFIRMED</span>
+        <h2 style="font-size:17px;margin-top:8px">Iran says six tankers hit mines in two days, and one supertanker sank</h2>
+        <p style="margin:4px 0 8px;font-size:14px;color:var(--ink2)">Only Iran's Revolutionary Guards say so. No ship has been named and nobody has verified it. US Central Command (CENTCOM) says the strait has been swept clear of mines.</p>
+        <span class="tag" style="background:#c62828">UNCONFIRMED</span>
+        <h2 style="font-size:17px;margin-top:8px">Six drones or two?</h2>
+        <p style="margin:4px 0 8px;font-size:14px;color:var(--ink2)">Iran says it sent six drones at a US base in Bahrain on Sunday. The US military says it was two, and both were shot down.</p>
+        <span class="tag" style="background:#c62828">UNCONFIRMED</span>
+        <h2 style="font-size:17px;margin-top:8px">Amazon cloud sign-in outage</h2>
+        <p style="margin:4px 0 0;font-size:14px;color:var(--ink2)">Tech trade sites report about three hours of trouble in Amazon Web Services' (AWS) Virginia region on Sunday morning. Not found in a major outlet.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OTHER STORIES -->
+  <section>
+    <h2>The rest of the world today</h2>
+    <p class="sub">From this morning's scan (16 Nov, 11:56 UTC, Coordinated Universal Time). Filter by topic, click a card for what changed.</p>
+    <div class="chips" id="chips"></div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <!-- WEEK STRIP -->
+  <section>
+    <h2>The week at a glance</h2>
+    <p class="sub">Each bar is one story, placed on the day it happened (Eastern). Faded bars: only the day is known. Hover a bar. <a href="timelines/World-Events-Timeline-Update-16Nov2026.svg">Open the full timeline picture</a>.</p>
+    <div class="card">
+      <div class="strip" id="strip"></div>
+      <div class="striptip" id="striptip">&nbsp;</div>
+    </div>
+  </section>
+
+  <footer>
+    <b>Key:</b> ULA = United Launch Alliance (a Boeing and Lockheed Martin company). NASA = National Aeronautics and Space Administration. UTC = Coordinated Universal Time. US = United States. AWS = Amazon Web Services. CENTCOM = US Central Command. APEC = Asia-Pacific Economic Cooperation. NATO = North Atlantic Treaty Organization. FAA = Federal Aviation Administration. NTSB = National Transportation Safety Board. CDC = US Centers for Disease Control and Prevention. FT = Financial Times. USGS = United States Geological Survey. T+ = time after liftoff.<br>
+    <b>Sources:</b>
+    <ul>
+      <li><a href="https://spaceflightnow.com/2026/11/15/ula-suffers-first-total-mission-failure-with-loss-of-vulcan-rocket-carrying-40-amazon-leo-satellites/">Spaceflight Now: Vulcan failure</a></li>
+      <li><a href="https://spacenews.com/vulcan-launch-of-amazon-leo-satellites-fails/">SpaceNews: Vulcan launch fails</a></li>
+      <li><a href="https://www.space.com/space-exploration/launches-spacecraft/ula-vulcan-centaur-return-to-flight-amazon-leo-internet-satellite-launch">Space.com: Vulcan return to flight fails</a></li>
+      <li><a href="https://www.engadget.com/2317283/ula-vulcan-rocket-failure-destroys-40-amazon-leo-satellites/">Engadget: Amazon Leo impact</a></li>
+      <li><a href="https://www.nasaspaceflight.com/2026/10/spacex-flight-15-16-milestones/">NASASpaceFlight: Starship Flight 16 plans</a></li>
+      <li><a href="https://www.cnbc.com/amp/2026/11/15/bahrain-iran-drone-attacks-tehran-us-base.html">CNBC: Bahrain attack, US count</a></li>
+      <li><a href="https://oilprice.com/Latest-Energy-News/World-News/Iran-Claims-Two-More-Oil-Tankers-Hit-Mines-in-Strait-of-Hormuz.html">OilPrice: Iran's new tanker claims</a></li>
+      <li><a href="https://www.aljazeera.com/news/2026/11/15/saudi-led-coalition-intercepts-two-missiles-two-drones-in-riyadh">Al Jazeera: missiles at Riyadh</a></li>
+      <li><a href="https://www.aljazeera.com/news/2026/11/15/israeli-air-strike-kills-senior-hamas-commander-in-gaza">Al Jazeera: Hamas commander killed</a></li>
+      <li><a href="https://gulfnews.com/world/asia/china-confirms-first-xi-trump-putin-summit-on-thursday-1.500748570">Gulf News: China confirms summit</a></li>
+      <li><a href="https://www.aljazeera.com/news/2026/11/15/give-donbas-take-nato-seat-could-new-us-pitch-work-for-ukraine-russia">Al Jazeera: Donbas for NATO</a></li>
+      <li><a href="https://www.faa.gov/newsroom/nationwide-ground-stop-questions-and-answers">FAA: ground stop questions and answers</a></li>
+      <li><a href="https://www.usnews.com/news/top-news/articles/2026-11-15/jensen-huang-discusses-comeback-as-nvidia-ceo-with-allies-ft-reports">US News / Reuters: Huang comeback talk</a></li>
+      <li><a href="https://www.cryptotimes.io/2026/11/16/bitcoin-price-today-btc-slides-toward-62k-amid-persistent-etf-outflows-and-extreme-fear/">Crypto Times: Bitcoin</a></li>
+      <li><a href="https://www.cdc.gov/ebola/situation-summary/index.html">CDC: Ebola figures</a></li>
+      <li><a href="https://www.wlwt.com/article/ntsb-tanker-steering-failure-new-orleans-cruise-ship-crash/74434062">WLWT: New Orleans steering failure</a></li>
+      <li><a href="https://www.kxan.com/news/us-army-officer-involved-in-alleged-russian-spying-scheme-identified-reports/">KXAN: officer named in spying case</a></li>
+      <li><a href="https://www.wxxinews.org/npr-news/2026-11-13/rivers-in-the-sky-are-raining-down-on-the-pacific-northwest-what-are-they">NPR: atmospheric rivers</a></li>
+      <li><a href="https://cybersecuritynews.com/aws-services-outage/">Cybersecurity News: AWS outage (trade site)</a></li>
+      <li><a href="https://earthquake.usgs.gov/earthquakes/map/">USGS: earthquakes (none of magnitude 6 or more in the last day)</a></li>
+    </ul>
+    Facts checked 16 Nov 2026 about 12:00 UTC. The page works out times live from your clock, but it does not fetch news: once the summit day begins it cannot know what happened there.
+  </footer>
+</div>
+
+<script src="pulse/world-land.js"></script>
+<script src="pulse/globe.js"></script>
+<script>
+(function () {
+  var ET = 'America/New_York';
+  function fmt(ms, opts) { return new Date(ms).toLocaleString('en-US', Object.assign({ timeZone: ET }, opts)); }
+
+  // globe
+  try {
+    WorldGlobe(document.getElementById('globe'), { lat: 27, lon: -84, spin: 0,
+      markers: [
+        { lat: 28.58, lon: -80.58, color: '#ff5252', title: 'Cape Canaveral: Vulcan launch site', label: 'Vulcan' },
+        { lat: 25.99, lon: -97.15, color: '#ffb300', title: 'Starbase, Texas: Starship', label: 'Starbase' }
+      ] });
+  } catch (e) { /* globe is a bonus; the page works without it */ }
+
+  // flight replay
+  var SVGNS = 'http://www.w3.org/2000/svg', mode = 'plan', running = false;
+  var plan = document.getElementById('plan'), L = plan.getTotalLength ? plan.getTotalLength() : 0;
+  var FLIGHT = {
+    plan: { stopAt: 1, stops: [
+      [0.00, '0:00', 'Liftoff from Space Launch Complex 41, 12:40 pm Eastern'],
+      [0.16, '1:40', 'Six strap-on solid boosters burn out and drop away'],
+      [0.40, '~5:00', 'Main stage separates; the Centaur upper stage lights'],
+      [0.75, '~10:00', 'Centaur keeps burning, about 12 minutes in all'],
+      [1.00, 'orbit', 'Satellites released into orbit (did not happen)']] },
+    real: { stopAt: 0.80, stops: [
+      [0.00, '0:00', 'Liftoff at 12:40 pm Eastern, after a hold at 20 seconds to go'],
+      [0.16, '1:40', 'The solid boosters burn out and drop away normally'],
+      [0.42, 'late', 'Main stage appears to burn longer than planned and separate late (early account)'],
+      [0.60, '', 'The Centaur upper stage makes odd turns (early account)'],
+      [0.80, '~10:00', 'ULA: an anomaly about 10 minutes in. The satellites never reach orbit']] }
+  };
+  function clearMarks() { document.getElementById('marks').innerHTML = ''; document.getElementById('trail').setAttribute('d', ''); document.getElementById('fcap').textContent = ''; document.getElementById('tclock').textContent = 'T+0:00'; place(0); }
+  function pt(k) { if (!L) return { x: 40 + 460 * k, y: 280 - 218 * k }; return plan.getPointAtLength(L * k); }
+  function place(k) { var p = pt(k); document.getElementById('rk').setAttribute('transform', 'translate(' + p.x + ',' + p.y + ')'); return p; }
+  function pick(m) { mode = m; document.getElementById('mPlan').classList.toggle('on', m === 'plan'); document.getElementById('mReal').classList.toggle('on', m === 'real'); clearMarks(); document.getElementById('hcap').textContent = 'Press play to see ' + (m === 'plan' ? 'what was planned.' : 'what happened.'); }
+  document.getElementById('mPlan').onclick = function () { if (!running) pick('plan'); };
+  document.getElementById('mReal').onclick = function () { if (!running) pick('real'); };
+  document.getElementById('play').onclick = function () {
+    if (running) return; running = true; clearMarks();
+    var F = FLIGHT[mode], cap = document.getElementById('hcap'), marks = document.getElementById('marks'), trail = document.getElementById('trail');
+    var next = 0, start = null, dpath = '';
+    function mark(s) {
+      var p = pt(s[0]), c = document.createElementNS(SVGNS, 'circle');
+      c.setAttribute('cx', p.x); c.setAttribute('cy', p.y); c.setAttribute('r', 4); c.setAttribute('fill', mode === 'real' && s === F.stops[F.stops.length - 1] ? '#ff5252' : '#9cc3ec'); marks.appendChild(c);
+      if (s[1]) document.getElementById('tclock').textContent = 'T+' + s[1];
+      cap.textContent = s[2];
+    }
+    function step(ts) {
+      if (!start) start = ts;
+      var k = Math.min(F.stopAt, (ts - start) / 6000);
+      var p = place(k); dpath += (dpath ? ' L' : 'M') + p.x.toFixed(1) + ' ' + p.y.toFixed(1); trail.setAttribute('d', dpath);
+      while (next < F.stops.length && k >= F.stops[next][0]) { mark(F.stops[next]); next++; }
+      if (k < F.stopAt) { requestAnimationFrame(step); return; }
+      if (mode === 'real') {
+        var g = document.getElementById('rk'); g.firstChild.setAttribute('fill', '#ff5252'); g.firstChild.setAttribute('r', 12);
+        document.getElementById('fcap').textContent = 'Lost: 40 satellites did not reach orbit';
+        setTimeout(function () { g.firstChild.setAttribute('r', 6); g.firstChild.setAttribute('fill', '#ffffff'); running = false; }, 900);
+      } else { document.getElementById('fcap').textContent = 'The plan: 40 satellites in orbit'; running = false; }
+    }
+    requestAnimationFrame(step);
+  };
+  pick('plan');
+
+  // steps timeline
+  var STEPS = [
+    { k: 'talk', name: '12:40 pm liftoff', when: 'Sun 15 Nov, 12:40 pm', d: 'Vulcan lifts off from Space Launch Complex 41 at Cape Canaveral at the end of its launch window, after a short hold at 20 seconds to go. It is Vulcan\'s fifth flight and its first in nine months.' },
+    { k: 'talk', name: 'boosters off', when: 'about T+1:40', d: 'The six solid rocket boosters burn out and drop away. Spaceflight Now says they appeared to work normally.' },
+    { k: 'claim', name: 'late separation', when: 'a few minutes in', d: 'Spaceflight Now says the main stage engines appeared to burn longer than planned and the stages separated later than expected. This is an early account from the broadcast, not a finding.' },
+    { k: 'mil', name: '10 min: anomaly', when: 'about 12:50 pm', d: 'ULA says the rocket suffered an anomaly about 10 minutes into flight and failed to deliver the Amazon mission to orbit.' },
+    { k: 'mil', name: '~1:30 pm: confirmed', when: 'about 50 minutes after liftoff', d: 'ULA confirms the failure and promises full transparency. It will work with Amazon and others to find the cause.' },
+    { k: 'talk', name: 'help offered', when: 'Sun 15 Nov', d: 'Engine maker Blue Origin is helping the investigation. NASA chief Jared Isaacman says NASA is available to help.' },
+    { k: 'next', name: 'cause: not known', when: 'still to come', d: 'No cause has been named. One encyclopedia page mentions a nozzle defect; no official source says so, so this page does not.' }
+  ];
+  var tl = document.getElementById('tl'), dots = [];
+  STEPS.forEach(function (s, i) {
+    var x = 5 + i * (90 / (STEPS.length - 1));
+    var dot = document.createElement('div'); dot.className = 'dot ' + s.k; dot.style.left = x + '%'; tl.appendChild(dot);
+    var lab = document.createElement('div'); lab.className = 'lab ' + (i % 2 ? 'down' : 'up'); lab.style.left = x + '%'; lab.textContent = s.name; tl.appendChild(lab);
+    dot.addEventListener('click', function () {
+      dots.forEach(function (o) { o.classList.remove('sel'); }); dot.classList.add('sel');
+      document.getElementById('tltip').innerHTML = '<b>' + s.when + '</b> &middot; ' + s.d + (s.k === 'claim' ? ' <span class="tag" style="background:#c62828">UNPROVEN</span>' : '');
+    });
+    dots.push(dot);
+  });
+
+  // what next
+  var NX = [
+    ['The investigation', 'ULA, Blue Origin, NASA', 'ULA leads, with Amazon and engine maker Blue Origin. NASA has offered help. ULA says it has no clear data on the cause yet.'],
+    ['Vulcan grounded', 'until the cause is found', 'Amazon Leo must wait for ULA\'s investigation before it flies on Vulcan again. ULA says it wants to fly again "as quickly as possible". No date.'],
+    ['Military launches', 'already on hold', 'The US Space Force had already paused national security launches on Vulcan after earlier nozzle problems. Engadget reports that pause stays until ULA fixes the problem.'],
+    ['Amazon\'s other rockets', 'New Glenn, Ariane 6, Falcon 9', 'Amazon also booked 24 New Glenn, 24 Ariane 6 and 13 Falcon 9 launches. New Glenn uses the same kind of engine as Vulcan; nobody has said whether that matters here.'],
+    ['Amazon Leo network', 'about 390 in service', 'Amazon had put about 398 satellites up over 14 launches since 2025. This flight would have taken it to about 436. Amazon says there is risk with any launch.'],
+    ['Starship, meanwhile', 'Flight 16 aimed for December', 'Not linked to Vulcan. SpaceX has not set a date. NASASpaceFlight says December, possibly from pad 39A in Florida; some sites now say early 2027.']
+  ];
+  var nx = document.getElementById('nx');
+  NX.forEach(function (n) {
+    var b = document.createElement('button'); b.innerHTML = n[0] + '<span>' + n[1] + '</span>';
+    b.onclick = function () { nx.querySelectorAll('button').forEach(function (x) { x.classList.remove('on'); }); b.classList.add('on'); document.getElementById('nxtip').textContent = n[2]; };
+    nx.appendChild(b);
+  });
+
+  // summit countdown (start of 19 Nov in China = 16:00 UTC on 18 Nov)
+  var SUMMIT = Date.UTC(2026, 10, 18, 16, 0, 0), SUMMIT_END = Date.UTC(2026, 10, 19, 16, 0, 0);
+  document.getElementById('cdw').textContent = 'Start of Thursday 19 Nov in Shenzhen = ' + fmt(SUMMIT, { weekday: 'long', hour: 'numeric', minute: '2-digit' }) + ' Eastern.';
+  var AG = {
+    'Nuclear weapons': 'Trump says it is a chance for all three to reach a deal on nuclear stockpiles. A senior US official told Reuters: do not expect any kind of agreement.',
+    'Iran war': 'The White House says Trump wants to discuss it. Iran\'s claims of new tanker hits keep it in the news.',
+    'Ukraine': 'Zelenskyy says the US floated swapping Donbas for NATO membership; the US has not confirmed. The Abu Dhabi talks agreed a prisoner swap of more than 1,000 people.',
+    'Who meets whom': 'Trump is expected to meet Xi one to one first. A Kremlin aide says no separate Putin and Trump meeting has been agreed.',
+    'The wider summit': 'The full APEC leaders summit runs 18 to 19 November in Shenzhen. China has not published an agenda for the three-way meeting.'
+  };
+  var agEl = document.getElementById('agenda');
+  Object.keys(AG).forEach(function (k) {
+    var b = document.createElement('button'); b.className = 'ag'; b.textContent = k;
+    b.onclick = function () { agEl.querySelectorAll('.ag').forEach(function (x) { x.classList.remove('on'); }); b.classList.add('on'); document.getElementById('agtip').textContent = AG[k]; };
+    agEl.appendChild(b);
+  });
+
+  function hms(ms) { var s = Math.max(0, Math.floor(ms / 1000)), d = Math.floor(s / 86400); return (d ? d + 'd ' : '') + String(Math.floor(s % 86400 / 3600)).padStart(2, '0') + ':' + String(Math.floor(s % 3600 / 60)).padStart(2, '0') + ':' + String(s % 60).padStart(2, '0'); }
+  function tick() {
+    var now = Date.now();
+    document.getElementById('clock').textContent = fmt(now, { weekday: 'long', day: 'numeric', month: 'long', hour: 'numeric', minute: '2-digit', second: '2-digit' }) + ' Eastern';
+    var cd = document.getElementById('cd');
+    if (now < SUMMIT) cd.textContent = hms(SUMMIT - now);
+    else if (now < SUMMIT_END) cd.textContent = 'Summit day has begun: what happened is not on this page';
+    else cd.textContent = 'Summit day is over: check World Pulse for the result';
+    if (now >= SUMMIT) cd.style.fontSize = '20px';
+  }
+  tick(); setInterval(tick, 1000);
+
+  // stories
+  var CATS = {
+    space: ['#3949ab', 'Space'], tech: ['#1f6fb5', 'Tech'], mil: ['#b3261e', 'Iran and military'], war: ['#6b6b6b', 'Wars and spying'],
+    money: ['#6a3fb5', 'Money'], health: ['#c77700', 'Health'], acc: ['#00796b', 'Accidents and weather'], world: ['#0d2b4e', 'World politics']
+  };
+  var STATUS = { upd: ['#1f6fb5', 'UPDATED'], neu: ['#2e7d32', 'NEW'], un: ['#c62828', 'UNPROVEN'], same: ['#8a96a3', 'NO CHANGE'] };
+  var STORIES = [
+    { c: 'mil', s: 'un', h: 'Iran: two more tankers hit mines, one supertanker sank', p: 'Iran now claims six tankers in two days. Nothing is verified and no ship is named.', more: ['US Central Command says the strait has been swept clear.', 'Iran says one ship carried over two million barrels.'], d: [15, 0, 16, 7, 1] },
+    { c: 'mil', s: 'upd', h: 'Bahrain attack: US says two drones, not six', p: 'The US military says it shot down both. Iran said it sent six.', more: ['Saudi Arabia, Qatar, Jordan and Egypt condemned Iran.', 'Second attack on Bahrain in three days.'], d: [15, 0, 15, 4, 1] },
+    { c: 'mil', s: 'neu', h: 'Houthi missiles fired at Riyadh', p: 'Saudi-led coalition says it shot down two ballistic missiles and three drones.', more: ['The drones were over the Eastern Province.', 'No casualties reported.', 'The US Embassy issued a nationwide security alert on Saturday.'], d: [15, 0, 15, 10, 1] },
+    { c: 'war', s: 'neu', h: 'Gaza: Israel kills Hamas Rafah commander', p: 'Samir Abu Younis was killed in an overnight strike in Khan Younis. Both sides confirm.', more: ['He had led the brigade for about two months.', 'Others were wounded; counts differ.', 'A ceasefire from October 2025 has not stopped the strikes.'], d: [14, 20, 15, 4, 1] },
+    { c: 'world', s: 'upd', h: 'China confirms Thursday\'s three-way summit', p: 'All three governments now agree: 19 Nov, Shenzhen.', more: ['Trump expected to see Xi one to one first.', 'No separate Putin and Trump meeting agreed, says a Kremlin aide.'], d: null },
+    { c: 'war', s: 'upd', h: 'Ukraine talks: 1,000+ prisoner swap agreed', p: 'The Abu Dhabi round ended with no breakthrough but a big prisoner exchange.', more: ['Zelenskyy says Ukraine proposed a local truce for 7 or 8 front line villages.', 'The Donbas for NATO idea is still unconfirmed by the US.'], d: [14, 8, 15, 18, 1] },
+    { c: 'war', s: 'upd', h: 'UK spying case: officer named', p: 'Reports name US Lieutenant Colonel Brandon Tyner. Not charged.', more: ['He worked at a NATO corps headquarters in England.', 'The Kremlin denies any part.'], d: null },
+    { c: 'space', s: 'upd', h: 'Starship: Flight 16 aimed for December', p: 'No date announced. Maybe the first launch from Florida.', more: ['Likely Booster 23 and Ship 43.', 'Some sites now say early 2027.', 'Musk says losing Booster 22 does not change the plan.'], d: null },
+    { c: 'tech', s: 'upd', h: 'Flight halt: two sites, one new router', p: 'The FAA points to an Arkansas radio site and a Texas radar site.', more: ['L3Harris was installing a new router in El Dorado, Arkansas.', 'The FAA switched off a broadcasting feature on all new routers.', 'Human error or faulty router: not decided.'], d: [13, 15.9, 13, 20.25, 0] },
+    { c: 'tech', s: 'un', h: 'Amazon cloud sign-in trouble (reports)', p: 'About three hours on Sunday morning, say tech trade sites.', more: ['Northern Virginia region; now fixed.', 'Not found in a major outlet. No sign of an attack reported.'], d: [15, 6.08, 15, 9.35, 0] },
+    { c: 'money', s: 'upd', h: 'Bitcoin dips to about $62,000, back to $65,000', p: 'Weekend low, then a small bounce on Monday.', more: ['Crypto sites point to money leaving Bitcoin funds and rate fears.'], d: [14, 0, 16, 6, 1] },
+    { c: 'money', s: 'upd', h: 'Nvidia: Jensen Huang weighs a comeback (FT)', p: 'The Financial Times says he is talking with allies. Not confirmed.', more: ['Shares slipped about 2% before Monday\'s open.', 'He resigned on 12 Nov.'], d: [15, 8, 15, 20, 1] },
+    { c: 'health', s: 'upd', h: 'Ebola in Congo: 11,285 cases', p: 'And 5,509 deaths, says the US CDC (figures to 12 Nov).', more: ['The United Nations says armed groups are blocking the response.', 'No approved vaccine for this strain (Bundibugyo).'], d: null },
+    { c: 'acc', s: 'upd', h: 'New Orleans crash: steering failure', p: 'NTSB early finding: the tanker\'s rudder was disabled.', more: ['The tanker dropped anchors and radioed warnings first.', 'The investigation is only beginning.'], d: [13, 12.5, 13, 13, 0] },
+    { c: 'acc', s: 'upd', h: 'Northwest: more atmospheric rivers', p: 'Two more back to back on Friday and Saturday.', more: ['Coastal flood advisories for Olympia, Seattle and Everett.', 'No major flood damage found so far.'], d: [13, 0, 16, 0, 1] },
+    { c: 'acc', s: 'same', h: 'No big earthquakes', p: 'Nothing of magnitude 6 or more in the last day. Largest: 5.5 in the Philippines.', more: ['From the United States Geological Survey feed, checked about 12:00 UTC.'], d: null }
+  ];
+  var chips = document.getElementById('chips'), grid = document.getElementById('grid'), active = 'all';
+  function chip(key, label, col) {
+    var b = document.createElement('button'); b.className = 'chip' + (key === 'all' ? ' on' : '');
+    b.innerHTML = (col ? '<i style="background:' + col + '"></i>' : '') + label;
+    b.onclick = function () { active = key; chips.querySelectorAll('.chip').forEach(function (c) { c.classList.remove('on'); }); b.classList.add('on'); render(); };
+    chips.appendChild(b);
+  }
+  chip('all', 'All');
+  Object.keys(CATS).forEach(function (k) { chip(k, CATS[k][1], CATS[k][0]); });
+  function render() {
+    grid.innerHTML = '';
+    STORIES.filter(function (s) { return active === 'all' || s.c === active; }).forEach(function (s, i) {
+      var el = document.createElement('div'); el.className = 'story'; el.style.borderLeftColor = CATS[s.c][0];
+      el.innerHTML = '<div class="meta"><span class="cat" style="color:' + CATS[s.c][0] + '">' + CATS[s.c][1] + '</span>' +
+        '<span class="tag" style="background:' + STATUS[s.s][0] + '">' + STATUS[s.s][1] + '</span></div>' +
+        '<h4>' + s.h + '</h4><p>' + s.p + '</p><div class="more"><ul><li>' + s.more.join('</li><li>') + '</li></ul></div>' +
+        '<div class="hint">Click for details</div>';
+      el.onclick = function () { el.classList.toggle('open'); el.querySelector('.hint').textContent = el.classList.contains('open') ? 'Click to close' : 'Click for details'; };
+      grid.appendChild(el);
+      setTimeout(function () { el.classList.add('in'); }, 60 * i);
+    });
+  }
+  render();
+
+  var tick2 = document.getElementById('ticker'), tt = [{ h: 'Vulcan rocket fails 10 minutes in; 40 Amazon Leo satellites lost' }].concat(STORIES).map(function (s) { return '<b>&#9679;</b>' + s.h; }).join('');
+  tick2.innerHTML = tt + tt;
+
+  // week strip (Eastern days)
+  var strip = document.getElementById('strip'), D0 = 11, D1 = 17, rowY = 22;
+  for (var d = D0; d <= D1; d++) {
+    var dv = document.createElement('div'); dv.className = 'day'; dv.style.left = ((d - D0) / (D1 - D0) * 100) + '%';
+    dv.textContent = d < D1 ? new Date(Date.UTC(2026, 10, d)).toLocaleDateString('en-US', { weekday: 'short', timeZone: 'UTC' }) + ' ' + d : ''; strip.appendChild(dv);
+  }
+  var row = 0, items = STORIES.filter(function (s) { return s.d; }).concat([
+    { c: 'space', h: 'Vulcan rocket fails, 40 Amazon satellites lost', d: [15, 12.67, 15, 13.5, 0] },
+    { c: 'space', h: 'Starship Flight 15: ship caught, booster lost', d: [13, 17.8, 14, 16.4, 0] },
+    { c: 'money', h: 'Nvidia boss Jensen Huang resigns', d: [12, 0, 13, 0, 1] },
+    { c: 'tech', h: 'Microsoft 365 outage', d: [12, 11.3, 13, 12.8, 0] }]);
+  items.sort(function (a, b) { return (a.d[0] * 24 + a.d[1]) - (b.d[0] * 24 + b.d[1]); });
+  items.forEach(function (s) {
+    var a = ((s.d[0] - D0) * 24 + s.d[1]) / ((D1 - D0) * 24) * 100, b = ((s.d[2] - D0) * 24 + s.d[3]) / ((D1 - D0) * 24) * 100;
+    a = Math.max(0, a);
+    var ev = document.createElement('div'); ev.className = 'ev' + (s.d[4] ? ' approx' : '');
+    ev.style.left = a + '%'; ev.style.width = Math.max(0.8, b - a) + '%'; ev.style.top = (rowY + row * 13) + 'px'; ev.style.background = CATS[s.c][0];
+    ev.onmouseenter = function () { document.getElementById('striptip').innerHTML = '<b style="color:' + CATS[s.c][0] + '">' + CATS[s.c][1] + ':</b> ' + s.h + (s.d[4] ? ' <i>(only the day is known)</i>' : ''); };
+    strip.appendChild(ev); row++;
+  });
+  strip.style.height = (rowY + row * 13 + 30) + 'px';
+})();
+</script>
+<style id="theme-toggle-style">/* theme-toggle-v2 */
+html.dark { filter: invert(1) hue-rotate(180deg); background: #ffffff; }
+html.dark body { background: #ffffff; }
+html.dark img, html.dark video, html.dark picture, html.dark canvas { filter: invert(1) hue-rotate(180deg); }
+#theme-toggle { position: fixed; top: 12px; right: 12px; z-index: 2147483000; padding: 6px 12px;
+  border: 1px solid #94a3b8; border-radius: 8px; background: #ffffff; color: #1e3a8a;
+  font: 600 12px 'Segoe UI', Arial, sans-serif; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,.12); }
+#theme-toggle:hover { background: #eef3ff; }
+@media print { #theme-toggle { display: none; } }
+</style>
+<button id="theme-toggle" type="button" aria-label="Switch between light and dark">Dark</button>
+<script id="theme-toggle-script">
+(function () {
+  var root = document.documentElement, key = 'theme:' + location.pathname;
+  var btn = document.getElementById('theme-toggle');
+  function set(dark) {
+    root.classList.toggle('dark', dark);
+    if (btn) { btn.textContent = dark ? 'Light' : 'Dark'; }
+  }
+  try { set(localStorage.getItem(key) === 'dark'); } catch (e) { set(false); }
+  if (btn) {
+    btn.addEventListener('click', function () {
+      var dark = !root.classList.contains('dark');
+      set(dark);
+      try { localStorage.setItem(key, dark ? 'dark' : 'light'); } catch (e) {}
+    });
+  }
+})();
+</script>
+</body>
+</html>
