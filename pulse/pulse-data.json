@@ -1,6 +1,6 @@
 {
  "about": "World Pulse data. One entry per running story (thread), each with a dated log of updates. Add to it, never rewrite history: new facts go in as a new update. Run build_pulse.py after editing.",
- "updated_utc": "2026-11-16T21:45:00Z",
+ "updated_utc": "2026-11-17T00:40:00Z",
  "categories": {
   "space": {
    "label": "Space",
@@ -257,6 +257,18 @@
       [
        "Fox Business",
        "https://www.foxbusiness.com/fox-news-air-space/monday-air-travel-faces-key-test-faa-ground-stop-possible-cause-emerges"
+      ]
+     ]
+    },
+    {
+     "ed": "2026-11-16",
+     "when": "16 Nov, noon to 6 pm Eastern",
+     "tag": "UPDATED",
+     "text": "Transportation Secretary Sean Duffy says a router is the \"likely cause\"; a Federal Aviation Administration (FAA) team is at contractor L3Harris's lab in Florida, and he asked the Federal Bureau of Investigation (FBI) to help. Juniper Networks, maker of the Arkansas router, says its device \"did not fail\". Duffy repeated his ask for $50 billion; Senators Jack Reed, Ted Cruz and leader John Thune questioned the number. Flighty counts over 17,000 cancellations Friday to Sunday, the worst technology-caused disruption on record. Monday: 347 cancelled by 6 pm.",
+     "src": [
+      [
+       "Yahoo News live",
+       "https://www.yahoo.com/news/us/live/faa-ground-stop-latest-updates-duffy-blames-contractor-l3harris-thousands-more-flights-canceled-saturday-no-sign-of-cyberattack-161329174.html"
       ]
      ]
     }
@@ -609,6 +621,22 @@
        "https://www.cnbc.com/2026/11/14/zelenskyy-us-ukraine-donbas-nato-membership.html"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-16",
+     "when": "overnight 15 to 16 Nov",
+     "tag": "UPDATED",
+     "text": "Russia's defence ministry says it downed 1,336 Ukrainian drones over 16 regions, the most in one night of the war (Russian figure). Crimea's Russian-installed governor says the bridge to Crimea was hit; the Kremlin calls the damage minor and road traffic was halted for repairs. Refineries and industrial sites were also hit; six people injured in Ilsky. Zelenskyy says the refinery strikes cut over half of Russia's refining capacity (not verified). Ukraine has not commented on the bridge.",
+     "src": [
+      [
+       "NBC News",
+       "https://www.nbcnews.com/world/ukraine/ukraine-launches-biggest-drone-attack-russia-war-began-rcna609555"
+      ],
+      [
+       "The Moscow Times",
+       "https://www.themoscowtimes.com/2026/11/16/ukraine-hits-crimean-bridge-amid-record-overnight-drone-attack-a94265"
+      ]
+     ]
     }
    ]
   },
@@ -762,6 +790,22 @@
       [
        "Forbes",
        "https://www.forbes.com/sites/zacharyfolk/2026/11/16/nvidia-shares-slip-in-premarket-as-jensen-huang-reportedly-weighs-ceo-comeback/"
+      ]
+     ]
+    },
+    {
+     "ed": "2026-11-16",
+     "when": "16 Nov",
+     "tag": "UPDATED",
+     "text": "Reports say the board is not considering bringing Jensen Huang back. The Commerce Department issued a rule requiring a licence to send advanced chips to Brazil, Indonesia, Malaysia, Singapore and Thailand, to stop Chinese firms renting that computing power through data centres there. Nvidia fell about 4% to its lowest close since July 2025. Its quarterly results are due Tuesday 17 Nov.",
+     "src": [
+      [
+       "CNBC",
+       "https://www.cnbc.com/2026/11/16/nvidia-commerce-china-lutnick.html"
+      ],
+      [
+       "Fortune",
+       "https://fortune.com/2026/11/16/new-commerce-rule-nvidia-chip-singapore-malaysia-china/"
       ]
      ]
     }
@@ -1201,7 +1245,7 @@
    "id": "us-bank-outage",
    "title": "US bank apps and websites down",
    "cat": "tech",
-   "status": "developing",
+   "status": "watching",
    "place": "United States (Chase, New York)",
    "lat": 40.755,
    "lon": -73.975,
@@ -1224,6 +1268,18 @@
       [
        "Forbes",
        "https://www.forbes.com/sites/conormurray/2026/11/16/customers-report-outages-at-major-banks-chase-bank-of-america-wells-fargo-impacted/"
+      ]
+     ]
+    },
+    {
+     "ed": "2026-11-16",
+     "when": "16 Nov, about 6:30 pm Eastern",
+     "tag": "UPDATED",
+     "text": "Chase says \"transactions are now posting normally\"; customers kept access to their money throughout, though some payments were slow. No all-clear found yet from Wells Fargo. Correction to the earlier entry: the start time is not confirmed. NBC News says only that it began Monday morning; the \"about 9 am\" figure was when one outlet started counting complaints, not a confirmed start.",
+     "src": [
+      [
+       "NBC News",
+       "https://www.nbcnews.com/business/consumer/outages-chase-banking-online-branches-rcna609673"
       ]
      ]
     }
@@ -1310,6 +1366,78 @@
        "https://www.nbcnews.com/politics/2026-election/jonathan-kreiss-tomkins-democrat-wins-alaska-governor-race-rcna606558"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-16",
+     "when": "16 Nov (check)",
+     "tag": "UPDATED",
+     "text": "Checked: his state election filing lists his age as 37 (born 7 Feb 1989). The \"youngest governor in Alaska history\" line comes from Alaska Public Media; no other source checked here names the previous youngest.",
+     "src": [
+      [
+       "Alaska Division of Elections filing",
+       "https://elections.alaska.gov/doc/oep/2026/KREISS-TOMKINS,%20JONATHAN%20S.%20JKT_Gov_Eng_v4.pdf"
+      ],
+      [
+       "Alaska Public Media",
+       "https://alaskapublic.org/news/politics/elections/2026-11-03/democrat-jonathan-kreiss-tomkins-leads-in-alaska-governors-race"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "united-outage",
+   "title": "United Airlines computer outage holds flights",
+   "cat": "tech",
+   "status": "settled",
+   "place": "United States (United, Chicago)",
+   "lat": 41.879,
+   "lon": -87.64,
+   "first": "2026-11-16",
+   "updates": [
+    {
+     "ed": "2026-11-16",
+     "when": "16 Nov, about 5 to 6:09 pm Eastern",
+     "tag": "NEW",
+     "text": "United reported a \"widespread system outage\" that kept departing flights at the gate, three days after the nationwide ground stop. Fixed about an hour later. United says flights in the air and United Express were not affected and there is no sign of a cyberattack; no link to Friday has been shown. Over 590 United flights were delayed on Monday; how many came from the outage is unclear.",
+     "src": [
+      [
+       "CNN",
+       "https://edition.cnn.com/2026/11/16/us/united-airlines-outage"
+      ],
+      [
+       "Yahoo News live",
+       "https://www.yahoo.com/news/us/live/faa-ground-stop-latest-updates-duffy-blames-contractor-l3harris-thousands-more-flights-canceled-saturday-no-sign-of-cyberattack-161329174.html"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "wall-street-selloff",
+   "title": "Wall Street selloff led by chip stocks",
+   "cat": "money",
+   "status": "watching",
+   "place": "New York Stock Exchange",
+   "lat": 40.707,
+   "lon": -74.011,
+   "first": "2026-11-16",
+   "updates": [
+    {
+     "ed": "2026-11-16",
+     "when": "16 Nov, market close",
+     "tag": "NEW",
+     "text": "Dow down 739 points (1.41%) to 51,608; S&P 500 down 1.92% to 7,417; Nasdaq down 2.49% to 24,510, about 11% below its 6 October high (a \"correction\"). Reasons given: Nvidia's leadership turmoil, the new chip export rule, and caution before Nvidia's results on Tuesday and Anthropic's expected stock market listing on Thursday.",
+     "src": [
+      [
+       "Yahoo Finance",
+       "https://finance.yahoo.com/markets/live/stock-market-today-monday-november-16-dow-sp-500-nasdaq-nvidia-oil-091631084.html"
+      ],
+      [
+       "The Motley Fool",
+       "https://www.fool.com/coverage/stock-market-today/2026/11/16/stock-market-today-nov-16-tech-selloff-deepens-as-ai-leadership-crisis-rattles-nasdaq/"
+      ]
+     ]
     }
    ]
   }
@@ -1376,6 +1504,10 @@
     [
      "Afternoon US scan, 16 Nov (picture)",
      "timelines/US-Afternoon-Scan-16Nov2026.svg"
+    ],
+    [
+     "Evening check, 16 Nov (picture)",
+     "timelines/US-Evening-Check-16Nov2026.svg"
     ]
    ]
   }

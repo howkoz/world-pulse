@@ -1,0 +1,132 @@
+<svg width="100%" height="100%" data-fixed-size="1260 760" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1260 760" font-family="Arial, Helvetica, sans-serif">
+<style id="theme-toggle-style">/* theme-toggle-v2 */
+:root.dark { filter: invert(1) hue-rotate(180deg); background-color: #121212; }
+.theme-toggle { cursor: pointer; }
+.theme-toggle rect { fill: #ffffff; stroke: #94a3b8; }
+.theme-toggle text { fill: #1e3a8a; font: 600 12px 'Segoe UI', Arial, sans-serif; }
+.theme-toggle:hover rect { fill: #eef3ff; }
+@media print { .theme-toggle { display: none; } }
+</style>
+<rect x="0" y="0" width="1260" height="760" fill="#FFFFFF"/>
+<text x="24" y="40" font-size="24" font-weight="700" fill="#1A1A1A">Evening check: what changed since the afternoon scan, Monday 16 November 2026</text>
+<text x="24" y="64" font-size="13" fill="#4A4A4A">Checked about 7:40 pm Eastern. Each fact is from a major outlet; links are on World Pulse. The strip shows Monday hour by hour (Eastern).</text>
+<line x1="70" y1="112" x2="1190" y2="112" stroke="#B0B7C3" stroke-width="3"/>
+<line x1="70" y1="104" x2="70" y2="120" stroke="#B0B7C3" stroke-width="2"/>
+<text x="70" y="98" font-size="12" font-weight="700" fill="#333333" text-anchor="middle">Sun 9 pm</text>
+<line x1="210" y1="104" x2="210" y2="120" stroke="#B0B7C3" stroke-width="2"/>
+<text x="210" y="98" font-size="12" font-weight="700" fill="#333333" text-anchor="middle">Midnight</text>
+<line x1="490" y1="104" x2="490" y2="120" stroke="#B0B7C3" stroke-width="2"/>
+<text x="490" y="98" font-size="12" font-weight="700" fill="#333333" text-anchor="middle">6 am</text>
+<line x1="770" y1="104" x2="770" y2="120" stroke="#B0B7C3" stroke-width="2"/>
+<text x="770" y="98" font-size="12" font-weight="700" fill="#333333" text-anchor="middle">Noon</text>
+<line x1="1050" y1="104" x2="1050" y2="120" stroke="#B0B7C3" stroke-width="2"/>
+<text x="1050" y="98" font-size="12" font-weight="700" fill="#333333" text-anchor="middle">6 pm</text>
+<line x1="1190" y1="104" x2="1190" y2="120" stroke="#B0B7C3" stroke-width="2"/>
+<text x="1190" y="98" font-size="12" font-weight="700" fill="#333333" text-anchor="middle">9 pm</text>
+<circle cx="280" cy="112" r="8" fill="#6A1B9A" stroke="#FFFFFF" stroke-width="2"/>
+<text x="280" y="136" font-size="11" fill="#333333" text-anchor="middle">Record drone night</text>
+<circle cx="653" cy="112" r="8" fill="#455A64" stroke="#FFFFFF" stroke-width="2"/>
+<text x="653" y="136" font-size="11" fill="#333333" text-anchor="middle">Market opens</text>
+<circle cx="770" cy="112" r="8" fill="#1565C0" stroke="#FFFFFF" stroke-width="2"/>
+<text x="770" y="154" font-size="11" fill="#333333" text-anchor="middle">Duffy: router</text>
+<circle cx="957" cy="112" r="8" fill="#2E7D32" stroke="#FFFFFF" stroke-width="2"/>
+<text x="957" y="136" font-size="11" fill="#333333" text-anchor="middle">Market closes</text>
+<circle cx="1013" cy="112" r="8" fill="#E65100" stroke="#FFFFFF" stroke-width="2"/>
+<text x="1013" y="154" font-size="11" fill="#333333" text-anchor="middle">United outage</text>
+<circle cx="1073" cy="112" r="8" fill="#C62828" stroke="#FFFFFF" stroke-width="2"/>
+<text x="1073" y="136" font-size="11" fill="#333333" text-anchor="middle">Chase: posting normally</text>
+<rect x="24" y="176" width="1212" height="132" rx="10" fill="#FFF4F3" stroke="#D5DBE5"/>
+<rect x="24" y="176" width="8" height="132" rx="4" fill="#C62828"/>
+<rect x="44" y="190" width="74" height="20" rx="10" fill="#C62828"/>
+<text x="52" y="204" font-size="11" font-weight="700" fill="#FFFFFF">BACK UP</text>
+<text x="128" y="204" font-size="12" fill="#555555">About 6:30 pm Eastern</text>
+<text x="44" y="232" font-size="17" font-weight="700" fill="#1A1A1A">Banks: Chase says transactions are posting normally</text>
+<text x="44" y="256" font-size="13" fill="#2B2B2B">Chase says payments are flowing again; customers kept access to their money all day, though some payments were slow.</text>
+<text x="44" y="275" font-size="13" fill="#2B2B2B">No all-clear found yet from Wells Fargo. Correction: the start time is not confirmed. NBC News says only "Monday morning";</text>
+<text x="44" y="294" font-size="13" fill="#2B2B2B">the "about 9 am" in the afternoon picture was when one outlet began counting complaints, not when the outage started.</text>
+<rect x="24" y="326" width="396" height="196" rx="10" fill="#F7F9FC" stroke="#D5DBE5"/>
+<rect x="24" y="326" width="8" height="196" rx="4" fill="#E65100"/>
+<rect x="44" y="340" width="42" height="20" rx="10" fill="#E65100"/>
+<text x="52" y="354" font-size="11" font-weight="700" fill="#FFFFFF">NEW</text>
+<text x="96" y="354" font-size="12" fill="#555555">About 5 to 6:09 pm</text>
+<text x="44" y="382" font-size="17" font-weight="700" fill="#1A1A1A">United Airlines computer outage</text>
+<text x="44" y="406" font-size="13" fill="#2B2B2B">A "widespread system outage" kept United flights</text>
+<text x="44" y="425" font-size="13" fill="#2B2B2B">at the gate for about an hour. United says no sign</text>
+<text x="44" y="444" font-size="13" fill="#2B2B2B">of a cyberattack and no effect on flights in the air.</text>
+<text x="44" y="463" font-size="13" fill="#2B2B2B">No link to Friday shown. Over 590 United flights</text>
+<text x="44" y="482" font-size="13" fill="#2B2B2B">delayed Monday; how many from the outage, unclear.</text>
+<rect x="432" y="326" width="396" height="196" rx="10" fill="#F7F9FC" stroke="#D5DBE5"/>
+<rect x="432" y="326" width="8" height="196" rx="4" fill="#2E7D32"/>
+<rect x="452" y="340" width="42" height="20" rx="10" fill="#2E7D32"/>
+<text x="460" y="354" font-size="11" font-weight="700" fill="#FFFFFF">NEW</text>
+<text x="504" y="354" font-size="12" fill="#555555">Market close</text>
+<text x="452" y="382" font-size="17" font-weight="700" fill="#1A1A1A">Stocks fall, chip makers lead</text>
+<text x="452" y="406" font-size="13" fill="#2B2B2B">Dow down 739 points (1.41%) to 51,608.</text>
+<text x="452" y="425" font-size="13" fill="#2B2B2B">S&amp;P 500 down 1.92%. Nasdaq down 2.49%, about 11%</text>
+<text x="452" y="444" font-size="13" fill="#2B2B2B">below its October high (a "correction").</text>
+<text x="452" y="463" font-size="13" fill="#2B2B2B">Nvidia down about 4%, its lowest close since July</text>
+<text x="452" y="482" font-size="13" fill="#2B2B2B">2025. Results Tue; Anthropic listing expected Thu.</text>
+<rect x="840" y="326" width="396" height="196" rx="10" fill="#F7F9FC" stroke="#D5DBE5"/>
+<rect x="840" y="326" width="8" height="196" rx="4" fill="#1565C0"/>
+<rect x="860" y="340" width="74" height="20" rx="10" fill="#1565C0"/>
+<text x="868" y="354" font-size="11" font-weight="700" fill="#FFFFFF">UPDATED</text>
+<text x="944" y="354" font-size="12" fill="#555555">Noon to 6 pm</text>
+<text x="860" y="382" font-size="17" font-weight="700" fill="#1A1A1A">Friday ground stop: a router blamed</text>
+<text x="860" y="406" font-size="13" fill="#2B2B2B">Transportation Secretary Duffy: a router is the</text>
+<text x="860" y="425" font-size="13" fill="#2B2B2B">"likely cause"; a team is at contractor L3Harris.</text>
+<text x="860" y="444" font-size="13" fill="#2B2B2B">Router maker Juniper says its device "did not fail".</text>
+<text x="860" y="463" font-size="13" fill="#2B2B2B">He wants $50 billion; senators of both parties push</text>
+<text x="860" y="482" font-size="13" fill="#2B2B2B">back. Over 17,000 flights cancelled Friday to Sunday.</text>
+<rect x="24" y="540" width="396" height="176" rx="10" fill="#F7F9FC" stroke="#D5DBE5"/>
+<rect x="24" y="540" width="8" height="176" rx="4" fill="#455A64"/>
+<rect x="44" y="554" width="74" height="20" rx="10" fill="#455A64"/>
+<text x="52" y="568" font-size="11" font-weight="700" fill="#FFFFFF">UPDATED</text>
+<text x="128" y="568" font-size="12" fill="#555555">Monday</text>
+<text x="44" y="596" font-size="17" font-weight="700" fill="#1A1A1A">New US chip export rule</text>
+<text x="44" y="620" font-size="13" fill="#2B2B2B">Licence now needed to send advanced chips to</text>
+<text x="44" y="639" font-size="13" fill="#2B2B2B">Brazil, Indonesia, Malaysia, Singapore and</text>
+<text x="44" y="658" font-size="13" fill="#2B2B2B">Thailand, to stop Chinese firms renting that</text>
+<text x="44" y="677" font-size="13" fill="#2B2B2B">computing power there. Reports: Nvidia board not</text>
+<text x="44" y="696" font-size="13" fill="#2B2B2B">bringing Jensen Huang back.</text>
+<rect x="432" y="540" width="396" height="176" rx="10" fill="#F7F9FC" stroke="#D5DBE5"/>
+<rect x="432" y="540" width="8" height="176" rx="4" fill="#6A1B9A"/>
+<rect x="452" y="554" width="74" height="20" rx="10" fill="#6A1B9A"/>
+<text x="460" y="568" font-size="11" font-weight="700" fill="#FFFFFF">UPDATED</text>
+<text x="536" y="568" font-size="12" fill="#555555">Overnight Sun to Mon</text>
+<text x="452" y="596" font-size="17" font-weight="700" fill="#1A1A1A">Record Ukrainian drone night</text>
+<text x="452" y="620" font-size="13" fill="#2B2B2B">Russia says it downed 1,336 drones, the most in</text>
+<text x="452" y="639" font-size="13" fill="#2B2B2B">one night of the war (its own figure). The bridge</text>
+<text x="452" y="658" font-size="13" fill="#2B2B2B">to Crimea was hit; the Kremlin says damage is</text>
+<text x="452" y="677" font-size="13" fill="#2B2B2B">minor. Refineries hit; six injured in Ilsky.</text>
+<rect x="840" y="540" width="396" height="176" rx="10" fill="#F7F9FC" stroke="#D5DBE5"/>
+<rect x="840" y="540" width="8" height="176" rx="4" fill="#00838F"/>
+<rect x="860" y="554" width="74" height="20" rx="10" fill="#00838F"/>
+<text x="868" y="568" font-size="11" font-weight="700" fill="#FFFFFF">CHECKED</text>
+<text x="944" y="568" font-size="12" fill="#555555">Correction note</text>
+<text x="860" y="596" font-size="17" font-weight="700" fill="#1A1A1A">Alaska governor age</text>
+<text x="860" y="620" font-size="13" fill="#2B2B2B">His state election filing says 37, born 7 Feb 1989.</text>
+<text x="860" y="639" font-size="13" fill="#2B2B2B">"Youngest governor in Alaska history" comes from</text>
+<text x="860" y="658" font-size="13" fill="#2B2B2B">Alaska Public Media; no second source checked</text>
+<text x="860" y="677" font-size="13" fill="#2B2B2B">here names the previous youngest.</text>
+<text x="24" y="742" font-size="12" fill="#555555">Sources: NBC News, CNN, Yahoo News and Yahoo Finance, CNBC, Fortune, The Motley Fool, The Moscow Times, Alaska Division of Elections, Alaska Public Media. Live: howkoz.github.io/world-pulse</text>
+<g class="theme-toggle" id="theme-toggle" role="button" aria-label="Switch between light and dark"><rect x="1182" y="10" width="66" height="26" rx="7" stroke-width="1"/><text id="theme-toggle-label" x="1215" y="27" text-anchor="middle">Dark</text></g>
+<script id="theme-toggle-script"><![CDATA[
+(function () {
+  var root = document.documentElement, key = 'theme:' + location.pathname;
+  var label = document.getElementById('theme-toggle-label');
+  function set(dark) {
+    if (dark) { root.classList.add('dark'); } else { root.classList.remove('dark'); }
+    if (label) { label.textContent = dark ? 'Light' : 'Dark'; }
+  }
+  try { set(localStorage.getItem(key) === 'dark'); } catch (e) { set(false); }
+  var btn = document.getElementById('theme-toggle');
+  if (btn) {
+    btn.addEventListener('click', function () {
+      var dark = !root.classList.contains('dark');
+      set(dark);
+      try { localStorage.setItem(key, dark ? 'dark' : 'light'); } catch (e) {}
+    });
+  }
+})();
+]]></script>
+</svg>
