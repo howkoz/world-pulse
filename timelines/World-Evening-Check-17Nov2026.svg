@@ -1,0 +1,131 @@
+<svg width="100%" height="100%" data-fixed-size="1260 760" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1260 760" font-family="Arial, Helvetica, sans-serif">
+<style id="theme-toggle-style">/* theme-toggle-v2 */
+:root.dark { filter: invert(1) hue-rotate(180deg); background-color: #121212; }
+.theme-toggle { cursor: pointer; }
+.theme-toggle rect { fill: #ffffff; stroke: #94a3b8; }
+.theme-toggle text { fill: #1e3a8a; font: 600 12px 'Segoe UI', Arial, sans-serif; }
+.theme-toggle:hover rect { fill: #eef3ff; }
+@media print { .theme-toggle { display: none; } }
+</style>
+<rect x="0" y="0" width="1260" height="760" fill="#FFFFFF"/>
+<text x="24" y="40" font-size="24" font-weight="700" fill="#1A1A1A">Evening check: what changed since the morning scan, Tuesday 17 November 2026</text>
+<text x="24" y="64" font-size="13" fill="#4A4A4A">Checked about 7:45 pm Eastern. Each fact is from a major outlet; links are on World Pulse. The strip shows Tuesday hour by hour (Eastern).</text>
+<line x1="70" y1="112" x2="1190" y2="112" stroke="#B0B7C3" stroke-width="3"/>
+<line x1="70" y1="104" x2="70" y2="120" stroke="#B0B7C3" stroke-width="2"/>
+<text x="70" y="98" font-size="12" font-weight="700" fill="#333333" text-anchor="middle">Mon 9 pm</text>
+<line x1="210" y1="104" x2="210" y2="120" stroke="#B0B7C3" stroke-width="2"/>
+<text x="210" y="98" font-size="12" font-weight="700" fill="#333333" text-anchor="middle">Midnight</text>
+<line x1="490" y1="104" x2="490" y2="120" stroke="#B0B7C3" stroke-width="2"/>
+<text x="490" y="98" font-size="12" font-weight="700" fill="#333333" text-anchor="middle">6 am</text>
+<line x1="770" y1="104" x2="770" y2="120" stroke="#B0B7C3" stroke-width="2"/>
+<text x="770" y="98" font-size="12" font-weight="700" fill="#333333" text-anchor="middle">Noon</text>
+<line x1="1050" y1="104" x2="1050" y2="120" stroke="#B0B7C3" stroke-width="2"/>
+<text x="1050" y="98" font-size="12" font-weight="700" fill="#333333" text-anchor="middle">6 pm</text>
+<line x1="1190" y1="104" x2="1190" y2="120" stroke="#B0B7C3" stroke-width="2"/>
+<text x="1190" y="98" font-size="12" font-weight="700" fill="#333333" text-anchor="middle">9 pm</text>
+<circle cx="303" cy="112" r="8" fill="#6A1B9A" stroke="#FFFFFF" stroke-width="2"/>
+<text x="303" y="136" font-size="11" fill="#333333" text-anchor="middle">Kerch bridge hit again</text>
+<circle cx="373" cy="112" r="8" fill="#C62828" stroke="#FFFFFF" stroke-width="2"/>
+<text x="373" y="154" font-size="11" fill="#333333" text-anchor="middle">Drones at Bahrain</text>
+<circle cx="422" cy="112" r="8" fill="#00838F" stroke="#FFFFFF" stroke-width="2"/>
+<text x="422" y="136" font-size="11" fill="#333333" text-anchor="middle">Trump lands in Manila</text>
+<circle cx="537" cy="112" r="8" fill="#455A64" stroke="#FFFFFF" stroke-width="2"/>
+<text x="537" y="154" font-size="11" fill="#333333" text-anchor="middle">DHS: "aspirational"</text>
+<circle cx="957" cy="112" r="8" fill="#2E7D32" stroke="#FFFFFF" stroke-width="2"/>
+<text x="957" y="136" font-size="11" fill="#333333" text-anchor="middle">Market closes</text>
+<circle cx="972" cy="112" r="8" fill="#1565C0" stroke="#FFFFFF" stroke-width="2"/>
+<text x="972" y="154" font-size="11" fill="#333333" text-anchor="middle">Nvidia results</text>
+<rect x="24" y="176" width="1212" height="132" rx="10" fill="#F1F6FD" stroke="#D5DBE5"/>
+<rect x="24" y="176" width="8" height="132" rx="4" fill="#1565C0"/>
+<rect x="44" y="190" width="66" height="20" rx="10" fill="#1565C0"/>
+<text x="52" y="204" font-size="11" font-weight="700" fill="#FFFFFF">RESULT</text>
+<text x="120" y="204" font-size="12" fill="#555555">After the close, about 4:20 pm</text>
+<text x="44" y="232" font-size="17" font-weight="700" fill="#1A1A1A">Nvidia beats forecasts in its first results without Jensen Huang</text>
+<text x="44" y="256" font-size="13" fill="#2B2B2B">Revenue $115.8 billion for the quarter, up 103% on a year ago; analysts expected about $109 billion. Next quarter: about $130 billion, with no China data centre sales assumed.</text>
+<text x="44" y="275" font-size="13" fill="#2B2B2B">Interim chief Colette Kress: "Our momentum is real." Board chair Harvey Jones: the board "does not intend to reinstate" Huang. A new committee will oversee export rules.</text>
+<text x="44" y="294" font-size="13" fill="#2B2B2B">Shares closed at $155.46, then rose up to about 4% after hours (5% by the end of the call). Still about 35% below their record close.</text>
+<rect x="24" y="326" width="396" height="196" rx="10" fill="#F7F9FC" stroke="#D5DBE5"/>
+<rect x="24" y="326" width="8" height="196" rx="4" fill="#6A1B9A"/>
+<rect x="44" y="340" width="74" height="20" rx="10" fill="#6A1B9A"/>
+<text x="52" y="354" font-size="11" font-weight="700" fill="#FFFFFF">UPDATED</text>
+<text x="128" y="354" font-size="12" fill="#555555">Mon to Tue overnight</text>
+<text x="44" y="382" font-size="17" font-weight="700" fill="#1A1A1A">Part of the Crimea bridge falls</text>
+<text x="44" y="406" font-size="13" fill="#2B2B2B">Checked videos show a section in the sea.</text>
+<text x="44" y="425" font-size="13" fill="#2B2B2B">Ukraine says an arch and the road span under it</text>
+<text x="44" y="444" font-size="13" fill="#2B2B2B">were destroyed; rail damaged. Russia: "terrorist</text>
+<text x="44" y="463" font-size="13" fill="#2B2B2B">act", will rebuild. Russia hit two Kyiv bridges</text>
+<text x="44" y="482" font-size="13" fill="#2B2B2B">(two killed) and the grid in eight regions.</text>
+<rect x="432" y="326" width="396" height="196" rx="10" fill="#F7F9FC" stroke="#D5DBE5"/>
+<rect x="432" y="326" width="8" height="196" rx="4" fill="#C62828"/>
+<rect x="452" y="340" width="74" height="20" rx="10" fill="#C62828"/>
+<text x="460" y="354" font-size="11" font-weight="700" fill="#FFFFFF">UPDATED</text>
+<text x="536" y="354" font-size="12" fill="#555555">Tuesday</text>
+<text x="452" y="382" font-size="17" font-weight="700" fill="#1A1A1A">Gulf: drones stopped, tanker lost</text>
+<text x="452" y="406" font-size="13" fill="#2B2B2B">US says Tuesday's drones at Bahrain were</text>
+<text x="452" y="425" font-size="13" fill="#2B2B2B">intercepted: no damage, no Americans hurt.</text>
+<text x="452" y="444" font-size="13" fill="#2B2B2B">Tanker Tara Gas hit twice and abandoned near</text>
+<text x="452" y="463" font-size="13" fill="#2B2B2B">Hormuz; one Indian sailor missing, two hurt.</text>
+<text x="452" y="482" font-size="13" fill="#2B2B2B">At least 15 ship attacks there this month (UKMTO).</text>
+<rect x="840" y="326" width="396" height="196" rx="10" fill="#F7F9FC" stroke="#D5DBE5"/>
+<rect x="840" y="326" width="8" height="196" rx="4" fill="#2E7D32"/>
+<rect x="860" y="340" width="74" height="20" rx="10" fill="#2E7D32"/>
+<text x="868" y="354" font-size="11" font-weight="700" fill="#FFFFFF">UPDATED</text>
+<text x="944" y="354" font-size="12" fill="#555555">Market close</text>
+<text x="860" y="382" font-size="17" font-weight="700" fill="#1A1A1A">Stocks fall a second day</text>
+<text x="860" y="406" font-size="13" fill="#2B2B2B">Dow down 848.75 points (1.6%) to 50,759.42.</text>
+<text x="860" y="425" font-size="13" fill="#2B2B2B">S&amp;P 500 down 1% to 7,340.53.</text>
+<text x="860" y="444" font-size="13" fill="#2B2B2B">Nasdaq down 0.7% to 24,328.38.</text>
+<text x="860" y="463" font-size="13" fill="#2B2B2B">Week so far: S&amp;P 500 down 2.9%, Dow down 3%.</text>
+<text x="860" y="482" font-size="13" fill="#2B2B2B">All 11 sectors fell, led by software companies.</text>
+<rect x="24" y="540" width="396" height="176" rx="10" fill="#F7F9FC" stroke="#D5DBE5"/>
+<rect x="24" y="540" width="8" height="176" rx="4" fill="#455A64"/>
+<rect x="44" y="554" width="82" height="20" rx="10" fill="#455A64"/>
+<text x="52" y="568" font-size="11" font-weight="700" fill="#FFFFFF">UNPROVEN</text>
+<text x="136" y="568" font-size="12" fill="#555555">Tuesday</text>
+<text x="44" y="596" font-size="17" font-weight="700" fill="#1A1A1A">Dirty bomb report: reactions</text>
+<text x="44" y="620" font-size="13" fill="#2B2B2B">Trump: "we take it very seriously". Homeland</text>
+<text x="44" y="639" font-size="13" fill="#2B2B2B">Security chief Mullin: "aspirational", not new.</text>
+<text x="44" y="658" font-size="13" fill="#2B2B2B">Iran: "baseless". Still one source (CNN); no</text>
+<text x="44" y="677" font-size="13" fill="#2B2B2B">device, arrest or security change found.</text>
+<rect x="432" y="540" width="396" height="176" rx="10" fill="#F7F9FC" stroke="#D5DBE5"/>
+<rect x="432" y="540" width="8" height="176" rx="4" fill="#E65100"/>
+<rect x="452" y="554" width="42" height="20" rx="10" fill="#E65100"/>
+<text x="460" y="568" font-size="11" font-weight="700" fill="#FFFFFF">NEW</text>
+<text x="504" y="568" font-size="12" fill="#555555">Formed Monday</text>
+<text x="452" y="596" font-size="17" font-weight="700" fill="#1A1A1A">Cyclone Akvan heads for India</text>
+<text x="452" y="620" font-size="13" fill="#2B2B2B">India's weather office forecasts it to cross the</text>
+<text x="452" y="639" font-size="13" fill="#2B2B2B">Andhra Pradesh coast around noon Fri 20 Nov</text>
+<text x="452" y="658" font-size="13" fill="#2B2B2B">(India time), winds up to 145 km/h (90 mph).</text>
+<text x="452" y="677" font-size="13" fill="#2B2B2B">Heavy rain warned for Odisha and south Bengal.</text>
+<rect x="840" y="540" width="396" height="176" rx="10" fill="#F7F9FC" stroke="#D5DBE5"/>
+<rect x="840" y="540" width="8" height="176" rx="4" fill="#00838F"/>
+<rect x="860" y="554" width="90" height="20" rx="10" fill="#00838F"/>
+<text x="868" y="568" font-size="11" font-weight="700" fill="#FFFFFF">COMING UP</text>
+<text x="960" y="568" font-size="12" fill="#555555">Eastern time</text>
+<text x="860" y="596" font-size="17" font-weight="700" fill="#1A1A1A">The next three days</text>
+<text x="860" y="620" font-size="13" fill="#2B2B2B">Wed: Anthropic sets its share price ($70 to $78</text>
+<text x="860" y="639" font-size="13" fill="#2B2B2B">range; report says above $80 possible).</text>
+<text x="860" y="658" font-size="13" fill="#2B2B2B">Wed: Trump meets Marcos, then flies to Shenzhen.</text>
+<text x="860" y="677" font-size="13" fill="#2B2B2B">Thu: Trump, Xi and Putin meet; Anthropic trades.</text>
+<text x="24" y="742" font-size="12" fill="#555555">Sources: CBS News, NBC News, CNBC, AP, The Motley Fool, Stars and Stripes, gCaptain, ANI, The Washington Post, Inquirer, India.com. Live: howkoz.github.io/world-pulse</text>
+<g class="theme-toggle" id="theme-toggle" role="button" aria-label="Switch between light and dark"><rect x="1182" y="10" width="66" height="26" rx="7" stroke-width="1"/><text id="theme-toggle-label" x="1215" y="27" text-anchor="middle">Dark</text></g>
+<script id="theme-toggle-script"><![CDATA[
+(function () {
+  var root = document.documentElement, key = 'theme:' + location.pathname;
+  var label = document.getElementById('theme-toggle-label');
+  function set(dark) {
+    if (dark) { root.classList.add('dark'); } else { root.classList.remove('dark'); }
+    if (label) { label.textContent = dark ? 'Light' : 'Dark'; }
+  }
+  try { set(localStorage.getItem(key) === 'dark'); } catch (e) { set(false); }
+  var btn = document.getElementById('theme-toggle');
+  if (btn) {
+    btn.addEventListener('click', function () {
+      var dark = !root.classList.contains('dark');
+      set(dark);
+      try { localStorage.setItem(key, dark ? 'dark' : 'light'); } catch (e) {}
+    });
+  }
+})();
+]]></script>
+</svg>

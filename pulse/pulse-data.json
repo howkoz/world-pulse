@@ -1,6 +1,6 @@
 {
  "about": "World Pulse data. One entry per running story (thread), each with a dated log of updates. Add to it, never rewrite history: new facts go in as a new update. Run build_pulse.py after editing.",
- "updated_utc": "2026-11-17T11:50:00Z",
+ "updated_utc": "2026-11-18T00:55:00Z",
  "categories": {
   "space": {
    "label": "Space",
@@ -476,6 +476,18 @@
        "https://pbs.org/newshour/world/third-u-s-aircraft-carrier-in-middle-east-as-trump-keeps-options-open-in-iran-war"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-17",
+     "when": "17 Nov, later",
+     "tag": "UPDATED",
+     "text": "US Central Command (CENTCOM) now says Tuesday's drones were intercepted, with no damage to US equipment and no Americans hurt; it did not say how many. Iran's claim of a hit on the radar at Sheikh Isa Air Base is contradicted. An International Crisis Group analyst says Iran is signalling it will answer even US flights near its airspace, not only attacks. Qatar, a mediator, was due to meet Iranian officials Tuesday; peace talks are stalled.",
+     "src": [
+      [
+       "Stars and Stripes",
+       "https://www.stripes.com/theaters/middle_east/2026-11-17/iran-bahrain-central-command-drone-attack-23493671.html"
+      ]
+     ]
     }
    ]
   },
@@ -570,6 +582,26 @@
       [
        "ABC News live",
        "https://abcnews.com/International/live-updates/iran-live-updates-tanker-attacked-strait-hormuz-ukmto/?id=138171071"
+      ]
+     ]
+    },
+    {
+     "ed": "2026-11-17",
+     "when": "16 to 17 Nov",
+     "tag": "UPDATED",
+     "text": "A named ship this time: the Panama-flagged gas tanker Tara Gas was hit on 16 Nov and again on 17 Nov, and its crew abandoned ship. Of 25 crew, 21 were taken ashore at Khasab, Oman, two are in hospital and one Indian sailor is missing. India's foreign ministry condemned the attack. The UK Maritime Trade Operations centre (UKMTO) counts at least 15 attacks on ships in or near the strait this month. Who fired on Tara Gas is not stated.",
+     "src": [
+      [
+       "gCaptain",
+       "https://gcaptain.com/second-strike-on-lpg-tanker-in-strait-of-hormuz-leaves-one-missing-two-injured/"
+      ],
+      [
+       "ANI",
+       "https://aninews.in/news/world/asia/india-strongly-condemns-strait-of-hormuz-tanker-attack-as-one-national-remains-missing20261117202107/"
+      ],
+      [
+       "Stars and Stripes",
+       "https://www.stripes.com/theaters/middle_east/2026-11-17/iran-bahrain-central-command-drone-attack-23493671.html"
       ]
      ]
     }
@@ -739,6 +771,26 @@
       [
        "Wikipedia current events, 16 Nov",
        "https://en.wikipedia.org/wiki/Portal:Current_events/2026_November_16"
+      ]
+     ]
+    },
+    {
+     "ed": "2026-11-17",
+     "when": "16 to 17 Nov",
+     "tag": "UPDATED",
+     "text": "Part of the Crimean (Kerch) Bridge has fallen into the sea. Checked videos show a section down; Ukraine's security service (SBU) says one metal arch and the road span under it were destroyed and the rail line damaged, after attacks on Monday and again overnight. Zelenskyy calls it a response to Russian strikes on Ukraine's power and infrastructure. Russia opened a \"terrorist act\" case and the Kremlin says it will rebuild. Road traffic is stopped; some trains resumed Tuesday. Crimea's Russian-installed head says two people were killed nearby. Overnight Russia damaged two main bridges in Kyiv, killing two, and hit the power grid in eight regions.",
+     "src": [
+      [
+       "NBC News",
+       "https://www.nbcnews.com/world/russia/kerch-bridge-strikes-putin-crimea-ukraine-russia-war-kyiv-rcna609756"
+      ],
+      [
+       "CNBC",
+       "https://www.cnbc.com/2026/11/17/kerch-bridge-ukraine-russia-putin-kyiv.html"
+      ],
+      [
+       "US News (Reuters)",
+       "https://www.usnews.com/news/world/articles/2026-11-17/zelenskiy-says-ukraine-struck-crimea-bridge-in-response-to-russian-attacks-on-infrastructure"
       ]
      ]
     }
@@ -954,12 +1006,28 @@
        "https://www.fxstreet.com/news/nvidia-earnings-preview-the-first-big-test-after-jensen-huangs-exit-202611160603"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-17",
+     "when": "17 Nov, after the close (about 4:20 pm Eastern)",
+     "tag": "RESULT",
+     "text": "First results without Jensen Huang: revenue $115.8 billion for the quarter to 25 Oct, up 103% on a year ago and above the roughly $109 billion analysts expected. Data centre revenue a record $107.6 billion. Nvidia expects about $130 billion next quarter and assumes no data centre chip sales to China. Interim chief executive Colette Kress: \"Our momentum is real.\" Board chair Harvey Jones says the board \"does not intend to reinstate\" Huang; a search firm is looking for a permanent chief. A new board committee will oversee export rules. Shares closed at $155.46, then rose up to about 4% after hours (5% by the end of the call, NBC).",
+     "src": [
+      [
+       "CBS News",
+       "https://www.cbsnews.com/news/nvidia-earnings-jensen-huang-colette-kress/"
+      ],
+      [
+       "NBC News live",
+       "https://www.nbcnews.com/business/business-news/live-blog/nvidia-stock-earnings-report-jensen-huang-rcna609804"
+      ],
+      [
+       "Nvidia filing (SEC)",
+       "https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000088/q3fy27pr.htm"
+      ]
+     ]
     }
-   ],
-   "next": {
-    "what": "Nvidia results, after the US market closes (about 4:20 pm Eastern is usual; exact time not confirmed)",
-    "utc": "2026-11-17T21:20:00Z"
-   }
+   ]
   },
   {
    "id": "ebola-congo",
@@ -1234,6 +1302,22 @@
       [
        "NBC News",
        "https://www.nbcnews.com/world/asia/live-updates-trump-heads-asia-meeting-xi-putin-china-russia-rcna608953"
+      ]
+     ]
+    },
+    {
+     "ed": "2026-11-17",
+     "when": "17 Nov, Manila evening",
+     "tag": "UPDATED",
+     "text": "Trump landed in Manila at 5:33 pm local time as the Association of Southeast Asian Nations (ASEAN) summit closed, his first visit since 2017. He told the leaders to \"call me\" when there is a problem. Talks with President Marcos are set for Wednesday morning before he leaves for Shenzhen. Up to 6,000 people protested several kilometres away.",
+     "src": [
+      [
+       "Inquirer",
+       "https://globalnation.inquirer.net/348322/trump-arrives-in-manila-for-asean-us-special-summit-marcos-meeting"
+      ],
+      [
+       "Philstar",
+       "https://www.philstar.com/headlines/2026/11/17/2570767/trump-lands-philippines-asean-marcos-meeting"
       ]
      ]
     }
@@ -1752,6 +1836,22 @@
        "https://www.benzinga.com/markets/equities/26/11/63331709/stock-market-today-dow-jones-sp-500-futures-fall-ahead-of-nvidias-q3-earnings-cbrs-amzn-rcat-in-focus"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-17",
+     "when": "17 Nov, market close",
+     "tag": "UPDATED",
+     "text": "A second down day. Dow down 848.75 points (1.6%) to 50,759.42; S&P 500 down 1% to 7,340.53; Nasdaq down 0.7% to 24,328.38. So far this week the S&P 500 is down 2.9% and the Dow 3%. All 11 sectors fell, led by software companies. Nvidia reported after the close.",
+     "src": [
+      [
+       "AP via WTOP",
+       "https://wtop.com/national/2026/11/how-major-us-stock-indexes-fared-tuesday-11-17-2026"
+      ],
+      [
+       "The Motley Fool",
+       "https://fool.com/coverage/stock-market-today/2026/11/17/stock-market-today-nov-17-nvidia-slides-ahead-of-earnings-but-soars-in-after-hours-trading"
+      ]
+     ]
     }
    ]
   },
@@ -1798,6 +1898,22 @@
       [
        "The Media Line",
        "https://themedialine.org/headlines/iran-again-attacks-bahrain-us-intelligence-warns-of-chemical-weapons-plot-against-officials"
+      ]
+     ]
+    },
+    {
+     "ed": "2026-11-17",
+     "when": "17 Nov, Manila",
+     "tag": "UNPROVEN",
+     "text": "Asked in Manila, Trump said: \"we take it very seriously\" and warned Iran would \"pay a price\". Homeland Security Secretary Markwayne Mullin called the threat \"aspirational\" and not new, and says the homeland is secure. Iran's foreign ministry calls the report \"baseless\". The Washington Post and CNBC say they have not confirmed CNN's report. Still no device, arrest or change to security in Washington found.",
+     "src": [
+      [
+       "CNBC",
+       "https://www.cnbc.com/2026/11/17/trump-iran-dirty-bomb-washington.html"
+      ],
+      [
+       "The Washington Post",
+       "https://www.washingtonpost.com/national-security/2026/11/17/trump-says-government-takes-report-iran-planning-dirty-bomb-very-seriously/"
       ]
      ]
     }
@@ -1882,6 +1998,54 @@
       [
        "CNN",
        "https://www.cnn.com/2026/10/26/tech/anthropic-files-ipo"
+      ]
+     ]
+    },
+    {
+     "ed": "2026-11-17",
+     "when": "17 Nov",
+     "tag": "UPDATED",
+     "text": "The filed price range is $70 to $78 a share for 825 million shares on the Nasdaq under the ticker ANT, with the price expected to be set Wednesday and trading Thursday. The Wall Street Journal, citing unnamed people, says the price could go above $80. Not confirmed by the company.",
+     "src": [
+      [
+       "CNBC guide",
+       "https://www.cnbc.com/2026/11/16/anthropic-ipo-date-price-range.html"
+      ],
+      [
+       "CBS News",
+       "https://www.cbsnews.com/news/anthropic-ipo-ai-boom-nasdaq-debut/"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cyclone-akvan",
+   "title": "Cyclone Akvan heads for India's east coast",
+   "cat": "acc",
+   "status": "watching",
+   "place": "Andhra Pradesh coast, India",
+   "lat": 15.9,
+   "lon": 80.9,
+   "first": "2026-11-17",
+   "next": {
+    "what": "Cyclone Akvan forecast to cross the Andhra Pradesh coast (around noon India time; forecast, may change)",
+    "utc": "2026-11-20T06:30:00Z"
+   },
+   "updates": [
+    {
+     "ed": "2026-11-17",
+     "when": "Formed 16 Nov evening India time",
+     "tag": "NEW",
+     "text": "The India Meteorological Department (IMD) says a Bay of Bengal system became Cyclonic Storm Akvan on Monday evening, the third storm in a row this season. Forecast: it strengthens into a very severe cyclonic storm and crosses the Andhra Pradesh coast between Nellore and Tuni around noon on 20 Nov, with winds up to 145 km/h (about 90 mph). Heavy rain warned for Odisha, south Bengal and Tamil Nadu. It is moving slowly; forecasts can change.",
+     "src": [
+      [
+       "India.com",
+       "https://www.india.com/news/india/cyclone-akvan-intensifies-over-bay-of-bengal-likely-to-make-landfall-on-november-20-with-145-kmph-winds-heavy-rain-alert-in-south-bengal-odisha-8545424/"
+      ],
+      [
+       "Republic World",
+       "https://www.republicworld.com/india/third-storm-in-a-row-after-arnab-and-murasu-cyclone-akvan-brewing-over-bay-of-bengal-imd-issues-alert-2026-11-15-141109"
       ]
      ]
     }
@@ -1969,6 +2133,10 @@
     [
      "Timeline 12 to 17 Nov (picture)",
      "timelines/World-Events-Timeline-Update-17Nov2026.svg"
+    ],
+    [
+     "Evening check, 17 Nov (picture)",
+     "timelines/World-Evening-Check-17Nov2026.svg"
     ]
    ]
   }
