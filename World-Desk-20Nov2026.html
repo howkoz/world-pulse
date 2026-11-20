@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>World Desk</title>
+<style>
+  :root {
+    --ink: #13202f; --ink2: #3c4a5a; --muted: #6b7887; --line: #dbe2ea; --bg: #f6f8fb; --card: #ffffff;
+    --blue: #1f6fb5; --red: #b3261e; --grey: #6b6b6b; --purple: #6a3fb5; --amber: #c77700; --teal: #00796b;
+    --green: #2e7d32; --navy: #0d2b4e; --sky: #e8f1fb;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Segoe UI", Arial, Helvetica, sans-serif; line-height: 1.45; }
+  a { color: var(--blue); }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 16px; }
+
+  .mast { background: var(--navy); color: #fff; padding: 18px 0 14px; }
+  .mast .wrap { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px; }
+  .brand { font-size: 28px; font-weight: 800; letter-spacing: .5px; }
+  .brand small { font-size: 13px; font-weight: 500; opacity: .75; margin-left: 10px; letter-spacing: 0; }
+  .clock { font-size: 13px; opacity: .9; font-variant-numeric: tabular-nums; }
+  .ticker { background: #0a2240; color: #cfe0f5; font-size: 13px; overflow: hidden; white-space: nowrap; border-top: 1px solid #1d3b60; }
+  .ticker span { display: inline-block; padding: 7px 0; animation: tick 80s linear infinite; }
+  .ticker b { color: #fff; margin: 0 6px 0 28px; }
+  @keyframes tick { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  .hero { background: linear-gradient(180deg, #0d2b4e 0%, #163d6b 100%); color: #fff; padding: 26px 0 30px; }
+  .kicker { display: inline-block; background: #ffb300; color: #13202f; font-weight: 800; font-size: 12px; letter-spacing: 1px; padding: 3px 9px; border-radius: 4px; }
+  .hero h1 { font-size: 34px; margin: 10px 0 6px; line-height: 1.15; }
+  .hero p.dek { font-size: 16px; opacity: .92; margin: 0 0 18px; max-width: 860px; }
+  .hero-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 18px; }
+  @media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr; } .hero h1 { font-size: 26px; } }
+  .panel { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.16); border-radius: 12px; padding: 14px; }
+  .panel h3 { margin: 0 0 8px; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; color: #9cc3ec; }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 12px; }
+  @media (max-width: 560px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+  .stat { background: rgba(255,255,255,.08); border-radius: 10px; padding: 10px; }
+  .stat .n { font-size: 22px; font-weight: 800; }
+  .stat .l { font-size: 11.5px; opacity: .85; }
+  .btn { cursor: pointer; border: 1px solid rgba(255,255,255,.4); background: transparent; color: #fff; border-radius: 6px; padding: 5px 10px; font-size: 12px; font-weight: 600; }
+  .btn.on { background: #fff; color: var(--navy); }
+  .cap { font-size: 13px; min-height: 40px; margin-top: 8px; background: rgba(255,255,255,.08); border-radius: 8px; padding: 8px 10px; }
+  svg text { font-family: "Segoe UI", Arial, sans-serif; }
+
+  section { padding: 26px 0 6px; }
+  h2 { font-size: 22px; margin: 0 0 4px; }
+  .sub { color: var(--muted); font-size: 13.5px; margin: 0 0 14px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 860px) { .two { grid-template-columns: 1fr; } }
+
+  .tl { position: relative; height: 120px; margin: 10px 8px 0; }
+  .tl .rail { position: absolute; left: 0; right: 0; top: 54px; height: 8px; background: #e3e9f0; border-radius: 4px; }
+  .tl .dot { position: absolute; top: 49px; width: 18px; height: 18px; margin-left: -9px; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 0 0 1px #aab6c3; cursor: pointer; }
+  .tl .dot.mil { background: var(--red); } .tl .dot.claim { background: #fff; box-shadow: 0 0 0 2px #c62828; } .tl .dot.talk { background: var(--blue); }
+  .tl .dot.next { background: #ffb300; animation: pulse 1.6s infinite; }
+  .tl .dot.sel { transform: scale(1.3); }
+  @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(255,179,0,.6); } 100% { box-shadow: 0 0 0 12px rgba(255,179,0,0); } }
+  .tl .lab { position: absolute; font-size: 11px; color: var(--ink2); transform: translateX(-50%); white-space: nowrap; }
+  .tl .lab.up { top: 18px; } .tl .lab.down { top: 76px; }
+  .tip { margin-top: 12px; background: var(--sky); border-left: 4px solid var(--blue); padding: 10px 12px; border-radius: 6px; font-size: 14px; min-height: 44px; }
+  @media (max-width: 640px) { .tl .lab { font-size: 9.5px; } }
+
+  .count { font-size: 40px; font-weight: 800; font-variant-numeric: tabular-nums; letter-spacing: 1px; color: var(--navy); }
+  .agenda { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  .ag { cursor: pointer; border: 1px solid var(--line); background: #fff; border-radius: 8px; padding: 6px 12px; font-size: 13px; font-weight: 600; }
+  .ag.on { background: var(--navy); color: #fff; border-color: var(--navy); }
+
+  .rumour { border: 2px dashed #c62828; background: #fff6f5; }
+  .tag { display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: .5px; padding: 2px 8px; border-radius: 999px; color: #fff; }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 14px; }
+  .chip { cursor: pointer; border: 1px solid var(--line); background: #fff; border-radius: 999px; padding: 5px 12px; font-size: 13px; font-weight: 600; color: var(--ink2); }
+  .chip.on { background: var(--ink); color: #fff; border-color: var(--ink); }
+  .chip i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+  .story { background: #fff; border: 1px solid var(--line); border-left: 6px solid var(--blue); border-radius: 10px; padding: 14px; cursor: pointer; transition: transform .2s, box-shadow .2s; opacity: 0; transform: translateY(12px); }
+  .story.in { opacity: 1; transform: none; }
+  .story:hover { box-shadow: 0 6px 18px rgba(16,40,70,.12); transform: translateY(-2px); }
+  .story h4 { margin: 6px 0 4px; font-size: 16px; }
+  .story p { margin: 0; font-size: 13.5px; color: var(--ink2); }
+  .story .more { max-height: 0; overflow: hidden; transition: max-height .4s; font-size: 13px; color: var(--ink2); }
+  .story.open .more { max-height: 360px; }
+  .story .more ul { margin: 8px 0 4px; padding-left: 18px; }
+  .story .meta { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+  .story .cat { font-size: 11px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; }
+  .story .hint { font-size: 11.5px; color: var(--muted); margin-top: 8px; }
+
+  .strip { position: relative; height: 210px; }
+  .strip .day { position: absolute; top: 0; bottom: 22px; border-left: 1px solid var(--line); font-size: 11.5px; color: var(--muted); padding-left: 4px; }
+  .strip .ev { position: absolute; height: 12px; border-radius: 6px; cursor: pointer; }
+  .strip .ev.approx { opacity: .45; }
+  .strip .ev:hover { outline: 2px solid var(--ink); }
+  .striptip { font-size: 13px; color: var(--ink2); min-height: 20px; }
+
+  footer { margin: 34px 0 0; padding: 18px 0 30px; border-top: 1px solid var(--line); font-size: 12.5px; color: var(--muted); }
+  footer ul { padding-left: 18px; margin: 6px 0; columns: 2; }
+  @media (max-width: 700px) { footer ul { columns: 1; } }
+</style>
+</head>
+<body>
+<style>
+  .nx { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+  .nx button { cursor: pointer; border: 1px solid var(--line); background: #fff; border-radius: 10px; padding: 8px 12px; font-size: 13px; font-weight: 700; color: var(--ink); text-align: left; }
+  .nx button span { display: block; font-size: 11px; font-weight: 600; color: var(--muted); }
+  .nx button.on { background: var(--navy); color: #fff; border-color: var(--navy); }
+  .nx button.on span { color: #cfe0f5; }
+</style>
+
+<div class="mast">
+  <div class="wrap">
+    <div class="brand">World Desk <small>Howard's personal news, checked against the sources &middot; <a href="World-Pulse.html" style="color:#ffd36b">World Pulse home</a></small></div>
+    <div class="clock" id="clock">loading clock</div>
+  </div>
+</div>
+<div class="ticker"><span id="ticker"></span></div>
+
+<style>
+  .lane { font-size: 12px; }
+  .blk { cursor: pointer; }
+  .blk:hover rect { stroke: #fff; stroke-width: 2; }
+  .pt { cursor: pointer; border: 1px solid var(--line); background: #fff; border-radius: 10px; padding: 10px 12px; font-size: 13.5px; font-weight: 700; color: var(--ink); text-align: left; }
+  .pt span { display: block; font-size: 11.5px; font-weight: 600; color: var(--muted); }
+  .pt.on { background: var(--navy); color: #fff; border-color: var(--navy); }
+  .pt.on span { color: #cfe0f5; }
+  .pt.miss { border-style: dashed; border-color: #c62828; }
+  .pts { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; }
+</style>
+
+<!-- HERO: ANTHROPIC FIRST DAY -->
+<div class="hero">
+  <div class="wrap">
+    <span class="kicker">HEADLINE &middot; MONEY</span>
+    <h1>Anthropic opens 34% up, ends its first day 17% up, on a day the Dow drops 1,100 points</h1>
+    <p class="dek">The artificial intelligence company Anthropic started trading on the Nasdaq on Thursday under the ticker ANT. Shares priced at $83 the night before first changed hands just before noon Eastern at about $111.50. The gain shrank through the afternoon and the stock closed at $97.17. Around it, the whole market fell hard: the Dow lost 2.2% and closed under 50,000 for the first time since May.</p>
+
+    <div class="hero-grid">
+      <div class="panel">
+        <h3 style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap">Replay: the first day, price by price
+          <span><button class="btn" id="play">&#9654; Play</button> <button class="btn" id="reset">Reset</button></span></h3>
+        <svg id="ladder" viewBox="0 0 520 270" width="100%" style="display:block;border-radius:8px">
+          <rect x="0" y="0" width="520" height="270" fill="#10345c"/>
+          <g id="axis"></g>
+          <rect id="range" x="150" y="0" width="120" height="0" rx="6" fill="#ffd54f" fill-opacity=".18" stroke="#ffd54f" stroke-dasharray="5 4" opacity="0"/>
+          <text id="rangeLab" x="210" y="0" font-size="10.5" fill="#ffd54f" text-anchor="middle" opacity="0">day's range (times not reported)</text>
+          <g id="marks"></g>
+          <circle id="ball" cx="210" cy="0" r="11" fill="#4fc3ff" stroke="#fff" stroke-width="3" opacity="0"/>
+          <text id="ballLab" x="232" y="0" font-size="15" font-weight="800" fill="#fff" opacity="0"></text>
+          <text x="260" y="262" font-size="10.5" fill="#9cc3ec" text-anchor="middle">Price per share in US dollars. Times Eastern. High and low times were not reported, so they show as a band.</text>
+        </svg>
+        <div class="cap" id="hcap">Press play to step through the day, or click a price on the scale.</div>
+        <div class="stats">
+          <div class="stat"><div class="n">$83</div><div class="l">offer price, set Wednesday night</div></div>
+          <div class="stat"><div class="n">+34%</div><div class="l">at the first trade, about $111.50</div></div>
+          <div class="stat"><div class="n">+17%</div><div class="l">at the close, $97.17</div></div>
+          <div class="stat"><div class="n">$107bn</div><div class="l">raised in all, a record (Yahoo Finance)</div></div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3 style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap">Same day, other direction
+          <span><button class="btn" id="grow">&#9654; Show</button></span></h3>
+        <svg id="bars" viewBox="0 0 420 270" width="100%" style="display:block;border-radius:8px">
+          <rect x="0" y="0" width="420" height="270" fill="#10345c"/>
+          <line x1="210" y1="20" x2="210" y2="232" stroke="#ffffff" stroke-opacity=".5"/>
+          <text x="210" y="250" font-size="10.5" fill="#cfe0f5" text-anchor="middle">0%</text>
+          <text x="40" y="250" font-size="10.5" fill="#cfe0f5" text-anchor="middle">-20%</text>
+          <text x="380" y="250" font-size="10.5" fill="#cfe0f5" text-anchor="middle">+20%</text>
+          <g id="barG"></g>
+        </svg>
+        <div class="cap" id="bcap">Each bar is one day's change at the 4 pm Eastern close, Thursday 19 Nov. Click a bar.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- STEPS -->
+  <section>
+    <h2>From price range to first trade, step by step</h2>
+    <p class="sub">Blue = happened. Evenly spaced, not to scale. Click any dot. Times in Eastern.</p>
+    <div class="card">
+      <div class="tl" id="tl"><div class="rail"></div></div>
+      <div class="tip" id="tltip">Click a dot to see what happened.</div>
+    </div>
+  </section>
+
+  <!-- RESULTS + UNCONFIRMED -->
+  <section>
+    <div class="two">
+      <div class="card">
+        <h2 style="font-size:18px">Results are in, and what is next</h2>
+        <p class="sub">Click one. Countdowns run from your clock; once a moment passes, this page cannot know what happened: check World Pulse.</p>
+        <div class="agenda" id="agenda"></div>
+        <div class="count" id="cd" style="margin-top:10px">--</div>
+        <div style="font-size:13px;color:var(--ink2)" id="cdw"></div>
+        <div class="tip" id="agtip"></div>
+      </div>
+      <div class="card rumour">
+        <span class="tag" style="background:#c62828">UNCONFIRMED</span>
+        <h2 style="font-size:17px;margin-top:8px">16,000 Chase customer emails leaked</h2>
+        <p style="margin:4px 0 8px;font-size:14px;color:var(--ink2)">Only the extortion group n0n says so. Chase has not confirmed the records are real or came from the vendor attack; CyberInsider could not verify them.</p>
+        <span class="tag" style="background:#c62828">UNCONFIRMED</span>
+        <h2 style="font-size:17px;margin-top:8px">Supertankers on mines</h2>
+        <p style="margin:4px 0 8px;font-size:14px;color:var(--ink2)">Iran's Revolutionary Guards, through the Tasnim agency, say two supertankers exploded on mines. No neutral source confirms it.</p>
+        <span class="tag" style="background:#c62828">UNCONFIRMED</span>
+        <h2 style="font-size:17px;margin-top:8px">Trump will wait until January on Iran</h2>
+        <p style="margin:4px 0 8px;font-size:14px;color:var(--ink2)">One headline, in the Times of Israel live blog. Other outlets only say he has not decided.</p>
+        <span class="tag" style="background:#c62828">UNCONFIRMED</span>
+        <h2 style="font-size:17px;margin-top:8px">Dirty bomb plans for Washington</h2>
+        <p style="margin:4px 0 0;font-size:14px;color:var(--ink2)">Still one original source, CNN. The Homeland Security Secretary calls Iran's planning aspirational; Iran calls the report fabricated.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OTHER STORIES -->
+  <section>
+    <h2>The rest of the world today</h2>
+    <p class="sub">From this morning's scan (20 Nov, about 11:50 UTC, Coordinated Universal Time). Filter by topic, click a card for what changed.</p>
+    <div class="chips" id="chips"></div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <!-- WEEK STRIP -->
+  <section>
+    <h2>The week at a glance</h2>
+    <p class="sub">Each bar is one story, placed on the day it happened (Eastern). Faded bars: only the day is known. Hover a bar. <a href="timelines/World-Events-Timeline-Update-20Nov2026.svg">Open the full timeline picture</a>.</p>
+    <div class="card">
+      <div class="strip" id="strip"></div>
+      <div class="striptip" id="striptip">&nbsp;</div>
+    </div>
+  </section>
+
+  <footer>
+    <b>Key:</b> US = United States. UK = United Kingdom. ANT = Anthropic's stock ticker. IPO = initial public offering (a company's first sale of shares to the public). S&amp;P = Standard and Poor's. NATO = North Atlantic Treaty Organization. PIF = Public Investment Fund. ADNOC = Abu Dhabi National Oil Company. IMD = India Meteorological Department. CDC = US Centers for Disease Control and Prevention. WHO = World Health Organization. NSA = National Security Agency. AP = Associated Press. USGS = United States Geological Survey. UTC = Coordinated Universal Time.<br>
+    <b>Sources:</b>
+    <ul>
+      <li><a href="https://www.forbes.com/sites/fionariley/2026/11/19/anthropic-ipo-live-stock-closes-day-at-97-up-more-than-17/">Forbes: Anthropic closes at $97</a></li>
+      <li><a href="https://finance.yahoo.com/technology/live/anthropic-ipo-live-company-said-to-price-stock-at-83-begin-trading-thursday-212656452.html">Yahoo Finance live: Anthropic first day</a></li>
+      <li><a href="https://www.stocktitan.net/articles/anthropic-ipo-live-ant-first-trading-day-2026">Stocktitan: first trade time</a></li>
+      <li><a href="https://deadline.com/2026/11/anthropic-ai-volatile-ipo-shares-trading-nasdaq-market-1237229045/">Deadline: a volatile session</a></li>
+      <li><a href="https://abcnews.com/Business/wireStory/major-us-stock-indexes-fared-thursday-11192026-138303454">AP via ABC News: how the indexes fared</a></li>
+      <li><a href="https://finance.yahoo.com/markets/live/stock-market-today-thursday-november-19-dow-sp-500-nasdaq-anthropic-ipo-live-141306032.html">Yahoo Finance live: Dow sinks 1,100 points</a></li>
+      <li><a href="https://aninews.in/news/national/general-news/cyclone-akvan-crosses-north-andhra-pradesh-south-odisha-coast-near-gopalpur-to-weaken-into-deep-depression20261120105926/">ANI: Cyclone Akvan crosses the coast</a></li>
+      <li><a href="https://www.theweek.in/news/india/2026/11/20/cyclone-akvan-landfall-begins-along-andhra-odisha-coast-imd-issues-red-alert.html">The Week: landfall begins</a></li>
+      <li><a href="https://www.cbsnews.com/news/putin-russia-ukraine-bridge-strike/">CBS News: Putin rules out a limited ceasefire</a></li>
+      <li><a href="https://www.aljazeera.com/news/2026/11/20/kushner-says-russia-ok-with-nato-like-security-pact-for-ukraine-is-it">Al Jazeera: Kushner on guarantees</a></li>
+      <li><a href="https://themoscowtimes.com/2026/11/20/russia-pushes-back-against-us-idea-of-nato-style-security-guarantees-for-ukraine-a94326">The Moscow Times: Russia pushes back</a></li>
+      <li><a href="https://abcnews.com/US/jpmorgan-chase-reports-cyberattack-party-service-providers/story?id=138287705">ABC News: Chase vendor cyberattack</a></li>
+      <li><a href="https://cyberinsider.com/jpmorgan-chase-vendor-cyberattack-customer-data/">CyberInsider: leaked records unverified</a></li>
+      <li><a href="https://www.bloomberg.com/news/articles/2026-11-19/trump-says-iran-looking-at-gas-bioweapons-but-downplays-threat">Bloomberg: Trump on gas and bioweapons</a></li>
+      <li><a href="https://www.aljazeera.com/news/2026/11/19/trump-claims-iran-is-developing-bioweapons-is-there-any-evidence">Al Jazeera: is there any evidence?</a></li>
+      <li><a href="https://www.timesofisrael.com/liveblog-november-19-2026/">Times of Israel live, 19 Nov</a></li>
+      <li><a href="https://www.thenationalnews.com/news/gulf/2026/11/19/saudi-sovereign-wealth-fund-tower-in-riyadh-damaged-in-houthi-strike/">The National: PIF Tower damage</a></li>
+      <li><a href="https://splash247.com/fresh-tanker-strike-adds-to-bloody-week-in-hormuz/">Splash247: Hormuz tanker</a></li>
+      <li><a href="https://www.bloomberg.com/news/articles/2026-11-19/iran-intensifies-hormuz-tanker-attacks-just-as-oil-prices-slide">Bloomberg: Hormuz attacks intensify</a></li>
+      <li><a href="https://www.cnbc.com/2026/11/19/nvidia-jensen-huang-legal.html">CNBC: Nvidia legal exposure</a></li>
+      <li><a href="https://www.cdc.gov/ebola/situation-summary/index.html">CDC: Ebola situation</a></li>
+      <li><a href="https://www.washingtonpost.com/world/2026/11/19/senegal-migration-migrants-boat-death-yenne/319391fa-e41d-11f1-a99e-b3e3805c6b8b_story.html">AP via Washington Post: Senegal boat</a></li>
+      <li><a href="https://abc7chicago.com/live-updates/tech-outage-live-updates/20048533/entry/20049517/">ABC7: Rubio on the outages</a></li>
+      <li><a href="https://newsroom.arianespace.com/arianespace-to-launch-36-amazon-leo-satellites-on-november-23-at-the-earliest-for-10th-ariane-6-flight/?lang=eng">Arianespace: Amazon Leo launch</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Starship_flight_16">Wikipedia: Starship Flight 16</a></li>
+      <li><a href="https://earthquake.usgs.gov/earthquakes/map/">USGS: earthquakes (none of magnitude 6 or more in the last day)</a></li>
+    </ul>
+    Facts checked 20 Nov 2026 about 11:50 UTC. The page works out times live from your clock, but it does not fetch news: once a countdown reaches zero it cannot know what happened.
+  </footer>
+</div>
+
+<script src="pulse/world-land.js"></script>
+<script src="pulse/globe.js"></script>
+<script>
+(function () {
+  var ET = 'America/New_York';
+  function fmt(ms, opts) { return new Date(ms).toLocaleString('en-US', Object.assign({ timeZone: ET }, opts)); }
+  var NS = 'http://www.w3.org/2000/svg';
+  function el(tag, attrs, parent) { var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
+
+  // hero: price ladder, $80 at the bottom to $120 at the top
+  var Y0 = 238, Y1 = 22;
+  function py(p) { return Y0 - (Y0 - Y1) * (p - 80) / 40; }
+  var axis = document.getElementById('axis');
+  for (var p = 80; p <= 120; p += 5) {
+    el('line', { x1: 60, y1: py(p), x2: 500, y2: py(p), stroke: '#ffffff', 'stroke-opacity': .1 }, axis);
+    var tx = el('text', { x: 50, y: py(p) + 4, 'font-size': 10.5, fill: '#cfe0f5', 'text-anchor': 'end' }, axis);
+    tx.textContent = '$' + p;
+  }
+  var PRICES = [
+    { p: 83, lab: 'Offer $83', col: '#cfe0f5', cap: 'Wednesday evening: the price is set at $83 a share, above the planned $70 to $78. 980 million shares, about $81 billion, plus $26 billion of shares sold privately to seven tech companies at the same price.' },
+    { p: 111.5, lab: 'First trade about $111.50', col: '#4fc3ff', cap: 'Just before noon Eastern on Thursday (Stocktitan says 11:48 am): the first trade, about $111.50, roughly 34% above the offer price. One live blog says $110.' },
+    { p: 97.17, lab: 'Close $97.17', col: '#69f0ae', cap: '4 pm Eastern: the close, $97.17, about 17% above the offer price. Most of the opening gain was gone, but buyers at $83 were still up.' }
+  ];
+  var HI = 115.10, LO = 92.72;
+  var range = document.getElementById('range'), rangeLab = document.getElementById('rangeLab');
+  range.setAttribute('y', py(HI)); range.setAttribute('height', py(LO) - py(HI));
+  rangeLab.setAttribute('y', py(HI) - 6);
+  var marks = document.getElementById('marks');
+  el('line', { x1: 60, y1: py(83), x2: 500, y2: py(83), stroke: '#cfe0f5', 'stroke-dasharray': '6 4', 'stroke-width': 1.5 }, marks);
+  var hiT = el('text', { x: 280, y: py(HI) + 4, 'font-size': 11, fill: '#ffd54f' }, marks); hiT.textContent = 'High $115.10';
+  var loT = el('text', { x: 280, y: py(LO) + 4, 'font-size': 11, fill: '#ffd54f' }, marks); loT.textContent = 'Low $92.72';
+  var capEl = document.getElementById('hcap'), ball = document.getElementById('ball'), ballLab = document.getElementById('ballLab');
+  function show(i) {
+    var s = PRICES[i];
+    ball.setAttribute('cy', py(s.p)); ball.setAttribute('fill', s.col); ball.setAttribute('opacity', 1);
+    ballLab.setAttribute('y', py(s.p) + 5); ballLab.textContent = s.lab; ballLab.setAttribute('opacity', 1);
+    capEl.textContent = s.cap;
+    if (i >= 2) { range.setAttribute('opacity', 1); rangeLab.setAttribute('opacity', 1); }
+  }
+  PRICES.forEach(function (s, i) {
+    var hit = el('rect', { x: 0, y: py(s.p) - 9, width: 58, height: 18, fill: 'transparent', style: 'cursor:pointer' }, marks);
+    hit.addEventListener('click', function () { stop(); show(i); });
+  });
+  var timer = null;
+  function stop() { if (timer) { clearInterval(timer); timer = null; } }
+  document.getElementById('play').onclick = function () {
+    stop(); var i = 0; show(0);
+    timer = setInterval(function () {
+      i++;
+      if (i < PRICES.length) show(i);
+      else { stop(); capEl.textContent = 'The yellow band is the whole day\'s range, $92.72 to $115.10. The reports found do not say when the high and low came, so this page does not guess.'; }
+    }, 2600);
+  };
+  document.getElementById('reset').onclick = function () {
+    stop(); ball.setAttribute('opacity', 0); ballLab.setAttribute('opacity', 0);
+    range.setAttribute('opacity', 0); rangeLab.setAttribute('opacity', 0);
+    capEl.textContent = 'Press play to step through the day, or click a price on the scale.';
+  };
+
+  // hero right: day's changes
+  var BARS = [
+    ['Anthropic (ANT)', 17.1, '#69f0ae', 'Anthropic: $97.17 at the close against the $83 offer price, about 17%. (Its first day, so the change is measured from the offer price.)'],
+    ['Dow', -2.2, '#ff8a80', 'Dow Jones Industrial Average: down 1,101 points, 2.2%, to 49,097. First close under 50,000 since early May.'],
+    ['S&P 500', -2.0, '#ff8a80', 'S&P 500: down 2%, to 7,176. Its sixth loss in a row, the longest losing run since 2024.'],
+    ['Nasdaq', -2.3, '#ff8a80', 'Nasdaq Composite: down 2.3%, to 23,879. The exchange Anthropic now trades on.'],
+    ['Bitcoin', null, '#ffd54f', 'Bitcoin: fell below $62,000, touching about $61,500 to $61,700 (reports differ). No single closing figure, so no bar is drawn.']
+  ];
+  function bx(v) { return 210 + v * 8.5; }
+  var barG = document.getElementById('barG'), barEls = [];
+  BARS.forEach(function (b, i) {
+    var y = 34 + i * 42, g = el('g', { style: 'cursor:pointer' }, barG);
+    var t = el('text', { x: b[1] !== null && b[1] < 0 ? 216 : 204, y: y - 6, 'font-size': 12, 'font-weight': 700, fill: '#ffffff', 'text-anchor': b[1] !== null && b[1] < 0 ? 'start' : 'end' }, g);
+    t.textContent = b[0];
+    var r = el('rect', { x: 210, y: y, width: 0, height: 18, rx: 4, fill: b[2] }, g);
+    var v = el('text', { x: 210, y: y + 14, 'font-size': 12, 'font-weight': 800, fill: '#ffffff' }, g);
+    if (b[1] === null) { v.textContent = 'below $62,000'; v.setAttribute('x', 216); }
+    g.addEventListener('click', function () { document.getElementById('bcap').textContent = b[3]; });
+    barEls.push([r, v, b]);
+  });
+  function grow() {
+    barEls.forEach(function (e) {
+      var r = e[0], v = e[1], b = e[2]; if (b[1] === null) return;
+      var x0 = Math.min(bx(0), bx(b[1])), w = Math.abs(bx(b[1]) - bx(0));
+      r.style.transition = 'all 1.2s ease'; r.setAttribute('x', x0); r.setAttribute('width', w);
+      v.textContent = (b[1] > 0 ? '+' : '') + b[1] + '%';
+      v.setAttribute('x', b[1] > 0 ? x0 + w + 6 : x0 - 46);
+    });
+  }
+  document.getElementById('grow').onclick = grow;
+  setTimeout(grow, 700);
+
+  // steps timeline
+  var STEPS = [
+    { k: 'talk', name: 'range filed', when: 'By Tue 17 Nov', d: 'Anthropic files a range of $70 to $78 a share for 825 million shares, ticker ANT, on the Nasdaq.' },
+    { k: 'talk', name: '$26bn side deal', when: 'Wed 18 Nov', d: 'Seven tech companies, including Google, Nvidia, AMD and Microsoft, agree to buy $26 billion of non-voting shares at the listing price.' },
+    { k: 'talk', name: 'priced at $83', when: 'Wed 18 Nov, evening', d: 'Above the range. The offer grows to 980 million shares, about $81 billion.' },
+    { k: 'talk', name: 'first trade', when: 'Thu 19 Nov, just before noon', d: 'About $111.50, roughly 34% up. The 9:30 am market open came first; big debuts often take a couple of hours to start trading.' },
+    { k: 'talk', name: 'day\'s high', when: 'Thu 19 Nov, time not reported', d: '$115.10 at the top of the day.' },
+    { k: 'talk', name: 'day\'s low', when: 'Thu 19 Nov, time not reported', d: '$92.72 at the bottom of the day, still above $83.' },
+    { k: 'talk', name: 'close $97.17', when: 'Thu 19 Nov, 4 pm', d: 'Up about 17% from $83 on a day the Nasdaq fell 2.3%. Total raised, with the side deal, a record $107.3 billion.' }
+  ];
+  var tl = document.getElementById('tl'), dots = [];
+  STEPS.forEach(function (s, i) {
+    var x = 5 + i * (90 / (STEPS.length - 1));
+    var dot = document.createElement('div'); dot.className = 'dot ' + s.k; dot.style.left = x + '%'; tl.appendChild(dot);
+    var lab = document.createElement('div'); lab.className = 'lab ' + (i % 2 ? 'down' : 'up'); lab.style.left = x + '%'; lab.textContent = s.name; tl.appendChild(lab);
+    dot.addEventListener('click', function () {
+      dots.forEach(function (o) { o.classList.remove('sel'); }); dot.classList.add('sel');
+      document.getElementById('tltip').innerHTML = '<b>' + s.when + '</b> &middot; ' + s.d;
+    });
+    dots.push(dot);
+  });
+
+  // results and countdowns (res = result already known at scan time)
+  var UP = [
+    { k: 'Anthropic: RESULT', res: 'Closed at $97.17, up 17%', when: 'Thursday 19 Nov, first day of trading.', d: 'Opened about $111.50, ranged from $92.72 to $115.10.' },
+    { k: 'Cyclone Akvan: RESULT', res: 'Landfall near Gopalpur', when: 'Friday 20 Nov, about 7:30 to 8:30 am India time (about 9 to 10 pm Thursday, Eastern).', d: 'The India Meteorological Department says it crossed between north Andhra Pradesh and south Odisha and is weakening into a deep depression. More than 300,000 people were moved beforehand. No casualty figures yet.' },
+    { k: 'Amazon Leo on Ariane 6', t: Date.UTC(2026, 10, 23, 11, 9), end: Date.UTC(2026, 10, 24, 5, 0), when: 'No earlier than 23 Nov at 11:09 UTC from French Guiana.', d: '36 Amazon satellites on a European rocket after the Vulcan loss.' }
+  ];
+  var sel = 0, agEl = document.getElementById('agenda');
+  UP.forEach(function (u, i) {
+    var b = document.createElement('button'); b.className = 'ag' + (i === sel ? ' on' : ''); b.textContent = u.k;
+    b.onclick = function () { sel = i; agEl.querySelectorAll('.ag').forEach(function (x) { x.classList.remove('on'); }); b.classList.add('on'); tick(); };
+    agEl.appendChild(b);
+  });
+  function hms(ms) { var s = Math.max(0, Math.floor(ms / 1000)), d = Math.floor(s / 86400); return (d ? d + 'd ' : '') + String(Math.floor(s % 86400 / 3600)).padStart(2, '0') + ':' + String(Math.floor(s % 3600 / 60)).padStart(2, '0') + ':' + String(s % 60).padStart(2, '0'); }
+  function tick() {
+    var now = Date.now(), u = UP[sel], cd = document.getElementById('cd');
+    document.getElementById('clock').textContent = fmt(now, { weekday: 'long', day: 'numeric', month: 'long', hour: 'numeric', minute: '2-digit', second: '2-digit' }) + ' Eastern';
+    document.getElementById('agtip').textContent = u.d;
+    if (u.res) { cd.textContent = u.res; cd.style.fontSize = '24px'; document.getElementById('cdw').textContent = u.when; return; }
+    document.getElementById('cdw').textContent = 'Counting to ' + fmt(u.t, { weekday: 'long', day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit' }) + ' Eastern. ' + u.when;
+    if (now < u.t) { cd.textContent = hms(u.t - now); cd.style.fontSize = '40px'; }
+    else if (now < u.end) { cd.textContent = 'Time has come: what happened is not on this page'; cd.style.fontSize = '20px'; }
+    else { cd.textContent = 'Passed: check World Pulse for the result'; cd.style.fontSize = '20px'; }
+  }
+  tick(); setInterval(tick, 1000);
+
+  // stories (d = [start day, start hour Eastern, end day, end hour Eastern, only the day known])
+  var CATS = {
+    space: ['#3949ab', 'Space'], tech: ['#1f6fb5', 'Tech'], mil: ['#b3261e', 'Iran and military'], war: ['#6b6b6b', 'Wars and spying'],
+    money: ['#6a3fb5', 'Money'], health: ['#c77700', 'Health'], acc: ['#00796b', 'Accidents and weather'], world: ['#0d2b4e', 'World politics']
+  };
+  var STATUS = { upd: ['#1f6fb5', 'UPDATED'], neu: ['#2e7d32', 'NEW'], un: ['#c62828', 'UNPROVEN'], same: ['#8a96a3', 'NO CHANGE'], res: ['#ef6c00', 'RESULT'] };
+  var STORIES = [
+    { c: 'acc', s: 'res', h: 'Cyclone Akvan makes landfall near Gopalpur', p: 'It crossed the north Andhra Pradesh and south Odisha coast and is weakening.', more: ['Landfall finished between 7:30 and 8:30 am India time, says the Amaravati weather centre.', 'More than 300,000 people moved out of the way in Odisha.', 'Wind reports differ: gusts of 90 to 110 km/h.', 'No casualty or damage figures found yet.'], d: [19, 21, 19, 23, 0] },
+    { c: 'money', s: 'upd', h: 'Wall Street: worst day in weeks', p: 'Dow down 1,101 points (2.2%), under 50,000 for the first time since May.', more: ['S&P 500 down 2%, a sixth loss in a row.', 'Nasdaq Composite down 2.3%.', 'Reports point to rate rise fears and money moving into the Anthropic debut.'], d: [19, 9.5, 19, 16, 0] },
+    { c: 'war', s: 'upd', h: 'Putin rules out a limited ceasefire', p: 'He blames the Kerch Bridge strikes and promises a "much more painful" response.', more: ['He had weighed limits on naval attacks and on strikes on energy sites.', 'In Berlin, Kushner said Russia accepts guarantees modelled on NATO\'s Article 5.', 'Russia\'s deputy foreign minister rejected that a day later.', 'Zelenskyy: no shared view yet of what the guarantees mean.'], d: [19, 6, 19, 12, 1] },
+    { c: 'tech', s: 'neu', h: 'Chase: hackers hit outside vendors', p: 'Customer names and email addresses may have been taken from marketing data.', more: ['Chase has not named the vendors or said how many people are affected.', 'Visa says its systems were not involved; Mastercard says a small set of emails was exposed.', 'Chase says last week\'s outage was a software bug, not this.', 'A leak claim of 16,000 emails is unverified.'], d: [19, 9, 19, 18, 1] },
+    { c: 'mil', s: 'upd', h: 'Trump: Iran looking at gas and bioweapons', p: 'He told Fox News Washington should not be alarmed, and threatened to "wipe them out".', more: ['The New York Times says Netanyahu urged a four to seven day joint air campaign; not approved.', 'Axios: officials say Iran cannot carry out such attacks now.', 'Iran calls the claims fraudulent.', 'Pentagon: the war has cost the US military over $48 billion.'], d: [18, 20, 19, 12, 1] },
+    { c: 'mil', s: 'upd', h: 'Riyadh tower: debris or a direct hit?', p: 'Several floors of the PIF (Public Investment Fund) Tower damaged; no one hurt.', more: ['The Saudi-led coalition says debris from an intercepted missile.', 'Three people told Reuters it was a direct hit.', 'The Houthis say they aimed at the airport and the financial district.'], d: [19, 0, 19, 6, 1] },
+    { c: 'mil', s: 'upd', h: 'Hormuz: one seafarer missing from the Navig8 Messi', p: '11 injured, says Splash247. Bloomberg counts at least two missing this week.', more: ['Iran claims two supertankers hit mines; not confirmed.', 'Attacks have run at a higher pace since October, says Bloomberg.'], d: [17, 17, 17, 21, 1] },
+    { c: 'money', s: 'upd', h: 'Bitcoin below $62,000', p: 'About $61,500 to $61,700 at its low on Thursday afternoon.', more: ['Reports differ on the exact low.'], d: [19, 13, 19, 16, 1] },
+    { c: 'money', s: 'upd', h: 'Nvidia: California issues a subpoena', p: 'It asks whether China got Nvidia chips or secrets, and whether investors were misled.', more: ['Treasury Secretary Bessent gave the board 10 days to answer questions, CNBC says.', 'Shareholders have begun suing.'], d: [19, 9, 19, 17, 1] },
+    { c: 'health', s: 'upd', h: 'Ebola: 11,536 confirmed cases', p: 'And 5,635 deaths, says the CDC (US Centers for Disease Control and Prevention).', more: ['The second largest Ebola outbreak on record.', 'WHO (World Health Organization): 400 to 500 new cases a week.', 'Travellers to the US must state they have not been in Congo for 21 days.'], d: null },
+    { c: 'acc', s: 'upd', h: 'Senegal boat: one confirmed dead, several missing', p: 'The AP (Associated Press) count. Local sources say two dead.', more: ['About 100 aboard, heading for Spain, survivors say.', 'We earlier reported at least four bodies; we could not match that to a major outlet.'], d: null },
+    { c: 'tech', s: 'upd', h: 'Rubio: zero sign the outages were linked', p: 'The administration again says the week\'s outages were not a coordinated attack.', more: ['Covers Microsoft, banks, airlines and federal agencies.'], d: null },
+    { c: 'space', s: 'same', h: 'Starship: still no Flight 16 date', p: 'Aimed at no earlier than December from pad 39A in Florida. Third quiet scan.', more: ['Moved to quiet on World Pulse until SpaceX announces something.'], d: null },
+    { c: 'space', s: 'same', h: 'Amazon Leo on Ariane 6: still 23 Nov', p: 'No new finding on the Vulcan failure.', more: ['36 satellites, from French Guiana, no earlier than 11:09 UTC.'], d: null },
+    { c: 'acc', s: 'same', h: 'No strong quakes', p: 'Nothing of magnitude 6 or more in the last day, says the USGS (United States Geological Survey).', more: ['Largest: magnitude 5.6 southeast of the Loyalty Islands, Pacific, green alert.'], d: null }
+  ];
+  var chips = document.getElementById('chips'), grid = document.getElementById('grid'), active = 'all';
+  function chip(key, label, col) {
+    var b = document.createElement('button'); b.className = 'chip' + (key === 'all' ? ' on' : '');
+    b.innerHTML = (col ? '<i style="background:' + col + '"></i>' : '') + label;
+    b.onclick = function () { active = key; chips.querySelectorAll('.chip').forEach(function (c) { c.classList.remove('on'); }); b.classList.add('on'); render(); };
+    chips.appendChild(b);
+  }
+  chip('all', 'All');
+  Object.keys(CATS).forEach(function (k) { chip(k, CATS[k][1], CATS[k][0]); });
+  function render() {
+    grid.innerHTML = '';
+    STORIES.filter(function (s) { return active === 'all' || s.c === active; }).forEach(function (s, i) {
+      var e = document.createElement('div'); e.className = 'story'; e.style.borderLeftColor = CATS[s.c][0];
+      e.innerHTML = '<div class="meta"><span class="cat" style="color:' + CATS[s.c][0] + '">' + CATS[s.c][1] + '</span>' +
+        '<span class="tag" style="background:' + STATUS[s.s][0] + '">' + STATUS[s.s][1] + '</span></div>' +
+        '<h4>' + s.h + '</h4><p>' + s.p + '</p><div class="more"><ul><li>' + s.more.join('</li><li>') + '</li></ul></div>' +
+        '<div class="hint">Click for details</div>';
+      e.onclick = function () { e.classList.toggle('open'); e.querySelector('.hint').textContent = e.classList.contains('open') ? 'Click to close' : 'Click for details'; };
+      grid.appendChild(e);
+      setTimeout(function () { e.classList.add('in'); }, 60 * i);
+    });
+  }
+  render();
+
+  var tick2 = document.getElementById('ticker'), tt = [{ h: 'Anthropic opens 34% up and closes 17% up on its first day; the Dow drops 1,100 points' }].concat(STORIES).map(function (s) { return '<b>&#9679;</b>' + s.h; }).join('');
+  tick2.innerHTML = tt + tt;
+
+  // week strip (Eastern days, 15 to 20 Nov)
+  var strip = document.getElementById('strip'), D0 = 15, D1 = 21, rowY = 22;
+  for (var d = D0; d <= D1; d++) {
+    var dv = document.createElement('div'); dv.className = 'day'; dv.style.left = ((d - D0) / (D1 - D0) * 100) + '%';
+    dv.textContent = d < D1 ? new Date(Date.UTC(2026, 10, d)).toLocaleDateString('en-US', { weekday: 'short', timeZone: 'UTC' }) + ' ' + d : ''; strip.appendChild(dv);
+  }
+  var row = 0, items = STORIES.filter(function (s) { return s.d; }).concat([
+    { c: 'money', h: 'Anthropic first day of trading', d: [19, 11.8, 19, 16, 0] },
+    { c: 'world', h: 'Trump, Xi and Putin meet in Shenzhen', d: [19, 3.48, 19, 4.98, 0] },
+    { c: 'world', h: 'Xi meets Trump at Shenzhen airport', d: [18, 2.5, 18, 3.5, 0] },
+    { c: 'mil', h: 'US strikes Qeshm Island; Iran fires at Kuwait', d: [17, 8, 18, 6, 1] },
+    { c: 'war', h: 'Kerch Bridge section collapses', d: [16, 18, 17, 6, 1] },
+    { c: 'space', h: 'Vulcan rocket fails, 40 Amazon satellites lost', d: [15, 12.67, 15, 13.5, 0] },
+    { c: 'tech', h: 'Classified NSA network goes down', d: [17, 0, 17, 20, 1] },
+    { c: 'world', h: 'World Court rules on Myanmar', d: [19, 4, 19, 6, 1] }]);
+  items.sort(function (a, b) { return (a.d[0] * 24 + a.d[1]) - (b.d[0] * 24 + b.d[1]); });
+  items.forEach(function (s) {
+    var a = ((s.d[0] - D0) * 24 + s.d[1]) / ((D1 - D0) * 24) * 100, b = ((s.d[2] - D0) * 24 + s.d[3]) / ((D1 - D0) * 24) * 100;
+    a = Math.max(0, a);
+    var ev = document.createElement('div'); ev.className = 'ev' + (s.d[4] ? ' approx' : '');
+    ev.style.left = a + '%'; ev.style.width = Math.max(0.8, b - a) + '%'; ev.style.top = (rowY + row * 13) + 'px'; ev.style.background = CATS[s.c][0];
+    ev.onmouseenter = function () { document.getElementById('striptip').innerHTML = '<b style="color:' + CATS[s.c][0] + '">' + CATS[s.c][1] + ':</b> ' + s.h + (s.d[4] ? ' <i>(only the day is known)</i>' : ''); };
+    strip.appendChild(ev); row++;
+  });
+  strip.style.height = (rowY + row * 13 + 30) + 'px';
+})();
+</script>
+<style id="theme-toggle-style">/* theme-toggle-v2 */
+html.dark { filter: invert(1) hue-rotate(180deg); background: #ffffff; }
+html.dark body { background: #ffffff; }
+html.dark img, html.dark video, html.dark picture, html.dark canvas { filter: invert(1) hue-rotate(180deg); }
+#theme-toggle { position: fixed; top: 12px; right: 12px; z-index: 2147483000; padding: 6px 12px;
+  border: 1px solid #94a3b8; border-radius: 8px; background: #ffffff; color: #1e3a8a;
+  font: 600 12px 'Segoe UI', Arial, sans-serif; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,.12); }
+#theme-toggle:hover { background: #eef3ff; }
+@media print { #theme-toggle { display: none; } }
+</style>
+<button id="theme-toggle" type="button" aria-label="Switch between light and dark">Dark</button>
+<script id="theme-toggle-script">
+(function () {
+  var root = document.documentElement, key = 'theme:' + location.pathname;
+  var btn = document.getElementById('theme-toggle');
+  function set(dark) {
+    root.classList.toggle('dark', dark);
+    if (btn) { btn.textContent = dark ? 'Light' : 'Dark'; }
+  }
+  try { set(localStorage.getItem(key) === 'dark'); } catch (e) { set(false); }
+  if (btn) {
+    btn.addEventListener('click', function () {
+      var dark = !root.classList.contains('dark');
+      set(dark);
+      try { localStorage.setItem(key, dark ? 'dark' : 'light'); } catch (e) {}
+    });
+  }
+})();
+</script>
+</body>
+</html>

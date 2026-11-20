@@ -1,6 +1,6 @@
 {
  "about": "World Pulse data. One entry per running story (thread), each with a dated log of updates. Add to it, never rewrite history: new facts go in as a new update. Run build_pulse.py after editing.",
- "updated_utc": "2026-11-19T11:49:00Z",
+ "updated_utc": "2026-11-20T11:48:00Z",
  "categories": {
   "space": {
    "label": "Space",
@@ -70,7 +70,7 @@
    "id": "starship-flight-15",
    "title": "Starship Flight 15",
    "cat": "space",
-   "status": "settled",
+   "status": "quiet",
    "place": "Starbase, Texas",
    "lat": 25.99,
    "lon": -97.15,
@@ -210,6 +210,12 @@
      "tag": "NO CHANGE",
      "text": "Nothing new surfaced in this scan.",
      "src": []
+    },
+    {
+     "ed": "2026-11-20",
+     "when": "20 Nov",
+     "tag": "NO CHANGE",
+     "text": "Third scan with nothing new. Still no Flight 16 date; it is aimed at no earlier than December 2026 from pad 39A in Florida. Marked as gone quiet until SpaceX announces something."
     }
    ]
   },
@@ -341,6 +347,12 @@
      "tag": "NO CHANGE",
      "text": "Nothing new surfaced in this scan.",
      "src": []
+    },
+    {
+     "ed": "2026-11-20",
+     "when": "20 Nov",
+     "tag": "NO CHANGE",
+     "text": "Nothing new surfaced in this scan."
     }
    ]
   },
@@ -570,6 +582,42 @@
        "https://aljazeera.com/news/2026/11/18/can-the-us-and-iran-sustain-a-frozen"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-20",
+     "when": "19 Nov",
+     "tag": "UPDATED",
+     "text": "Trump told Fox News from Shenzhen there are indications Iran is looking at gases and biological weapons, but he did not think Washington should be alarmed, and said the US would wipe them out if it attacked. The New York Times reports Netanyahu urged a joint US and Israeli air campaign of four to seven days; Trump has not approved it. Axios says US and Israeli officials think Iran has expanded chemical weapons research but cannot carry out such attacks now. Iran's Foreign Ministry calls the claims fraudulent. A Pentagon official puts the cost of the war to the US military at more than $48 billion since late February.",
+     "src": [
+      [
+       "Bloomberg",
+       "https://www.bloomberg.com/news/articles/2026-11-19/trump-says-iran-looking-at-gas-bioweapons-but-downplays-threat"
+      ],
+      [
+       "Al Jazeera",
+       "https://www.aljazeera.com/news/2026/11/19/trump-claims-iran-is-developing-bioweapons-is-there-any-evidence"
+      ],
+      [
+       "Times of Israel live blog",
+       "https://www.timesofisrael.com/liveblog-november-19-2026/"
+      ],
+      [
+       "CBS News",
+       "https://www.cbsnews.com/live-updates/iran-war-us-gulf-retaliation-strikes-strait-of-hormuz/"
+      ]
+     ]
+    },
+    {
+     "ed": "2026-11-20",
+     "when": "19 Nov",
+     "tag": "UNPROVEN",
+     "text": "A Times of Israel headline says Trump is not rushing into a strike and will wait until January. Only that one outlet found for the January timing.",
+     "src": [
+      [
+       "Times of Israel live blog",
+       "https://www.timesofisrael.com/liveblog-november-19-2026/"
+      ]
+     ]
     }
    ]
   },
@@ -720,6 +768,26 @@
       [
        "NewsNation",
        "https://www.newsnationnow.com/world/us-iran-war-kuwait-bahrain-strikes/"
+      ]
+     ]
+    },
+    {
+     "ed": "2026-11-20",
+     "when": "17 to 19 Nov",
+     "tag": "UPDATED",
+     "text": "Splash247 says the tanker hit near Khasab, the Navig8 Messi run by Abu Dhabi's ADNOC Logistics and Services, has one seafarer missing and 11 injured. Bloomberg counts at least two seafarers missing after this week's attacks and says attacks have run at a higher pace since October. Iran's Revolutionary Guards, through the Tasnim agency, claim two supertankers exploded after hitting naval mines; no neutral source confirms it.",
+     "src": [
+      [
+       "Splash247",
+       "https://splash247.com/fresh-tanker-strike-adds-to-bloody-week-in-hormuz/"
+      ],
+      [
+       "Bloomberg",
+       "https://www.bloomberg.com/news/articles/2026-11-19/iran-intensifies-hormuz-tanker-attacks-just-as-oil-prices-slide"
+      ],
+      [
+       "Tasnim (Iranian state-linked)",
+       "https://tasnimnews.ir/en/news/2026/11/19/3752799/explosion-of-two-supertankers-carrying-4-million-barrels-of-oil-in-hormuz-strait"
       ]
      ]
     }
@@ -951,6 +1019,26 @@
        "https://www.yahoo.com/news/politics/articles/ukraines-allies-meet-berlin-trump-025206417.html"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-20",
+     "when": "19 to 20 Nov",
+     "tag": "UPDATED",
+     "text": "Putin, speaking in China, said Russia will not negotiate a limited ceasefire (he had weighed limits on naval attacks and on strikes on energy sites) because of the Kerch Bridge strikes, and promised a much more painful response. In Berlin, Kushner said Russia had accepted that any guarantee for Ukraine would rest on a model like NATO's Article 5 (an attack on one is an attack on all). Russia's deputy foreign minister Sergei Ryabkov rejected that the next day. Zelenskyy said Berlin produced no shared view of what such guarantees would mean.",
+     "src": [
+      [
+       "CBS News",
+       "https://www.cbsnews.com/news/putin-russia-ukraine-bridge-strike/"
+      ],
+      [
+       "Al Jazeera",
+       "https://www.aljazeera.com/news/2026/11/20/kushner-says-russia-ok-with-nato-like-security-pact-for-ukraine-is-it"
+      ],
+      [
+       "The Moscow Times",
+       "https://themoscowtimes.com/2026/11/20/russia-pushes-back-against-us-idea-of-nato-style-security-guarantees-for-ukraine-a94326"
+      ]
+     ]
     }
    ]
   },
@@ -1117,6 +1205,18 @@
        "https://cryptoticker.io/en/bitcoin-price-prediction-fed-minutes-november-18-2026/"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-20",
+     "when": "19 Nov, afternoon Eastern",
+     "tag": "UPDATED",
+     "text": "Bitcoin fell below $62,000, touching about $61,500 to $61,700 (reports differ), as stocks slid.",
+     "src": [
+      [
+       "Yahoo Finance live",
+       "https://finance.yahoo.com/markets/live/stock-market-today-thursday-november-19-dow-sp-500-nasdaq-anthropic-ipo-live-141306032.html"
+      ]
+     ]
     }
    ]
   },
@@ -1249,6 +1349,22 @@
      "tag": "NO CHANGE",
      "text": "Nothing new surfaced in this scan.",
      "src": []
+    },
+    {
+     "ed": "2026-11-20",
+     "when": "19 Nov",
+     "tag": "UPDATED",
+     "text": "California's attorney general served Nvidia with an investigative subpoena, looking at whether China got Nvidia's advanced chips or secret information and whether investors were misled (reported by Bloomberg via Benzinga). CNBC says Treasury Secretary Bessent gave the board 10 days to answer questions, and that shareholders have begun suing.",
+     "src": [
+      [
+       "CNBC",
+       "https://www.cnbc.com/2026/11/19/nvidia-jensen-huang-legal.html"
+      ],
+      [
+       "Benzinga",
+       "https://www.benzinga.com/markets/tech/26/11/63463775/california-subpoenas-nvidia-over-china-chips-after-jensen-huang-resignation"
+      ]
+     ]
     }
    ]
   },
@@ -1369,6 +1485,22 @@
        "https://www.ecdc.europa.eu/en/public-health-events/2026-eip-00026/2026-11-16"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-20",
+     "when": "18 Nov (data to 16 Nov)",
+     "tag": "UPDATED",
+     "text": "The US Centers for Disease Control and Prevention (CDC) now counts 11,536 confirmed cases and 5,635 confirmed deaths, 11,504 of the cases in Congo. It calls this the second largest Ebola outbreak on record. The World Health Organization (WHO) says 400 to 500 new cases a week are still reported, and armed attacks are slowing the response. US-bound travellers must now state they have not been in Congo in the past 21 days.",
+     "src": [
+      [
+       "CDC",
+       "https://www.cdc.gov/ebola/situation-summary/index.html"
+      ],
+      [
+       "UN News",
+       "https://news.un.org/en/story/2026/11/1168797"
+      ]
+     ]
     }
    ]
   },
@@ -1454,6 +1586,12 @@
        "https://www.wdsu.com/article/port-of-new-orleans-sues-tanker-owners/74430595"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-20",
+     "when": "20 Nov",
+     "tag": "NO CHANGE",
+     "text": "Nothing new surfaced in this scan."
     }
    ]
   },
@@ -1657,6 +1795,12 @@
        "https://www.cnbc.com/2026/11/18/trump-xi-putin-apec-shenzhen-china.html"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-20",
+     "when": "20 Nov",
+     "tag": "NO CHANGE",
+     "text": "Nothing new surfaced in this scan."
     }
    ]
   },
@@ -1847,6 +1991,12 @@
        "https://www.geekwire.com/2026/latest-findings-point-to-fuel-supply-not-blue-origins-engines-in-loss-of-amazon-leo-satellites/"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-20",
+     "when": "20 Nov",
+     "tag": "NO CHANGE",
+     "text": "Nothing new on the Vulcan failure. Arianespace still lists the Ariane 6 launch of 36 Amazon Leo satellites for no earlier than 23 Nov."
     }
    ],
    "next": {
@@ -1924,6 +2074,22 @@
       [
        "Times of Israel",
        "https://www.timesofisrael.com/riyadh-skyscraper-damaged-as-saudi-arabia-reports-fresh-houthi-attacks/"
+      ]
+     ]
+    },
+    {
+     "ed": "2026-11-20",
+     "when": "19 Nov",
+     "tag": "UPDATED",
+     "text": "Saudi civil defence says the attack damaged several floors of the Public Investment Fund (PIF) Tower and hurt no one. Accounts differ on how: the Saudi-led coalition says debris from an intercepted missile fell on it; three people told Reuters a missile hit it directly. Houthi spokesman Yahya Saree says they aimed cruise missiles at King Khalid International Airport and Riyadh's financial district. The Houthi-run Saba agency reports Saudi air strikes on Sanaa (not confirmed by Saudi Arabia).",
+     "src": [
+      [
+       "The National",
+       "https://www.thenationalnews.com/news/gulf/2026/11/19/saudi-sovereign-wealth-fund-tower-in-riyadh-damaged-in-houthi-strike/"
+      ],
+      [
+       "Middle East Eye",
+       "https://www.middleeasteye.net/news/houthis-bomb-saudi-arabia-sovereign-wealth-fund-office"
       ]
      ]
     }
@@ -2096,6 +2262,18 @@
      "tag": "NO CHANGE",
      "text": "Nothing new surfaced in this scan.",
      "src": []
+    },
+    {
+     "ed": "2026-11-20",
+     "when": "19 Nov",
+     "tag": "UPDATED",
+     "text": "A Chase spokesperson says last week's outage came from a software bug in its own on-site hardware systems and was not cyber-related. Separately Chase disclosed a breach at outside vendors; see the new story on that.",
+     "src": [
+      [
+       "CyberInsider",
+       "https://cyberinsider.com/jpmorgan-chase-vendor-cyberattack-customer-data/"
+      ]
+     ]
     }
    ]
   },
@@ -2392,6 +2570,22 @@
        "https://www.babypips.com/news/daily-financial-forex-market-recap-2026-11-18"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-20",
+     "when": "19 Nov, 4 pm Eastern",
+     "tag": "UPDATED",
+     "text": "A much worse day. The Dow fell 1,101 points (2.2%) to 49,097, closing under 50,000 for the first time since early May. The S&P 500 fell 2% to 7,176, its sixth loss in a row and longest losing run since 2024. The Nasdaq Composite fell 2.3% to 23,879. Reports point to fears of more interest rate rises and the Anthropic debut drawing money.",
+     "src": [
+      [
+       "ABC News (AP)",
+       "https://abcnews.com/Business/wireStory/major-us-stock-indexes-fared-thursday-11192026-138303454"
+      ],
+      [
+       "Yahoo Finance live",
+       "https://finance.yahoo.com/markets/live/stock-market-today-thursday-november-19-dow-sp-500-nasdaq-anthropic-ipo-live-141306032.html"
+      ]
+     ]
     }
    ]
   },
@@ -2479,6 +2673,22 @@
      "tag": "NO CHANGE",
      "text": "Nothing new surfaced in this scan.",
      "src": []
+    },
+    {
+     "ed": "2026-11-20",
+     "when": "18 to 19 Nov",
+     "tag": "UPDATED",
+     "text": "Asked about the reported plot, Trump said he did not think Washington should be alarmed. Homeland Security Secretary Markwayne Mullin called Iran's planning aspirational. The underlying report still rests on CNN's sources; Iran calls it fabricated.",
+     "src": [
+      [
+       "Bloomberg",
+       "https://www.bloomberg.com/news/articles/2026-11-19/trump-says-iran-looking-at-gas-bioweapons-but-downplays-threat"
+      ],
+      [
+       "CBS News",
+       "https://www.cbsnews.com/live-updates/iran-war-us-gulf-retaliation-strikes-strait-of-hormuz/"
+      ]
+     ]
     }
    ]
   },
@@ -2486,7 +2696,7 @@
    "id": "phuket-fire",
    "title": "Phuket: building fire kills 11",
    "cat": "acc",
-   "status": "settled",
+   "status": "quiet",
    "place": "Patong, Phuket, Thailand",
    "lat": 7.896,
    "lon": 98.296,
@@ -2521,6 +2731,12 @@
      "tag": "NO CHANGE",
      "text": "Nothing new surfaced in this scan.",
      "src": []
+    },
+    {
+     "ed": "2026-11-20",
+     "when": "20 Nov",
+     "tag": "NO CHANGE",
+     "text": "Third scan with nothing new. Marked as gone quiet."
     }
    ]
   },
@@ -2528,7 +2744,7 @@
    "id": "banda-sea-quake",
    "title": "Magnitude 6.6 earthquake, Banda Sea, Indonesia",
    "cat": "acc",
-   "status": "settled",
+   "status": "quiet",
    "place": "Banda Sea, west of Tual, Indonesia",
    "lat": -6.1,
    "lon": 131.5,
@@ -2559,6 +2775,12 @@
      "tag": "NO CHANGE",
      "text": "Nothing new surfaced in this scan.",
      "src": []
+    },
+    {
+     "ed": "2026-11-20",
+     "when": "20 Nov",
+     "tag": "NO CHANGE",
+     "text": "Third scan with nothing new. Marked as gone quiet. (The only quake of magnitude 5.5 or more in the last day was a 5.6 southeast of the Loyalty Islands, Pacific, with a green alert.)"
     }
    ]
   },
@@ -2566,15 +2788,11 @@
    "id": "anthropic-listing",
    "title": "Anthropic stock market debut expected",
    "cat": "money",
-   "status": "watching",
+   "status": "settled",
    "place": "New York",
    "lat": 40.757,
    "lon": -73.986,
    "first": "2026-11-17",
-   "next": {
-    "what": "Anthropic (ticker ANT) starts trading on the Nasdaq at the 9:30 am Eastern open",
-    "utc": "2026-11-19T14:30:00Z"
-   },
    "updates": [
     {
      "ed": "2026-11-17",
@@ -2643,6 +2861,26 @@
        "https://www.tradingview.com/symbols/NASDAQ-ANT/"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-20",
+     "when": "19 Nov, about 11:48 am to 4 pm Eastern",
+     "tag": "RESULT",
+     "text": "Anthropic began trading just before noon at about $111.50, around 34% above the $83 offer price (one live blog says the first trade was $110). It reached $115.10, fell as low as $92.72 and closed at $97.17, up about 17%. Yahoo Finance puts the closing value at about $1.27 trillion. With the private placement, total money raised was a record $107.3 billion. It debuted on a day the Nasdaq fell 2.3%.",
+     "src": [
+      [
+       "Forbes",
+       "https://www.forbes.com/sites/fionariley/2026/11/19/anthropic-ipo-live-stock-closes-day-at-97-up-more-than-17/"
+      ],
+      [
+       "Yahoo Finance live",
+       "https://finance.yahoo.com/technology/live/anthropic-ipo-live-company-said-to-price-stock-at-83-begin-trading-thursday-212656452.html"
+      ],
+      [
+       "Deadline",
+       "https://deadline.com/2026/11/anthropic-ai-volatile-ipo-shares-trading-nasdaq-market-1237229045/"
+      ]
+     ]
     }
    ]
   },
@@ -2655,10 +2893,6 @@
    "lat": 15.9,
    "lon": 80.9,
    "first": "2026-11-17",
-   "next": {
-    "what": "Cyclone Akvan forecast to cross the coast near Gopalpur, Odisha (noon to afternoon India time; forecast, may change)",
-    "utc": "2026-11-20T06:30:00Z"
-   },
    "updates": [
     {
      "ed": "2026-11-17",
@@ -2705,6 +2939,26 @@
       [
        "OdishaTV",
        "https://odishatv.in/weather/cyclone-akvan-live-update-odisha-on-alert-as-storm-likely-to-cross-state-after-andhra-landfall-12818804"
+      ]
+     ]
+    },
+    {
+     "ed": "2026-11-20",
+     "when": "20 Nov, about 7:30 to 8:30 am India time (about 9 to 10 pm Eastern, 19 Nov)",
+     "tag": "RESULT",
+     "text": "Cyclone Akvan crossed the coast between north Andhra Pradesh and south Odisha near Gopalpur, says the India Meteorological Department (IMD); the Amaravati weather centre says landfall finished between 7:30 and 8:30 am. It is weakening into a deep depression, with heavy rain in Odisha and parts of West Bengal. Odisha moved more than 300,000 people out of the way beforehand. Wind reports differ (gusts of 90 to 110 km/h). No casualty or damage figures found yet.",
+     "src": [
+      [
+       "ANI",
+       "https://aninews.in/news/national/general-news/cyclone-akvan-crosses-north-andhra-pradesh-south-odisha-coast-near-gopalpur-to-weaken-into-deep-depression20261120105926/"
+      ],
+      [
+       "The Week",
+       "https://www.theweek.in/news/india/2026/11/20/cyclone-akvan-landfall-begins-along-andhra-odisha-coast-imd-issues-red-alert.html"
+      ],
+      [
+       "Outlook India",
+       "https://www.outlookindia.com/national/cyclone-akvan-weakens-after-landfall-near-gopalpur-imd-forecasts-further-weakening"
       ]
      ]
     }
@@ -2755,6 +3009,22 @@
        "https://www.deseret.com/politics/2026/11/18/cyberattack-rumors-government-responds/"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-20",
+     "when": "19 Nov",
+     "tag": "UPDATED",
+     "text": "The administration again urged calm: officials say they have found no evidence tying the outages at Microsoft, banks, airlines and federal agencies to a coordinated cyberattack. Secretary of State Rubio says there is zero information they were linked or caused by a hostile actor.",
+     "src": [
+      [
+       "Fox News live",
+       "https://www.foxnews.com/live-news/tech-outages-internet-trump-november-19"
+      ],
+      [
+       "ABC7 live",
+       "https://abc7chicago.com/live-updates/tech-outage-live-updates/20048533/entry/20049517/"
+      ]
+     ]
     }
    ]
   },
@@ -2803,6 +3073,12 @@
        "https://www.adn.com/nation-world/2026/11/18/iran-widens-gulf-attacks-by-targeting-us-air-base-in-kuwait-and-sites-in-bahrain/"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-20",
+     "when": "20 Nov",
+     "tag": "NO CHANGE",
+     "text": "Nothing new surfaced in this scan."
     }
    ]
   },
@@ -2831,6 +3107,12 @@
        "https://www.irishtimes.com/world/asia-pacific/2026/11/19/myanmar-committed-acts-of-genocide-against-rohingya-minority-top-un-court-rules/"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-20",
+     "when": "20 Nov",
+     "tag": "NO CHANGE",
+     "text": "Nothing new surfaced in this scan."
     }
    ]
   },
@@ -2859,6 +3141,12 @@
        "https://www.cbsnews.com/news/greenland-security-deal-us-denmark-danish-lawmakers/"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-20",
+     "when": "20 Nov",
+     "tag": "NO CHANGE",
+     "text": "Nothing new surfaced in this scan."
     }
    ]
   },
@@ -2887,6 +3175,22 @@
        "https://www.bairdmaritime.com/security/incidents/piracy/boat-carrying-illegal-migrants-to-europe-capsizes-off-senegal-dozens-missing"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-20",
+     "when": "19 Nov",
+     "tag": "UPDATED",
+     "text": "The Associated Press (AP) reports one body recovered and several people missing; local sources put the dead at two, and two more bodies found in nearby villages may not be from this boat. This replaces our earlier figure of at least four bodies, which we could not match to a major outlet. Survivors say about 100 people were aboard, heading for Spain. It comes 10 days after another capsizing off Senegal killed 43.",
+     "src": [
+      [
+       "Washington Post (AP)",
+       "https://www.washingtonpost.com/world/2026/11/19/senegal-migration-migrants-boat-death-yenne/319391fa-e41d-11f1-a99e-b3e3805c6b8b_story.html"
+      ],
+      [
+       "CBC",
+       "https://www.cbc.ca/news/world/dozens-missing-migrant-boat-capsize-senegal-coast-9.7427784"
+      ]
+     ]
     }
    ]
   },
@@ -2913,6 +3217,52 @@
       [
        "Business Standard",
        "https://www.business-standard.com/amp/world-news/inside-south-korea-s-biggest-exam-suneung-how-the-country-prevents-cheatin-126111900434_1.html"
+      ]
+     ]
+    },
+    {
+     "ed": "2026-11-20",
+     "when": "20 Nov",
+     "tag": "NO CHANGE",
+     "text": "Nothing new surfaced in this scan."
+    }
+   ]
+  },
+  {
+   "id": "chase-vendor-breach",
+   "title": "Chase: hackers hit outside vendors",
+   "cat": "tech",
+   "status": "developing",
+   "place": "New York, US",
+   "lat": 40.755,
+   "lon": -73.975,
+   "first": "2026-11-20",
+   "updates": [
+    {
+     "ed": "2026-11-20",
+     "when": "19 Nov",
+     "tag": "NEW",
+     "text": "JPMorgan Chase says companies that provide services to it were hit by a cyberattack, and the attackers may have got marketing data including some customer names and email addresses. It has not named the vendors or said how many people are affected, and will contact them and offer free credit monitoring. Visa says its own systems were not involved and points to an incident at a provider in Asia Pacific; Mastercard says a small set of email addresses from one benefit programme was exposed.",
+     "src": [
+      [
+       "ABC News",
+       "https://abcnews.com/US/jpmorgan-chase-reports-cyberattack-party-service-providers/story?id=138287705"
+      ],
+      [
+       "CyberInsider",
+       "https://cyberinsider.com/jpmorgan-chase-vendor-cyberattack-customer-data/"
+      ]
+     ]
+    },
+    {
+     "ed": "2026-11-20",
+     "when": "19 Nov",
+     "tag": "UNPROVEN",
+     "text": "An extortion group calling itself n0n posted what it says are more than 16,000 customer email addresses, some with phone numbers. Chase has not confirmed the records are real or came from this attack; CyberInsider could not verify them.",
+     "src": [
+      [
+       "CyberInsider",
+       "https://cyberinsider.com/jpmorgan-chase-vendor-cyberattack-customer-data/"
       ]
      ]
     }
@@ -3034,6 +3384,21 @@
     [
      "Timeline 14 to 19 Nov (picture)",
      "timelines/World-Events-Timeline-Update-19Nov2026.svg"
+    ]
+   ]
+  },
+  {
+   "date": "2026-11-20",
+   "scan": "20 Nov, 6:48 am Eastern",
+   "headline": "Anthropic opens 34% up and closes 17% up on its first day as the Dow drops 1,100 points; Cyclone Akvan lands near Gopalpur; Putin rules out a limited ceasefire",
+   "links": [
+    [
+     "World Desk page",
+     "World-Desk-20Nov2026.html"
+    ],
+    [
+     "Timeline 15 to 20 Nov (picture)",
+     "timelines/World-Events-Timeline-Update-20Nov2026.svg"
     ]
    ]
   }
