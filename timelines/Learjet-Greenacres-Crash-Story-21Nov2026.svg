@@ -1,0 +1,143 @@
+<svg width="100%" height="100%" data-fixed-size="1260 820" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1260 820" font-family="Arial, Helvetica, sans-serif">
+<style id="theme-toggle-style">/* theme-toggle-v2 */
+:root.dark { filter: invert(1) hue-rotate(180deg); background-color: #121212; }
+.theme-toggle { cursor: pointer; }
+.theme-toggle rect { fill: #ffffff; stroke: #94a3b8; }
+.theme-toggle text { fill: #1e3a8a; font: 600 12px 'Segoe UI', Arial, sans-serif; }
+.theme-toggle:hover rect { fill: #eef3ff; }
+@media print { .theme-toggle { display: none; } }
+</style>
+<rect x="0" y="0" width="1260" height="820" fill="#FFFFFF"/>
+<text x="24" y="40" font-size="24" font-weight="700" fill="#1A1A1A">Learjet 60 crash near West Palm Beach, 1 Nov 2026: what investigators have said</text>
+<text x="24" y="64" font-size="13" fill="#4A4A4A">Austin to the Bahamas charter, 9 on board, no survivors. From the National Transportation Safety Board (NTSB), the Federal Aviation Administration (FAA) and major outlets.</text>
+<rect x="24" y="84" width="600" height="320" rx="10" fill="#F7F9FC" stroke="#D5DBE5"/>
+<rect x="24" y="84" width="8" height="320" rx="4" fill="#C62828"/>
+<text x="46" y="112" font-size="16" font-weight="700" fill="#1A1A1A">The last two minutes (times approximate, Eastern)</text>
+<line x1="96" y1="360" x2="600" y2="360" stroke="#E3E8EF"/>
+<text x="90" y="364" font-size="11" fill="#555555" text-anchor="end">0 ft</text>
+<line x1="96" y1="302" x2="600" y2="302" stroke="#E3E8EF"/>
+<text x="90" y="306" font-size="11" fill="#555555" text-anchor="end">10,000 ft</text>
+<line x1="96" y1="244" x2="600" y2="244" stroke="#E3E8EF"/>
+<text x="90" y="248" font-size="11" fill="#555555" text-anchor="end">20,000 ft</text>
+<line x1="96" y1="186" x2="600" y2="186" stroke="#E3E8EF"/>
+<text x="90" y="190" font-size="11" fill="#555555" text-anchor="end">30,000 ft</text>
+<line x1="96" y1="128" x2="600" y2="128" stroke="#E3E8EF"/>
+<text x="90" y="132" font-size="11" fill="#555555" text-anchor="end">40,000 ft</text>
+<text x="96" y="378" font-size="11" fill="#555555" text-anchor="middle">12:46:30</text>
+<text x="180" y="378" font-size="11" fill="#555555" text-anchor="middle">12:47</text>
+<text x="348" y="378" font-size="11" fill="#555555" text-anchor="middle">12:48</text>
+<text x="516" y="378" font-size="11" fill="#555555" text-anchor="middle">12:49</text>
+<polyline fill="none" stroke="#C62828" stroke-width="3" points="96,157 180,157 264,155 314,156 482,309 516,360"/>
+<circle cx="180" cy="157" r="6" fill="#1565C0" stroke="#FFFFFF" stroke-width="2"/>
+<circle cx="348" cy="186" r="6" fill="#C62828" stroke="#FFFFFF" stroke-width="2"/>
+<circle cx="482" cy="309" r="6" fill="#6A1B9A" stroke="#FFFFFF" stroke-width="2"/>
+<circle cx="516" cy="360" r="6" fill="#1A1A1A" stroke="#FFFFFF" stroke-width="2"/>
+<text x="107" y="131" font-size="12" fill="#1565C0" font-weight="700">12:47 Ice and turbulence reported;</text>
+<text x="107" y="146" font-size="12" fill="#1565C0">cleared to climb to 37,000 ft</text>
+<text x="365" y="190" font-size="12" fill="#C62828" font-weight="700">12:48 Mayday, overspeed</text>
+<text x="275" y="293" font-size="12" fill="#6A1B9A" font-weight="700">35,250 to 8,750 ft</text>
+<text x="275" y="308" font-size="12" fill="#6A1B9A">in one minute (FAA)</text>
+<text x="566" y="350" font-size="12" fill="#1A1A1A" font-weight="700" text-anchor="end">Impact about 12:49</text>
+<text x="44" y="396" font-size="11" fill="#555555">Shape drawn from air traffic audio and the FAA figure; exact second-by-second data is not yet public.</text>
+<rect x="644" y="84" width="592" height="320" rx="10" fill="#F7F9FC" stroke="#D5DBE5"/>
+<rect x="644" y="84" width="8" height="320" rx="4" fill="#E65100"/>
+<text x="666" y="112" font-size="16" font-weight="700" fill="#1A1A1A">What came off before the impact</text>
+<line x1="690" y1="230" x2="1200" y2="230" stroke="#B0B7C3" stroke-width="3"/>
+<rect x="856" y="215" width="319" height="30" rx="6" fill="#FFE0B2" stroke="#E65100"/>
+<line x1="690" y1="248" x2="690" y2="256" stroke="#B0B7C3" stroke-width="2"/>
+<text x="690" y="270" font-size="11" fill="#555555" text-anchor="middle">0 mi</text>
+<line x1="818" y1="248" x2="818" y2="256" stroke="#B0B7C3" stroke-width="2"/>
+<text x="818" y="270" font-size="11" fill="#555555" text-anchor="middle">1 mi</text>
+<line x1="945" y1="248" x2="945" y2="256" stroke="#B0B7C3" stroke-width="2"/>
+<text x="945" y="270" font-size="11" fill="#555555" text-anchor="middle">2 mi</text>
+<line x1="1072" y1="248" x2="1072" y2="256" stroke="#B0B7C3" stroke-width="2"/>
+<text x="1072" y="270" font-size="11" fill="#555555" text-anchor="middle">3 mi</text>
+<line x1="1200" y1="248" x2="1200" y2="256" stroke="#B0B7C3" stroke-width="2"/>
+<text x="1200" y="270" font-size="11" fill="#555555" text-anchor="middle">4 mi</text>
+<circle cx="690" cy="230" r="11" fill="#1A1A1A"/>
+<text x="680" y="204" font-size="12" font-weight="700" fill="#1A1A1A">Crater on Military Trail</text>
+<rect x="848" y="225" width="16" height="10" rx="2" fill="#E65100" transform="rotate(-20 856 230)"/>
+<rect x="1014" y="225" width="16" height="10" rx="2" fill="#E65100" transform="rotate(-20 1022 230)"/>
+<rect x="1166" y="225" width="16" height="10" rx="2" fill="#E65100" transform="rotate(-20 1174 230)"/>
+<text x="1035" y="204" font-size="12" font-weight="700" fill="#E65100" text-anchor="middle">Left elevator, three pieces, 1.3 to 3.8 miles out</text>
+<text x="664" y="300" font-size="12.5" fill="#2B2B2B">The elevator is the hinged tail surface that pitches the nose up and down.</text>
+<text x="664" y="320" font-size="12.5" fill="#2B2B2B">Finding it miles away means part of the tail came off in the air (NTSB, 3 Nov).</text>
+<text x="664" y="340" font-size="12.5" fill="#2B2B2B">Not yet known: whether it broke first and caused the dive, or broke</text>
+<text x="664" y="360" font-size="12.5" fill="#2B2B2B">because of the dive. The NTSB has not said which.</text>
+<text x="664" y="380" font-size="12.5" fill="#555555">Middle piece placed for illustration; the NTSB gave only the 1.3 to 3.8 mile range.</text>
+<rect x="24" y="422" width="1212" height="250" rx="10" fill="#F7F9FC" stroke="#D5DBE5"/>
+<rect x="24" y="422" width="8" height="250" rx="4" fill="#1565C0"/>
+<text x="46" y="450" font-size="16" font-weight="700" fill="#1A1A1A">What has been announced, and what comes next</text>
+<line x1="70" y1="542" x2="1190" y2="542" stroke="#B0B7C3" stroke-width="3"/>
+<circle cx="110" cy="542" r="8" fill="#C62828" stroke="#FFFFFF" stroke-width="2"/>
+<text x="110" y="484" font-size="12" font-weight="700" fill="#C62828" text-anchor="middle">1 Nov: Crash, 9 killed</text>
+<text x="110" y="500" font-size="11.5" fill="#2B2B2B" text-anchor="middle">Dashcam films it; 600</text>
+<text x="110" y="515" font-size="11.5" fill="#2B2B2B" text-anchor="middle">residents displaced</text>
+<circle cx="240" cy="542" r="8" fill="#1565C0" stroke="#FFFFFF" stroke-width="2"/>
+<text x="240" y="572" font-size="12" font-weight="700" fill="#1565C0" text-anchor="middle">2 Nov: Briefing 1</text>
+<text x="240" y="588" font-size="11.5" fill="#2B2B2B" text-anchor="middle">"Breaking up</text>
+<text x="240" y="603" font-size="11.5" fill="#2B2B2B" text-anchor="middle">before impact"</text>
+<circle cx="370" cy="542" r="8" fill="#1565C0" stroke="#FFFFFF" stroke-width="2"/>
+<text x="370" y="484" font-size="12" font-weight="700" fill="#1565C0" text-anchor="middle">3 Nov: Briefing 2</text>
+<text x="370" y="500" font-size="11.5" fill="#2B2B2B" text-anchor="middle">Tail part came off;</text>
+<text x="370" y="515" font-size="11.5" fill="#2B2B2B" text-anchor="middle">elevator found</text>
+<circle cx="500" cy="542" r="8" fill="#455A64" stroke="#FFFFFF" stroke-width="2"/>
+<text x="500" y="572" font-size="12" font-weight="700" fill="#455A64" text-anchor="middle">4 to 5 Nov: Dig begins</text>
+<text x="500" y="588" font-size="11.5" fill="#2B2B2B" text-anchor="middle">Engine part found;</text>
+<text x="500" y="603" font-size="11.5" fill="#2B2B2B" text-anchor="middle">debris appeal</text>
+<circle cx="630" cy="542" r="8" fill="#455A64" stroke="#FFFFFF" stroke-width="2"/>
+<text x="630" y="484" font-size="12" font-weight="700" fill="#455A64" text-anchor="middle">8 Nov: On-scene work done</text>
+<text x="630" y="500" font-size="11.5" fill="#2B2B2B" text-anchor="middle">Both wings, engines,</text>
+<text x="630" y="515" font-size="11.5" fill="#2B2B2B" text-anchor="middle">tail recovered</text>
+<circle cx="760" cy="542" r="8" fill="#6A1B9A" stroke="#FFFFFF" stroke-width="2"/>
+<text x="760" y="572" font-size="12" font-weight="700" fill="#6A1B9A" text-anchor="middle">9 Nov: Voice recorder found</text>
+<text x="760" y="588" font-size="11.5" fill="#2B2B2B" text-anchor="middle">Sent to NTSB lab;</text>
+<text x="760" y="603" font-size="11.5" fill="#2B2B2B" text-anchor="middle">dig finished</text>
+<circle cx="890" cy="542" r="8" fill="#2E7D32" stroke="#FFFFFF" stroke-width="2"/>
+<text x="890" y="484" font-size="12" font-weight="700" fill="#2E7D32" text-anchor="middle">12 Nov: Road reopens</text>
+<text x="890" y="500" font-size="11.5" fill="#2B2B2B" text-anchor="middle">Military Trail open</text>
+<text x="890" y="515" font-size="11.5" fill="#2B2B2B" text-anchor="middle">both ways</text>
+<circle cx="1020" cy="542" r="8" fill="#555555" stroke="#FFFFFF" stroke-width="2"/>
+<text x="1020" y="572" font-size="12" font-weight="700" fill="#555555" text-anchor="middle">21 Nov: Today</text>
+<text x="1020" y="588" font-size="11.5" fill="#2B2B2B" text-anchor="middle">No new NTSB</text>
+<text x="1020" y="603" font-size="11.5" fill="#2B2B2B" text-anchor="middle">statement since 9 Nov</text>
+<circle cx="1150" cy="542" r="8" fill="#E65100" stroke="#FFFFFF" stroke-width="2"/>
+<circle cx="1150" cy="542" r="13" fill="none" stroke="#E65100" stroke-width="2" stroke-dasharray="4 3"/>
+<text x="1150" y="484" font-size="12" font-weight="700" fill="#E65100" text-anchor="middle">About 1 Dec: Preliminary report</text>
+<text x="1150" y="500" font-size="11.5" fill="#2B2B2B" text-anchor="middle">Usual timing;</text>
+<text x="1150" y="515" font-size="11.5" fill="#2B2B2B" text-anchor="middle">no date announced</text>
+<text x="44" y="656" font-size="12" fill="#555555">Dots are in order, evenly spaced (not to scale). After that: a final report with the probable cause, usually one to two years later. NTSB case ERA27MA026.</text>
+<rect x="24" y="690" width="294" height="84" rx="10" fill="#FFFFFF" stroke="#C62828" stroke-width="2"/>
+<text x="42" y="728" font-size="26" font-weight="700" fill="#C62828">9</text>
+<text x="42" y="756" font-size="13" fill="#2B2B2B">killed: 2 crew, 7 passengers</text>
+<rect x="330" y="690" width="294" height="84" rx="10" fill="#FFFFFF" stroke="#E65100" stroke-width="2"/>
+<text x="348" y="728" font-size="26" font-weight="700" fill="#E65100">1</text>
+<text x="348" y="756" font-size="13" fill="#2B2B2B">hurt on the ground, in a car</text>
+<rect x="636" y="690" width="294" height="84" rx="10" fill="#FFFFFF" stroke="#455A64" stroke-width="2"/>
+<text x="654" y="728" font-size="26" font-weight="700" fill="#455A64">About 600</text>
+<text x="654" y="756" font-size="13" fill="#2B2B2B">residents displaced for about a week</text>
+<rect x="942" y="690" width="294" height="84" rx="10" fill="#FFFFFF" stroke="#1565C0" stroke-width="2"/>
+<text x="960" y="728" font-size="26" font-weight="700" fill="#1565C0">Not named</text>
+<text x="960" y="756" font-size="13" fill="#2B2B2B">cause of the crash, as of 21 Nov</text>
+<text x="24" y="804" font-size="12" fill="#555555">Sources: NTSB investigation page, AP, CNN, ABC News, WFTV, CBS12, WPTV, WPBF, KUT, Flightradar24, FlightGlobal. Live: howkoz.github.io/world-pulse</text>
+<g class="theme-toggle" id="theme-toggle" role="button" aria-label="Switch between light and dark"><rect x="1182" y="10" width="66" height="26" rx="7" stroke-width="1"/><text id="theme-toggle-label" x="1215" y="27" text-anchor="middle">Dark</text></g>
+<script id="theme-toggle-script"><![CDATA[
+(function () {
+  var root = document.documentElement, key = 'theme:' + location.pathname;
+  var label = document.getElementById('theme-toggle-label');
+  function set(dark) {
+    if (dark) { root.classList.add('dark'); } else { root.classList.remove('dark'); }
+    if (label) { label.textContent = dark ? 'Light' : 'Dark'; }
+  }
+  try { set(localStorage.getItem(key) === 'dark'); } catch (e) { set(false); }
+  var btn = document.getElementById('theme-toggle');
+  if (btn) {
+    btn.addEventListener('click', function () {
+      var dark = !root.classList.contains('dark');
+      set(dark);
+      try { localStorage.setItem(key, dark ? 'dark' : 'light'); } catch (e) {}
+    });
+  }
+})();
+]]></script>
+</svg>

@@ -3735,6 +3735,146 @@ window.PULSE = {
      ]
     }
    ]
+  },
+  {
+   "id": "learjet-greenacres",
+   "title": "Learjet breaks up and crashes near West Palm Beach, nine killed",
+   "cat": "acc",
+   "status": "watching",
+   "place": "Military Trail, Greenacres, Palm Beach County, Florida",
+   "lat": 26.633,
+   "lon": -80.113,
+   "first": "2026-11-21",
+   "next": {
+    "what": "NTSB preliminary report on the Learjet 60 crash (usually about 30 days after; date not announced)",
+    "utc": "2026-12-01T17:00:00Z"
+   },
+   "updates": [
+    {
+     "ed": "2026-11-21",
+     "when": "1 Nov, about 12:49 pm Eastern",
+     "tag": "NEW",
+     "text": "A Learjet 60 business jet (registration N722BD, built 2004) dived from about 35,000 feet and hit Military Trail at 10th Avenue North in unincorporated Palm Beach County, near Greenacres, a few miles south of the main West Palm Beach airport. All nine people on board died: two crew and seven passengers. It was a charter flight from Austin, Texas, to North Eleuthera in the Bahamas, run by Aurora Aviation of Fort Lauderdale, which trades as Upper Jets. It missed homes in the Greenacres Mobile Home Community by feet and left a crater in the road. One person in a passing car was hurt. A dashcam filmed the impact.",
+     "src": [
+      [
+       "PBS NewsHour (AP)",
+       "https://www.pbs.org/newshour/nation/all-9-people-aboard-a-jet-that-crashed-in-florida-have-died-transportation-secretary-says"
+      ],
+      [
+       "Flightradar24",
+       "https://www.flightradar24.com/blog/flight-tracking-news/major-incident/learjet-60-crashes-near-west-palm-beach-florida/"
+      ],
+      [
+       "FlightGlobal",
+       "https://www.flightglobal.com/ops-safety/2026/11/emergency-services-attend-apparent-executive-jet-crash-near-west-palm-beach/"
+      ]
+     ]
+    },
+    {
+     "ed": "2026-11-21",
+     "when": "1 to 3 Nov, families and records",
+     "tag": "UPDATED",
+     "text": "A family spokesperson named the passengers: Austin technology entrepreneur Adam Robinson, his wife Helen Sharp, their young children Emma and Charlie Robinson, family friends Rachael Reed and Charmi Fehr, and the children's nanny Anita Maria Cetina. The captain was Jeff Gregory; the first officer was Nathalia Gadelha Filgueiras, 20, of Boca Raton. Federal Aviation Administration (FAA) records show she held a commercial pilot certificate and a rating to fly the Learjet 60 as second in command, not as captain. It is the deadliest Learjet 60 crash on record.",
+     "src": [
+      [
+       "KUT Austin",
+       "https://www.kut.org/text/transportation/2026-11-02/austin-plane-crash-florida-learjet-victims-identified-adam-robinson-ntsb-investigation"
+      ],
+      [
+       "Flying Magazine",
+       "https://www.flyingmag.com/captain-passengers-identified-crashed-learjet/"
+      ],
+      [
+       "CNN, 2 Nov",
+       "https://www.cnn.com/2026/11/02/us/florida-learjet-plane-crash-monday"
+      ]
+     ]
+    },
+    {
+     "ed": "2026-11-21",
+     "when": "2 and 3 Nov, National Transportation Safety Board (NTSB) briefings",
+     "tag": "UPDATED",
+     "text": "NTSB board member Tom Chapman: \"We do have some indication that the aircraft was breaking up before impact.\" On 3 Nov he confirmed part of the tail came off in the air: the left elevator (the tail surface that pitches the nose up and down) was found in three pieces, 1.3 to 3.8 miles from the crater. Air traffic audio shows the crew reported light clear ice and moderate turbulence at about 35,000 feet, with height swings of about 700 feet, and asked to climb to 37,000 feet. Then came an overspeed, a mayday call and a dive faster than 20,000 feet a minute. The FAA says the jet fell from 35,250 to 8,750 feet in one minute. Thunderstorms were in the area. The NTSB says weather is a main focus but has not said it caused the crash.",
+     "src": [
+      [
+       "ABC News",
+       "https://abcnews.com/US/learjet-breaking-crashed-florida-ntsb/story?id=137781527"
+      ],
+      [
+       "WFTV",
+       "https://www.wftv.com/news/local/learjet-60-broke-apart-before-crashing-palm-beach-county-ntsb-says/CEBMS4ZUBFHKJKT2DNS24AGIVI/"
+      ],
+      [
+       "CBS12",
+       "https://cbs12.com/news/local/national-transportation-safety-board-share-new-details-palm-beach-county-learjet-60-emergency-operation-center-crash-greenacres-south-military-trail-co-pilot-identified-nathalia-filgueiras-florida-news"
+      ],
+      [
+       "Fox News",
+       "https://www.foxnews.com/us/florida-plane-crash-investigators-weather-conditions-major-focus-plane-may-have-started-break"
+      ]
+     ]
+    },
+    {
+     "ed": "2026-11-21",
+     "when": "4 to 9 Nov, digging out the crater",
+     "tag": "UPDATED",
+     "text": "Digging began late on 4 Nov in a crater that kept filling with storm water; part of one engine was found on 5 Nov. The NTSB asked anyone holding debris, including pieces found on roofs, not to keep or move it and to email witness@ntsb.gov. By 8 Nov it had recovered parts of both wings, both engines, the flight deck, the vertical and horizontal tail, the left elevator, aileron sections and flap tracks; some went to its Washington laboratories. On 9 Nov it said the cockpit voice recorder had been found at the impact point and the dig was finished. The recorder is being checked in the NTSB lab; whether it captured usable audio has not been said.",
+     "src": [
+      [
+       "NTSB investigation page",
+       "https://www.ntsb.gov/investigations/Pages/ERA27MA026.aspx"
+      ],
+      [
+       "CNN, 5 Nov",
+       "https://www.cnn.com/2026/11/05/us/learjet-crash-investigation-thursday"
+      ],
+      [
+       "CNN, 9 Nov",
+       "https://www.cnn.com/2026/11/09/us/florida-learjet-crash-voice-recorder"
+      ],
+      [
+       "KTLA",
+       "https://ktla.com/news/nationworld/ntsb-public-appeal-debris-florida-plane-crash/"
+      ]
+     ]
+    },
+    {
+     "ed": "2026-11-21",
+     "when": "1 to 12 Nov, on the ground",
+     "tag": "UPDATED",
+     "text": "About 600 residents of the mobile home community were evacuated or displaced; shelters opened and United Way set up a relief fund. John I. Leonard High School, next to the site, closed on 2 Nov and reopened later that week. Residents began going home around 9 Nov. Military Trail, cut by the crater, reopened in both directions on 12 Nov after repairs, the Florida Department of Transportation said.",
+     "src": [
+      [
+       "WPTV",
+       "https://www.wptv.com/news/palm-beach-county/region-c-palm-beach-county/military-trail-reopens-in-both-directions-after-repairs-following-deadly-learjet-crash"
+      ],
+      [
+       "WPBF",
+       "https://www.wpbf.com/article/military-trail-palm-beach-county-reopens-learjet-crash-florida/74415703"
+      ],
+      [
+       "Wikipedia summary",
+       "https://en.wikipedia.org/wiki/2026_Palm_Beach_County_Learjet_60_crash"
+      ]
+     ]
+    },
+    {
+     "ed": "2026-11-21",
+     "when": "21 Nov check",
+     "tag": "NO CHANGE",
+     "text": "No new NTSB statement since 9 Nov. No cause has been named. The NTSB usually issues a preliminary report about 30 days after a crash, which would be around early December, but it has not announced a date. A final report with the probable cause usually takes one to two years. No lawsuit or FAA action on the Learjet 60 was found in this scan.",
+     "src": [
+      [
+       "NTSB investigation page",
+       "https://www.ntsb.gov/investigations/Pages/ERA27MA026.aspx"
+      ],
+      [
+       "WPBF",
+       "https://www.wpbf.com/article/florida-plane-learjet-crash-ntsb-black-box/74316120"
+      ]
+     ]
+    }
+   ]
   }
  ],
  "editions": [
@@ -3882,9 +4022,17 @@ window.PULSE = {
     [
      "Timeline 16 to 21 Nov (picture)",
      "timelines/World-Events-Timeline-Update-21Nov2026.svg"
+    ],
+    [
+     "Full story: the Learjet crash near West Palm Beach",
+     "Story-Learjet-Greenacres-Crash.html"
+    ],
+    [
+     "Learjet crash story (picture)",
+     "timelines/Learjet-Greenacres-Crash-Story-21Nov2026.svg"
     ]
    ]
   }
  ],
- "built_utc": "2026-11-21T12:15:35Z"
+ "built_utc": "2026-11-21T13:30:48Z"
 };
