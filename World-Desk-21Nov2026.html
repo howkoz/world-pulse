@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>World Desk 21 Nov</title>
+<style>
+  :root {
+    --ink: #13202f; --ink2: #3c4a5a; --muted: #6b7887; --line: #dbe2ea; --bg: #f6f8fb; --card: #ffffff;
+    --blue: #1f6fb5; --red: #b3261e; --grey: #6b6b6b; --purple: #6a3fb5; --amber: #c77700; --teal: #00796b;
+    --green: #2e7d32; --navy: #0d2b4e; --sky: #e8f1fb;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Segoe UI", Arial, Helvetica, sans-serif; line-height: 1.45; }
+  a { color: var(--blue); }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 16px; }
+
+  .mast { background: var(--navy); color: #fff; padding: 18px 0 14px; }
+  .mast .wrap { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px; }
+  .brand { font-size: 28px; font-weight: 800; letter-spacing: .5px; }
+  .brand small { font-size: 13px; font-weight: 500; opacity: .75; margin-left: 10px; letter-spacing: 0; }
+  .clock { font-size: 13px; opacity: .9; font-variant-numeric: tabular-nums; }
+  .ticker { background: #0a2240; color: #cfe0f5; font-size: 13px; overflow: hidden; white-space: nowrap; border-top: 1px solid #1d3b60; }
+  .ticker span { display: inline-block; padding: 7px 0; animation: tick 80s linear infinite; }
+  .ticker b { color: #fff; margin: 0 6px 0 28px; }
+  @keyframes tick { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  .hero { background: linear-gradient(180deg, #0d2b4e 0%, #163d6b 100%); color: #fff; padding: 26px 0 30px; }
+  .kicker { display: inline-block; background: #ffb300; color: #13202f; font-weight: 800; font-size: 12px; letter-spacing: 1px; padding: 3px 9px; border-radius: 4px; }
+  .hero h1 { font-size: 34px; margin: 10px 0 6px; line-height: 1.15; }
+  .hero p.dek { font-size: 16px; opacity: .92; margin: 0 0 18px; max-width: 860px; }
+  .hero-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 18px; }
+  @media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr; } .hero h1 { font-size: 26px; } }
+  .panel { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.16); border-radius: 12px; padding: 14px; }
+  .panel h3 { margin: 0 0 8px; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; color: #9cc3ec; }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 12px; }
+  @media (max-width: 560px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+  .stat { background: rgba(255,255,255,.08); border-radius: 10px; padding: 10px; }
+  .stat .n { font-size: 22px; font-weight: 800; }
+  .stat .l { font-size: 11.5px; opacity: .85; }
+  .btn { cursor: pointer; border: 1px solid rgba(255,255,255,.4); background: transparent; color: #fff; border-radius: 6px; padding: 5px 10px; font-size: 12px; font-weight: 600; }
+  .btn.on { background: #fff; color: var(--navy); }
+  .cap { font-size: 13px; min-height: 40px; margin-top: 8px; background: rgba(255,255,255,.08); border-radius: 8px; padding: 8px 10px; }
+  svg text { font-family: "Segoe UI", Arial, sans-serif; }
+
+  section { padding: 26px 0 6px; }
+  h2 { font-size: 22px; margin: 0 0 4px; }
+  .sub { color: var(--muted); font-size: 13.5px; margin: 0 0 14px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 860px) { .two { grid-template-columns: 1fr; } }
+
+  .tl { position: relative; height: 120px; margin: 10px 8px 0; }
+  .tl .rail { position: absolute; left: 0; right: 0; top: 54px; height: 8px; background: #e3e9f0; border-radius: 4px; }
+  .tl .dot { position: absolute; top: 49px; width: 18px; height: 18px; margin-left: -9px; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 0 0 1px #aab6c3; cursor: pointer; }
+  .tl .dot.mil { background: var(--red); } .tl .dot.claim { background: #fff; box-shadow: 0 0 0 2px #c62828; } .tl .dot.talk { background: var(--blue); }
+  .tl .dot.next { background: #ffb300; animation: pulse 1.6s infinite; }
+  .tl .dot.sel { transform: scale(1.3); }
+  @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(255,179,0,.6); } 100% { box-shadow: 0 0 0 12px rgba(255,179,0,0); } }
+  .tl .lab { position: absolute; font-size: 11px; color: var(--ink2); transform: translateX(-50%); white-space: nowrap; }
+  .tl .lab.up { top: 18px; } .tl .lab.down { top: 76px; }
+  .tip { margin-top: 12px; background: var(--sky); border-left: 4px solid var(--blue); padding: 10px 12px; border-radius: 6px; font-size: 14px; min-height: 44px; }
+  @media (max-width: 640px) { .tl .lab { font-size: 9.5px; } }
+
+  .count { font-size: 40px; font-weight: 800; font-variant-numeric: tabular-nums; letter-spacing: 1px; color: var(--navy); }
+  .agenda { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  .ag { cursor: pointer; border: 1px solid var(--line); background: #fff; border-radius: 8px; padding: 6px 12px; font-size: 13px; font-weight: 600; }
+  .ag.on { background: var(--navy); color: #fff; border-color: var(--navy); }
+
+  .rumour { border: 2px dashed #c62828; background: #fff6f5; }
+  .tag { display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: .5px; padding: 2px 8px; border-radius: 999px; color: #fff; }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 14px; }
+  .chip { cursor: pointer; border: 1px solid var(--line); background: #fff; border-radius: 999px; padding: 5px 12px; font-size: 13px; font-weight: 600; color: var(--ink2); }
+  .chip.on { background: var(--ink); color: #fff; border-color: var(--ink); }
+  .chip i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+  .story { background: #fff; border: 1px solid var(--line); border-left: 6px solid var(--blue); border-radius: 10px; padding: 14px; cursor: pointer; transition: transform .2s, box-shadow .2s; opacity: 0; transform: translateY(12px); }
+  .story.in { opacity: 1; transform: none; }
+  .story:hover { box-shadow: 0 6px 18px rgba(16,40,70,.12); transform: translateY(-2px); }
+  .story h4 { margin: 6px 0 4px; font-size: 16px; }
+  .story p { margin: 0; font-size: 13.5px; color: var(--ink2); }
+  .story .more { max-height: 0; overflow: hidden; transition: max-height .4s; font-size: 13px; color: var(--ink2); }
+  .story.open .more { max-height: 360px; }
+  .story .more ul { margin: 8px 0 4px; padding-left: 18px; }
+  .story .meta { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+  .story .cat { font-size: 11px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; }
+  .story .hint { font-size: 11.5px; color: var(--muted); margin-top: 8px; }
+
+  .strip { position: relative; height: 210px; }
+  .strip .day { position: absolute; top: 0; bottom: 22px; border-left: 1px solid var(--line); font-size: 11.5px; color: var(--muted); padding-left: 4px; }
+  .strip .ev { position: absolute; height: 12px; border-radius: 6px; cursor: pointer; }
+  .strip .ev.approx { opacity: .45; }
+  .strip .ev:hover { outline: 2px solid var(--ink); }
+  .striptip { font-size: 13px; color: var(--ink2); min-height: 20px; }
+
+  footer { margin: 34px 0 0; padding: 18px 0 30px; border-top: 1px solid var(--line); font-size: 12.5px; color: var(--muted); }
+  footer ul { padding-left: 18px; margin: 6px 0; columns: 2; }
+  @media (max-width: 700px) { footer ul { columns: 1; } }
+</style>
+</head>
+<body>
+<style>
+  .nx { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+  .nx button { cursor: pointer; border: 1px solid var(--line); background: #fff; border-radius: 10px; padding: 8px 12px; font-size: 13px; font-weight: 700; color: var(--ink); text-align: left; }
+  .nx button span { display: block; font-size: 11px; font-weight: 600; color: var(--muted); }
+  .nx button.on { background: var(--navy); color: #fff; border-color: var(--navy); }
+  .nx button.on span { color: #cfe0f5; }
+</style>
+
+<div class="mast">
+  <div class="wrap">
+    <div class="brand">World Desk <small>Howard's personal news, checked against the sources &middot; <a href="World-Pulse.html" style="color:#ffd36b">World Pulse home</a></small></div>
+    <div class="clock" id="clock">loading clock</div>
+  </div>
+</div>
+<div class="ticker"><span id="ticker"></span></div>
+
+<style>
+  .chain { display: flex; flex-direction: column; gap: 6px; }
+  .link { display: grid; grid-template-columns: 150px 1fr 74px; align-items: center; gap: 8px; cursor: pointer; border-radius: 8px; padding: 6px 8px; background: rgba(255,255,255,.05); border: 1px solid transparent; opacity: .35; transition: opacity .5s, background .3s; }
+  .link.lit { opacity: 1; }
+  .link.sel { border-color: #ffd54f; background: rgba(255,213,79,.12); }
+  .link .nm { font-size: 13px; font-weight: 700; }
+  .link .track { position: relative; height: 16px; background: rgba(255,255,255,.08); border-radius: 4px; overflow: hidden; }
+  .link .fill { position: absolute; right: 0; top: 0; bottom: 0; width: 0; border-radius: 4px; transition: width 1.1s ease; }
+  .link .pc { font-size: 15px; font-weight: 800; text-align: right; font-variant-numeric: tabular-nums; }
+  .link.trig .fill { background: repeating-linear-gradient(45deg, #ffd54f 0 6px, #ffb300 6px 12px); }
+  @media (max-width: 560px) { .link { grid-template-columns: 104px 1fr 62px; } .link .nm { font-size: 11.5px; } }
+</style>
+
+<!-- HERO: THE FRIDAY ROUT -->
+<div class="hero">
+  <div class="wrap">
+    <span class="kicker">HEADLINE &middot; MONEY</span>
+    <h1>Nasdaq drops 5.3% and wipes out its 2026 gains as Nvidia falls 14%</h1>
+    <p class="dek">Friday 20 Nov was the hardest day of this week's selloff. Reuters reported that the Securities and Exchange Commission (SEC), the US stock market regulator, is looking at Nvidia's accounting. Nvidia fell 13.8%. The tech-heavy Nasdaq followed, and the S&amp;P 500 and the Dow both closed in a correction, at least 10% below their record highs. Overnight, bitcoin slid to its lowest price since September 2024.</p>
+
+    <div class="hero-grid">
+      <div class="panel">
+        <h3 style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap">Replay: how the fall spread
+          <span><button class="btn" id="play">&#9654; Play</button> <button class="btn" id="reset">Reset</button></span></h3>
+        <div class="chain" id="chain"></div>
+        <div class="cap" id="hcap">Press play to watch one report turn into a market-wide fall, or click any row. Bars show the one-day drop; the longer the bar, the bigger the fall.</div>
+      </div>
+
+      <div class="panel">
+        <h3 style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap">Thursday close to Friday close
+          <span><button class="btn on" data-k="0">Nasdaq</button> <button class="btn" data-k="1">S&amp;P 500</button> <button class="btn" data-k="2">Dow</button> <button class="btn" data-k="3">Bitcoin</button></span></h3>
+        <svg id="slope" viewBox="0 0 420 250" width="100%" style="display:block;border-radius:8px">
+          <rect x="0" y="0" width="420" height="250" fill="#10345c"/>
+          <line x1="90" y1="30" x2="90" y2="210" stroke="#ffffff" stroke-opacity=".3"/>
+          <line x1="330" y1="30" x2="330" y2="210" stroke="#ffffff" stroke-opacity=".3"/>
+          <text id="lA" x="90" y="232" font-size="11" fill="#cfe0f5" text-anchor="middle">Thu 19 Nov, 4 pm</text>
+          <text id="lB" x="330" y="232" font-size="11" fill="#cfe0f5" text-anchor="middle">Fri 20 Nov, 4 pm</text>
+          <line id="sl" x1="90" y1="50" x2="330" y2="50" stroke="#ff8a80" stroke-width="5" stroke-linecap="round"/>
+          <circle id="cA" cx="90" cy="50" r="8" fill="#fff"/>
+          <circle id="cB" cx="330" cy="50" r="8" fill="#ff8a80"/>
+          <text id="vA" x="104" y="44" font-size="14" font-weight="800" fill="#fff"></text>
+          <text id="vB" x="318" y="0" font-size="14" font-weight="800" fill="#ff8a80" text-anchor="end"></text>
+          <text id="pc" x="210" y="130" font-size="34" font-weight="800" fill="#ff8a80" text-anchor="middle"></text>
+        </svg>
+        <div class="cap" id="scap"></div>
+        <div class="stats">
+          <div class="stat"><div class="n">-5.28%</div><div class="l">Nasdaq Composite, to 22,617.73</div></div>
+          <div class="stat"><div class="n">-13.8%</div><div class="l">Nvidia, to $125.53</div></div>
+          <div class="stat"><div class="n">10%+</div><div class="l">S&amp;P 500 and Dow below their records: a correction</div></div>
+          <div class="stat"><div class="n">~$55,600</div><div class="l">bitcoin low early Saturday</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- STEPS -->
+  <section>
+    <h2>A week of selling, step by step</h2>
+    <p class="sub">Each dot is one day of the market story this week. Evenly spaced, not to scale. Click any dot. Times in Eastern.</p>
+    <div class="card">
+      <div class="tl" id="tl"><div class="rail"></div></div>
+      <div class="tip" id="tltip">Click a dot to see what happened.</div>
+    </div>
+  </section>
+
+  <!-- RESULTS + UNCONFIRMED -->
+  <section>
+    <div class="two">
+      <div class="card">
+        <h2 style="font-size:18px">What is next</h2>
+        <p class="sub">Click one. Countdowns run from your clock; once a moment passes, this page cannot know what happened: check World Pulse.</p>
+        <div class="agenda" id="agenda"></div>
+        <div class="count" id="cd" style="margin-top:10px">--</div>
+        <div style="font-size:13px;color:var(--ink2)" id="cdw"></div>
+        <div class="tip" id="agtip"></div>
+      </div>
+      <div class="card rumour">
+        <span class="tag" style="background:#c62828">UNCONFIRMED</span>
+        <h2 style="font-size:17px;margin-top:8px">What exactly the SEC is looking at</h2>
+        <p style="margin:4px 0 8px;font-size:14px;color:var(--ink2)">Reuters cites two people briefed. It could not say when the inquiry opened or which accounting issues it covers. The SEC declined to comment. An inquiry is not a finding of wrongdoing.</p>
+        <span class="tag" style="background:#c62828">UNCONFIRMED</span>
+        <h2 style="font-size:17px;margin-top:8px">Russia sent weapons into Poland on purpose</h2>
+        <p style="margin:4px 0 8px;font-size:14px;color:var(--ink2)">Poland's prime minister calls it a likely provocation and a think tank, the Institute for the Study of War, assesses it was deliberate. Russia has not explained it. That is a judgement, not an established fact.</p>
+        <span class="tag" style="background:#c62828">UNCONFIRMED</span>
+        <h2 style="font-size:17px;margin-top:8px">Hormuz: mine or missile?</h2>
+        <p style="margin:4px 0 8px;font-size:14px;color:var(--ink2)">The UK maritime office says projectiles hit the tankers near Khasab; Iran's Revolutionary Guards say a mine. A Qeshm Island blast is also disputed: Iranian media say a missile, CENTCOM says it made no strike.</p>
+        <span class="tag" style="background:#c62828">UNCONFIRMED</span>
+        <h2 style="font-size:17px;margin-top:8px">How Chase data got out</h2>
+        <p style="margin:4px 0 0;font-size:14px;color:var(--ink2)">Only the extortion group n0n says it came through the cloud data platform Qubole. Nobody has confirmed a shared vendor.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OTHER STORIES -->
+  <section>
+    <h2>The rest of the world today</h2>
+    <p class="sub">From this morning's scan (21 Nov, about 11:50 UTC, Coordinated Universal Time). Filter by topic, click a card for what changed.</p>
+    <div class="chips" id="chips"></div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <!-- WEEK STRIP -->
+  <section>
+    <h2>The week at a glance</h2>
+    <p class="sub">Each bar is one story, placed on the day it happened (Eastern). Faded bars: only the day is known. Hover a bar. <a href="timelines/World-Events-Timeline-Update-21Nov2026.svg">Open the full timeline picture</a>.</p>
+    <div class="card">
+      <div class="strip" id="strip"></div>
+      <div class="striptip" id="striptip">&nbsp;</div>
+    </div>
+  </section>
+
+  <footer>
+    <b>Key:</b> US = United States. UK = United Kingdom. SEC = Securities and Exchange Commission. S&amp;P = Standard and Poor's. AI = artificial intelligence. NATO = North Atlantic Treaty Organization. CENTCOM = US Central Command. UKMTO = United Kingdom Maritime Trade Operations. CDC = US Centers for Disease Control and Prevention. NSA = National Security Agency. NTSB = National Transportation Safety Board. AP = Associated Press. USGS = United States Geological Survey. UTC = Coordinated Universal Time.<br>
+    <b>Sources:</b>
+    <ul>
+      <li><a href="https://www.bloomberg.com/news/articles/2026-11-20/wall-street-regulator-probing-nvidia-s-accounting-reuters-says">Bloomberg: regulator probes Nvidia accounting, Reuters says</a></li>
+      <li><a href="https://www.investing.com/news/economy-news/exclusiveus-secs-nvidia-probe-is-examining-potential-accounting-issues-sources-say-5042460">Reuters via Investing.com: the SEC inquiry</a></li>
+      <li><a href="https://nbcnews.com/business/markets/anthropic-shares-markets-selloff-nasdaq-rcna610394">NBC News: Nasdaq erases 2026 gains</a></li>
+      <li><a href="https://www.upi.com/Top_News/US/2026/11/20/stocks-dow-jones-nasdaq-correction-territory/1061795214998/">UPI: Dow and S&amp;P 500 enter correction</a></li>
+      <li><a href="https://finance.yahoo.com/markets/live/stock-market-today-friday-november-19-dow-sp-500-nasdaq-anthropic-nvidia-141644188.html">Yahoo Finance live: Friday session</a></li>
+      <li><a href="https://abcnews.com/Business/wireStory/major-us-stock-indexes-fared-thursday-11192026-138303454">AP via ABC News: Thursday closes</a></li>
+      <li><a href="https://www.brecorder.com/news/40450104/bitcoin-falls-510-to-55830">Business Recorder: bitcoin $55,830</a></li>
+      <li><a href="https://www.cryptotimes.io/2026/11/21/bitcoin-price-today-btc-drops-10-and-crypto-markets-crash-7-amid-extreme-fear/">The Crypto Times: bitcoin low</a></li>
+      <li><a href="https://www.aljazeera.com/news/2026/11/21/trump-calls-for-nvidia-to-reinstate-brilliant-jensen-huang">Al Jazeera: Trump on Huang</a></li>
+      <li><a href="https://www.usnews.com/news/world/articles/2026-11-20/russian-attacks-on-kyiv-kill-3-cripple-bridges-and-cut-power">AP via US News: missile crash in Poland</a></li>
+      <li><a href="https://www.pbs.org/newshour/world/nato-calls-russian-missiles-landing-in-poland-a-grave-violation-of-airspace">PBS NewsHour: NATO on Poland</a></li>
+      <li><a href="https://www.aljazeera.com/news/2026/11/20/russia-unleashes-retaliatory-barrage-on-kyiv-bridges">Al Jazeera: Kyiv bridges</a></li>
+      <li><a href="https://kyivindependent.com/russia-launches-mass-missile-attack-against-ukraine-after-putin-vows-revenge/">Kyiv Independent: at least 9 dead</a></li>
+      <li><a href="https://www.cnn.com/2026/11/20/europe/denmark-russia-kyivstoner-assassination-plot-intl">CNN: Denmark plot</a></li>
+      <li><a href="https://gulfnews.com/world/mena/two-tankers-attacked-in-hormuz-strait-maritime-agency-1.500756027">Gulf News: two tankers hit</a></li>
+      <li><a href="https://www.cbsnews.com/live-updates/iran-war-trump-tehran-denies-chemical-weapons/">CBS News live: Iran decision can wait to 2027</a></li>
+      <li><a href="https://gulfnews.com/world/gulf/saudi/saudi-led-coalition-says-downed-3-houthi-missiles-headed-for-riyadh-2-1.500755733">Gulf News: Riyadh missiles</a></li>
+      <li><a href="https://abcnews.com/US/wireStory/federal-jury-convicts-man-starting-deadly-2025-palisades-138333574">AP via ABC News: Palisades verdict</a></li>
+      <li><a href="https://www.nbcnews.com/business/corporations/trump-data-centers-overseas-penalties-rcna610445">NBC News: data center tax threat</a></li>
+      <li><a href="https://www.nbcchicago.com/news/national-international/peru-earthquake-andes-damage/4019715/">AP via NBC Chicago: Peru quake</a></li>
+      <li><a href="https://aapnews.aap.com.au/news/top-end-shaken-as-major-quake-hits-east-timor">AAP: Timor-Leste quake</a></li>
+      <li><a href="https://earthquake.usgs.gov/earthquakes/map/">USGS: earthquakes</a></li>
+      <li><a href="https://www.cdc.gov/ebola/situation-summary/index.html">CDC: Ebola situation</a></li>
+      <li><a href="https://www.nbcnews.com/politics/trump-administration/live-blog/trump-asia-trip-xi-putin-congress-2026-live-updates-rcna610347/rcrd124397">NBC News: NSA network restored</a></li>
+      <li><a href="https://www.bleepingcomputer.com/news/security/vendor-data-breach-exposes-chase-visa-mastercard-customer-info/">BleepingComputer: vendor breach</a></li>
+      <li><a href="https://www.deccanherald.com/india/odisha/cyclone-akvan-no-major-damage-loss-of-life-in-odisha-says-minister-4225296">Deccan Herald: Akvan in Odisha</a></li>
+      <li><a href="https://www.geekwire.com/2026/latest-findings-point-to-fuel-supply-not-blue-origins-engines-in-loss-of-amazon-leo-satellites/">GeekWire: Vulcan findings</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Starship_flight_16">Wikipedia: Starship Flight 16</a></li>
+    </ul>
+    Facts checked 21 Nov 2026 about 11:50 UTC. The page works out times live from your clock, but it does not fetch news: once a countdown reaches zero it cannot know what happened.
+  </footer>
+</div>
+
+<script>
+(function () {
+  var ET = 'America/New_York';
+  function fmt(ms, opts) { return new Date(ms).toLocaleString('en-US', Object.assign({ timeZone: ET }, opts)); }
+
+  // hero left: the chain
+  var CHAIN = [
+    { n: 'Reuters report', v: null, col: '', cap: 'Friday 20 Nov: Reuters reports, citing two people briefed, that SEC enforcement staff are looking at possible accounting issues at Nvidia. The SEC declined to comment.' },
+    { n: 'Nvidia', v: 13.8, col: '#ff5252', cap: 'Nvidia fell 13.8% to $125.53, its worst day since the DeepSeek selloff in January 2025. It was already under pressure after its chief executive Jensen Huang resigned on 12 Nov.' },
+    { n: 'Nasdaq', v: 5.28, col: '#ff8a80', cap: 'The Nasdaq Composite, full of tech companies, fell 1,261 points or 5.28% to 22,617.73. That wiped out every gain it had made in 2026.' },
+    { n: 'S&P 500', v: 3.7, col: '#ff8a80', cap: 'The S&P 500, 500 large US companies, fell 3.7% to 6,910.39 and closed in a correction (at least 10% below its record).' },
+    { n: 'Dow', v: 1.93, col: '#ff8a80', cap: 'The Dow, 30 big companies with fewer tech names, fell 949.73 points or 1.93% to 48,147.33. Also in a correction.' },
+    { n: 'Anthropic', v: 9, col: '#b388ff', cap: 'Anthropic, on only its second day of trading, fell about 9% (NBC News and Yahoo Finance; a rounded figure). It is still above its $83 offer price.' },
+    { n: 'Bitcoin (24 h)', v: 9.9, col: '#ffd54f', cap: 'Bitcoin fell below $60,000 on Friday for the first time since July and reached about $55,600 early Saturday, its lowest since September 2024. CoinCodex shows a 9.91% drop over 24 hours.' }
+  ];
+  var MAX = 15, chain = document.getElementById('chain'), rows = [];
+  CHAIN.forEach(function (c, i) {
+    var r = document.createElement('div'); r.className = 'link' + (c.v === null ? ' trig' : '');
+    r.innerHTML = '<div class="nm">' + c.n + '</div><div class="track"><div class="fill"></div></div><div class="pc">' + (c.v === null ? 'trigger' : '') + '</div>';
+    r.onclick = function () { stop(); light(i, true); };
+    chain.appendChild(r); rows.push(r);
+  });
+  var capEl = document.getElementById('hcap');
+  function light(i, only) {
+    var r = rows[i], c = CHAIN[i];
+    rows.forEach(function (x) { x.classList.remove('sel'); });
+    r.classList.add('lit'); r.classList.add('sel');
+    var f = r.querySelector('.fill');
+    if (c.v === null) { f.style.width = '100%'; }
+    else { f.style.background = c.col; f.style.width = (c.v / MAX * 100) + '%'; r.querySelector('.pc').textContent = '-' + c.v + '%'; }
+    capEl.textContent = c.cap;
+  }
+  var timer = null;
+  function stop() { if (timer) { clearInterval(timer); timer = null; } }
+  function reset() {
+    stop();
+    rows.forEach(function (r, i) { r.classList.remove('lit'); r.classList.remove('sel'); r.querySelector('.fill').style.width = 0; if (CHAIN[i].v !== null) r.querySelector('.pc').textContent = ''; });
+    capEl.textContent = 'Press play to watch one report turn into a market-wide fall, or click any row. Bars show the one-day drop; the longer the bar, the bigger the fall.';
+  }
+  document.getElementById('play').onclick = function () {
+    reset(); var i = 0; light(0);
+    timer = setInterval(function () {
+      i++;
+      if (i < CHAIN.length) light(i);
+      else { stop(); rows.forEach(function (x) { x.classList.remove('sel'); }); capEl.textContent = 'One report, one company, then the whole market. Note the order is how the story spread, not a proven chain of cause: reporters also point to worries that artificial intelligence (AI) shares had run too high.'; }
+    }, 2300);
+  };
+  document.getElementById('reset').onclick = reset;
+  setTimeout(function () { if (!timer) document.getElementById('play').onclick(); }, 900);
+
+  // hero right: slope
+  var SL = [
+    { n: 'Nasdaq Composite', a: 23879, b: 22617.73, fa: '23,879', fb: '22,617.73', pc: '-5.28%', cap: 'The Nasdaq Composite closed at 23,879 on Thursday and 22,617.73 on Friday: down 1,261 points.', la: 'Thu 19 Nov, 4 pm', lb: 'Fri 20 Nov, 4 pm' },
+    { n: 'S&P 500', a: 7176, b: 6910.39, fa: '7,176', fb: '6,910.39', pc: '-3.7%', cap: 'The S&P 500 closed at 7,176 on Thursday and 6,910.39 on Friday. Its seventh loss in a row.', la: 'Thu 19 Nov, 4 pm', lb: 'Fri 20 Nov, 4 pm' },
+    { n: 'Dow', a: 49097, b: 48147.33, fa: '49,097', fb: '48,147.33', pc: '-1.93%', cap: 'The Dow closed at 49,097 on Thursday and 48,147.33 on Friday: down 949.73 points, after 1,101 the day before.', la: 'Thu 19 Nov, 4 pm', lb: 'Fri 20 Nov, 4 pm' },
+    { n: 'Bitcoin', a: 61600, b: 55600, fa: '~$61,600', fb: '~$55,600', pc: 'about -10%', cap: 'Bitcoin trades around the clock, so there is no close. Thursday afternoon low about $61,500 to $61,700; early Saturday low about $55,600. Rounded figures.', la: 'Thu 19 Nov, afternoon', lb: 'Sat 21 Nov, early' }
+  ];
+  function ys(v, s) { var top = Math.max(s.a, s.b), bot = Math.min(s.a, s.b), span = (top - bot) / 0.55; var hi = top + span * 0.12; return 40 + (hi - v) / span * 170; }
+  function showSlope(k) {
+    var s = SL[k], ya = ys(s.a, s), yb = ys(s.b, s);
+    var sl = document.getElementById('sl');
+    sl.setAttribute('y1', ya); sl.setAttribute('y2', ya); sl.style.transition = 'none';
+    document.getElementById('cA').setAttribute('cy', ya); var cB = document.getElementById('cB'); cB.setAttribute('cy', ya);
+    document.getElementById('vA').setAttribute('y', ya - 12); document.getElementById('vA').textContent = s.fa;
+    var vB = document.getElementById('vB'); vB.textContent = ''; document.getElementById('pc').textContent = '';
+    document.getElementById('lA').textContent = s.la; document.getElementById('lB').textContent = s.lb;
+    document.getElementById('scap').textContent = s.cap;
+    setTimeout(function () {
+      sl.style.transition = 'all 1.2s ease'; sl.setAttribute('y2', yb);
+      cB.style.transition = 'all 1.2s ease'; cB.setAttribute('cy', yb);
+      setTimeout(function () { vB.setAttribute('y', yb + 26); vB.textContent = s.fb; document.getElementById('pc').textContent = s.pc; }, 1100);
+    }, 120);
+  }
+  document.querySelectorAll('[data-k]').forEach(function (b) {
+    b.onclick = function () { document.querySelectorAll('[data-k]').forEach(function (x) { x.classList.remove('on'); }); b.classList.add('on'); showSlope(+b.getAttribute('data-k')); };
+  });
+  showSlope(0);
+
+  // steps timeline
+  var STEPS = [
+    { k: 'talk', name: 'chip stocks slide', when: 'Mon 16 Nov', d: 'A selloff led by chip stocks starts the week, after Nvidia\'s chief executive Jensen Huang resigned on 12 Nov.' },
+    { k: 'talk', name: 'bond rates jump', when: 'Tue 17 to Wed 18 Nov', d: 'Fears of more interest rate rises push bitcoin and shares lower day after day.' },
+    { k: 'talk', name: 'Dow -1,101', when: 'Thu 19 Nov, 4 pm', d: 'The Dow drops 2.2% to 49,097, its first close under 50,000 since early May, on the day Anthropic starts trading.' },
+    { k: 'mil', name: 'SEC report', when: 'Fri 20 Nov', d: 'Reuters: SEC enforcement staff are looking at possible accounting issues at Nvidia. The Wall Street Journal had reported an SEC inquiry without saying what it covers.' },
+    { k: 'mil', name: 'Nasdaq -5.28%', when: 'Fri 20 Nov, 4 pm', d: 'Nvidia -13.8%, Nasdaq -5.28%, S&P 500 -3.7%, Dow -1.93%. The S&P 500 and the Dow close in a correction.' },
+    { k: 'mil', name: 'bitcoin $55,600', when: 'Sat 21 Nov, early', d: 'Bitcoin reaches about $55,600, its lowest since September 2024. Crypto sites point to money pulled out of bitcoin funds.' },
+    { k: 'next', name: 'Monday open', when: 'Mon 23 Nov, 9:30 am', d: 'US stock markets reopen. This page cannot know how they will trade.' }
+  ];
+  var tl = document.getElementById('tl'), dots = [];
+  STEPS.forEach(function (s, i) {
+    var x = 5 + i * (90 / (STEPS.length - 1));
+    var dot = document.createElement('div'); dot.className = 'dot ' + s.k; dot.style.left = x + '%'; tl.appendChild(dot);
+    var lab = document.createElement('div'); lab.className = 'lab ' + (i % 2 ? 'down' : 'up'); lab.style.left = x + '%'; lab.textContent = s.name; tl.appendChild(lab);
+    dot.addEventListener('click', function () {
+      dots.forEach(function (o) { o.classList.remove('sel'); }); dot.classList.add('sel');
+      document.getElementById('tltip').innerHTML = '<b>' + s.when + '</b> &middot; ' + s.d;
+    });
+    dots.push(dot);
+  });
+
+  // what is next (res = result already known at scan time)
+  var UP = [
+    { k: 'US markets reopen', t: Date.UTC(2026, 10, 23, 14, 30), end: Date.UTC(2026, 10, 23, 21, 0), when: 'Monday 23 Nov, 9:30 am Eastern.', d: 'The first trading after Friday\'s fall. Bitcoin trades all weekend, so it moves first.' },
+    { k: 'Amazon Leo on Ariane 6', t: Date.UTC(2026, 10, 23, 11, 9), end: Date.UTC(2026, 10, 24, 5, 0), when: 'No earlier than 23 Nov at 11:09 UTC from French Guiana.', d: '36 Amazon satellites on a European rocket after the Vulcan loss on 15 Nov.' },
+    { k: 'Correction: RESULT', res: 'S&P 500 and Dow in a correction', when: 'Friday 20 Nov, at the 4 pm close.', d: 'A correction means at least 10% below the record high. The Nasdaq has given back all of its 2026 gains.' }
+  ];
+  var sel = 0, agEl = document.getElementById('agenda');
+  UP.forEach(function (u, i) {
+    var b = document.createElement('button'); b.className = 'ag' + (i === sel ? ' on' : ''); b.textContent = u.k;
+    b.onclick = function () { sel = i; agEl.querySelectorAll('.ag').forEach(function (x) { x.classList.remove('on'); }); b.classList.add('on'); tick(); };
+    agEl.appendChild(b);
+  });
+  function hms(ms) { var s = Math.max(0, Math.floor(ms / 1000)), d = Math.floor(s / 86400); return (d ? d + 'd ' : '') + String(Math.floor(s % 86400 / 3600)).padStart(2, '0') + ':' + String(Math.floor(s % 3600 / 60)).padStart(2, '0') + ':' + String(s % 60).padStart(2, '0'); }
+  function tick() {
+    var now = Date.now(), u = UP[sel], cd = document.getElementById('cd');
+    document.getElementById('clock').textContent = fmt(now, { weekday: 'long', day: 'numeric', month: 'long', hour: 'numeric', minute: '2-digit', second: '2-digit' }) + ' Eastern';
+    document.getElementById('agtip').textContent = u.d;
+    if (u.res) { cd.textContent = u.res; cd.style.fontSize = '24px'; document.getElementById('cdw').textContent = u.when; return; }
+    document.getElementById('cdw').textContent = 'Counting to ' + fmt(u.t, { weekday: 'long', day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit' }) + ' Eastern. ' + u.when;
+    if (now < u.t) { cd.textContent = hms(u.t - now); cd.style.fontSize = '40px'; }
+    else if (now < u.end) { cd.textContent = 'Time has come: what happened is not on this page'; cd.style.fontSize = '20px'; }
+    else { cd.textContent = 'Passed: check World Pulse for the result'; cd.style.fontSize = '20px'; }
+  }
+  tick(); setInterval(tick, 1000);
+
+  // stories (d = [start day, start hour Eastern, end day, end hour Eastern, only the day known])
+  var CATS = {
+    space: ['#3949ab', 'Space'], tech: ['#1f6fb5', 'Tech'], mil: ['#b3261e', 'Iran and military'], war: ['#6b6b6b', 'Wars and spying'],
+    money: ['#6a3fb5', 'Money'], health: ['#c77700', 'Health'], acc: ['#00796b', 'Accidents and weather'], world: ['#0d2b4e', 'World politics']
+  };
+  var STATUS = { upd: ['#1f6fb5', 'UPDATED'], neu: ['#2e7d32', 'NEW'], un: ['#c62828', 'UNPROVEN'], same: ['#8a96a3', 'NO CHANGE'], res: ['#ef6c00', 'RESULT'] };
+  var STORIES = [
+    { c: 'war', s: 'neu', h: 'Russian missile and drones come down in Poland', p: 'During Russia\'s huge overnight attack on Ukraine. No injuries reported.', more: ['Poland first said two missiles and a drone; later revised to one cruise missile and two drones (UA.News).', 'One crashed about 35 km from European military exercises, says the AP (Associated Press).', 'NATO (North Atlantic Treaty Organization) head Mark Rutte: a grave violation of Polish airspace.', 'Whether it was deliberate is not established.'], d: [20, 0, 20, 6, 1] },
+    { c: 'war', s: 'upd', h: 'Kyiv: three bridges hit, at least 8 dead', p: 'The Podilskyi, Darnytskyi and Southern bridges over the Dnipro were damaged.', more: ['Hours after Putin promised revenge for the Kerch Bridge strikes.', 'Al Jazeera counts at least 8 dead across Ukraine; the Kyiv Independent at least 9.', 'Power, heating and water cut in places.', 'Russia says it aimed at bridges used to move weapons.'], d: [20, 0, 20, 7, 1] },
+    { c: 'war', s: 'neu', h: 'Denmark expels Russia\'s defence attache', p: 'Over a foiled plot to kill the Ukrainian-American rapper Kyivstoner near Copenhagen.', more: ['Two armed Danish men were stopped minutes before the concert on 25 Sept; both deny attempted murder.', 'Danish intelligence says Russian intelligence planned it.', 'Russia says there is no proof.'], d: [20, 6, 20, 12, 1] },
+    { c: 'money', s: 'upd', h: 'Nvidia: SEC accounting inquiry reported', p: 'Shares -13.8%. Huang says he would be honored to return if the board asks.', more: ['Reuters, from two people briefed; the SEC declined to comment.', 'Trump: he would like Huang to apologize and go back.', 'The Wall Street Journal says the board is not considering it.'], d: [20, 9.5, 20, 16, 1] },
+    { c: 'money', s: 'neu', h: 'Trump threatens a tax on AI data centers abroad', p: 'A "tremendous tax" on US firms that build them overseas. No rate or timing.', more: ['He said he had not yet told his own officials.'], d: [20, 12, 20, 18, 1] },
+    { c: 'mil', s: 'upd', h: 'Hormuz: two more tankers hit near Khasab', p: 'Saturday, by unidentified projectiles, says the UK maritime office. No casualties.', more: ['A tanker reported a fire on Friday, 8 nautical miles north of Khasab; Iran says a mine.', 'Iran\'s foreign minister: the US blockade must end before oil exports resume.'], d: [20, 20, 21, 4, 1] },
+    { c: 'mil', s: 'upd', h: 'Trump: Iran strike decision can wait until 2027', p: 'The Senate rejected a bid to curb the campaign, 48 to 51.', more: ['CENTCOM (US Central Command) denies a new strike on Qeshm Island.', 'Iranian media reported an explosion there; the cause is disputed.'], d: [20, 9, 20, 18, 1] },
+    { c: 'mil', s: 'upd', h: 'Riyadh: three Houthi missiles intercepted', p: 'Early Saturday, says the Saudi-led coalition. Explosions heard; no casualty reports.', more: ['Two missiles aimed at Jazan downed on Friday.', 'The coalition says it is striking Houthi targets in Sanaa, Saada, Taiz and Hodeidah.'], d: [20, 18, 20, 21, 1] },
+    { c: 'acc', s: 'neu', h: 'Magnitude 6.7 deep quake shakes Peru', p: 'Friday 7:09 pm Eastern, about 108 km under the Andes; felt in Lima.', more: ['Minor damage to homes in Junin, power cuts and road limits, says Peru\'s defence minister.', 'Landslides and rockfalls on hillsides.', 'USGS (United States Geological Survey) green alert.'], d: [20, 19.15, 20, 19.4, 0] },
+    { c: 'acc', s: 'neu', h: 'Magnitude 6.8 deep quake off Timor-Leste', p: 'Saturday 4:42 am Eastern, about 130 to 145 km deep. Felt in Darwin.', more: ['No damage confirmed; no tsunami threat.', 'USGS also lists a 5.9 in Qinghai, China, yellow alert; no reports found yet.'], d: [21, 4.7, 21, 5, 0] },
+    { c: 'acc', s: 'neu', h: 'Palisades Fire: man convicted at retrial', p: 'Jonathan Rinderknecht, 30, guilty on both counts.', more: ['Prosecutors say his 1 Jan 2025 fire smouldered and became the Palisades Fire, which killed 12.', 'His lawyer plans to appeal. One report puts sentencing on 17 March.'], d: [20, 12, 20, 17, 1] },
+    { c: 'health', s: 'upd', h: 'Ebola: 11,645 confirmed cases', p: 'And 5,683 deaths, says the CDC (US Centers for Disease Control and Prevention).', more: ['UN responders say armed group attacks are holding the response back.', 'Risk to Americans still rated low.'], d: null },
+    { c: 'tech', s: 'upd', h: 'NSA network back up', p: 'Staff told to return after a three-day disruption, NBC News says.', more: ['Tied earlier to a software patch.', 'Still no sign the week\'s outages were a cyberattack.'], d: null },
+    { c: 'tech', s: 'upd', h: 'Chase breach: Visa and Mastercard confirm vendor hacks too', p: 'Visa says no card numbers were affected.', more: ['Hackread counts over 27,000 emails in the leaked files.', 'The Qubole link is n0n\'s claim only.'], d: null },
+    { c: 'acc', s: 'upd', h: 'Cyclone Akvan: no major damage in Odisha', p: 'No deaths there, says the state\'s disaster minister.', more: ['About 300,000 people were moved beforehand.', 'No Andhra Pradesh figures found yet.'], d: null },
+    { c: 'acc', s: 'upd', h: 'Senegal boat: counts still differ', p: 'Al Jazeera says four bodies; the AP still says one dead.', more: ['About 100 aboard, says a survivor.'], d: null },
+    { c: 'space', s: 'upd', h: 'Vulcan: reports differ on the cause', p: 'Fuel supply or engines. Ariane 6 with Amazon Leo still set for 23 Nov.', more: ['The US Space Force has paused Vulcan national security launches.'], d: null },
+    { c: 'space', s: 'same', h: 'Starship: still no Flight 16 date', p: 'Aimed at no earlier than December from pad 39A in Florida.', more: ['No launch licence announced. Still marked quiet on World Pulse.'], d: null }
+  ];
+  var chips = document.getElementById('chips'), grid = document.getElementById('grid'), active = 'all';
+  function chip(key, label, col) {
+    var b = document.createElement('button'); b.className = 'chip' + (key === 'all' ? ' on' : '');
+    b.innerHTML = (col ? '<i style="background:' + col + '"></i>' : '') + label;
+    b.onclick = function () { active = key; chips.querySelectorAll('.chip').forEach(function (c) { c.classList.remove('on'); }); b.classList.add('on'); render(); };
+    chips.appendChild(b);
+  }
+  chip('all', 'All');
+  Object.keys(CATS).forEach(function (k) { chip(k, CATS[k][1], CATS[k][0]); });
+  function render() {
+    grid.innerHTML = '';
+    STORIES.filter(function (s) { return active === 'all' || s.c === active; }).forEach(function (s, i) {
+      var e = document.createElement('div'); e.className = 'story'; e.style.borderLeftColor = CATS[s.c][0];
+      e.innerHTML = '<div class="meta"><span class="cat" style="color:' + CATS[s.c][0] + '">' + CATS[s.c][1] + '</span>' +
+        '<span class="tag" style="background:' + STATUS[s.s][0] + '">' + STATUS[s.s][1] + '</span></div>' +
+        '<h4>' + s.h + '</h4><p>' + s.p + '</p><div class="more"><ul><li>' + s.more.join('</li><li>') + '</li></ul></div>' +
+        '<div class="hint">Click for details</div>';
+      e.onclick = function () { e.classList.toggle('open'); e.querySelector('.hint').textContent = e.classList.contains('open') ? 'Click to close' : 'Click for details'; };
+      grid.appendChild(e);
+      setTimeout(function () { e.classList.add('in'); }, 60 * i);
+    });
+  }
+  render();
+
+  var tick2 = document.getElementById('ticker'), tt = [{ h: 'Nasdaq drops 5.3% and wipes out its 2026 gains as Nvidia falls 14%; bitcoin under $56,000' }].concat(STORIES).map(function (s) { return '<b>&#9679;</b>' + s.h; }).join('');
+  tick2.innerHTML = tt + tt;
+
+  // week strip (Eastern days, 16 to 21 Nov)
+  var strip = document.getElementById('strip'), D0 = 16, D1 = 22, rowY = 22;
+  for (var d = D0; d <= D1; d++) {
+    var dv = document.createElement('div'); dv.className = 'day'; dv.style.left = ((d - D0) / (D1 - D0) * 100) + '%';
+    dv.textContent = d < D1 ? new Date(Date.UTC(2026, 10, d)).toLocaleDateString('en-US', { weekday: 'short', timeZone: 'UTC' }) + ' ' + d : ''; strip.appendChild(dv);
+  }
+  var row = 0, items = STORIES.filter(function (s) { return s.d; }).concat([
+    { c: 'money', h: 'Wall Street: Nasdaq -5.28%, S&P 500 and Dow in correction', d: [20, 9.5, 20, 16, 0] },
+    { c: 'money', h: 'Dow drops 1,101 points; Anthropic first day', d: [19, 9.5, 19, 16, 0] },
+    { c: 'money', h: 'Bitcoin slides from about $61,600 to about $55,600', d: [19, 13, 21, 3, 1] },
+    { c: 'acc', h: 'Cyclone Akvan crosses the coast near Gopalpur', d: [19, 21, 19, 23, 0] },
+    { c: 'world', h: 'Trump, Xi and Putin meet in Shenzhen', d: [19, 3.48, 19, 4.98, 0] },
+    { c: 'mil', h: 'US strikes Qeshm Island; Iran fires at Kuwait', d: [17, 8, 18, 6, 1] },
+    { c: 'war', h: 'Kerch Bridge section collapses', d: [16, 18, 17, 6, 1] },
+    { c: 'tech', h: 'Classified NSA network down, about three days', d: [17, 0, 20, 0, 1] }]);
+  items.sort(function (a, b) { return (a.d[0] * 24 + a.d[1]) - (b.d[0] * 24 + b.d[1]); });
+  items.forEach(function (s) {
+    var a = ((s.d[0] - D0) * 24 + s.d[1]) / ((D1 - D0) * 24) * 100, b = ((s.d[2] - D0) * 24 + s.d[3]) / ((D1 - D0) * 24) * 100;
+    a = Math.max(0, a);
+    var ev = document.createElement('div'); ev.className = 'ev' + (s.d[4] ? ' approx' : '');
+    ev.style.left = a + '%'; ev.style.width = Math.max(0.8, b - a) + '%'; ev.style.top = (rowY + row * 13) + 'px'; ev.style.background = CATS[s.c][0];
+    ev.onmouseenter = function () { document.getElementById('striptip').innerHTML = '<b style="color:' + CATS[s.c][0] + '">' + CATS[s.c][1] + ':</b> ' + s.h + (s.d[4] ? ' <i>(only the day is known)</i>' : ''); };
+    strip.appendChild(ev); row++;
+  });
+  strip.style.height = (rowY + row * 13 + 30) + 'px';
+})();
+</script>
+<style id="theme-toggle-style">/* theme-toggle-v2 */
+html.dark { filter: invert(1) hue-rotate(180deg); background: #ffffff; }
+html.dark body { background: #ffffff; }
+html.dark img, html.dark video, html.dark picture { filter: invert(1) hue-rotate(180deg); }
+#theme-toggle { position: fixed; top: 12px; right: 12px; z-index: 2147483000; padding: 6px 12px;
+  border: 1px solid #94a3b8; border-radius: 8px; background: #ffffff; color: #1e3a8a;
+  font: 600 12px 'Segoe UI', Arial, sans-serif; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,.12); }
+#theme-toggle:hover { background: #eef3ff; }
+@media print { #theme-toggle { display: none; } }
+</style>
+<button id="theme-toggle" type="button" aria-label="Switch between light and dark">Dark</button>
+<script id="theme-toggle-script">
+(function () {
+  var root = document.documentElement, key = 'theme:' + location.pathname;
+  var btn = document.getElementById('theme-toggle');
+  function set(dark) {
+    root.classList.toggle('dark', dark);
+    if (btn) { btn.textContent = dark ? 'Light' : 'Dark'; }
+  }
+  try { set(localStorage.getItem(key) === 'dark'); } catch (e) { set(false); }
+  if (btn) {
+    btn.addEventListener('click', function () {
+      var dark = !root.classList.contains('dark');
+      set(dark);
+      try { localStorage.setItem(key, dark ? 'dark' : 'light'); } catch (e) {}
+    });
+  }
+})();
+</script>
+</body>
+</html>
