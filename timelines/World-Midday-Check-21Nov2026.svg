@@ -1,0 +1,106 @@
+<svg width="100%" height="100%" data-fixed-size="1260 690" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1260 690" font-family="Arial, Helvetica, sans-serif">
+<style id="theme-toggle-style">/* theme-toggle-v2 */
+:root.dark { filter: invert(1) hue-rotate(180deg); background-color: #121212; }
+.theme-toggle { cursor: pointer; }
+.theme-toggle rect { fill: #ffffff; stroke: #94a3b8; }
+.theme-toggle text { fill: #1e3a8a; font: 600 12px 'Segoe UI', Arial, sans-serif; }
+.theme-toggle:hover rect { fill: #eef3ff; }
+@media print { .theme-toggle { display: none; } }
+</style>
+<rect x="0" y="0" width="1260" height="690" fill="#FFFFFF"/>
+<text x="24" y="40" font-size="24" font-weight="700" fill="#1A1A1A">Midday check: what changed since the 6:48 am scan, Saturday 21 November 2026</text>
+<text x="24" y="64" font-size="13" fill="#4A4A4A">Checked about 11:30 am Eastern. Each fact is from a major outlet; links are on World Pulse. Four new stories, six updated.</text>
+<rect x="24" y="84" width="1212" height="132" rx="10" fill="#EEF8F6" stroke="#D5DBE5"/>
+<rect x="24" y="84" width="8" height="132" rx="4" fill="#00796B"/>
+<rect x="44" y="98" width="42" height="20" rx="10" fill="#00796B"/>
+<text x="52" y="112" font-size="11" font-weight="700" fill="#FFFFFF">NEW</text>
+<text x="96" y="112" font-size="12" fill="#555555">Tuesday 17 Nov to now</text>
+<text x="44" y="140" font-size="17" font-weight="700" fill="#1A1A1A">Record flooding on Florida's Space Coast: St. Johns River above its 1953 record</text>
+<text x="44" y="164" font-size="13" fill="#2B2B2B">More than 17 inches of rain since Tuesday in places. Rescues by Friday afternoon: about 120 in Brevard County and well over 150 in Volusia County.</text>
+<text x="44" y="183" font-size="13" fill="#2B2B2B">Rockledge told west-side residents to be ready to leave. The river keeps rising for days and stays flooded into next week. Emergency covers 21 counties.</text>
+<text x="44" y="202" font-size="13" fill="#2B2B2B">Warnings run from just south of Melbourne to Jacksonville: Palm Beach County is outside them. No deaths reported in the sources found.</text>
+<rect x="24" y="234" width="396" height="196" rx="10" fill="#F1F6FD" stroke="#D5DBE5"/>
+<rect x="24" y="234" width="8" height="196" rx="4" fill="#1F6FB5"/>
+<rect x="44" y="248" width="82" height="20" rx="10" fill="#1F6FB5"/>
+<text x="52" y="262" font-size="11" font-weight="700" fill="#FFFFFF">UNPROVEN</text>
+<text x="136" y="262" font-size="12" fill="#555555">Announced Friday</text>
+<text x="44" y="290" font-size="17" font-weight="700" fill="#1A1A1A">A proof of the Riemann Hypothesis?</text>
+<text x="44" y="314" font-size="13" fill="#2B2B2B">Anthropic mathematician Levent Alpoge says</text>
+<text x="44" y="333" font-size="13" fill="#2B2B2B">he and Claude proved the 1859 prime-number</text>
+<text x="44" y="352" font-size="13" fill="#2B2B2B">problem ($1 million prize). 17 million lines of</text>
+<text x="44" y="371" font-size="13" fill="#2B2B2B">computer-checkable code; not yet checked by</text>
+<text x="44" y="390" font-size="13" fill="#2B2B2B">other mathematicians. Clay Institute: still unsolved.</text>
+<rect x="432" y="234" width="396" height="196" rx="10" fill="#F7F9FC" stroke="#D5DBE5"/>
+<rect x="432" y="234" width="8" height="196" rx="4" fill="#B3261E"/>
+<rect x="452" y="248" width="74" height="20" rx="10" fill="#B3261E"/>
+<text x="460" y="262" font-size="11" font-weight="700" fill="#FFFFFF">UPDATED</text>
+<text x="536" y="262" font-size="12" fill="#555555">Saturday</text>
+<text x="452" y="290" font-size="17" font-weight="700" fill="#1A1A1A">Hormuz: three tankers hit Saturday</text>
+<text x="452" y="314" font-size="13" fill="#2B2B2B">Two struck by projectiles leaving the Gulf</text>
+<text x="452" y="333" font-size="13" fill="#2B2B2B">(stern, engine room), no casualties. Iran says a</text>
+<text x="452" y="352" font-size="13" fill="#2B2B2B">third hit a mine and caught fire. Iran shows a</text>
+<text x="452" y="371" font-size="13" fill="#2B2B2B">new two-missile underground launcher; Qatar</text>
+<text x="452" y="390" font-size="13" fill="#2B2B2B">mediators visited Friday to test diplomacy.</text>
+<rect x="840" y="234" width="396" height="196" rx="10" fill="#F7F9FC" stroke="#D5DBE5"/>
+<rect x="840" y="234" width="8" height="196" rx="4" fill="#5F6B7A"/>
+<rect x="860" y="248" width="74" height="20" rx="10" fill="#5F6B7A"/>
+<text x="868" y="262" font-size="11" font-weight="700" fill="#FFFFFF">UPDATED</text>
+<text x="944" y="262" font-size="12" fill="#555555">Fri night to Sat</text>
+<text x="860" y="290" font-size="17" font-weight="700" fill="#1A1A1A">Ukraine and Poland</text>
+<text x="860" y="314" font-size="13" fill="#2B2B2B">Missile strike on Kryvyi Rih: 2 killed (a boy of 7),</text>
+<text x="860" y="333" font-size="13" fill="#2B2B2B">60 hurt; more rockets hit arriving rescuers.</text>
+<text x="860" y="352" font-size="13" fill="#2B2B2B">Russian cargo ship on fire in the Gulf of Finland</text>
+<text x="860" y="371" font-size="13" fill="#2B2B2B">after a drone hit. Rutte in Warsaw: "NATO will</text>
+<text x="860" y="390" font-size="13" fill="#2B2B2B">defend every inch of Polish territory".</text>
+<rect x="24" y="448" width="396" height="176" rx="10" fill="#F7F9FC" stroke="#D5DBE5"/>
+<rect x="24" y="448" width="8" height="176" rx="4" fill="#00796B"/>
+<rect x="44" y="462" width="42" height="20" rx="10" fill="#00796B"/>
+<text x="52" y="476" font-size="11" font-weight="700" fill="#FFFFFF">NEW</text>
+<text x="96" y="476" font-size="12" fill="#555555">Overnight</text>
+<text x="44" y="504" font-size="17" font-weight="700" fill="#1A1A1A">Mexico captures "El Chapo Isidro"</text>
+<text x="44" y="528" font-size="13" fill="#2B2B2B">Fausto Isidro Meza Flores, on the FBI's 10 most</text>
+<text x="44" y="547" font-size="13" fill="#2B2B2B">wanted list, caught in Guasave, Sinaloa, with</text>
+<text x="44" y="566" font-size="13" fill="#2B2B2B">US intelligence help. Gunfire and burning cars</text>
+<text x="44" y="585" font-size="13" fill="#2B2B2B">followed, including at a baseball game.</text>
+<rect x="432" y="448" width="396" height="176" rx="10" fill="#F7F9FC" stroke="#D5DBE5"/>
+<rect x="432" y="448" width="8" height="176" rx="4" fill="#1F6FB5"/>
+<rect x="452" y="462" width="42" height="20" rx="10" fill="#1F6FB5"/>
+<text x="460" y="476" font-size="11" font-weight="700" fill="#FFFFFF">NEW</text>
+<text x="504" y="476" font-size="12" fill="#555555">Ended Saturday</text>
+<text x="452" y="504" font-size="17" font-weight="700" fill="#1A1A1A">UN killer robot talks: no binding rules</text>
+<text x="452" y="528" font-size="13" fill="#2B2B2B">Geneva talks agreed only to keep working on a</text>
+<text x="452" y="547" font-size="13" fill="#2B2B2B">possible deal until 2028. Activists blame Russia</text>
+<text x="452" y="566" font-size="13" fill="#2B2B2B">and the US for blocking stronger wording.</text>
+<text x="452" y="585" font-size="13" fill="#2B2B2B">UN chief Guterres wanted binding rules this year.</text>
+<rect x="840" y="448" width="396" height="176" rx="10" fill="#F7F9FC" stroke="#D5DBE5"/>
+<rect x="840" y="448" width="8" height="176" rx="4" fill="#6A3FB5"/>
+<rect x="860" y="462" width="74" height="20" rx="10" fill="#6A3FB5"/>
+<text x="868" y="476" font-size="11" font-weight="700" fill="#FFFFFF">UPDATED</text>
+<text x="944" y="476" font-size="12" fill="#555555">Week and weekend</text>
+<text x="860" y="504" font-size="17" font-weight="700" fill="#1A1A1A">Markets: the worst week since April 2025</text>
+<text x="860" y="528" font-size="13" fill="#2B2B2B">S&amp;P 500: seven straight down days, longest</text>
+<text x="860" y="547" font-size="13" fill="#2B2B2B">since 2020. Anthropic fell 8.5% Friday.</text>
+<text x="860" y="566" font-size="13" fill="#2B2B2B">Bitcoin as low as about $55,150 Saturday, then</text>
+<text x="860" y="585" font-size="13" fill="#2B2B2B">about $57,900. Markets reopen Monday 9:30 am.</text>
+<text x="24" y="672" font-size="12" fill="#555555">Sources: AP, News 6 (ClickOrlando), Latin Times, Coinpaper, Scientific American. Live: howkoz.github.io/world-pulse</text>
+<g class="theme-toggle" id="theme-toggle" role="button" aria-label="Switch between light and dark"><rect x="1182" y="10" width="66" height="26" rx="7" stroke-width="1"/><text id="theme-toggle-label" x="1215" y="27" text-anchor="middle">Dark</text></g>
+<script id="theme-toggle-script"><![CDATA[
+(function () {
+  var root = document.documentElement, key = 'theme:' + location.pathname;
+  var label = document.getElementById('theme-toggle-label');
+  function set(dark) {
+    if (dark) { root.classList.add('dark'); } else { root.classList.remove('dark'); }
+    if (label) { label.textContent = dark ? 'Light' : 'Dark'; }
+  }
+  try { set(localStorage.getItem(key) === 'dark'); } catch (e) { set(false); }
+  var btn = document.getElementById('theme-toggle');
+  if (btn) {
+    btn.addEventListener('click', function () {
+      var dark = !root.classList.contains('dark');
+      set(dark);
+      try { localStorage.setItem(key, dark ? 'dark' : 'light'); } catch (e) {}
+    });
+  }
+})();
+]]></script>
+</svg>
