@@ -25,10 +25,17 @@
   .brand svg { vertical-align: middle; }
   .brand small { font-size: 13px; font-weight: 500; opacity: .75; letter-spacing: 0; }
   .clock { font-size: 13px; opacity: .9; font-variant-numeric: tabular-nums; }
-  .ticker { background: #0a1d36; color: #cfe0f5; font-size: 13px; overflow: hidden; white-space: nowrap; border-top: 1px solid #1d3b60; }
-  .ticker span { display: inline-block; padding: 7px 0; animation: tick 90s linear infinite; }
-  .ticker b { margin: 0 6px 0 28px; }
-  @keyframes tick { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .ticker { background: #0a1d36; color: #cfe0f5; font-size: 13px; white-space: nowrap; border-top: 1px solid #1d3b60; display: flex; align-items: stretch; }
+  .tk-view { flex: 1; min-width: 0; overflow: hidden; position: relative; }
+  .tk-track { display: inline-block; padding: 7px 0; will-change: transform; }
+  .tk-item { cursor: pointer; border-radius: 4px; padding: 2px 4px; }
+  .tk-item:hover, .tk-item:focus { background: #1d3b60; color: #fff; outline: none; text-decoration: underline; }
+  .ticker b { margin: 0 6px 0 24px; }
+  .tk-btn { flex: none; background: #071426; color: #cfe0f5; border: 0; border-left: 1px solid #1d3b60; padding: 0 12px; font-size: 13px; cursor: pointer; }
+  .tk-btn:first-child { border-left: 0; border-right: 1px solid #1d3b60; }
+  .tk-btn:hover, .tk-btn:focus { background: #1d3b60; color: #fff; outline: none; }
+  .tk-hint { position: absolute; right: 8px; top: 50%; transform: translateY(-50%); background: #071426e6; color: #ffd166; font-size: 11px; padding: 2px 8px; border-radius: 10px; display: none; }
+  .ticker.held .tk-hint { display: block; }
   #theme { position: fixed; top: 12px; right: 12px; z-index: 50; padding: 6px 12px; border: 1px solid #94a3b8; border-radius: 8px; background: #fff; color: #1e3a8a; font: 600 12px 'Segoe UI', Arial, sans-serif; cursor: pointer; }
   @media print { #theme { display: none; } }
 
@@ -126,7 +133,12 @@
     <div class="clock" id="clock">loading clock</div>
   </div>
 </div>
-<div class="ticker"><span id="ticker"></span></div>
+<div class="ticker" id="tickerBar">
+  <button class="tk-btn" id="tkBack" type="button" title="Back one headline" aria-label="Back one headline">&#9664;</button>
+  <div class="tk-view" id="tkView"><span class="tk-track" id="ticker"></span><span class="tk-hint" id="tkHint">Paused</span></div>
+  <button class="tk-btn" id="tkPlay" type="button" title="Pause or play the ticker" aria-label="Pause the ticker">&#10074;&#10074;</button>
+  <button class="tk-btn" id="tkFwd" type="button" title="Forward one headline" aria-label="Forward one headline">&#9654;</button>
+</div>
 
 <div class="hero">
   <div class="wrap hero-grid">
@@ -268,8 +280,68 @@
   document.getElementById('tUn').textContent = T.filter(function (t) { return t.status === 'unproven' || t.updates.some(function (u) { return u.ed === LATEST && u.tag === 'UNPROVEN'; }); }).length;
 
   // ticker: latest entry of each thread
-  var tk = T.map(function (t) { return '<b style="color:' + CATS[t.cat].glow + '">&#9679;</b>' + esc(t.title) + ': ' + esc(bestUp(t).text.split('. ')[0]); }).join('');
-  document.getElementById('ticker').innerHTML = tk + tk;
+  // Slow scroll (TK_SPEED pixels a second), pauses while the mouse is over it, a pause button,
+  // back and forward one headline, and a click on a headline opens that story below.
+  var tk = T.map(function (t) { return '<b style="color:' + CATS[t.cat].glow + '">&#9679;</b><span class="tk-item" tabindex="0" role="link" data-id="' + esc(t.id) + '" title="Open this story">' + esc(t.title) + ': ' + esc(bestUp(t).text.split('. ')[0]) + '</span>'; }).join('');
+  var tkTrack = document.getElementById('ticker');
+  tkTrack.innerHTML = tk + tk;
+  (function () {
+    var TK_SPEED = 60, bar = document.getElementById('tickerBar'), view = document.getElementById('tkView'),
+        playBtn = document.getElementById('tkPlay'), hint = document.getElementById('tkHint');
+    var pos = 0, half = 1, starts = [], hover = false, paused = false, anim = null, last = 0;
+    try { paused = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+    function measure() {
+      half = tkTrack.scrollWidth / 2 || 1;
+      var items = tkTrack.querySelectorAll('.tk-item'), n = items.length / 2;
+      starts = [];
+      for (var i = 0; i < n; i++) starts.push(Math.max(0, items[i].previousSibling.offsetLeft - 8));
+    }
+    function wrap(x) { return ((x % half) + half) % half; }
+    function draw() { tkTrack.style.transform = 'translateX(' + (-pos) + 'px)'; }
+    function held() { return paused || hover || anim; }
+    function showState() {
+      bar.classList.toggle('held', paused);
+      playBtn.innerHTML = paused ? '&#9654;&#xFE0E; Play' : '&#10074;&#10074;';
+      playBtn.setAttribute('aria-label', paused ? 'Play the ticker' : 'Pause the ticker');
+      hint.textContent = 'Paused: click a headline to read it';
+    }
+    function step(dir) {
+      if (!starts.length) return;
+      paused = true; showState();
+      var cur = wrap(pos), i, target;
+      if (dir > 0) { target = null; for (i = 0; i < starts.length; i++) if (starts[i] > cur + 4) { target = starts[i]; break; } if (target === null) target = half; }
+      else { target = null; for (i = starts.length - 1; i >= 0; i--) if (starts[i] < cur - 4) { target = starts[i]; break; } if (target === null) { cur += half; target = starts[starts.length - 1]; } }
+      var from = cur, t0 = performance.now();
+      anim = function (now) {
+        var k = Math.min(1, (now - t0) / 350), e = 1 - Math.pow(1 - k, 3);
+        pos = wrap(from + (target - from) * e); draw();
+        if (k >= 1) anim = null;
+      };
+    }
+    function frame(now) {
+      var dt = last ? Math.min(0.1, (now - last) / 1000) : 0; last = now;
+      if (anim) anim(now);
+      else if (!held()) { pos = wrap(pos + TK_SPEED * dt); draw(); }
+      requestAnimationFrame(frame);
+    }
+    view.addEventListener('mouseenter', function () { hover = true; });
+    view.addEventListener('mouseleave', function () { hover = false; });
+    view.addEventListener('focusin', function () { hover = true; });
+    view.addEventListener('focusout', function () { hover = false; });
+    tkTrack.addEventListener('click', function (ev) {
+      var it = ev.target.closest('.tk-item'); if (!it) return;
+      paused = true; showState(); openThread(it.getAttribute('data-id'), true);
+    });
+    tkTrack.addEventListener('keydown', function (ev) {
+      var it = ev.target.closest('.tk-item'); if (it && (ev.key === 'Enter' || ev.key === ' ')) { ev.preventDefault(); it.click(); }
+    });
+    playBtn.onclick = function () { paused = !paused; showState(); };
+    document.getElementById('tkBack').onclick = function () { step(-1); };
+    document.getElementById('tkFwd').onclick = function () { step(1); };
+    window.addEventListener('resize', measure);
+    measure(); showState(); requestAnimationFrame(frame);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
+  })();
 
   // globe
   var HEAT = { developing: 1.5, unproven: 0.9, watching: 1.0, settled: 0.6, quiet: 0.45 };
