@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>World Desk 22 Nov</title>
+<style>
+  :root {
+    --ink: #13202f; --ink2: #3c4a5a; --muted: #6b7887; --line: #dbe2ea; --bg: #f6f8fb; --card: #ffffff;
+    --blue: #1f6fb5; --red: #b3261e; --grey: #6b6b6b; --purple: #6a3fb5; --amber: #c77700; --teal: #00796b;
+    --green: #2e7d32; --navy: #0d2b4e; --sky: #e8f1fb;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Segoe UI", Arial, Helvetica, sans-serif; line-height: 1.45; }
+  a { color: var(--blue); }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 16px; }
+
+  .mast { background: var(--navy); color: #fff; padding: 18px 0 14px; }
+  .mast .wrap { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px; }
+  .brand { font-size: 28px; font-weight: 800; letter-spacing: .5px; }
+  .brand small { font-size: 13px; font-weight: 500; opacity: .75; margin-left: 10px; letter-spacing: 0; }
+  .clock { font-size: 13px; opacity: .9; font-variant-numeric: tabular-nums; }
+  .ticker { background: #0a2240; color: #cfe0f5; font-size: 13px; overflow: hidden; white-space: nowrap; border-top: 1px solid #1d3b60; }
+  .ticker span { display: inline-block; padding: 7px 0; animation: tick 80s linear infinite; }
+  .ticker b { color: #fff; margin: 0 6px 0 28px; }
+  @keyframes tick { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  .hero { background: linear-gradient(180deg, #0d2b4e 0%, #163d6b 100%); color: #fff; padding: 26px 0 30px; }
+  .kicker { display: inline-block; background: #ffb300; color: #13202f; font-weight: 800; font-size: 12px; letter-spacing: 1px; padding: 3px 9px; border-radius: 4px; }
+  .hero h1 { font-size: 34px; margin: 10px 0 6px; line-height: 1.15; }
+  .hero p.dek { font-size: 16px; opacity: .92; margin: 0 0 18px; max-width: 860px; }
+  .hero-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 18px; }
+  @media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr; } .hero h1 { font-size: 26px; } }
+  .panel { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.16); border-radius: 12px; padding: 14px; }
+  .panel h3 { margin: 0 0 8px; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; color: #9cc3ec; }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 12px; }
+  @media (max-width: 560px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+  .stat { background: rgba(255,255,255,.08); border-radius: 10px; padding: 10px; }
+  .stat .n { font-size: 22px; font-weight: 800; }
+  .stat .l { font-size: 11.5px; opacity: .85; }
+  .btn { cursor: pointer; border: 1px solid rgba(255,255,255,.4); background: transparent; color: #fff; border-radius: 6px; padding: 5px 10px; font-size: 12px; font-weight: 600; }
+  .btn.on { background: #fff; color: var(--navy); }
+  .cap { font-size: 13px; min-height: 40px; margin-top: 8px; background: rgba(255,255,255,.08); border-radius: 8px; padding: 8px 10px; }
+  svg text { font-family: "Segoe UI", Arial, sans-serif; }
+
+  section { padding: 26px 0 6px; }
+  h2 { font-size: 22px; margin: 0 0 4px; }
+  .sub { color: var(--muted); font-size: 13.5px; margin: 0 0 14px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 860px) { .two { grid-template-columns: 1fr; } }
+
+  .tl { position: relative; height: 120px; margin: 10px 8px 0; }
+  .tl .rail { position: absolute; left: 0; right: 0; top: 54px; height: 8px; background: #e3e9f0; border-radius: 4px; }
+  .tl .dot { position: absolute; top: 49px; width: 18px; height: 18px; margin-left: -9px; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 0 0 1px #aab6c3; cursor: pointer; }
+  .tl .dot.mil { background: var(--red); } .tl .dot.claim { background: #fff; box-shadow: 0 0 0 2px #c62828; } .tl .dot.talk { background: var(--blue); }
+  .tl .dot.next { background: #ffb300; animation: pulse 1.6s infinite; }
+  .tl .dot.sel { transform: scale(1.3); }
+  @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(255,179,0,.6); } 100% { box-shadow: 0 0 0 12px rgba(255,179,0,0); } }
+  .tl .lab { position: absolute; font-size: 11px; color: var(--ink2); transform: translateX(-50%); white-space: nowrap; }
+  .tl .lab.up { top: 18px; } .tl .lab.down { top: 76px; }
+  .tip { margin-top: 12px; background: var(--sky); border-left: 4px solid var(--blue); padding: 10px 12px; border-radius: 6px; font-size: 14px; min-height: 44px; }
+  @media (max-width: 640px) { .tl .lab { font-size: 9.5px; } }
+
+  .count { font-size: 40px; font-weight: 800; font-variant-numeric: tabular-nums; letter-spacing: 1px; color: var(--navy); }
+  .agenda { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  .ag { cursor: pointer; border: 1px solid var(--line); background: #fff; border-radius: 8px; padding: 6px 12px; font-size: 13px; font-weight: 600; }
+  .ag.on { background: var(--navy); color: #fff; border-color: var(--navy); }
+
+  .rumour { border: 2px dashed #c62828; background: #fff6f5; }
+  .tag { display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: .5px; padding: 2px 8px; border-radius: 999px; color: #fff; }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 14px; }
+  .chip { cursor: pointer; border: 1px solid var(--line); background: #fff; border-radius: 999px; padding: 5px 12px; font-size: 13px; font-weight: 600; color: var(--ink2); }
+  .chip.on { background: var(--ink); color: #fff; border-color: var(--ink); }
+  .chip i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+  .story { background: #fff; border: 1px solid var(--line); border-left: 6px solid var(--blue); border-radius: 10px; padding: 14px; cursor: pointer; transition: transform .2s, box-shadow .2s; opacity: 0; transform: translateY(12px); }
+  .story.in { opacity: 1; transform: none; }
+  .story:hover { box-shadow: 0 6px 18px rgba(16,40,70,.12); transform: translateY(-2px); }
+  .story h4 { margin: 6px 0 4px; font-size: 16px; }
+  .story p { margin: 0; font-size: 13.5px; color: var(--ink2); }
+  .story .more { max-height: 0; overflow: hidden; transition: max-height .4s; font-size: 13px; color: var(--ink2); }
+  .story.open .more { max-height: 360px; }
+  .story .more ul { margin: 8px 0 4px; padding-left: 18px; }
+  .story .meta { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+  .story .cat { font-size: 11px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; }
+  .story .hint { font-size: 11.5px; color: var(--muted); margin-top: 8px; }
+
+  .strip { position: relative; height: 210px; }
+  .strip .day { position: absolute; top: 0; bottom: 22px; border-left: 1px solid var(--line); font-size: 11.5px; color: var(--muted); padding-left: 4px; }
+  .strip .ev { position: absolute; height: 12px; border-radius: 6px; cursor: pointer; }
+  .strip .ev.approx { opacity: .45; }
+  .strip .ev:hover { outline: 2px solid var(--ink); }
+  .striptip { font-size: 13px; color: var(--ink2); min-height: 20px; }
+
+  footer { margin: 34px 0 0; padding: 18px 0 30px; border-top: 1px solid var(--line); font-size: 12.5px; color: var(--muted); }
+  footer ul { padding-left: 18px; margin: 6px 0; columns: 2; }
+  @media (max-width: 700px) { footer ul { columns: 1; } }
+</style>
+</head>
+<body>
+<style>
+  .nx { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+  .nx button { cursor: pointer; border: 1px solid var(--line); background: #fff; border-radius: 10px; padding: 8px 12px; font-size: 13px; font-weight: 700; color: var(--ink); text-align: left; }
+  .nx button span { display: block; font-size: 11px; font-weight: 600; color: var(--muted); }
+  .nx button.on { background: var(--navy); color: #fff; border-color: var(--navy); }
+  .nx button.on span { color: #cfe0f5; }
+</style>
+
+<div class="mast">
+  <div class="wrap">
+    <div class="brand">World Desk <small>Howard's personal news, checked against the sources &middot; <a href="World-Pulse.html" style="color:#ffd36b">World Pulse home</a></small></div>
+    <div class="clock" id="clock">loading clock</div>
+  </div>
+</div>
+<div class="ticker"><span id="ticker"></span></div>
+
+
+<style>
+  .ladder { display: flex; flex-direction: column; gap: 6px; }
+  .rung { display: grid; grid-template-columns: 28px 1fr 92px; align-items: center; gap: 8px; cursor: pointer; border-radius: 8px; padding: 7px 8px; background: rgba(255,255,255,.05); border: 1px solid transparent; opacity: .35; transition: opacity .5s, background .3s; }
+  .rung.lit { opacity: 1; }
+  .rung.sel { border-color: #ffd54f; background: rgba(255,213,79,.12); }
+  .rung .ic { width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800; background: rgba(255,255,255,.15); }
+  .rung.done .ic { background: #66bb6a; color: #0d2b4e; }
+  .rung.wip .ic { background: #ffb300; color: #0d2b4e; animation: pulse 1.6s infinite; }
+  .rung.later .ic { background: transparent; border: 2px dashed rgba(255,255,255,.5); }
+  .rung .nm { font-size: 13.5px; font-weight: 700; }
+  .rung .nm small { display: block; font-weight: 500; font-size: 11.5px; opacity: .8; }
+  .rung .st { font-size: 11px; font-weight: 800; text-align: right; letter-spacing: .5px; }
+  .gauge { height: 10px; background: rgba(255,255,255,.12); border-radius: 5px; overflow: hidden; margin: 10px 0 2px; }
+  .gauge div { height: 100%; width: 0; background: linear-gradient(90deg, #66bb6a, #ffb300); transition: width 1.2s ease; }
+  @media (max-width: 560px) { .rung { grid-template-columns: 24px 1fr 70px; } .rung .nm { font-size: 12px; } }
+</style>
+
+<!-- HERO: THE RIEMANN PROOF -->
+<div class="hero">
+  <div class="wrap">
+    <span class="kicker">HEADLINE &middot; SCIENCE</span>
+    <h1>Computer proof checkers back the Claude-assisted proof of the Riemann Hypothesis</h1>
+    <p class="dek">The Riemann Hypothesis is a 167-year-old question about where the prime numbers hide, and one of seven problems with a $1 million prize. On Friday 20 Nov, Anthropic mathematician Levent Alpoge said he and the AI (artificial intelligence) model Claude had proved it. Now the Lean and Mathlib communities, who run the main software that checks proofs line by line, say in a joint statement they have "full confidence" it is correct. Human experts still need weeks to understand the ideas.</p>
+
+    <div class="hero-grid">
+      <div class="panel">
+        <h3 style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap">What the hypothesis says
+          <span><button class="btn" id="play">&#9654; Plot the zeros</button> <button class="btn" id="off">What a failure looks like</button></span></h3>
+        <svg id="plane" viewBox="0 0 420 270" width="100%" style="display:block;border-radius:8px">
+          <rect x="0" y="0" width="420" height="270" fill="#10345c"/>
+          <rect x="150" y="14" width="120" height="226" fill="#ffffff" fill-opacity=".06"/>
+          <line x1="150" y1="14" x2="150" y2="240" stroke="#ffffff" stroke-opacity=".35" stroke-dasharray="3 4"/>
+          <line x1="270" y1="14" x2="270" y2="240" stroke="#ffffff" stroke-opacity=".35" stroke-dasharray="3 4"/>
+          <line x1="210" y1="14" x2="210" y2="240" stroke="#ffd54f" stroke-width="2.5"/>
+          <line x1="30" y1="240" x2="400" y2="240" stroke="#ffffff" stroke-opacity=".5"/>
+          <text x="150" y="256" font-size="11" fill="#cfe0f5" text-anchor="middle">0</text>
+          <text x="210" y="256" font-size="11" fill="#ffd54f" text-anchor="middle" font-weight="700">1/2</text>
+          <text x="270" y="256" font-size="11" fill="#cfe0f5" text-anchor="middle">1</text>
+          <text x="214" y="28" font-size="11" fill="#ffd54f">the critical line</text>
+          <text x="36" y="28" font-size="10.5" fill="#9cc3ec">height up</text>
+          <text x="36" y="42" font-size="10.5" fill="#9cc3ec">the line</text>
+          <text x="282" y="210" font-size="10.5" fill="#9cc3ec">the critical strip:</text>
+          <text x="282" y="224" font-size="10.5" fill="#9cc3ec">zeros live here</text>
+          <g id="zeros"></g>
+          <g id="bad" style="opacity:0;transition:opacity .6s">
+            <circle cx="244" cy="96" r="8" fill="none" stroke="#ff5252" stroke-width="3"/>
+            <text x="256" y="92" font-size="11" fill="#ff8a80" font-weight="700">a zero off the line</text>
+            <text x="256" y="106" font-size="10.5" fill="#ff8a80">never found; the proof</text>
+            <text x="256" y="119" font-size="10.5" fill="#ff8a80">says it cannot exist</text>
+          </g>
+        </svg>
+        <div class="cap" id="hcap">The zeta function has infinitely many "zeros", points where it equals nothing. Riemann guessed in 1859 that every interesting zero sits exactly on the yellow line. Press play to plot the first ten, at their real heights.</div>
+      </div>
+
+      <div class="panel">
+        <h3 style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap">How far the checking has got
+          <span><button class="btn" id="climb">&#9654; Climb the ladder</button></span></h3>
+        <div class="ladder" id="ladder"></div>
+        <div class="gauge"><div id="gfill"></div></div>
+        <div style="font-size:11.5px;opacity:.85" id="glab">5 of 7 steps done</div>
+        <div class="cap" id="lcap">Click a step. Green is done, amber is happening now, dashed is still to come.</div>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="n">1859</div><div class="l">Bernhard Riemann states the guess</div></div>
+      <div class="stat"><div class="n">$1 million</div><div class="l">Clay Mathematics Institute prize, one of seven Millennium Problems</div></div>
+      <div class="stat"><div class="n">~17 million</div><div class="l">lines of Lean code in the computer proof</div></div>
+      <div class="stat"><div class="n">2</div><div class="l">proof claims now: the Claude-assisted one, and a separate human one nobody has checked</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- STEPS -->
+  <section>
+    <h2>The story so far, and what happens next</h2>
+    <p class="sub">Each dot is one moment. Evenly spaced, not to scale. Click any dot.</p>
+    <div class="card">
+      <div class="tl" id="tl"><div class="rail"></div></div>
+      <div class="tip" id="tltip">Click a dot to see what happened.</div>
+    </div>
+  </section>
+
+  <!-- NEXT + UNCONFIRMED -->
+  <section>
+    <div class="two">
+      <div class="card">
+        <h2 style="font-size:18px">What is next</h2>
+        <p class="sub">Click one. Countdowns run from your clock; once a moment passes, this page cannot know what happened: check World Pulse.</p>
+        <div class="agenda" id="agenda"></div>
+        <div class="count" id="cd" style="margin-top:10px">--</div>
+        <div style="font-size:13px;color:var(--ink2)" id="cdw"></div>
+        <div class="tip" id="agtip"></div>
+      </div>
+      <div class="card rumour">
+        <span class="tag" style="background:#c62828">UNCONFIRMED</span>
+        <h2 style="font-size:17px;margin-top:8px">A second, human-written Riemann proof</h2>
+        <p style="margin:4px 0 8px;font-size:14px;color:var(--ink2)">Scientific American reports two top mathematicians say a person may have proved it months ago. Nobody has checked that claim yet.</p>
+        <span class="tag" style="background:#c62828">UNCONFIRMED</span>
+        <h2 style="font-size:17px;margin-top:8px">Bessent accuses Nvidia over China chip sales</h2>
+        <p style="margin:4px 0 8px;font-size:14px;color:var(--ink2)">Only aggregator sites carry this weekend remark. We could not find it at a major outlet.</p>
+        <span class="tag" style="background:#c62828">UNCONFIRMED</span>
+        <h2 style="font-size:17px;margin-top:8px">Plane crash at Jackson, Mississippi</h2>
+        <p style="margin:4px 0 8px;font-size:14px;color:var(--ink2)">One online crash database lists two dead at Hawkins Field on 21 Nov. No news outlet or Federal Aviation Administration (FAA) record found yet.</p>
+        <span class="tag" style="background:#c62828">UNCONFIRMED</span>
+        <h2 style="font-size:17px;margin-top:8px">"FBI hacked again"</h2>
+        <p style="margin:4px 0 0;font-size:14px;color:var(--ink2)">A one-line headline in a news bulletin roundup. We found no detail and no statement from the FBI (Federal Bureau of Investigation).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OTHER STORIES -->
+  <section>
+    <h2>The rest of the world today</h2>
+    <p class="sub">From this morning's scan (22 Nov, about 11:50 UTC, Coordinated Universal Time). Filter by topic, click a card for what changed.</p>
+    <div class="chips" id="chips"></div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <!-- WEEK STRIP -->
+  <section>
+    <h2>The week at a glance</h2>
+    <p class="sub">Each bar is one story, placed on the day it happened (Eastern). Faded bars: only the day is known. Hover a bar. <a href="timelines/World-Events-Timeline-Update-22Nov2026.svg">Open the full timeline picture</a>.</p>
+    <div class="card">
+      <div class="strip" id="strip"></div>
+      <div class="striptip" id="striptip">&nbsp;</div>
+    </div>
+  </section>
+
+  <footer>
+    <b>Key:</b> AI = artificial intelligence. MIT = Massachusetts Institute of Technology. US = United States. UK = United Kingdom. COP31 = the 31st United Nations climate Conference of the Parties. EU = European Union. NATO = North Atlantic Treaty Organization. SEC = Securities and Exchange Commission. PCE = Personal Consumption Expenditures (an inflation measure). FAA = Federal Aviation Administration. FBI = Federal Bureau of Investigation. NTSB = National Transportation Safety Board. UAP = Unidentified Anomalous Phenomena. UFO = Unidentified Flying Object. ECDC = European Centre for Disease Prevention and Control. USGS = United States Geological Survey. UTC = Coordinated Universal Time.<br>
+    <b>Sources:</b>
+    <ul>
+      <li><a href="https://www.scientificamerican.com/article/the-ai-riemann-hypothesis-proof-is-almost-certainly-true-independent-mathematicians-attest/">Scientific American: Lean and Mathlib statement</a></li>
+      <li><a href="https://www.science.org/content/article/ai-may-have-solved-math-s-greatest-mystery-can-humans-understand-answer">Science: can humans understand it?</a></li>
+      <li><a href="https://www.nature.com/articles/d41586-026-03812-7">Nature: mathematicians astounded</a></li>
+      <li><a href="https://www.scientificamerican.com/article/dueling-claims-of-riemann-hypothesis-proofs-emerge/">Scientific American: dueling claims</a></li>
+      <li><a href="https://www.aljazeera.com/news/2026/11/21/riemann-hypothesis-has-the-worlds-most-famous-maths-problem-been-cracked">Al Jazeera: has it been cracked?</a></li>
+      <li><a href="https://www.bostonglobe.com/2026/11/22/world/turkey-un-climate-fossil-fuels-global-warming/">AP via Boston Globe: COP31 final draft</a></li>
+      <li><a href="https://www.abc.net.au/news/2026-11-22/cop31-at-odds-over-fossil-fuels/107414330">ABC News Australia: COP31 at odds</a></li>
+      <li><a href="https://www.cbsnews.com/live-updates/iran-war-trump-tehran-denies-chemical-weapons/">CBS News live: Iran</a></li>
+      <li><a href="https://www.thenationalnews.com/news/gulf/2026/11/22/two-injured-one-critically-in-iranian-attack-on-industrial-plant-in-bahrain/">The National: Bahrain plant</a></li>
+      <li><a href="https://www.aljazeera.com/news/2026/11/21/tankers-hit-in-strait-of-hormuz-as-iran-tightens-grip-on-shipping">Al Jazeera: Hormuz tankers</a></li>
+      <li><a href="https://aa.com.tr/en/middle-east/saudi-led-coalition-says-it-intercepted-houthi-drone-targeting-riyadh-region/4133472">Anadolu: Houthi drone at Riyadh</a></li>
+      <li><a href="https://www.aljazeera.com/video/newsfeed/2026/11/22/dashcam-captures-russian-missile-strike-on-lviv-ukraine">Al Jazeera: Lviv dashcam</a></li>
+      <li><a href="https://unn.ua/en/news/russian-attack-on-lviv-on-november-20-killed-two-people-sadovyi">UNN: Lviv toll</a></li>
+      <li><a href="https://www.aljazeera.com/news/2026/11/21/russian-missiles-hit-poland-what-happened-and-could-nato-respond">Al Jazeera: Poland and NATO</a></li>
+      <li><a href="https://edition.cnn.com/2026/11/21/americas/el-chapo-isidro-mexico-fbi-wanted-hnk-intl">CNN: El Chapo Isidro</a></li>
+      <li><a href="https://www.npr.org/2026/11/21/nx-s1-6049672/cartel-boss-el-chapo-isidro-detained">NPR: 11 dead in firefight</a></li>
+      <li><a href="https://www.nbcnews.com/politics/white-house/national-cyber-director-sean-cairncross-leaving-kirsten-davies-replaci-rcna610329">NBC News: cyber director out</a></li>
+      <li><a href="https://cyberscoop.com/sean-cairncross-out-national-cyber-director/">CyberScoop: Cairncross</a></li>
+      <li><a href="https://www.euronews.com/video/2026/11/21/pentagon-declassifies-new-ufo-footage-filmed-by-us-military">Euronews: UFO footage</a></li>
+      <li><a href="https://www.clickorlando.com/news/local/2026/11/21/cocoa-flooding-everything-was-floating-as-residents-rescued-from-homes-amid-record-st-johns-river-flooding/">News 6: Cocoa flooding</a></li>
+      <li><a href="https://www.wesh.com/article/road-closures-flooding-central-florida-brevard-county/74475372">WESH: road closures</a></li>
+      <li><a href="https://coincodex.com/article/95777/daily-market-update-for-november-22-2026/">CoinCodex: bitcoin</a></li>
+      <li><a href="https://www.proactiveinvestors.com/companies/news/1083087/week-ahead-a-thanksgiving-shortened-trading-week-after-volatile-november-selloff-1083087.html">Proactive Investors: week ahead</a></li>
+      <li><a href="https://outbreaknewstoday.substack.com/p/ebola-outbreak-update-as-of-november-6e6">Outbreak News Today: Ebola</a></li>
+      <li><a href="https://www.geekwire.com/2026/latest-findings-point-to-fuel-supply-not-blue-origins-engines-in-loss-of-amazon-leo-satellites/">GeekWire: Vulcan findings</a></li>
+      <li><a href="https://hackread.com/jpmorgan-chase-visa-mastercard-vendor-incidents-n0n-leak/">Hackread: vendor breach</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Starship_flight_16">Wikipedia: Starship Flight 16</a></li>
+      <li><a href="https://earthquake.usgs.gov/earthquakes/map/">USGS: earthquakes (none of magnitude 5.5 or more in the last day)</a></li>
+    </ul>
+    Facts checked 22 Nov 2026 about 11:50 UTC. The page works out times live from your clock, but it does not fetch news: once a countdown reaches zero it cannot know what happened.
+  </footer>
+</div>
+
+<script>
+(function () {
+  var ET = 'America/New_York';
+  function fmt(ms, opts) { return new Date(ms).toLocaleString('en-US', Object.assign({ timeZone: ET }, opts)); }
+
+  // hero left: zeros on the critical line (real heights of the first ten nontrivial zeros)
+  var Z = [14.13, 21.02, 25.01, 30.42, 32.94, 37.59, 40.92, 43.33, 48.01, 49.77];
+  var zg = document.getElementById('zeros'), NS = 'http://www.w3.org/2000/svg', zt = null, cap = document.getElementById('hcap');
+  function yOf(h) { return 240 - h / 52 * 216; }
+  function clearZ() { while (zg.firstChild) zg.removeChild(zg.firstChild); }
+  function dot(i) {
+    var y = yOf(Z[i]);
+    var c = document.createElementNS(NS, 'circle'); c.setAttribute('cx', 210); c.setAttribute('cy', y); c.setAttribute('r', 0); c.setAttribute('fill', '#ffffff');
+    c.style.transition = 'r .4s'; zg.appendChild(c);
+    var t = document.createElementNS(NS, 'text'); t.setAttribute('x', 196); t.setAttribute('y', y + 4); t.setAttribute('font-size', '10'); t.setAttribute('fill', '#cfe0f5'); t.setAttribute('text-anchor', 'end'); t.textContent = Z[i].toFixed(2);
+    zg.appendChild(t);
+    setTimeout(function () { c.setAttribute('r', 5); }, 30);
+  }
+  function playZ() {
+    if (zt) clearInterval(zt); clearZ(); document.getElementById('bad').style.opacity = 0;
+    var i = 0; dot(0); cap.textContent = 'Zero 1 sits at height 14.13, right on the line.';
+    zt = setInterval(function () {
+      i++;
+      if (i < Z.length) { dot(i); cap.textContent = 'Zero ' + (i + 1) + ' at height ' + Z[i].toFixed(2) + ': on the line again.'; }
+      else { clearInterval(zt); zt = null; cap.textContent = 'Computers have checked trillions of zeros and every one is on the line. But checking examples is not a proof. The new proof claims to show that no zero can ever leave it.'; }
+    }, 650);
+  }
+  document.getElementById('play').onclick = playZ;
+  document.getElementById('off').onclick = function () {
+    document.getElementById('bad').style.opacity = 1;
+    cap.textContent = 'If even one zero sat off the line, like the red ring, the hypothesis would be false, and many results about prime numbers that assume it would fall with it.';
+  };
+  setTimeout(function () { if (!zt && !zg.firstChild) playZ(); }, 900);
+
+  // hero right: the checking ladder
+  var STEPS2 = [
+    { s: 'done', n: 'Claim posted', w: '20 Nov', d: 'Levent Alpoge posts a four-page note saying he and Claude found a proof, plus the full computer version of it.' },
+    { s: 'done', n: 'Computer proof compiles', w: '20 to 21 Nov', d: 'The proof is written in Lean, a language where software checks every step. About 17 million lines, and it runs with no errors.' },
+    { s: 'done', n: 'It proves the right statement', w: '21 Nov', d: 'The danger with computer proofs is proving a slightly different question. Two independent comparison tools say the theorem is exactly Mathlib\'s own standard statement of the Riemann Hypothesis.' },
+    { s: 'done', n: 'Rebuilt by an outsider', w: '21 Nov', d: 'MIT mathematician Andrew Sutherland compiled it himself without issues.' },
+    { s: 'done', n: 'Lean and Mathlib statement', w: '21 Nov', d: 'The two communities behind the checker issue a joint statement: "full confidence" the proof is correct.' },
+    { s: 'wip', n: 'Humans understand it', w: 'now, likely weeks', d: 'A proof nobody understands teaches little. Science reports many mathematicians expect it to hold up; Al Jazeera says it may take weeks to understand. Andrew Granville criticised releasing it without a clearer write-up.' },
+    { s: 'later', n: 'Journal, then the prize', w: 'years', d: 'Clay Institute rules ask for publication in a respected journal and then a wait of two years before any prize. Alpoge says credit should go to him as the person, though Claude outpaced him near the finish.' }
+  ];
+  var lad = document.getElementById('ladder'), rungs = [], lcap = document.getElementById('lcap'), ct = null;
+  STEPS2.forEach(function (st, i) {
+    var r = document.createElement('div'); r.className = 'rung ' + st.s;
+    r.innerHTML = '<div class="ic">' + (st.s === 'done' ? '&#10003;' : (i + 1)) + '</div><div class="nm">' + st.n + '<small>' + st.w + '</small></div><div class="st">' + (st.s === 'done' ? 'DONE' : st.s === 'wip' ? 'UNDER WAY' : 'TO COME') + '</div>';
+    r.onclick = function () { if (ct) { clearInterval(ct); ct = null; } lightR(i); };
+    lad.appendChild(r); rungs.push(r);
+  });
+  function lightR(i) {
+    rungs.forEach(function (x, j) { x.classList.remove('sel'); if (j <= i) x.classList.add('lit'); });
+    rungs[i].classList.add('lit'); rungs[i].classList.add('sel');
+    lcap.innerHTML = '<b>' + STEPS2[i].n + '</b> (' + STEPS2[i].w + '): ' + STEPS2[i].d;
+  }
+  function climb() {
+    if (ct) clearInterval(ct);
+    rungs.forEach(function (x) { x.classList.remove('lit'); x.classList.remove('sel'); });
+    document.getElementById('gfill').style.width = '0';
+    var i = 0; lightR(0);
+    ct = setInterval(function () {
+      i++;
+      if (i < STEPS2.length) lightR(i);
+      else { clearInterval(ct); ct = null; document.getElementById('gfill').style.width = (5 / 7 * 100) + '%'; lcap.textContent = 'Five of seven steps done in two days, which is very fast for a problem this old. The machine says the logic holds; the slow, human part has only started.'; }
+    }, 1500);
+  }
+  document.getElementById('climb').onclick = climb;
+  setTimeout(climb, 1200);
+
+  // steps timeline
+  var STEPS = [
+    { k: 'talk', name: '1859: the guess', when: '1859', d: 'Bernhard Riemann suggests that all the interesting zeros of the zeta function lie on one line. That would mean the primes are spread about as evenly as they can be.' },
+    { k: 'talk', name: '2000: $1 million prize', when: '2000', d: 'The Clay Mathematics Institute names it one of seven Millennium Prize Problems. Only one of the seven, the Poincare conjecture, has been solved so far.' },
+    { k: 'mil', name: 'note posted', when: 'Fri 20 Nov', d: 'Levent Alpoge, a mathematician at Anthropic, posts a short note and a Lean computer proof made with Claude.' },
+    { k: 'claim', name: 'rival claim', when: '20 to 21 Nov', d: 'Scientific American reports a separate, human-written proof claim. Nobody has checked it yet.' },
+    { k: 'mil', name: 'checkers back it', when: 'Sat 21 Nov', d: 'The Lean and Mathlib communities say they have full confidence the proof is correct. An MIT mathematician rebuilt it with no errors.' },
+    { k: 'next', name: 'experts read it', when: 'coming weeks', d: 'Mathematicians work through the ideas. Some extensions, such as other zeta-like functions, are not covered yet, by Alpoge\'s own account.' },
+    { k: 'next', name: 'journal and prize', when: 'years', d: 'Publication, then the two-year wait the Clay rules ask for. This page cannot know how that will go.' }
+  ];
+  var tl = document.getElementById('tl'), dots = [];
+  STEPS.forEach(function (s, i) {
+    var x = 5 + i * (90 / (STEPS.length - 1));
+    var d = document.createElement('div'); d.className = 'dot ' + s.k; d.style.left = x + '%'; tl.appendChild(d);
+    var lab = document.createElement('div'); lab.className = 'lab ' + (i % 2 ? 'down' : 'up'); lab.style.left = x + '%'; lab.textContent = s.name; tl.appendChild(lab);
+    d.addEventListener('click', function () {
+      dots.forEach(function (o) { o.classList.remove('sel'); }); d.classList.add('sel');
+      document.getElementById('tltip').innerHTML = '<b>' + s.when + '</b> &middot; ' + s.d;
+    });
+    dots.push(d);
+  });
+
+  // what is next
+  var UP = [
+    { k: 'Amazon Leo on Ariane 6', t: Date.UTC(2026, 10, 23, 11, 9), end: Date.UTC(2026, 10, 24, 5, 0), when: 'No earlier than Monday 23 Nov, 11:09 UTC, from French Guiana (one list says 10:12 UTC).', d: '36 Amazon satellites on a European rocket, the first Amazon launch since Vulcan lost 40 on 15 Nov.' },
+    { k: 'US markets reopen', t: Date.UTC(2026, 10, 23, 14, 30), end: Date.UTC(2026, 10, 23, 21, 0), when: 'Monday 23 Nov, 9:30 am Eastern.', d: 'First trading after the worst week since April 2025. Futures open Sunday 6 pm Eastern.' },
+    { k: 'Thanksgiving: markets shut', t: Date.UTC(2026, 10, 26, 5, 0), end: Date.UTC(2026, 10, 27, 5, 0), when: 'Thursday 26 Nov, all day. Early close 1 pm Eastern on Friday.', d: 'A short, thin trading week.' },
+    { k: 'COP31 closing vote', t: Date.UTC(2026, 10, 22, 6, 0), end: Date.UTC(2026, 10, 22, 18, 0), when: 'Sunday 22 Nov, Antalya morning (times reported differ).', d: 'Nearly 200 countries must approve a text that never names fossil fuels. At scan time we found no report that it passed.' },
+    { k: 'Learjet NTSB report', t: Date.UTC(2026, 11, 1, 17, 0), end: Date.UTC(2026, 11, 8, 0, 0), when: 'Usually about 30 days after the 1 Nov crash; no date announced. Countdown is a rough guide.', d: 'The National Transportation Safety Board preliminary report on the Learjet 60 crash near West Palm Beach.' }
+  ];
+  var sel = 0, agEl = document.getElementById('agenda');
+  UP.forEach(function (u, i) {
+    var b = document.createElement('button'); b.className = 'ag' + (i === sel ? ' on' : ''); b.textContent = u.k;
+    b.onclick = function () { sel = i; agEl.querySelectorAll('.ag').forEach(function (x) { x.classList.remove('on'); }); b.classList.add('on'); tick(); };
+    agEl.appendChild(b);
+  });
+  function hms(ms) { var s = Math.max(0, Math.floor(ms / 1000)), d = Math.floor(s / 86400); return (d ? d + 'd ' : '') + String(Math.floor(s % 86400 / 3600)).padStart(2, '0') + ':' + String(Math.floor(s % 3600 / 60)).padStart(2, '0') + ':' + String(s % 60).padStart(2, '0'); }
+  function tick() {
+    var now = Date.now(), u = UP[sel], cd = document.getElementById('cd');
+    document.getElementById('clock').textContent = fmt(now, { weekday: 'long', day: 'numeric', month: 'long', hour: 'numeric', minute: '2-digit', second: '2-digit' }) + ' Eastern';
+    document.getElementById('agtip').textContent = u.d;
+    document.getElementById('cdw').textContent = 'Counting to ' + fmt(u.t, { weekday: 'long', day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit' }) + ' Eastern. ' + u.when;
+    if (now < u.t) { cd.textContent = hms(u.t - now); cd.style.fontSize = '40px'; }
+    else if (now < u.end) { cd.textContent = 'Time has come: what happened is not on this page'; cd.style.fontSize = '20px'; }
+    else { cd.textContent = 'Passed: check World Pulse for the result'; cd.style.fontSize = '20px'; }
+  }
+  tick(); setInterval(tick, 1000);
+
+  // stories (d = [start day, start hour Eastern, end day, end hour Eastern, only the day known])
+  var CATS = {
+    space: ['#3949ab', 'Space'], tech: ['#1f6fb5', 'Tech and science'], mil: ['#b3261e', 'Iran and military'], war: ['#6b6b6b', 'Wars and spying'],
+    money: ['#6a3fb5', 'Money'], health: ['#c77700', 'Health'], acc: ['#00796b', 'Accidents and weather'], world: ['#0d2b4e', 'World politics']
+  };
+  var STATUS = { upd: ['#1f6fb5', 'UPDATED'], neu: ['#2e7d32', 'NEW'], un: ['#c62828', 'UNPROVEN'], same: ['#8a96a3', 'NO CHANGE'], res: ['#ef6c00', 'RESULT'] };
+  var STORIES = [
+    { c: 'world', s: 'neu', h: 'COP31: final climate text never says "fossil fuels"', p: 'Talks in Antalya, Turkey ran past Friday\'s deadline. Approval vote set for Sunday.', more: ['The 10-page text does not use the words fossil, oil, coal or phase out.', 'It only points back to the 2023 Dubai promise to move away from them.', 'A European Union official called it a step backwards; a no-deal ending is possible.', 'At scan time we found no report that it was adopted.'], d: [21, 0, 22, 6, 1] },
+    { c: 'mil', s: 'upd', h: 'Iranian attack sets a Bahrain factory on fire', p: 'Two people hurt, one critically, The National reports.', more: ['Iran\'s Revolutionary Guard says it aimed at US positions at Riffa and Awali.', 'Bahrain asked the United Nations Security Council to act.', 'Trump says there is an "indication" Iran wants chemical or biological weapons; Iran denies it.', 'CBS: Trump says he wants a "permanent" deal; his next move may wait until 2027.'], d: [21, 0, 21, 12, 1] },
+    { c: 'mil', s: 'same', h: 'Hormuz: no new ship attacks found since Saturday', p: 'Saturday\'s count still differs: two tankers or three.', more: ['Iran says ships must follow lanes it sets.', 'The US is blockading Iranian ports and escorting tankers.'], d: null },
+    { c: 'mil', s: 'upd', h: 'Houthi drone and missile shot down over Saudi Arabia', p: 'A drone aimed at the Riyadh region and a ballistic missile at the west.', more: ['Spokesman Turki al-Maliki gave no casualty or damage details.'], d: [21, 17, 22, 2, 1] },
+    { c: 'war', s: 'upd', h: 'Lviv: two killed as Russian missile hits near a railway station', p: 'Dashcam video caught the strike. Seven to ten injured.', more: ['Homes, an energy site and the Sknyliv station ticket hall were hit.', 'At least four killed in strikes on Odesa, Al Jazeera reports.'], d: [20, 5, 20, 9, 1] },
+    { c: 'war', s: 'upd', h: 'Poland did not formally invoke NATO Article 4', p: 'It asked allies for more air defence instead.', more: ['Some outlets that reported Article 4 issued corrections.', 'Warsaw says two missiles and a jet-powered drone may have come down.', 'NATO = North Atlantic Treaty Organization.'], d: null },
+    { c: 'acc', s: 'upd', h: 'St. Johns River at a record level near Cocoa', p: 'Flooding on Florida\'s Space Coast could last weeks.', more: ['Forecast crest of 10.4 feet above Lake Harney, major flood stage.', 'State Road 46 closed at the river; part of State Road 50 closed.', 'About 120 rescued in Brevard and over 150 in Volusia; no deaths reported as of Thursday.'], d: null },
+    { c: 'acc', s: 'upd', h: 'El Chapo Isidro: 11 died in the capture firefight', p: 'Seven suspected gang members and four soldiers.', more: ['Troops could not get him out of Guasave until 4 am.', 'Flown to Mexico City on Saturday.', 'He faces a US extradition request; no transfer confirmed.'], d: [20, 19, 21, 4, 0] },
+    { c: 'tech', s: 'neu', h: 'White House cyber chief Sean Cairncross is out', p: 'Kirsten Davies, the Pentagon\'s chief information officer, is acting director.', more: ['Several outlets say he was fired; the White House confirmed he is leaving.', 'Officials still deny that cyberattacks caused this month\'s outages.'], d: [20, 12, 20, 20, 1] },
+    { c: 'space', s: 'neu', h: 'Pentagon releases new UFO videos', p: 'Eighth batch: 43 files, three videos filmed over the Middle East.', more: ['Filmed in 2020, 2023 and 2026 by US military sensors.', 'One shows a small object glowing on infrared as it passes a warship.', 'The Pentagon gives no assessment of what any object is.'], d: [20, 9, 20, 17, 1] },
+    { c: 'space', s: 'upd', h: 'Vulcan loss: engines starved of fuel, early findings say', p: 'The BE-4 engines worked; they did not get enough fuel.', more: ['The Federal Aviation Administration (FAA) is overseeing the investigation.', 'Ariane 6 with 36 Amazon Leo satellites is set for Monday 23 Nov.'], d: null },
+    { c: 'money', s: 'upd', h: 'Bitcoin bounces back to about $59,000', p: 'After a low of about $55,130 on Saturday.', more: ['Quotes differ by exchange, from about $58,900 to $60,400.', 'Still down about 12% on the week.'], d: [21, 0, 22, 6, 1] },
+    { c: 'money', s: 'upd', h: 'A short week for Wall Street', p: 'Markets reopen Monday, shut Thursday for Thanksgiving.', more: ['Futures start trading Sunday 6 pm Eastern.', 'Inflation figures (PCE, Personal Consumption Expenditures) on Wednesday.', 'Early close 1 pm Eastern on Friday.'], d: null },
+    { c: 'money', s: 'same', h: 'Nvidia: no new official word', p: 'No statement from the SEC (Securities and Exchange Commission) or Nvidia.', more: ['A reported Bessent remark is only on aggregator sites: unproven.'], d: null },
+    { c: 'health', s: 'upd', h: 'Ebola: 11,723 confirmed cases in Congo', p: 'And 5,752 deaths, per the health ministry figures for 19 Nov.', more: ['43 new confirmed cases that day.', 'Ituri province has about two thirds of cases.', 'No approved vaccine for this strain.'], d: null },
+    { c: 'tech', s: 'upd', h: 'Chase breach: hackers name the vendor, nobody confirms', p: 'The group n0n says it was Qubole, a data platform.', more: ['No company has named the vendor or given a customer count.', 'Chase says it will contact affected customers directly.'], d: null },
+    { c: 'acc', s: 'un', h: 'Plane crash reported at Jackson, Mississippi', p: 'One crash database says two dead. Not confirmed elsewhere.', more: ['Hawkins Field, 21 Nov.', 'No news or FAA record found yet.'], d: [21, 0, 21, 23, 1] },
+    { c: 'space', s: 'same', h: 'Starship: still no Flight 16 date', p: 'Aimed at no earlier than December from pad 39A in Florida.', more: ['Likely Booster 23 and Ship 43.', 'No launch licence announced. Still marked quiet on World Pulse.'], d: null }
+  ];
+  var chips = document.getElementById('chips'), grid = document.getElementById('grid'), active = 'all';
+  function chip(key, label, col) {
+    var b = document.createElement('button'); b.className = 'chip' + (key === 'all' ? ' on' : '');
+    b.innerHTML = (col ? '<i style="background:' + col + '"></i>' : '') + label;
+    b.onclick = function () { active = key; chips.querySelectorAll('.chip').forEach(function (c) { c.classList.remove('on'); }); b.classList.add('on'); render(); };
+    chips.appendChild(b);
+  }
+  chip('all', 'All');
+  Object.keys(CATS).forEach(function (k) { chip(k, CATS[k][1], CATS[k][0]); });
+  function render() {
+    grid.innerHTML = '';
+    STORIES.filter(function (s) { return active === 'all' || s.c === active; }).forEach(function (s, i) {
+      var e = document.createElement('div'); e.className = 'story'; e.style.borderLeftColor = CATS[s.c][0];
+      e.innerHTML = '<div class="meta"><span class="cat" style="color:' + CATS[s.c][0] + '">' + CATS[s.c][1] + '</span>' +
+        '<span class="tag" style="background:' + STATUS[s.s][0] + '">' + STATUS[s.s][1] + '</span></div>' +
+        '<h4>' + s.h + '</h4><p>' + s.p + '</p><div class="more"><ul><li>' + s.more.join('</li><li>') + '</li></ul></div>' +
+        '<div class="hint">Click for details</div>';
+      e.onclick = function () { e.classList.toggle('open'); e.querySelector('.hint').textContent = e.classList.contains('open') ? 'Click to close' : 'Click for details'; };
+      grid.appendChild(e);
+      setTimeout(function () { e.classList.add('in'); }, 60 * i);
+    });
+  }
+  render();
+
+  var tick2 = document.getElementById('ticker'), tt = [{ h: 'Computer proof checkers back the Claude-assisted proof of the Riemann Hypothesis' }].concat(STORIES).map(function (s) { return '<b>&#9679;</b>' + s.h; }).join('');
+  tick2.innerHTML = tt + tt;
+
+  // week strip (Eastern days, 17 to 22 Nov)
+  var strip = document.getElementById('strip'), D0 = 17, D1 = 23, rowY = 22;
+  for (var d = D0; d <= D1; d++) {
+    var dv = document.createElement('div'); dv.className = 'day'; dv.style.left = ((d - D0) / (D1 - D0) * 100) + '%';
+    dv.textContent = d < D1 ? new Date(Date.UTC(2026, 10, d)).toLocaleDateString('en-US', { weekday: 'short', timeZone: 'UTC' }) + ' ' + d : ''; strip.appendChild(dv);
+  }
+  var row = 0, items = STORIES.filter(function (s) { return s.d; }).concat([
+    { c: 'tech', h: 'Riemann Hypothesis proof claim posted', d: [20, 9, 20, 18, 1] },
+    { c: 'tech', h: 'Lean and Mathlib back the proof', d: [21, 9, 21, 20, 1] },
+    { c: 'money', h: 'Nasdaq -5.28%, S&P 500 and Dow in correction', d: [20, 9.5, 20, 16, 0] },
+    { c: 'money', h: 'Dow drops 1,101 points; Anthropic first day', d: [19, 9.5, 19, 16, 0] },
+    { c: 'war', h: 'Russian missile and drones come down in Poland', d: [20, 0, 20, 6, 1] },
+    { c: 'mil', h: 'Three tankers attacked near Hormuz', d: [21, 0, 21, 12, 1] },
+    { c: 'acc', h: 'Cyclone Akvan crosses the coast', d: [19, 21, 19, 23, 0] },
+    { c: 'world', h: 'Trump, Xi and Putin meet in Shenzhen', d: [19, 3.48, 19, 4.98, 0] },
+    { c: 'mil', h: 'US strikes Qeshm Island; Iran fires at Kuwait', d: [17, 8, 18, 6, 1] },
+    { c: 'tech', h: 'Classified NSA (National Security Agency) network down', d: [17, 0, 20, 0, 1] }]);
+  items.sort(function (a, b) { return (a.d[0] * 24 + a.d[1]) - (b.d[0] * 24 + b.d[1]); });
+  items.forEach(function (s) {
+    var a = ((s.d[0] - D0) * 24 + s.d[1]) / ((D1 - D0) * 24) * 100, b = ((s.d[2] - D0) * 24 + s.d[3]) / ((D1 - D0) * 24) * 100;
+    a = Math.max(0, a);
+    var ev = document.createElement('div'); ev.className = 'ev' + (s.d[4] ? ' approx' : '');
+    ev.style.left = a + '%'; ev.style.width = Math.max(0.8, b - a) + '%'; ev.style.top = (rowY + row * 13) + 'px'; ev.style.background = CATS[s.c][0];
+    ev.onmouseenter = function () { document.getElementById('striptip').innerHTML = '<b style="color:' + CATS[s.c][0] + '">' + CATS[s.c][1] + ':</b> ' + s.h + (s.d[4] ? ' <i>(only the day is known)</i>' : ''); };
+    strip.appendChild(ev); row++;
+  });
+  strip.style.height = (rowY + row * 13 + 30) + 'px';
+})();
+</script>
+<style id="theme-toggle-style">/* theme-toggle-v2 */
+html.dark { filter: invert(1) hue-rotate(180deg); background: #ffffff; }
+html.dark body { background: #ffffff; }
+html.dark img, html.dark video, html.dark picture { filter: invert(1) hue-rotate(180deg); }
+#theme-toggle { position: fixed; top: 12px; right: 12px; z-index: 2147483000; padding: 6px 12px;
+  border: 1px solid #94a3b8; border-radius: 8px; background: #ffffff; color: #1e3a8a;
+  font: 600 12px 'Segoe UI', Arial, sans-serif; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,.12); }
+#theme-toggle:hover { background: #eef3ff; }
+@media print { #theme-toggle { display: none; } }
+</style>
+<button id="theme-toggle" type="button" aria-label="Switch between light and dark">Dark</button>
+<script id="theme-toggle-script">
+(function () {
+  var root = document.documentElement, key = 'theme:' + location.pathname;
+  var btn = document.getElementById('theme-toggle');
+  function set(dark) {
+    root.classList.toggle('dark', dark);
+    if (btn) { btn.textContent = dark ? 'Light' : 'Dark'; }
+  }
+  try { set(localStorage.getItem(key) === 'dark'); } catch (e) { set(false); }
+  if (btn) {
+    btn.addEventListener('click', function () {
+      var dark = !root.classList.contains('dark');
+      set(dark);
+      try { localStorage.setItem(key, dark ? 'dark' : 'light'); } catch (e) {}
+    });
+  }
+})();
+</script>
+</body>
+</html>
