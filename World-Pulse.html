@@ -74,7 +74,7 @@
   .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; box-shadow: var(--shadow); }
   .legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 12.5px; color: var(--ink2); margin-top: 6px; }
   .legend i { display: inline-block; width: 11px; height: 11px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
-  #beat path.ecg { stroke-dasharray: 2000; stroke-dashoffset: 2000; animation: draw 3.2s ease-out forwards, glowp 2.4s 3.2s ease-in-out infinite; }
+  #beat path.ecg { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 3.2s ease-out forwards, glowp 2.4s 3.2s ease-in-out infinite; }
   @keyframes draw { to { stroke-dashoffset: 0; } }
   @keyframes glowp { 50% { opacity: .55; } }
 
@@ -396,7 +396,7 @@
     }
     var lastX = X0 + step * (days.length - 0.5) + step * 0.3;
     pts.push([lastX, base]);
-    h += '<path class="ecg" d="M' + pts.map(function (p) { return p[0].toFixed(1) + ' ' + p[1].toFixed(1); }).join(' L') + '" fill="none" stroke="#ff5252" stroke-width="3" stroke-linejoin="round"/>';
+    h += '<path class="ecg" pathLength="1" d="M' + pts.map(function (p) { return p[0].toFixed(1) + ' ' + p[1].toFixed(1); }).join(' L') + '" fill="none" stroke="#ff5252" stroke-width="3" stroke-linejoin="round"/>';
     h += '<circle cx="' + lastX + '" cy="' + base + '" r="5" fill="#ff5252"><animate attributeName="r" values="4;9;4" dur="1.2s" repeatCount="indefinite"/></circle>';
     h += '<text x="' + X0 + '" y="20" font-size="12" fill="var(--muted)">changes found per scan</text>';
     svg.innerHTML = h;
