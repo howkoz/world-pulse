@@ -1,6 +1,6 @@
 {
  "about": "World Pulse data. One entry per running story (thread), each with a dated log of updates. Add to it, never rewrite history: new facts go in as a new update. Run build_pulse.py after editing.",
- "updated_utc": "2026-11-24T11:55:00Z",
+ "updated_utc": "2026-11-25T11:55:00Z",
  "categories": {
   "space": {
    "label": "Space",
@@ -705,6 +705,18 @@
        "https://www.cbsnews.com/live-updates/iran-war-us-trump-blockade-strait-of-hormuz-ship-attacks/"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-25",
+     "when": "24 to 25 Nov",
+     "tag": "NO CHANGE",
+     "text": "No new Iranian attack on US bases found since the 21 Nov strikes in Bahrain.",
+     "src": [
+      [
+       "NBC News",
+       "https://www.nbcnews.com/world/iran/iran-widens-gulf-attacks-targeting-us-air-base-kuwait-sites-bahrain-rcna610128"
+      ]
+     ]
     }
    ]
   },
@@ -967,6 +979,26 @@
       [
        "Gulf News",
        "https://gulfnews.com/uae/mid-east-war-what-irgc-claimed-what-jmic-reported-what-residents-need-to-know-today-nov-24-2026-1.500758721"
+      ]
+     ]
+    },
+    {
+     "ed": "2026-11-25",
+     "when": "24 to 25 Nov",
+     "tag": "UPDATED",
+     "text": "Iran's Revolutionary Guards navy says two more tankers hit mines and caught fire on Wednesday after using an unauthorized route. That is Iran's claim; we found no independent confirmation. CNN, citing maritime data, says attacks on shipping are at the highest level since the war began. The US Treasury added sanctions on more than two dozen Iranian exchange houses and front companies. Oil traders shrugged it off: Brent settled at $91.40 on Tuesday and was near $90 early Wednesday. A claim on one aggregator site that oil passed $120 is not supported by any market report we found.",
+     "src": [
+      [
+       "CNBC",
+       "https://www.cnbc.com/2026/11/24/iran-trump-hormuz-crude-.html"
+      ],
+      [
+       "Yahoo Finance",
+       "https://finance.yahoo.com/energy/articles/oil-prices-hold-near-three-070500511.html"
+      ],
+      [
+       "Jerusalem Post",
+       "https://www.jpost.com/middle-east/iran-news/article-916095"
       ]
      ]
     }
@@ -1294,6 +1326,26 @@
        "https://www.aljazeera.com/tag/ukraine-russia-crisis/"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-25",
+     "when": "24 to 25 Nov",
+     "tag": "UPDATED",
+     "text": "President Zelensky confirmed Ukraine hit the Russian cargo ship Sparta II with drones in the Gulf of Finland on 21 Nov, calling it a legitimate target carrying weapons. Norway, a firm Ukraine ally, urged caution near its region. Overnight into Wednesday, Ukraine's Air Force says Russia sent 112 drones and 88 were downed. In Kyiv, Mayor Vitali Klitschko said drone debris started a fire that killed two people.",
+     "src": [
+      [
+       "The Moscow Times",
+       "https://www.themoscowtimes.com/2026/11/24/zelensky-confirms-ukraine-was-behind-drone-attack-on-russian-cargo-ship-in-gulf-of-finland-a94364"
+      ],
+      [
+       "Bloomberg",
+       "https://www.bloomberg.com/news/articles/2026-11-24/zelenskyy-confirms-ukraine-hit-russian-ship-in-gulf-of-finland"
+      ],
+      [
+       "Kyiv Independent",
+       "https://kyivindependent.com/russian-attacks-kill-9-injure-77-across-ukraine-over-past-day-zaporizhzhia-residential-building-massively-hit/"
+      ]
+     ]
     }
    ]
   },
@@ -1548,6 +1600,18 @@
        "https://crypto.news/what-did-nvidias-short-lived-rally-reveal-about-bitcoin-demand/"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-25",
+     "when": "24 Nov",
+     "tag": "UPDATED",
+     "text": "Bitcoin fell back below $60,000 on Tuesday, about $59,700 to $59,900 depending on the source, giving back most of the run toward $64,000.",
+     "src": [
+      [
+       "CoinDesk",
+       "https://www.coindesk.com/markets/2026/11/24/bitcoin-falls-below-usd60-000-as-rally-on-jensen-huang-s-nvidia-return-fades"
+      ]
+     ]
     }
    ]
   },
@@ -1772,6 +1836,22 @@
        "https://www.aljazeera.com/economy/2026/11/23/nvidia-board-reinstates-jensen-huang-as-ceo"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-25",
+     "when": "24 Nov",
+     "tag": "UPDATED",
+     "text": "Nvidia stock gave back some of Monday's jump, closing down about 5.9% at $155.38 on Tuesday. The board says its investigation of the foreign intelligence effort aimed at Huang will run to the end. Lawmakers asked Huang to disclose his talks with President Trump, who says he called the board to help bring Huang back.",
+     "src": [
+      [
+       "CNBC",
+       "https://www.cnbc.com/2026/11/24/nvidia-jensen-huang-ceo-return.html"
+      ],
+      [
+       "Motley Fool",
+       "https://www.fool.com/coverage/stock-market-today/2026/11/24/stock-market-today-nov-24-nvidia-gives-back-usd240-billion-in-market-value-despite-wall-street-upgrade-signaling-29-upside/"
+      ]
+     ]
     }
    ]
   },
@@ -1970,6 +2050,22 @@
       [
        "WHO",
        "https://www.who.int/emergencies/situations/ebola-outbreak---drc-2026"
+      ]
+     ]
+    },
+    {
+     "ed": "2026-11-25",
+     "when": "23 to 25 Nov",
+     "tag": "UPDATED",
+     "text": "The Centers for Disease Control and Prevention (CDC) 23 Nov summary keeps the count at 11,762 confirmed cases and 5,775 deaths. The latest World Health Organization (WHO) update added 39 confirmed cases, 23 of them in Ituri. Kenya and Nigeria report no new cases and are counting down 42 days to declare their outbreaks over. CDC rates the risk to Americans as low.",
+     "src": [
+      [
+       "CDC",
+       "https://www.cdc.gov/ebola/situation-summary/index.html"
+      ],
+      [
+       "UN News",
+       "https://news.un.org/en/story/2026/11/1168858"
       ]
      ]
     }
@@ -2439,7 +2535,7 @@
    "id": "vulcan-amazon-leo",
    "title": "Vulcan rocket lost with 40 Amazon satellites",
    "cat": "space",
-   "status": "developing",
+   "status": "settled",
    "place": "Cape Canaveral, Florida",
    "lat": 28.58,
    "lon": -80.58,
@@ -2588,6 +2684,26 @@
       [
        "CNES (French space agency)",
        "https://centrespatialguyanais.cnes.fr/en/va271-en-bref"
+      ]
+     ]
+    },
+    {
+     "ed": "2026-11-25",
+     "when": "24 Nov, 6:14 am Eastern (11:14 UTC)",
+     "tag": "RESULT",
+     "text": "It flew. Ariane 6 flight VA271 lifted off from Kourou, French Guiana, and placed 36 Amazon Leo satellites in orbit. It was Ariane 6's tenth flight and all ten have succeeded. It was Amazon's first launch since the Vulcan failure on 15 Nov. Amazon says its network now has more than 430 satellites.",
+     "src": [
+      [
+       "ArianeGroup",
+       "https://www.ariane.group/en/news/ariane-6-successfully-transports-another-36-amazon-leo-satellites-into-orbit-on-its-10th-flight/"
+      ],
+      [
+       "AIAA",
+       "https://aiaa.org/2026/11/24/ariane-6-launches-36-satellites-for-amazon-leo-constellation/"
+      ],
+      [
+       "WESH",
+       "https://www.wesh.com/article/ariane-6-launches-amazon-leo-satellites/74523723"
       ]
      ]
     }
@@ -2739,6 +2855,22 @@
       [
        "Al Jazeera",
        "https://www.aljazeera.com/news/2026/11/23/at-least-eight-killed-in-yemen-air-raids-on-houthi-held-hodeidah"
+      ]
+     ]
+    },
+    {
+     "ed": "2026-11-25",
+     "when": "24 to 25 Nov",
+     "tag": "UPDATED",
+     "text": "The Saudi-led coalition struck the Houthi-held port of Hodeidah, despite Houthi threats against Jeddah and other Saudi Red Sea ports. A day later the coalition said it shot down four drones over Ras Tanura, a major oil port in the east, and three more in the Eastern Province, with no casualties in a first assessment.",
+     "src": [
+      [
+       "Al Jazeera",
+       "https://www.aljazeera.com/news/2026/11/25/saudi-led-coalition-intercepts-houthi-attacks-after-hodeidah-strike"
+      ],
+      [
+       "The National",
+       "https://www.thenationalnews.com/news/mena/2026/11/25/live-iran-war-saudi-arabia-hodeidah-port/"
       ]
      ]
     }
@@ -3332,6 +3464,22 @@
        "https://www.cnbc.com/2026/11/23/stock-market-today-live-updates.html"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-25",
+     "when": "24 Nov",
+     "tag": "UPDATED",
+     "text": "Tuesday was calmer. The S&P 500 slipped about 0.5% and the Nasdaq about 1.5% as Nvidia gave back ground. One report has the Dow up about 0.85% and closing above 50,000.",
+     "src": [
+      [
+       "Babypips",
+       "https://www.babypips.com/news/daily-financial-forex-market-recap-2026-11-24"
+      ],
+      [
+       "Motley Fool",
+       "https://www.fool.com/coverage/stock-market-today/2026/11/24/stock-market-today-nov-24-nvidia-gives-back-usd240-billion-in-market-value-despite-wall-street-upgrade-signaling-29-upside/"
+      ]
+     ]
     }
    ]
   },
@@ -3468,6 +3616,22 @@
      "tag": "NO CHANGE",
      "text": "Nothing new surfaced in this scan.",
      "src": []
+    },
+    {
+     "ed": "2026-11-25",
+     "when": "24 Nov",
+     "tag": "UPDATED",
+     "text": "NBC News and Fox News report that Trump officials are again debating strikes on Iran's top leaders as a way to end the war. Officials are reported to be split, and no decision has been announced. The dirty bomb intelligence itself is still unconfirmed; Iran rejects it.",
+     "src": [
+      [
+       "CNN (original report)",
+       "https://www.cnn.com/2026/11/16/politics/us-intelligence-iran-dirty-bomb"
+      ],
+      [
+       "WZDM (Fox report)",
+       "https://www.wzdm.com/2026/11/24/trump-administration-weighs-targeting-irans-top-regime-leaders-in-bid-to-end-war-report/"
+      ]
+     ]
     }
    ]
   },
@@ -4207,7 +4371,7 @@
    "id": "chase-vendor-breach",
    "title": "Chase: hackers hit outside vendors",
    "cat": "tech",
-   "status": "developing",
+   "status": "quiet",
    "place": "New York, US",
    "lat": 40.755,
    "lon": -73.975,
@@ -4296,6 +4460,18 @@
        "https://windowsforum.com/news/chase-visa-and-mastercard-vendor-incidents-qubole-link-unconfirmed-amid-aws-role-abuse.453411/"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-25",
+     "when": "",
+     "tag": "NO CHANGE",
+     "text": "Third scan with nothing new. Marked as gone quiet. Still no vendor confirmed.",
+     "src": [
+      [
+       "BleepingComputer",
+       "https://www.bleepingcomputer.com/news/security/vendor-data-breach-exposes-chase-visa-mastercard-customer-info/"
+      ]
+     ]
     }
    ]
   },
@@ -4378,6 +4554,22 @@
       [
        "UPI",
        "https://www.upi.com/Top_News/World-News/2026/11/24/belgium-NATO-warning-aircraft-Poland/4441795509101"
+      ]
+     ]
+    },
+    {
+     "ed": "2026-11-25",
+     "when": "24 Nov",
+     "tag": "UPDATED",
+     "text": "NATO's top commander in Europe authorized a forward deployment of an AWACS plane to Poland and is weighing more. Prime Minister Donald Tusk called Monday's drone crossing a deliberate provocation. Poland has not asked for formal NATO Article 4 talks. Russia has not commented.",
+     "src": [
+      [
+       "Notes from Poland",
+       "https://notesfrompoland.com/2026/11/24/nato-to-send-surveillance-aircraft-to-poland-after-russian-missile-strikes/"
+      ],
+      [
+       "Militarnyi",
+       "https://militarnyi.com/en/news/nato-to-deploy-awacs-aircraft-to-poland-after-kh-101-missile-crash/"
       ]
      ]
     }
@@ -4786,6 +4978,18 @@
      "tag": "NO CHANGE",
      "text": "Nothing new surfaced in this scan.",
      "src": []
+    },
+    {
+     "ed": "2026-11-25",
+     "when": "",
+     "tag": "NO CHANGE",
+     "text": "No new National Transportation Safety Board (NTSB) update. The preliminary report is still expected around 1 Dec.",
+     "src": [
+      [
+       "NTSB",
+       "https://www.ntsb.gov/investigations/Pages/ERA27MA026.aspx"
+      ]
+     ]
     }
    ]
   },
@@ -4882,6 +5086,18 @@
        "https://www.fox35orlando.com/news/ron-desantis-florida-flooding-st-johns-river-record"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-25",
+     "when": "",
+     "tag": "NO CHANGE",
+     "text": "No newer river forecast found. The St. Johns River is still near record levels in Brevard.",
+     "src": [
+      [
+       "Yahoo (Florida Today)",
+       "https://www.yahoo.com/news/weather-news/articles/brevard-flooding-continues-st-johns-121545220.html"
+      ]
+     ]
     }
    ]
   },
@@ -4962,6 +5178,18 @@
        "https://www.scientificamerican.com/article/anthropic-mathematician-claims-to-prove-riemann-hypothesis-most-famous-problem-in-all-of-math/"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-25",
+     "when": "24 Nov",
+     "tag": "UPDATED",
+     "text": "Nature reports that mathematicians are impressed, but the proof is still only computer code in the Lean language, which is hard for people to read. There is still no human-readable paper. The Clay Mathematics Institute, which offers a $1 million prize, has not commented.",
+     "src": [
+      [
+       "Nature",
+       "https://www.nature.com/articles/d41586-026-03812-7"
+      ]
+     ]
     }
    ]
   },
@@ -5024,6 +5252,18 @@
        "CBS News",
        "https://www.cbsnews.com/news/chapo-isidro-capture-violence-arrests-mexico/"
       ],
+      [
+       "NBC News",
+       "https://www.nbcnews.com/world/mexico/mexico-detains-top-cartel-boss-el-chapo-isidro-rcna610559"
+      ]
+     ]
+    },
+    {
+     "ed": "2026-11-25",
+     "when": "",
+     "tag": "NO CHANGE",
+     "text": "No new figures beyond 11 dead in the fighting after the capture.",
+     "src": [
       [
        "NBC News",
        "https://www.nbcnews.com/world/mexico/mexico-detains-top-cartel-boss-el-chapo-isidro-rcna610559"
@@ -5137,6 +5377,13 @@
      "tag": "NO CHANGE",
      "text": "Nothing new after the collapse.",
      "src": []
+    },
+    {
+     "ed": "2026-11-25",
+     "when": "",
+     "tag": "NO CHANGE",
+     "text": "Nothing new surfaced in this scan.",
+     "src": []
     }
    ]
   },
@@ -5144,7 +5391,7 @@
    "id": "cyber-director-out",
    "title": "White House cyber chief out after a run of tech outages",
    "cat": "tech",
-   "status": "settled",
+   "status": "quiet",
    "place": "Washington, DC",
    "lat": 38.9,
    "lon": -77.04,
@@ -5183,6 +5430,13 @@
      "tag": "NO CHANGE",
      "text": "Nothing new surfaced in this scan.",
      "src": []
+    },
+    {
+     "ed": "2026-11-25",
+     "when": "",
+     "tag": "NO CHANGE",
+     "text": "Third scan with nothing new. Marked as gone quiet.",
+     "src": []
     }
    ]
   },
@@ -5190,7 +5444,7 @@
    "id": "pentagon-ufo-files",
    "title": "Pentagon releases eighth batch of UFO files, with three new videos",
    "cat": "space",
-   "status": "settled",
+   "status": "quiet",
    "place": "Middle East (where the videos were filmed)",
    "lat": 26.0,
    "lon": 52.0,
@@ -5225,6 +5479,13 @@
      "tag": "NO CHANGE",
      "text": "Nothing new surfaced in this scan.",
      "src": []
+    },
+    {
+     "ed": "2026-11-25",
+     "when": "",
+     "tag": "NO CHANGE",
+     "text": "Third scan with nothing new. Marked as gone quiet.",
+     "src": []
     }
    ]
   },
@@ -5232,7 +5493,7 @@
    "id": "jackson-ms-crash",
    "title": "Small plane crash reported at Jackson, Mississippi airfield",
    "cat": "acc",
-   "status": "unproven",
+   "status": "quiet",
    "place": "Hawkins Field, Jackson, Mississippi",
    "lat": 32.34,
    "lon": -90.22,
@@ -5262,6 +5523,13 @@
      "when": "24 Nov",
      "tag": "NO CHANGE",
      "text": "Nothing new surfaced in this scan.",
+     "src": []
+    },
+    {
+     "ed": "2026-11-25",
+     "when": "",
+     "tag": "NO CHANGE",
+     "text": "Third scan with nothing new. Marked as gone quiet. (A separate, confirmed crash off the Mississippi coast is a new story today.)",
      "src": []
     }
    ]
@@ -5319,6 +5587,22 @@
        "https://www.navalnews.com/naval-news/2026/11/russian-warship-destroyed-in-huge-explosion-in-libya/"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-25",
+     "when": "24 Nov",
+     "tag": "UPDATED",
+     "text": "Two officers of the eastern Libyan National Army died of their wounds on Tuesday evening, the Associated Press (AP) reports; at least 10 people were wounded. Zelensky says seven Ukrainian naval drones were used against the corvette, named in reports as the Merkury. Eastern Libyan authorities filed a complaint with the United Nations (UN) and promised to retaliate.",
+     "src": [
+      [
+       "Al Jazeera",
+       "https://aljazeera.com/news/2026/11/25/two-libyan-soldiers-die-after-ukraine-attack-on-russian-vessel"
+      ],
+      [
+       "Arab News (AP)",
+       "https://www.arabnews.com/middle-east/2-libyan-naval-officers-die-of-wounds-from-ukrainian-drone-attack-on-russian-warship-in-benghazi-3013949"
+      ]
+     ]
     }
    ]
   },
@@ -5367,6 +5651,22 @@
        "https://www.vanguardngr.com/2026/11/bayelsa-boat-mishap-death-toll-rises-to-29/"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-25",
+     "when": "24 to 25 Nov",
+     "tag": "UPDATED",
+     "text": "Reported death tolls now range from 29 to 32. President Bola Tinubu approved 250 million naira for the victims' families, Premium Times reports. The governor says the boat was not fit for the river and some bodies may still be inside it.",
+     "src": [
+      [
+       "Rio Times",
+       "https://www.riotimesonline.com/nigeria-boat-capsize-kills-29-mourners-bayelsa/"
+      ],
+      [
+       "allAfrica (Premium Times)",
+       "https://allafrica.com/view/group/main/main/id/00098905.html"
+      ]
+     ]
     }
    ]
   },
@@ -5395,6 +5695,13 @@
     {
      "ed": "2026-11-24",
      "when": "24 Nov",
+     "tag": "NO CHANGE",
+     "text": "No damage reports.",
+     "src": []
+    },
+    {
+     "ed": "2026-11-25",
+     "when": "",
      "tag": "NO CHANGE",
      "text": "No damage reports.",
      "src": []
@@ -5429,6 +5736,18 @@
      "tag": "NO CHANGE",
      "text": "Still only the one SBS report.",
      "src": []
+    },
+    {
+     "ed": "2026-11-25",
+     "when": "",
+     "tag": "NO CHANGE",
+     "text": "Still only the one SBS report on customer data. Korea Electric Power Corporation (KEPCO) says customer data is kept in a separate system.",
+     "src": [
+      [
+       "SBS Biz",
+       "https://biz.sbs.co.kr/amp/article/20000340759"
+      ]
+     ]
     }
    ]
   },
@@ -5461,6 +5780,22 @@
        "https://www.aljazeera.com/news/2026/11/21/fbi-national-crime-database-suffers-suspected-breach-reports"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-25",
+     "when": "24 Nov",
+     "tag": "UPDATED",
+     "text": "FBI Director Kash Patel said an active investigation is under way with other agencies but gave no details on who did it or what was taken. CNN says the new hack at the Central Intelligence Agency (CIA) does not appear to be linked.",
+     "src": [
+      [
+       "CyberScoop",
+       "https://cyberscoop.com/kash-patel-fbi-ncic-database-hack"
+      ],
+      [
+       "CNN",
+       "https://www.cnn.com/2026/11/24/politics/cia-odni-hack-unclassified-information"
+      ]
+     ]
     }
    ]
   },
@@ -5487,6 +5822,18 @@
       [
        "NBC News",
        "https://www.nbcnews.com/world/united-kingdom/don-toliver-concert-evacuated-coop-live-unknown-substance-released-rcna610820"
+      ]
+     ]
+    },
+    {
+     "ed": "2026-11-25",
+     "when": "24 Nov",
+     "tag": "UPDATED",
+     "text": "Greater Manchester Police say tests are still under way to find out what the substance was and where it came from. The arena is still a police scene.",
+     "src": [
+      [
+       "The Manc",
+       "https://themanc.com/news/further-police-update-issued-as-investigations-into-unknown-substance-at-co-op-live-continue/amp/"
       ]
      ]
     }
@@ -5525,6 +5872,26 @@
        "https://www.wbur.org/news/2026/11/23/thanksgiving-travel-weather-forecast-storm-east-coast"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-25",
+     "when": "24 to 25 Nov",
+     "tag": "UPDATED",
+     "text": "The storm is forming off Florida and peaks in the Northeast on Thanksgiving Day. Forecasters expect gusts over 50 mph, up to 60 mph on the coast, and the National Weather Service (NWS) warns of record high tides and major coastal flooding. Newark, LaGuardia and Washington National airports could see big delays. AAA (the American Automobile Association) expects about 81 million people to travel.",
+     "src": [
+      [
+       "CNN",
+       "https://www.cnn.com/2026/11/24/us/live-news/thanksgiving-travel"
+      ],
+      [
+       "Weather.com",
+       "https://weather.com/2026/11/24/holiday/thanksgiving/east-coast-thanksgiving-storm-wind-rain-flooding"
+      ],
+      [
+       "NBC News",
+       "https://www.nbcnews.com/weather/storms/severe-thanksgiving-storms-threaten-millions-travelers-macys-parade-rcna611071"
+      ]
+     ]
     }
    ]
   },
@@ -5551,6 +5918,141 @@
       [
        "QuakeMap24 (EMSC)",
        "https://quakemap24.com/en/event/b5126957d1e2a46926fa95aa83b97cb3eee85bb5/earthquake-m5-9-mauritius-reunion-region-2026-11-24"
+      ]
+     ]
+    },
+    {
+     "ed": "2026-11-25",
+     "when": "",
+     "tag": "NO CHANGE",
+     "text": "No damage reports.",
+     "src": []
+    }
+   ]
+  },
+  {
+   "id": "us-spy-treasury-hacks",
+   "title": "Hackers hit a CIA intelligence system; Treasury crime unit goes offline",
+   "cat": "tech",
+   "status": "developing",
+   "place": "Washington, DC area",
+   "lat": 38.95,
+   "lon": -77.15,
+   "first": "2026-11-25",
+   "updates": [
+    {
+     "ed": "2026-11-25",
+     "when": "24 Nov",
+     "tag": "NEW",
+     "text": "Hackers got into an unclassified system the Central Intelligence Agency (CIA), the Office of the Director of National Intelligence (ODNI) and the National Geospatial-Intelligence Agency (NGA) use to gather and study public information, the New York Times and CNN report. Officials say no classified systems were touched. CNN's sources say early signs point to China; that is not confirmed. The same day the Treasury's Financial Crimes Enforcement Network (FinCEN) said it found unauthorized access to some systems and took them offline as a precaution, extending filing deadlines. Nobody has claimed either attack. Reports that the CIA problem was a faulty software update mix it up with the earlier National Security Agency (NSA) outage.",
+     "src": [
+      [
+       "CNN",
+       "https://www.cnn.com/2026/11/24/politics/cia-odni-hack-unclassified-information"
+      ],
+      [
+       "CyberScoop",
+       "https://cyberscoop.com/cia-odni-osint-data-breach/"
+      ],
+      [
+       "The Record",
+       "https://therecord.media/treasury-fincen-takes-systems-offline-after-cyber-incident"
+      ],
+      [
+       "BleepingComputer",
+       "https://www.bleepingcomputer.com/news/security/hackers-reportedly-breached-cia-intelligence-analysis-system/"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "shenzhou-24",
+   "title": "Pakistan's first astronaut reaches China's space station",
+   "cat": "space",
+   "status": "watching",
+   "place": "Tiangong space station (launched from Jiuquan, China)",
+   "lat": 40.96,
+   "lon": 100.29,
+   "first": "2026-11-25",
+   "updates": [
+    {
+     "ed": "2026-11-25",
+     "when": "25 Nov, Beijing time",
+     "tag": "NEW",
+     "text": "China's Shenzhou-24 spacecraft docked with the Tiangong space station carrying Muhammad Zeeshan Ali of Pakistan, the first astronaut from another country to visit it. He is expected to stay about a week, then fly home with two of the Shenzhou-23 crew, while Zhu Yangzhu stays on for a year-long mission.",
+     "src": [
+      [
+       "Dawn",
+       "https://dawn.com/news/2046753"
+      ],
+      [
+       "Kathmandu Post",
+       "https://kathmandupost.com/world/2026/11/25/china-s-shenzhou-24-docks-at-space-station-with-pakistani-national-as-first-foreign-astronaut"
+      ],
+      [
+       "Wikipedia",
+       "https://en.wikipedia.org/wiki/Shenzhou_24"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cartagena-hostages",
+   "title": "Cartagena: gunmen take supermarket hostages, troops free them",
+   "cat": "acc",
+   "status": "settled",
+   "place": "Cartagena, Colombia",
+   "lat": 10.39,
+   "lon": -75.51,
+   "first": "2026-11-25",
+   "updates": [
+    {
+     "ed": "2026-11-25",
+     "when": "24 to 25 Nov",
+     "tag": "NEW",
+     "text": "After a failed robbery of an armored truck, gunmen ran into an Exito supermarket in Cartagena and took about 25 to 30 hostages. Ten were let go during the standoff. Security forces stormed the store early Wednesday and President Abelardo de la Espriella says all hostages were rescued. We found no confirmed figure for any injuries.",
+     "src": [
+      [
+       "CBS News",
+       "https://www.cbsnews.com/news/cartagena-colombia-hostages-supermarket/"
+      ],
+      [
+       "France 24",
+       "https://www.france24.com/en/americas/20261124-hostages-supermarket-colombia-cartagena-flights"
+      ],
+      [
+       "Al Jazeera",
+       "https://www.aljazeera.com/amp/news/2026/11/24/hostage-situation-reported-in-colombia-as-armed-men-flee-into-supermarket"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mississippi-cessna",
+   "title": "Small plane crashes off Mississippi, six killed",
+   "cat": "acc",
+   "status": "watching",
+   "place": "Near Horn Island, Mississippi",
+   "lat": 30.24,
+   "lon": -88.66,
+   "first": "2026-11-25",
+   "updates": [
+    {
+     "ed": "2026-11-25",
+     "when": "24 Nov, about 4:30 pm Eastern",
+     "tag": "NEW",
+     "text": "A Cessna 210 flying from New Orleans to Fort Myers, Florida, went down in the Gulf about 2 miles from Horn Island. The Coast Guard says all six aboard died, four adults and two boys aged 8 and 10. Early Federal Aviation Administration (FAA) data shows a very fast descent before contact was lost. The NTSB is investigating; no cause has been given.",
+     "src": [
+      [
+       "CBS News",
+       "https://www.cbsnews.com/news/small-plane-crash-off-mississippi-6-dead-2-children/"
+      ],
+      [
+       "NBC News",
+       "https://www.nbcnews.com/news/us-news/4-adults-2-kids-are-missing-plane-crashes-mississippi-coast-rcna611218"
       ]
      ]
     }
@@ -5759,6 +6261,21 @@
     [
      "Timeline 19 to 24 Nov (picture)",
      "timelines/World-Events-Timeline-Update-24Nov2026.svg"
+    ]
+   ]
+  },
+  {
+   "date": "2026-11-25",
+   "scan": "25 Nov, 6:55 am Eastern",
+   "headline": "Hackers hit a CIA intelligence system and the Treasury's crime unit; Ariane 6 delivers 36 Amazon satellites; Pakistan's first astronaut reaches Tiangong",
+   "links": [
+    [
+     "World Desk page",
+     "World-Desk-25Nov2026.html"
+    ],
+    [
+     "Timeline 20 to 25 Nov (picture)",
+     "timelines/World-Events-Timeline-Update-25Nov2026.svg"
     ]
    ]
   }
