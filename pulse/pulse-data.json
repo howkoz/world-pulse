@@ -1,6 +1,6 @@
 {
  "about": "World Pulse data. One entry per running story (thread), each with a dated log of updates. Add to it, never rewrite history: new facts go in as a new update. Run build_pulse.py after editing.",
- "updated_utc": "2026-11-25T11:55:00Z",
+ "updated_utc": "2026-11-26T11:52:00Z",
  "categories": {
   "space": {
    "label": "Space",
@@ -428,7 +428,7 @@
    "id": "iran-us-bases",
    "title": "Iran presses on US bases",
    "cat": "mil",
-   "status": "developing",
+   "status": "quiet",
    "place": "Bahrain and the Gulf",
    "lat": 26.2,
    "lon": 50.6,
@@ -717,6 +717,18 @@
        "https://www.nbcnews.com/world/iran/iran-widens-gulf-attacks-targeting-us-air-base-kuwait-sites-bahrain-rcna610128"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-26",
+     "when": "25 to 26 Nov",
+     "tag": "NO CHANGE",
+     "text": "No new Iranian attack on US bases found since Sunday's drone attack in Bahrain. Reporting this week has shifted to the strait and to whether the US or Israel will strike Iran itself.",
+     "src": [
+      [
+       "CBS News live",
+       "https://www.cbsnews.com/live-updates/iran-war-us-trump-blockade-strait-of-hormuz-ship-attacks/"
+      ]
+     ]
     }
    ]
   },
@@ -999,6 +1011,22 @@
       [
        "Jerusalem Post",
        "https://www.jpost.com/middle-east/iran-news/article-916095"
+      ]
+     ]
+    },
+    {
+     "ed": "2026-11-26",
+     "when": "25 to 26 Nov",
+     "tag": "UPDATED",
+     "text": "The head of Iran's Revolutionary Guard navy said the Strait of Hormuz is now under Iran's \"complete control\". The UK Maritime Trade Operations centre (UKMTO) and other monitors count about 25 ships hit in and around the strait over the past week, through which roughly a fifth of the world's oil passes. Iran's demands include ending the war, unfreezing its assets, lifting oil sanctions and ending the US counter-blockade of its ports. Brent oil held near a three-month low, about $90 a barrel.",
+     "src": [
+      [
+       "Al Jazeera",
+       "https://www.aljazeera.com/news/2026/11/22/whats-behind-irans-escalation-of-attacks-in-the-gulf"
+      ],
+      [
+       "Reuters via Global Nation",
+       "https://globalnation.inquirer.net/349422/bahrain-says-iran-struck-industrial-site-as-tankers-hit-in-hormuz/amp"
       ]
      ]
     }
@@ -1346,6 +1374,26 @@
        "https://kyivindependent.com/russian-attacks-kill-9-injure-77-across-ukraine-over-past-day-zaporizhzhia-residential-building-massively-hit/"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-26",
+     "when": "25 to 26 Nov",
+     "tag": "UPDATED",
+     "text": "Zelensky said that if Trump's push for a deal by year's end fails, he will go to the incoming US Congress in January to seek more military aid and tougher sanctions on Russia. Envoys Steve Witkoff and Jared Kushner are trying to broker a deal \"as soon as possible\", with January seen as the target. Trump laughed off the January timing and said he has set no deadline, adding that sometimes Putin looks ready and Zelensky is not. The Trump team has reportedly shelved offering Russia business deals as an incentive, after Moscow stayed focused on taking territory.",
+     "src": [
+      [
+       "Yahoo News (Bloomberg)",
+       "https://www.yahoo.com/news/politics/articles/volodymyr-zelensky-reveals-humiliating-plan-131018625.html"
+      ],
+      [
+       "Ukrainska Pravda / Liga",
+       "https://news.liga.net/en/war/news/who-said-that-trump-scoffed-at-zelenskyys-remarks-about-a-deal-with-russia-by-january"
+      ],
+      [
+       "IBTimes",
+       "https://ibtimes.com/trump-administration-shelves-russia-business-deals-ukraine-peace-3810170"
+      ]
+     ]
     }
    ]
   },
@@ -1612,6 +1660,26 @@
        "https://www.coindesk.com/markets/2026/11/24/bitcoin-falls-below-usd60-000-as-rally-on-jensen-huang-s-nvidia-return-fades"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-26",
+     "when": "25 Nov",
+     "tag": "UPDATED",
+     "text": "Bitcoin slid further, trading in the high $58,000s to about $60,000 on Tuesday depending on the source, and down on the week. One market fear gauge read \"extreme fear\". Ethereum, XRP and Solana also fell.",
+     "src": [
+      [
+       "Coinglass",
+       "https://www.coinglass.com/currencies/BTC"
+      ],
+      [
+       "Fortune",
+       "https://fortune.com/article/price-of-bitcoin-11-25-2026/"
+      ],
+      [
+       "Eurasia Business News",
+       "https://eurasiabusinessnews.com/2026/11/25/crypto-market-today-november-25-2026-bitcoin-below-60000-as-ethereum-xrp-and-solana-slide/"
+      ]
+     ]
     }
    ]
   },
@@ -1852,6 +1920,26 @@
        "https://www.fool.com/coverage/stock-market-today/2026/11/24/stock-market-today-nov-24-nvidia-gives-back-usd240-billion-in-market-value-despite-wall-street-upgrade-signaling-29-upside/"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-26",
+     "when": "25 to 26 Nov",
+     "tag": "UPDATED",
+     "text": "Nvidia stock fell another 3.9% on Tuesday to $149.30 in an AI-chip selloff. Vice President JD Vance said the Attorney General assured him that chief executive Jensen Huang is under no Department of Justice (DOJ) investigation; Reuters reported the DOJ ran no formal investigation before Trump pushed for Huang's return. Fortune reports a foundation funded by Lori Huang gained about $2.3 billion on paper the day Huang came back. Huang is due to testify before Congress on 1 and 3 December, with Nvidia's general counsel on 2 December.",
+     "src": [
+      [
+       "CNBC",
+       "https://www.cnbc.com/2026/11/25/vance-jensen-huang-nvidia-doj-investigation.html"
+      ],
+      [
+       "Fortune",
+       "https://fortune.com/2026/11/26/jensen-huang-return-lori-huang-foundation-nvidia-stake/"
+      ],
+      [
+       "ABC News",
+       "https://abcnews.com/Business/nvidia-stock-falls-after-company-opens-probe-ceo/story?id=137970524"
+      ]
+     ]
     }
    ]
   },
@@ -2066,6 +2154,26 @@
       [
        "UN News",
        "https://news.un.org/en/story/2026/11/1168858"
+      ]
+     ]
+    },
+    {
+     "ed": "2026-11-26",
+     "when": "17 to 26 Nov",
+     "tag": "UPDATED",
+     "text": "The World Health Organization's (WHO) latest outbreak update puts the Bundibugyo-strain outbreak at 11,613 confirmed cases, including 5,678 deaths and 3,148 recoveries as of 17 November. On 18 November the WHO Director-General again declared it a public health emergency of international concern. The WHO says 400 to 500 new cases are still reported each week, and two-thirds of deaths occur outside treatment centres.",
+     "src": [
+      [
+       "WHO Disease Outbreak News",
+       "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON630"
+      ],
+      [
+       "TIME",
+       "https://time.com/article/2026/11/21/ebola-s-death-toll-tops-5-700-can-the-outbreak-be-contained-/"
+      ],
+      [
+       "ECDC",
+       "https://www.ecdc.europa.eu/en/public-health-events/2026-eip-00026/2026-11-19"
       ]
      ]
     }
@@ -2873,6 +2981,26 @@
        "https://www.thenationalnews.com/news/mena/2026/11/25/live-iran-war-saudi-arabia-hodeidah-port/"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-26",
+     "when": "25 to 26 Nov",
+     "tag": "UPDATED",
+     "text": "Yemen's Houthis claimed they attacked Saudi Arabia's largest oil refinery, Ras Tanura, on 25 November, saying they started fires there, and claimed a renewed strike on Riyadh's financial district. The Saudi-led coalition said it shot down four drones over Ras Tanura and did not confirm any refinery hit. Satellite imagery reviewed by Reuters showed large plumes of black smoke around the refinery. The coalition said a Houthi projectile also hit Jazan port on the Red Sea, causing minor damage.",
+     "src": [
+      [
+       "Reuters via US News",
+       "https://www.usnews.com/news/world/articles/2026-11-25/yemens-houthis-say-they-attacked-saudi-oil-refinery-and-riyadh-financial-district"
+      ],
+      [
+       "Al-Monitor",
+       "https://www.al-monitor.com/originals/2026/11/yemens-houthis-say-they-attacked-saudi-arabias-ras-tanura-refinery"
+      ],
+      [
+       "Insurance Journal (Reuters)",
+       "https://www.insurancejournal.com/news/international/2026/11/25/893737.htm"
+      ]
+     ]
     }
    ]
   },
@@ -3480,6 +3608,26 @@
        "https://www.fool.com/coverage/stock-market-today/2026/11/24/stock-market-today-nov-24-nvidia-gives-back-usd240-billion-in-market-value-despite-wall-street-upgrade-signaling-29-upside/"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-26",
+     "when": "25 Nov",
+     "tag": "UPDATED",
+     "text": "A wild session on the eve of Thanksgiving. The Dow Jones Industrial Average erased a loss of more than 1,100 points to close up 0.33% at 50,182.95, its second straight finish above 50,000. The S&P 500 slipped 0.25% to 7,182.78 and the Nasdaq Composite fell 0.62% to 23,585.80, after an intraday drop of as much as 4.6%, on an AI-chip selloff, hotter inflation data and new tariff proposals. Markets were closed on Thursday for the holiday.",
+     "src": [
+      [
+       "Motley Fool",
+       "https://www.fool.com/coverage/stock-market-today/2026/11/25/stock-market-today-nov-25-dow-erases-1-100-point-loss-as-wall-street-stages-dramatic-late-day-comeback/"
+      ],
+      [
+       "GSM Global News",
+       "https://gsmglobalnews.com/article/d20261125-mktclose1.html"
+      ],
+      [
+       "CNBC",
+       "https://www.cnbc.com/2026/11/24/stock-market-today-live-updates-.html"
+      ]
+     ]
     }
    ]
   },
@@ -3630,6 +3778,18 @@
       [
        "WZDM (Fox report)",
        "https://www.wzdm.com/2026/11/24/trump-administration-weighs-targeting-irans-top-regime-leaders-in-bid-to-end-war-report/"
+      ]
+     ]
+    },
+    {
+     "ed": "2026-11-26",
+     "when": "25 to 26 Nov",
+     "tag": "NO CHANGE",
+     "text": "No new confirmed development. US officials are reported to be still split on whether to strike Iran's leaders, and the dirty bomb intelligence remains unconfirmed, with Iran rejecting it.",
+     "src": [
+      [
+       "CBS News",
+       "https://www.cbsnews.com/news/nvidia-jensen-huang-stock-board-investigation-spy/"
       ]
      ]
     }
@@ -4572,6 +4732,22 @@
        "https://militarnyi.com/en/news/nato-to-deploy-awacs-aircraft-to-poland-after-kh-101-missile-crash/"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-26",
+     "when": "25 to 26 Nov",
+     "tag": "UPDATED",
+     "text": "Poland's foreign minister called the Russian missiles that came down near its border a direct threat, but reporting says NATO allies lack the unanimity to start shooting Russian missiles down over Ukraine before they reach alliance territory. Defence Minister Kosiniak-Kamysz said on 25 November that the discussion is ongoing. NATO is sending an Airborne Warning and Control System (AWACS) surveillance plane to Poland. Russia has not commented.",
+     "src": [
+      [
+       "Euromaidan Press",
+       "https://euromaidanpress.com/2026/11/26/polands-top-diplomat-calls-russian-missiles-near-its-border-a-direct-threat-nato-is-cool-on-shooting-them-over-ukraine/"
+      ],
+      [
+       "Notes from Poland",
+       "https://notesfrompoland.com/2026/11/24/nato-to-send-surveillance-aircraft-to-poland-after-russian-missile-strikes/"
+      ]
+     ]
     }
    ]
   },
@@ -4824,7 +5000,7 @@
    "id": "learjet-greenacres",
    "title": "Learjet breaks up and crashes near West Palm Beach, nine killed",
    "cat": "acc",
-   "status": "watching",
+   "status": "quiet",
    "place": "Military Trail, Greenacres, Palm Beach County, Florida",
    "lat": 26.633,
    "lon": -80.113,
@@ -4990,6 +5166,13 @@
        "https://www.ntsb.gov/investigations/Pages/ERA27MA026.aspx"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-26",
+     "when": "",
+     "tag": "NO CHANGE",
+     "text": "No new National Transportation Safety Board (NTSB) update. The preliminary report is still expected around 1 December.",
+     "src": []
     }
    ]
   },
@@ -5098,6 +5281,13 @@
        "https://www.yahoo.com/news/weather-news/articles/brevard-flooding-continues-st-johns-121545220.html"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-26",
+     "when": "",
+     "tag": "NO CHANGE",
+     "text": "No newer river forecast found. The St. Johns River is still near record levels in Brevard County, Florida.",
+     "src": []
     }
    ]
   },
@@ -5190,6 +5380,22 @@
        "https://www.nature.com/articles/d41586-026-03812-7"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-26",
+     "when": "23 to 26 Nov",
+     "tag": "NO CHANGE",
+     "text": "No major change. The Lean language certification is complete and independent checkers accept it, but wider mathematical review is still ongoing and there is no human-readable paper or peer-reviewed publication. One mathematician's Lean test run was still pending as of 23 November.",
+     "src": [
+      [
+       "Wikipedia",
+       "https://en.wikipedia.org/wiki/Alp%C3%B6ge's_proof_of_the_Riemann_hypothesis"
+      ],
+      [
+       "Lean community blog",
+       "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/"
+      ]
+     ]
     }
    ]
   },
@@ -5269,6 +5475,13 @@
        "https://www.nbcnews.com/world/mexico/mexico-detains-top-cartel-boss-el-chapo-isidro-rcna610559"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-26",
+     "when": "",
+     "tag": "NO CHANGE",
+     "text": "No new figures beyond the 11 dead in the fighting after the capture.",
+     "src": []
     }
    ]
   },
@@ -5321,7 +5534,7 @@
    "id": "cop31-antalya",
    "title": "COP31 climate talks collapse without a deal",
    "cat": "world",
-   "status": "settled",
+   "status": "quiet",
    "place": "Antalya, Turkey",
    "lat": 36.9,
    "lon": 30.7,
@@ -5380,6 +5593,13 @@
     },
     {
      "ed": "2026-11-25",
+     "when": "",
+     "tag": "NO CHANGE",
+     "text": "Nothing new surfaced in this scan.",
+     "src": []
+    },
+    {
+     "ed": "2026-11-26",
      "when": "",
      "tag": "NO CHANGE",
      "text": "Nothing new surfaced in this scan.",
@@ -5603,6 +5823,13 @@
        "https://www.arabnews.com/middle-east/2-libyan-naval-officers-die-of-wounds-from-ukrainian-drone-attack-on-russian-warship-in-benghazi-3013949"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-26",
+     "when": "",
+     "tag": "NO CHANGE",
+     "text": "No new development found beyond Tuesday's report that two eastern Libyan officers died of their wounds. Zelensky said seven Ukrainian sea drones were used against the corvette.",
+     "src": []
     }
    ]
   },
@@ -5667,6 +5894,13 @@
        "https://allafrica.com/view/group/main/main/id/00098905.html"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-26",
+     "when": "",
+     "tag": "NO CHANGE",
+     "text": "No new death toll found. Reported figures still range from about 29 to 32, with some bodies feared still in the boat.",
+     "src": []
     }
    ]
   },
@@ -5674,7 +5908,7 @@
    "id": "vanuatu-quake",
    "title": "Magnitude 6.5 deep earthquake, Vanuatu",
    "cat": "acc",
-   "status": "watching",
+   "status": "quiet",
    "place": "Vanuatu region, Pacific",
    "lat": -13.58,
    "lon": 172.27,
@@ -5705,6 +5939,13 @@
      "tag": "NO CHANGE",
      "text": "No damage reports.",
      "src": []
+    },
+    {
+     "ed": "2026-11-26",
+     "when": "",
+     "tag": "NO CHANGE",
+     "text": "No damage reports.",
+     "src": []
     }
    ]
   },
@@ -5712,7 +5953,7 @@
    "id": "kepco-leak",
    "title": "South Korea: power company customer data leak (one report)",
    "cat": "tech",
-   "status": "unproven",
+   "status": "quiet",
    "place": "South Korea",
    "lat": 36.5,
    "lon": 127.8,
@@ -5748,6 +5989,13 @@
        "https://biz.sbs.co.kr/amp/article/20000340759"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-26",
+     "when": "",
+     "tag": "NO CHANGE",
+     "text": "Still only the one SBS report on customer data. Korea Electric Power Corporation (KEPCO) says customer data is kept in a separate system.",
+     "src": []
     }
    ]
   },
@@ -5796,6 +6044,22 @@
        "https://www.cnn.com/2026/11/24/politics/cia-odni-hack-unclassified-information"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-26",
+     "when": "25 to 26 Nov",
+     "tag": "UPDATED",
+     "text": "The Federal Bureau of Investigation (FBI) says its investigation into the apparent intrusion of the National Crime Information Center (NCIC) continues, with no public word yet on who did it or what was taken. Reporting ties it to a wider wave: a breach of an unclassified open-source system used by the Central Intelligence Agency (CIA) and the Office of the Director of National Intelligence (ODNI), which CNN's sources say does not appear linked, and a separate \"cybersecurity incident\" at the Treasury's Financial Crimes Enforcement Network (FinCEN).",
+     "src": [
+      [
+       "India TV News",
+       "https://www.indiatvnews.com/amp/news/world/cia-odni-hit-by-cyberattack-as-hackers-breach-us-intelligence-agencies-handling-unclassified-data-says-report-2026-11-25-1060298"
+      ],
+      [
+       "KAIT8",
+       "https://www.kait8.com/2026/11/25/cybersecurity-incident-impacts-treasury-department-services/"
+      ]
+     ]
     }
    ]
   },
@@ -5836,6 +6100,22 @@
        "https://themanc.com/news/further-police-update-issued-as-investigations-into-unknown-substance-at-co-op-live-continue/amp/"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-26",
+     "when": "25 to 26 Nov",
+     "tag": "UPDATED",
+     "text": "Greater Manchester Police say the investigation into the unknown substance continues, with the substance still not identified. Police say 89 people showed symptoms and one woman was taken to hospital. They are looking at whether the release was linked to a string of jewellery robberies during the Don Toliver concert, with nine separate theft reports. No arrests so far.",
+     "src": [
+      [
+       "ASIS Security Management",
+       "https://www.asisonline.org/security-management-magazine/latest-news/today-in-security/2026/november/co-op-live-arena-unknown-gas/"
+      ],
+      [
+       "Rolling Stone Australia",
+       "https://au.rollingstone.com/music/music-news/don-toliver-concert-evacuation-substance-investigation-103714"
+      ]
+     ]
     }
    ]
   },
@@ -5848,10 +6128,6 @@
    "lat": 39.5,
    "lon": -77.0,
    "first": "2026-11-24",
-   "next": {
-    "what": "Thanksgiving Day: Northeast storm and Pacific Northwest rain and mountain snow peak",
-    "utc": "2026-11-26T12:00:00Z"
-   },
    "updates": [
     {
      "ed": "2026-11-24",
@@ -5892,6 +6168,26 @@
        "https://www.nbcnews.com/weather/storms/severe-thanksgiving-storms-threaten-millions-travelers-macys-parade-rcna611071"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-26",
+     "when": "26 Nov, Thanksgiving Day",
+     "tag": "RESULT",
+     "text": "The storm arrived. Roughly 60 to 70 million people from the Southeast up to New England faced coastal flooding, high winds and heavy rain on Thanksgiving Day. The National Weather Service (NWS) forecast moderate to major coastal flooding and record-high tides, with wind gusts up to about 65 miles per hour at the shore. All major airlines issued travel waivers for the Northeast. The Macy's Thanksgiving Day Parade in New York was postponed to Saturday, a rare move, because of the wind threat.",
+     "src": [
+      [
+       "Weather.com",
+       "https://weather.com/2026/11/25/holiday/thanksgiving/east-coast-thanksgiving-storm-wind-rain-flooding"
+      ],
+      [
+       "FOX Weather",
+       "https://www.foxweather.com/weather-news/storms-coast-to-coast-thanksgiving-americans-forecast"
+      ],
+      [
+       "NBC News live",
+       "https://www.nbcnews.com/weather/storms/live-blog/thanksgiving-travel-weather-storms-forecast-wednesday-rcna611082"
+      ]
+     ]
     }
    ]
   },
@@ -5923,6 +6219,13 @@
     },
     {
      "ed": "2026-11-25",
+     "when": "",
+     "tag": "NO CHANGE",
+     "text": "No damage reports.",
+     "src": []
+    },
+    {
+     "ed": "2026-11-26",
      "when": "",
      "tag": "NO CHANGE",
      "text": "No damage reports.",
@@ -5963,6 +6266,22 @@
        "https://www.bleepingcomputer.com/news/security/hackers-reportedly-breached-cia-intelligence-analysis-system/"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-26",
+     "when": "25 to 26 Nov",
+     "tag": "UPDATED",
+     "text": "The Treasury's Financial Crimes Enforcement Network (FinCEN) said it is investigating a \"cybersecurity incident\" that affected some of its services. The breach of the unclassified open-source system used by the Central Intelligence Agency (CIA) and the Office of the Director of National Intelligence (ODNI) is still under investigation; officials say no classified networks were touched and the attackers have not been named.",
+     "src": [
+      [
+       "KAIT8",
+       "https://www.kait8.com/2026/11/25/cybersecurity-incident-impacts-treasury-department-services/"
+      ],
+      [
+       "Ground News",
+       "https://ground.news/daily-briefing/us-cia-and-odni-suffer-cybersecurity-breach-involving-unclassified-information-sources_80b1db"
+      ]
+     ]
     }
    ]
   },
@@ -5995,6 +6314,13 @@
        "https://en.wikipedia.org/wiki/Shenzhou_24"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-26",
+     "when": "",
+     "tag": "NO CHANGE",
+     "text": "No new development. Pakistan's first astronaut, Muhammad Zeeshan Ali, is aboard China's Tiangong space station for about a week.",
+     "src": []
     }
    ]
   },
@@ -6027,6 +6353,13 @@
        "https://www.aljazeera.com/amp/news/2026/11/24/hostage-situation-reported-in-colombia-as-armed-men-flee-into-supermarket"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-26",
+     "when": "",
+     "tag": "NO CHANGE",
+     "text": "No new figures. Colombian security forces rescued the hostages from the Exito supermarket and the president said all were freed.",
+     "src": []
     }
    ]
   },
@@ -6055,6 +6388,13 @@
        "https://www.nbcnews.com/news/us-news/4-adults-2-kids-are-missing-plane-crashes-mississippi-coast-rcna611218"
       ]
      ]
+    },
+    {
+     "ed": "2026-11-26",
+     "when": "",
+     "tag": "NO CHANGE",
+     "text": "No change. All six aboard the Cessna 210, four adults and two boys, were confirmed dead; the National Transportation Safety Board (NTSB) is investigating.",
+     "src": []
     }
    ]
   }
@@ -6276,6 +6616,21 @@
     [
      "Timeline 20 to 25 Nov (picture)",
      "timelines/World-Events-Timeline-Update-25Nov2026.svg"
+    ]
+   ]
+  },
+  {
+   "date": "2026-11-26",
+   "scan": "26 Nov, 6:52 am Eastern",
+   "headline": "Thanksgiving storm floods the Northeast and postpones the Macy's parade; markets swing and the Gulf stays tense",
+   "links": [
+    [
+     "World Desk",
+     "World-Desk-26Nov2026.html"
+    ],
+    [
+     "Timeline",
+     "timelines/World-Events-Timeline-Update-26Nov2026.svg"
     ]
    ]
   }
