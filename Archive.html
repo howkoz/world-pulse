@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>World Pulse Archive</title>
+<style>
+  :root, :root[data-theme="light"] {
+    --ink: #13202f; --ink2: #3c4a5a; --muted: #6b7887; --line: #dbe2ea; --bg: #f3f6fa; --card: #ffffff; --sky: #e8f1fb;
+    --blue: #1f6fb5; --shadow: 0 6px 18px rgba(16,40,70,.10);
+  }
+  :root[data-theme="dark"] {
+    --ink: #e6edf5; --ink2: #c3cfdc; --muted: #93a1b3; --line: #24324a; --bg: #0b1220; --card: #111b2c; --sky: #13243d;
+    --blue: #6ab7ff; --shadow: 0 6px 18px rgba(0,0,0,.35);
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Segoe UI", Arial, Helvetica, sans-serif; line-height: 1.45; }
+  a { color: var(--blue); }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+  button, input { font-family: inherit; }
+  .mast { background: #071426; color: #fff; padding: 16px 0 12px; }
+  .mast .wrap { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px; padding-right: 90px; }
+  .brand { font-size: 28px; font-weight: 800; display: flex; align-items: center; gap: 10px; }
+  .brand small { font-size: 13px; font-weight: 500; opacity: .75; }
+  .mast a { color: #9cc3ec; font-size: 13px; }
+  #theme { position: fixed; top: 12px; right: 12px; z-index: 50; padding: 6px 12px; border: 1px solid #94a3b8; border-radius: 8px; background: #fff; color: #1e3a8a; font: 600 12px 'Segoe UI', Arial, sans-serif; cursor: pointer; }
+  @media print { #theme { display: none; } }
+  .intro { background: var(--sky); border-bottom: 1px solid var(--line); padding: 16px 0; }
+  .intro p { margin: 0 0 10px; color: var(--ink2); font-size: 14px; max-width: 860px; }
+  .rule { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--ink2); }
+  .rule span { background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; }
+  .rule b { color: var(--muted); }
+  .tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 14px 0 0; }
+  @media (max-width: 620px) { .tiles { grid-template-columns: repeat(2, 1fr); } }
+  .tile { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 10px; }
+  .tile .n { font-size: 24px; font-weight: 800; } .tile .l { font-size: 12px; color: var(--muted); }
+  section { padding: 24px 0 4px; }
+  h2 { font-size: 22px; margin: 0 0 4px; }
+  .sub { color: var(--muted); font-size: 13.5px; margin: 0 0 12px; }
+  .search { width: 100%; max-width: 460px; padding: 9px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); color: var(--ink); font-size: 14px; }
+  .week { margin: 18px 0 8px; font-size: 13px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px; box-shadow: var(--shadow); }
+  .eds { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
+  .ed .d { font-size: 12px; font-weight: 800; letter-spacing: 1px; color: var(--muted); text-transform: uppercase; }
+  .ed h4 { margin: 4px 0 6px; font-size: 15.5px; }
+  .ed ul { margin: 6px 0 0; padding-left: 18px; font-size: 13px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 14px; }
+  @media (max-width: 400px) { .grid { grid-template-columns: 1fr; } }
+  .th { border-top: 5px solid var(--blue); }
+  .th .top { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+  .th .cat { font-size: 11px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; }
+  .pill { display: inline-block; font-size: 11px; font-weight: 800; padding: 2px 8px; border-radius: 999px; color: #fff; }
+  .th h4 { margin: 6px 0 2px; font-size: 16.5px; }
+  .th .place { font-size: 12.5px; color: var(--muted); }
+  .th .latest { font-size: 13.5px; color: var(--ink2); margin: 8px 0 0; }
+  .th .row { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+  .tbtn { cursor: pointer; border: 1px solid var(--line); background: transparent; color: var(--ink2); border-radius: 6px; padding: 4px 10px; font-size: 12.5px; font-weight: 600; text-decoration: none; }
+  .tbtn:hover { border-color: var(--blue); color: var(--blue); }
+  .log { display: none; }
+  .th.open .log { display: block; }
+  .log ol { list-style: none; margin: 12px 0 0; padding: 0 0 0 16px; border-left: 2px solid var(--line); }
+  .log li { position: relative; margin: 0 0 12px; font-size: 13px; color: var(--ink2); }
+  .log li::before { content: ""; position: absolute; left: -22px; top: 4px; width: 10px; height: 10px; border-radius: 50%; background: var(--dotc, #8a96a3); border: 2px solid var(--card); }
+  .log .w { font-size: 11.5px; color: var(--muted); font-weight: 600; }
+  .log .src { font-size: 11.5px; }
+  .empty { color: var(--muted); font-size: 14px; }
+  footer { margin: 34px 0 0; padding: 18px 0 30px; border-top: 1px solid var(--line); font-size: 12.5px; color: var(--muted); }
+</style>
+</head>
+<body>
+<button id="theme" type="button" aria-label="Switch between light and dark">Dark</button>
+<div class="mast">
+  <div class="wrap">
+    <div class="brand">
+      <svg width="34" height="22" viewBox="0 0 34 22" aria-hidden="true"><polyline points="0,12 9,12 12,4 16,19 20,9 23,12 34,12" fill="none" stroke="#ff5252" stroke-width="2.4" stroke-linejoin="round"/></svg>
+      World Pulse Archive <small>everything older than a week, kept in full</small>
+    </div>
+    <a href="World-Pulse.html">&#8592; Back to this week on World Pulse</a>
+  </div>
+</div>
+
+<div class="intro">
+  <div class="wrap">
+    <p>The home page keeps only what is current: the last 7 daily scans, and the stories that had real news in those 7 days or still have something coming up. Everything else moves here after a week. Nothing is deleted, and a story comes back to the home page the day it has new information.</p>
+    <div class="rule"><span>No new information for 7 days</span><b>&#8594;</b><span>Moves to the archive</span><b>&#8594;</b><span>News again: back on the home page</span></div>
+    <div class="tiles">
+      <div class="tile"><div class="n" id="aE">-</div><div class="l">archived daily editions</div></div>
+      <div class="tile"><div class="n" id="aT">-</div><div class="l">archived stories</div></div>
+      <div class="tile"><div class="n" id="aU">-</div><div class="l">dated entries kept in those stories</div></div>
+      <div class="tile"><div class="n" id="aC">-</div><div class="l">current week starts</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <section>
+    <input class="search" id="q" type="search" placeholder="Search the archive (for example: Hormuz, Starship, earthquake)" aria-label="Search the archive">
+  </section>
+  <section>
+    <h2>Archived stories</h2>
+    <p class="sub">Stories with no new information for at least a week, newest news first. Click "History" for every dated entry and its sources.</p>
+    <div class="grid" id="threads"></div>
+  </section>
+  <section>
+    <h2>Older daily editions</h2>
+    <p class="sub">Each morning's full page and timeline picture, grouped by week, newest first.</p>
+    <div id="eds"></div>
+  </section>
+  <footer><span id="builtLine"></span> Personal news page, checked against major outlets. <a href="World-Pulse.html">Back to World Pulse</a>.</footer>
+</div>
+
+<script src="pulse/pulse-data.js"></script>
+<script>
+(function () {
+  var root = document.documentElement, KEY = 'theme:world-pulse', btn = document.getElementById('theme');
+  function setTheme(t) { root.setAttribute('data-theme', t); btn.textContent = t === 'dark' ? 'Light' : 'Dark'; }
+  var saved = 'light'; try { saved = localStorage.getItem(KEY) || 'light'; } catch (e) {}
+  setTheme(saved === 'dark' ? 'dark' : 'light');
+  btn.onclick = function () { var t = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'; setTheme(t); try { localStorage.setItem(KEY, t); } catch (e) {} };
+
+  var P = window.PULSE;
+  if (!P) { document.getElementById('threads').textContent = 'The data file (pulse/pulse-data.js) did not load.'; return; }
+  var CATS = P.categories, STS = P.statuses;
+  var TAGC = { 'NEW': '#2e7d32', 'UPDATED': '#1f6fb5', 'UNPROVEN': '#c62828', 'NO CHANGE': '#8a96a3', 'RESULT': '#e65100' };
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function dt(d) { var p = d.split('-'); return new Date(Date.UTC(+p[0], +p[1] - 1, +p[2], 12)); }
+  function dayLabel(d) { return dt(d).toLocaleDateString('en-US', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'UTC' }); }
+  function weekOf(d) { var x = dt(d), back = (x.getUTCDay() + 6) % 7; x.setUTCDate(x.getUTCDate() - back); return x.toISOString().slice(0, 10); }
+
+  var AT = P.threads.filter(function (t) { return t.archived; }).sort(function (a, b) { return a.last_news < b.last_news ? 1 : -1; });
+  var AE = P.editions.filter(function (e) { return e.archived; }).sort(function (a, b) { return a.date < b.date ? 1 : -1; });
+  document.getElementById('aE').textContent = AE.length;
+  document.getElementById('aT').textContent = AT.length;
+  document.getElementById('aU').textContent = AT.reduce(function (n, t) { return n + t.updates.length; }, 0);
+  document.getElementById('aC').textContent = P.archive_cutoff ? dayLabel(P.archive_cutoff) : '-';
+  document.getElementById('builtLine').textContent = 'Archive rebuilt with the data of ' + new Date(Date.parse(P.updated_utc)).toLocaleString('en-US', { timeZone: 'America/New_York', weekday: 'short', day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit' }) + ' Eastern.';
+
+  function bestUp(t) { var f = t.updates.filter(function (u) { return u.tag === 'NEW' || u.tag === 'UPDATED' || u.tag === 'RESULT'; }); return f.length ? f[f.length - 1] : t.updates[t.updates.length - 1]; }
+  function textOf(t) { return (t.title + ' ' + t.place + ' ' + t.updates.map(function (u) { return u.text; }).join(' ')).toLowerCase(); }
+
+  function card(t) {
+    var el = document.createElement('div'); el.className = 'card th'; el.style.borderTopColor = CATS[t.cat].color;
+    var log = t.updates.slice().reverse().map(function (u) {
+      var src = (u.src || []).map(function (s) { return '<a href="' + esc(s[1]) + '" target="_blank" rel="noopener">' + esc(s[0]) + '</a>'; }).join(' &middot; ');
+      return '<li style="--dotc:' + TAGC[u.tag] + '"><div class="w">' + esc(u.when) + ' &middot; found in the ' + dayLabel(u.ed) + ' scan <span class="pill" style="background:' + TAGC[u.tag] + '">' + u.tag + '</span></div>' + esc(u.text) + (src ? '<div class="src">' + src + '</div>' : '') + '</li>';
+    }).join('');
+    el.innerHTML = '<div class="top"><span class="cat" style="color:' + CATS[t.cat].color + '">' + esc(CATS[t.cat].label) + '</span>' +
+      '<span class="pill" style="background:' + STS[t.status].color + '">' + esc(STS[t.status].label) + '</span></div>' +
+      '<h4>' + esc(t.title) + '</h4><div class="place">' + esc(t.place) + ' &middot; ' + dayLabel(t.first) + ' to ' + dayLabel(t.last_news) + ' &middot; ' + t.updates.length + (t.updates.length === 1 ? ' entry' : ' entries') + '</div>' +
+      '<p class="latest"><b>Last news:</b> ' + esc(bestUp(t).text) + '</p>' +
+      '<div class="row"><button class="tbtn hist">History (' + t.updates.length + ')</button>' + (t.story ? '<a class="tbtn" href="' + esc(t.story) + '">Full story</a>' : '') + '</div>' +
+      '<div class="log"><ol>' + log + '</ol></div>';
+    el.querySelector('.hist').onclick = function () { el.classList.toggle('open'); this.textContent = el.classList.contains('open') ? 'Hide history' : 'History (' + t.updates.length + ')'; };
+    return el;
+  }
+  function edCard(e) {
+    var d = document.createElement('div'); d.className = 'card ed';
+    d.innerHTML = '<div class="d">Scan of ' + esc(e.scan) + '</div><h4>' + esc(e.headline) + '</h4><ul>' +
+      e.links.map(function (l) { return '<li><a href="' + esc(l[1]) + '">' + esc(l[0]) + '</a></li>'; }).join('') + '</ul>';
+    return d;
+  }
+  function render() {
+    var q = document.getElementById('q').value.trim().toLowerCase();
+    var grid = document.getElementById('threads'); grid.innerHTML = '';
+    var ts = AT.filter(function (t) { return !q || textOf(t).indexOf(q) >= 0; });
+    ts.forEach(function (t) { grid.appendChild(card(t)); });
+    if (!ts.length) grid.innerHTML = '<p class="empty">' + (AT.length ? 'No archived story matches that search.' : 'No story has gone a week without news yet.') + '</p>';
+    var box = document.getElementById('eds'); box.innerHTML = '';
+    var es = AE.filter(function (e) { return !q || (e.headline + ' ' + e.scan).toLowerCase().indexOf(q) >= 0; });
+    var wk = null, row = null;
+    es.forEach(function (e) {
+      var w = weekOf(e.date);
+      if (w !== wk) {
+        wk = w;
+        var h = document.createElement('div'); h.className = 'week'; h.textContent = 'Week of ' + dt(w).toLocaleDateString('en-US', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+        box.appendChild(h); row = document.createElement('div'); row.className = 'eds'; box.appendChild(row);
+      }
+      row.appendChild(edCard(e));
+    });
+    if (!es.length) box.innerHTML = '<p class="empty">' + (AE.length ? 'No archived edition matches that search.' : 'No edition is older than a week yet.') + '</p>';
+  }
+  document.getElementById('q').addEventListener('input', render);
+  render();
+})();
+</script>
+</body>
+</html>

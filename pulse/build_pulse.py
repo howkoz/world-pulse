@@ -8,6 +8,7 @@ import json
 import os
 import re
 import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from datetime import datetime, timezone
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -57,6 +58,19 @@ def main():
             path = os.path.normpath(os.path.join(DESK, href))
             if not href.startswith('http') and not os.path.exists(path):
                 errors.append('edition %s: missing file %s' % (e['date'], href))
+    for t in data['threads']:
+        if t.get('story') and not os.path.exists(os.path.join(DESK, t['story'])):
+            errors.append('%s: story page %s not found' % (t.get('id'), t['story']))
+    # One-week rule (shared with archive_old.py): mark what the home page shows and what the Archive page shows.
+    from archive_old import cutoff_of, thread_archived, last_news
+    now_utc = datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
+    cutoff = cutoff_of(data)
+    data['archive_cutoff'] = cutoff
+    for t in data['threads']:
+        t['archived'] = thread_archived(t, cutoff, now_utc)
+        t['last_news'] = last_news(t)
+    for e in data['editions']:
+        e['archived'] = e['date'] < cutoff
     if errors:
         print('NOT BUILT. Fix these first:')
         for e in errors:
@@ -68,6 +82,9 @@ def main():
     open(OUT, 'w', encoding='utf-8').write(js)
     n_up = sum(len(t['updates']) for t in data['threads'])
     print('Built pulse-data.js: %d threads, %d updates, %d editions' % (len(data['threads']), n_up, len(data['editions'])))
+    print('Current week from %s: %d stories and %d editions on the home page, %d stories and %d editions in the archive.' % (
+        cutoff, sum(not t['archived'] for t in data['threads']), sum(not e['archived'] for e in data['editions']),
+        sum(t['archived'] for t in data['threads']), sum(e['archived'] for e in data['editions'])))
 
 
 if __name__ == '__main__':

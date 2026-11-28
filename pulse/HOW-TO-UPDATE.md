@@ -15,6 +15,8 @@ Personal-interest site, not work. Updated by the 6:45 am daily scan, or when How
 | `pulse/globe.js`, `pulse/world-land.js` | The realistic globe and the coastline data | No |
 | `World-Desk-<date>.html` | One daily edition per scan, headline story with its own visual | New one each morning |
 | `timelines/` | Each day's timeline picture (SVG), copied in from where it is drawn | Add one each morning |
+| `Archive.html` | Everything older than a week: archived stories with full history, older editions by week | No (built from the data) |
+| `archive/` | Old World Desk pages and timeline pictures, moved there by `pulse/archive_old.py` | No |
 | `publish.py` | Builds, safety-checks and pushes to GitHub | Run it to publish |
 
 ## The one rule: history only grows
@@ -60,3 +62,14 @@ em or en dash, then commits the site files by name and pushes. The web address u
 2. Script syntax: extract the inline `<script>` blocks and run `node --check`.
 3. Smoke test with jsdom (`resources: 'usable'` so the pulse scripts load): no script errors, thread cards render.
 4. Publish, then open the web address and the local home page.
+
+## The one-week archive (set 28 Nov 2026)
+
+The home page shows only what is current. Everything else moves to `Archive.html` automatically, every time `publish.py` runs:
+
+- **Current week** = the latest scan date and the 6 days before it (7 scans). Older editions are archived.
+- **A story is archived** when its last real entry (anything except NO CHANGE) is older than that and it has no `next` moment still ahead. NO CHANGE entries do not keep a story on the home page.
+- **A story comes back** to the home page the day it gets a new NEW, UPDATED, UNPROVEN or RESULT entry. Nothing to do by hand.
+- **Files move, never get deleted.** `pulse/archive_old.py` moves an archived edition's `World-Desk-*.html` page and its timeline pictures into `archive/` (same layout: `archive/timelines/...`) with `git mv`, fixes the links in and to those pages, and points the edition links in `pulse-data.json` at the new place.
+- **Full story pages** (`Story-*.html`) stay in the root while their story is current. Give the thread a `"story": "Story-....html"` field so the card shows a "Full story" button and the page is kept in place.
+- `build_pulse.py` marks each thread and edition with `archived` in `pulse-data.js`; `World-Pulse.html` shows the current ones and `Archive.html` shows the rest, grouped by week, with a search box.

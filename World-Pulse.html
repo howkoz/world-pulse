@@ -115,6 +115,10 @@
   .ed ul { margin: 6px 0 0; padding-left: 18px; font-size: 13px; }
   .ed .bar { display: flex; height: 8px; border-radius: 4px; overflow: hidden; margin-top: 8px; background: var(--line); }
 
+  .archbox { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; margin-top: 14px; text-decoration: none; color: var(--ink); border-left: 5px solid var(--blue); }
+  .archbox b { font-size: 16px; } .archbox span { color: var(--muted); font-size: 13.5px; } .archbox i { margin-left: auto; font-style: normal; font-weight: 700; color: var(--blue); font-size: 13.5px; }
+  .archbox:hover { box-shadow: 0 0 0 2px var(--blue), var(--shadow); }
+  a.tbtn { text-decoration: none; display: inline-block; }
   #grow text { font-family: "Segoe UI", Arial, sans-serif; }
   footer { margin: 34px 0 0; padding: 18px 0 30px; border-top: 1px solid var(--line); font-size: 12.5px; color: var(--muted); }
   footer ul { padding-left: 18px; margin: 6px 0; columns: 2; }
@@ -130,7 +134,7 @@
       <svg width="34" height="22" viewBox="0 0 34 22" aria-hidden="true"><polyline points="0,12 9,12 12,4 16,19 20,9 23,12 34,12" fill="none" stroke="#ff5252" stroke-width="2.4" stroke-linejoin="round"/></svg>
       World Pulse <small>Howard's running picture of the world, checked against the sources</small>
     </div>
-    <div class="clock" id="clock">loading clock</div>
+    <div class="clock"><span id="clock">loading clock</span> &middot; <a href="Archive.html" style="color:#9cc3ec">Archive</a></div>
   </div>
 </div>
 <div class="ticker" id="tickerBar">
@@ -170,7 +174,7 @@
 
   <section>
     <h2>The heartbeat</h2>
-    <p class="sub">One beat per scan. The taller the spike, the more changed in the world that day. Bars show what kind of change it was. It grows by one beat every morning.</p>
+    <p class="sub">One beat per scan for the last 7 days. The taller the spike, the more changed in the world that day. Bars show what kind of change it was. Older beats move to the archive.</p>
     <div class="card">
       <svg id="beat" viewBox="0 0 1000 230" width="100%" style="display:block"></svg>
       <div class="legend" id="beatLegend"></div>
@@ -179,7 +183,7 @@
 
   <section>
     <h2>Running stories</h2>
-    <p class="sub">Every story keeps its whole history: each scan adds a dated entry instead of replacing the old one. Click "History" for the full log and the sources, or "Show on globe".</p>
+    <p class="sub">Every story keeps its whole history: each scan adds a dated entry instead of replacing the old one. Click "History" for the full log and the sources, or "Show on globe". Only stories with news in the last 7 days (or something still coming up) are here; <a class="archlink" href="Archive.html">older ones are in the archive</a>.</p>
     <div class="chips" id="catChips"></div>
     <div class="chips" id="stChips"></div>
     <div class="grid" id="threads"></div>
@@ -193,13 +197,14 @@
 
   <section>
     <h2>Daily editions</h2>
-    <p class="sub">Each morning's full page and timeline picture, newest first.</p>
+    <p class="sub">Each morning's full page and timeline picture for the last 7 days, newest first.</p>
     <div class="eds" id="eds"></div>
+    <a class="archbox card" href="Archive.html"><b>Archive</b><span id="archCount">Older editions and stories</span><i>Open the archive &#8594;</i></a>
   </section>
 
   <section>
     <h2>How this site grows</h2>
-    <p class="sub">Two ways in, one way out. Nothing old is deleted; history only gets longer.</p>
+    <p class="sub">Two ways in, one way out. Nothing old is deleted; history only gets longer. After 7 days with no news a story moves to the <a href="Archive.html">archive</a>.</p>
     <div class="card">
       <svg id="grow" viewBox="0 0 1000 170" width="100%" style="display:block">
         <defs><marker id="ga" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#6b7887"/></marker></defs>
@@ -255,7 +260,10 @@
   function dayLabel(d) { var p = d.split('-'); return new Date(Date.UTC(+p[0], +p[1] - 1, +p[2], 12)).toLocaleDateString('en-US', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'UTC' }); }
   function hms(ms) { var s = Math.max(0, Math.floor(ms / 1000)); return String(Math.floor(s / 3600)).padStart(2, '0') + ':' + String(Math.floor(s % 3600 / 60)).padStart(2, '0') + ':' + String(s % 60).padStart(2, '0'); }
 
-  var T = P.threads, EDS = P.editions.slice().sort(function (a, b) { return a.date < b.date ? -1 : 1; });
+  // One-week rule (worked out by build_pulse.py): the home page shows only what is current; the rest is on Archive.html.
+  var T = P.threads.filter(function (t) { return !t.archived; }), EDS = P.editions.filter(function (e) { return !e.archived; }).sort(function (a, b) { return a.date < b.date ? -1 : 1; });
+  var NARCH_T = P.threads.length - T.length, NARCH_E = P.editions.length - EDS.length;
+  document.getElementById('archCount').textContent = NARCH_E + ' older editions and ' + NARCH_T + ' stories with no news for a week, with their full history.';
   var LATEST = EDS.length ? EDS[EDS.length - 1].date : '';
   function lastUp(t) { return t.updates[t.updates.length - 1]; }
   function bestUp(t) { var f = t.updates.filter(function (u) { return u.tag === 'NEW' || u.tag === 'UPDATED' || u.tag === 'RESULT'; }); return f.length ? f[f.length - 1] : lastUp(t); }
@@ -429,7 +437,7 @@
       '<span class="spark" title="Changes per scan">' + spark + '</span></div>' +
       '<h4>' + esc(t.title) + '</h4><div class="place">' + esc(t.place) + ' &middot; tracked since ' + dayLabel(t.first) + ' &middot; ' + t.updates.length + (t.updates.length === 1 ? ' entry' : ' entries') + '</div>' +
       '<p class="latest"><b>Latest:</b> ' + esc(L.text) + '</p>' + (OC ? '<p class="latest" style="color:#c62828"><b>Unproven claim:</b> ' + esc(OC.text) + '</p>' : '') +
-      '<div class="row"><button class="tbtn hist">History (' + t.updates.length + ')</button>' + (t.lat != null ? '<button class="tbtn map">Show on globe</button>' : '') + '</div>' +
+      '<div class="row"><button class="tbtn hist">History (' + t.updates.length + ')</button>' + (t.story ? '<a class="tbtn" href="' + esc(t.story) + '">Full story</a>' : '') + (t.lat != null ? '<button class="tbtn map">Show on globe</button>' : '') + '</div>' +
       '<div class="log"><ol>' + log + '</ol></div>';
     el.querySelector('.hist').onclick = function () { el.classList.toggle('open'); this.textContent = el.classList.contains('open') ? 'Hide history' : 'History (' + t.updates.length + ')'; };
     var mb = el.querySelector('.map'); if (mb) mb.onclick = function () { globe.focus(t.lat, t.lon); window.scrollTo({ top: 0, behavior: 'smooth' }); };

@@ -218,7 +218,9 @@ window.PULSE = {
      "tag": "NO CHANGE",
      "text": "Third scan with nothing new. Still no Flight 16 date; it is aimed at no earlier than December 2026 from pad 39A in Florida. Marked as gone quiet until SpaceX announces something."
     }
-   ]
+   ],
+   "archived": true,
+   "last_news": "2026-11-17"
   },
   {
    "id": "faa-ground-stop",
@@ -362,7 +364,9 @@ window.PULSE = {
      "text": "Third scan with nothing new. Marked as gone quiet.",
      "src": []
     }
-   ]
+   ],
+   "archived": true,
+   "last_news": "2026-11-18"
   },
   {
    "id": "microsoft-365-outage",
@@ -423,7 +427,9 @@ window.PULSE = {
      "tag": "NO CHANGE",
      "text": "Third scan with nothing new. Marked as gone quiet."
     }
-   ]
+   ],
+   "archived": true,
+   "last_news": "2026-11-14"
   },
   {
    "id": "iran-us-bases",
@@ -738,7 +744,9 @@ window.PULSE = {
      "text": "No new base attack confirmed today. Iran continues to deny a drone strike on a Kuwaiti military site that killed two Italian nationals.",
      "src": []
     }
-   ]
+   ],
+   "archived": false,
+   "last_news": "2026-11-23"
   },
   {
    "id": "strait-of-hormuz",
@@ -1070,7 +1078,9 @@ window.PULSE = {
       ]
      ]
     }
-   ]
+   ],
+   "archived": false,
+   "last_news": "2026-11-28"
   },
   {
    "id": "raf-lakenheath-drones",
@@ -1131,7 +1141,9 @@ window.PULSE = {
      "tag": "NO CHANGE",
      "text": "Third scan with nothing new. Marked as gone quiet."
     }
-   ]
+   ],
+   "archived": true,
+   "last_news": "2026-11-14"
   },
   {
    "id": "ukraine-moscow-drones",
@@ -1458,7 +1470,9 @@ window.PULSE = {
       ]
      ]
     }
-   ]
+   ],
+   "archived": false,
+   "last_news": "2026-11-28"
   },
   {
    "id": "uk-spy-arrest",
@@ -1516,7 +1530,9 @@ window.PULSE = {
      "text": "Third scan with nothing new. Marked as gone quiet.",
      "src": []
     }
-   ]
+   ],
+   "archived": true,
+   "last_news": "2026-11-16"
   },
   {
    "id": "bitcoin-markets",
@@ -1776,7 +1792,9 @@ window.PULSE = {
       ]
      ]
     }
-   ]
+   ],
+   "archived": false,
+   "last_news": "2026-11-28"
   },
   {
    "id": "nvidia-ceo",
@@ -2050,7 +2068,9 @@ window.PULSE = {
      "text": "No new development. Jensen Huang is back as chief executive after briefly resigning. Internal and external investigations continue, and a reported congressional interview is unconfirmed.",
      "src": []
     }
-   ]
+   ],
+   "archived": false,
+   "last_news": "2026-11-26"
   },
   {
    "id": "ebola-congo",
@@ -2322,7 +2342,9 @@ window.PULSE = {
       ]
      ]
     }
-   ]
+   ],
+   "archived": false,
+   "last_news": "2026-11-28"
   },
   {
    "id": "new-orleans-tanker",
@@ -2427,7 +2449,9 @@ window.PULSE = {
      "text": "Third scan with nothing new. Marked as gone quiet.",
      "src": []
     }
-   ]
+   ],
+   "archived": true,
+   "last_news": "2026-11-19"
   },
   {
    "id": "dc-gym-shooting",
@@ -2487,7 +2511,9 @@ window.PULSE = {
      "text": "Third scan with nothing new. Marked as gone quiet.",
      "src": []
     }
-   ]
+   ],
+   "archived": true,
+   "last_news": "2026-11-15"
   },
   {
    "id": "apec-shenzhen",
@@ -2676,7 +2702,9 @@ window.PULSE = {
      "text": "Third scan with nothing new. Marked as gone quiet.",
      "src": []
     }
-   ]
+   ],
+   "archived": true,
+   "last_news": "2026-11-21"
   },
   {
    "id": "fedwire-911-claims",
@@ -2722,7 +2750,9 @@ window.PULSE = {
      "tag": "NO CHANGE",
      "text": "Still quiet. Nothing new."
     }
-   ]
+   ],
+   "archived": true,
+   "last_news": "2026-11-13"
   },
   {
    "id": "west-coast-storms",
@@ -2782,7 +2812,9 @@ window.PULSE = {
      "text": "Third scan with nothing new. Marked as gone quiet.",
      "src": []
     }
-   ]
+   ],
+   "archived": true,
+   "last_news": "2026-11-16"
   },
   {
    "id": "vulcan-amazon-leo",
@@ -2960,7 +2992,9 @@ window.PULSE = {
       ]
      ]
     }
-   ]
+   ],
+   "archived": false,
+   "last_news": "2026-11-25"
   },
   {
    "id": "houthi-riyadh",
@@ -3161,7 +3195,9 @@ window.PULSE = {
      "text": "No new strike confirmed today. Earlier Houthi claims against Saudi targets, including the Ras Tanura refinery, stay disputed by the Saudi-led coalition.",
      "src": []
     }
-   ]
+   ],
+   "archived": false,
+   "last_news": "2026-11-26"
   },
   {
    "id": "gaza-rafah-commander",
@@ -3209,7 +3245,9 @@ window.PULSE = {
      "text": "Third scan with nothing new. Marked as gone quiet.",
      "src": []
     }
-   ]
+   ],
+   "archived": true,
+   "last_news": "2026-11-16"
   },
   {
    "id": "aws-us-east-1",
@@ -3257,7 +3295,9 @@ window.PULSE = {
      "text": "Third scan with nothing new. Marked as gone quiet.",
      "src": []
     }
-   ]
+   ],
+   "archived": true,
+   "last_news": "2026-11-16"
   },
   {
    "id": "us-bank-outage",
@@ -3364,7 +3404,9 @@ window.PULSE = {
      "text": "Third scan with nothing new. Marked as gone quiet.",
      "src": []
     }
-   ]
+   ],
+   "archived": true,
+   "last_news": "2026-11-20"
   },
   {
    "id": "us-measles-status",
@@ -3412,7 +3454,9 @@ window.PULSE = {
      "text": "Third scan with nothing new. Marked as gone quiet.",
      "src": []
     }
-   ]
+   ],
+   "archived": true,
+   "last_news": "2026-11-16"
   },
   {
    "id": "miami-planes-collide",
@@ -3460,7 +3504,9 @@ window.PULSE = {
      "text": "Third scan with nothing new. Marked as gone quiet.",
      "src": []
     }
-   ]
+   ],
+   "archived": true,
+   "last_news": "2026-11-16"
   },
   {
    "id": "alaska-governor",
@@ -3524,7 +3570,9 @@ window.PULSE = {
      "text": "Third scan with nothing new. Marked as gone quiet.",
      "src": []
     }
-   ]
+   ],
+   "archived": true,
+   "last_news": "2026-11-16"
   },
   {
    "id": "united-outage",
@@ -3572,7 +3620,9 @@ window.PULSE = {
      "text": "Third scan with nothing new. Marked as gone quiet.",
      "src": []
     }
-   ]
+   ],
+   "archived": true,
+   "last_news": "2026-11-16"
   },
   {
    "id": "wall-street-selloff",
@@ -3811,7 +3861,9 @@ window.PULSE = {
       ]
      ]
     }
-   ]
+   ],
+   "archived": false,
+   "last_news": "2026-11-28"
   },
   {
    "id": "iran-dc-dirty-bomb",
@@ -3989,7 +4041,9 @@ window.PULSE = {
      "text": "No new development on the reported dirty-bomb threat.",
      "src": []
     }
-   ]
+   ],
+   "archived": false,
+   "last_news": "2026-11-25"
   },
   {
    "id": "phuket-fire",
@@ -4037,7 +4091,9 @@ window.PULSE = {
      "tag": "NO CHANGE",
      "text": "Third scan with nothing new. Marked as gone quiet."
     }
-   ]
+   ],
+   "archived": true,
+   "last_news": "2026-11-17"
   },
   {
    "id": "banda-sea-quake",
@@ -4081,7 +4137,9 @@ window.PULSE = {
      "tag": "NO CHANGE",
      "text": "Third scan with nothing new. Marked as gone quiet. (The only quake of magnitude 5.5 or more in the last day was a 5.6 southeast of the Loyalty Islands, Pacific, with a green alert.)"
     }
-   ]
+   ],
+   "archived": true,
+   "last_news": "2026-11-17"
   },
   {
    "id": "anthropic-listing",
@@ -4214,7 +4272,9 @@ window.PULSE = {
      "text": "Third scan with nothing new. Marked as gone quiet.",
      "src": []
     }
-   ]
+   ],
+   "archived": true,
+   "last_news": "2026-11-21"
   },
   {
    "id": "cyclone-akvan",
@@ -4327,7 +4387,9 @@ window.PULSE = {
      "text": "Third scan with nothing new. Marked as gone quiet.",
      "src": []
     }
-   ]
+   ],
+   "archived": true,
+   "last_news": "2026-11-21"
   },
   {
    "id": "nsa-network-outage",
@@ -4428,7 +4490,9 @@ window.PULSE = {
      "text": "Third scan with nothing new. Marked as gone quiet.",
      "src": []
     }
-   ]
+   ],
+   "archived": true,
+   "last_news": "2026-11-21"
   },
   {
    "id": "iran-kuwait-drones",
@@ -4496,7 +4560,9 @@ window.PULSE = {
      "text": "Third scan with nothing new. Marked as gone quiet.",
      "src": []
     }
-   ]
+   ],
+   "archived": true,
+   "last_news": "2026-11-19"
   },
   {
    "id": "icj-myanmar-genocide",
@@ -4544,7 +4610,9 @@ window.PULSE = {
      "text": "Third scan with nothing new. Marked as gone quiet.",
      "src": []
     }
-   ]
+   ],
+   "archived": true,
+   "last_news": "2026-11-19"
   },
   {
    "id": "greenland-deal",
@@ -4592,7 +4660,9 @@ window.PULSE = {
      "text": "Third scan with nothing new. Marked as gone quiet.",
      "src": []
     }
-   ]
+   ],
+   "archived": true,
+   "last_news": "2026-11-19"
   },
   {
    "id": "senegal-migrant-boat",
@@ -4673,7 +4743,9 @@ window.PULSE = {
      "text": "Third scan with nothing new. Marked as gone quiet.",
      "src": []
     }
-   ]
+   ],
+   "archived": true,
+   "last_news": "2026-11-21"
   },
   {
    "id": "suneung-alerts",
@@ -4721,7 +4793,9 @@ window.PULSE = {
      "text": "Third scan with nothing new. Marked as gone quiet.",
      "src": []
     }
-   ]
+   ],
+   "archived": true,
+   "last_news": "2026-11-19"
   },
   {
    "id": "chase-vendor-breach",
@@ -4829,7 +4903,9 @@ window.PULSE = {
       ]
      ]
     }
-   ]
+   ],
+   "archived": false,
+   "last_news": "2026-11-22"
   },
   {
    "id": "poland-missiles",
@@ -4959,7 +5035,9 @@ window.PULSE = {
      "text": "No new incident on Polish territory reported today.",
      "src": []
     }
-   ]
+   ],
+   "archived": false,
+   "last_news": "2026-11-26"
   },
   {
    "id": "denmark-plot",
@@ -5008,7 +5086,9 @@ window.PULSE = {
      "text": "Third scan with nothing new. Marked as gone quiet.",
      "src": []
     }
-   ]
+   ],
+   "archived": true,
+   "last_news": "2026-11-21"
   },
   {
    "id": "peru-quake",
@@ -5057,7 +5137,9 @@ window.PULSE = {
      "text": "Third scan with nothing new. Marked as gone quiet.",
      "src": []
     }
-   ]
+   ],
+   "archived": true,
+   "last_news": "2026-11-21"
   },
   {
    "id": "timor-quake",
@@ -5106,7 +5188,9 @@ window.PULSE = {
      "text": "Third scan with nothing new. Marked as gone quiet.",
      "src": []
     }
-   ]
+   ],
+   "archived": true,
+   "last_news": "2026-11-21"
   },
   {
    "id": "palisades-verdict",
@@ -5155,7 +5239,9 @@ window.PULSE = {
      "text": "Third scan with nothing new. Marked as gone quiet.",
      "src": []
     }
-   ]
+   ],
+   "archived": true,
+   "last_news": "2026-11-21"
   },
   {
    "id": "datacenter-tax",
@@ -5204,7 +5290,9 @@ window.PULSE = {
      "text": "Third scan with nothing new. Marked as gone quiet.",
      "src": []
     }
-   ]
+   ],
+   "archived": true,
+   "last_news": "2026-11-21"
   },
   {
    "id": "learjet-greenacres",
@@ -5384,7 +5472,10 @@ window.PULSE = {
      "text": "No new National Transportation Safety Board (NTSB) update. The preliminary report is still expected around 1 December.",
      "src": []
     }
-   ]
+   ],
+   "story": "Story-Learjet-Greenacres-Crash.html",
+   "archived": false,
+   "last_news": "2026-11-21"
   },
   {
    "id": "florida-space-coast-flood",
@@ -5513,7 +5604,9 @@ window.PULSE = {
      "text": "No new flooding reported along Florida's Space Coast today.",
      "src": []
     }
-   ]
+   ],
+   "archived": false,
+   "last_news": "2026-11-24"
   },
   {
    "id": "riemann-claim",
@@ -5640,7 +5733,9 @@ window.PULSE = {
      "text": "No new development today. The computer-checked Lean proof still has the Lean group's confidence, but no short human-readable version has been published.",
      "src": []
     }
-   ]
+   ],
+   "archived": false,
+   "last_news": "2026-11-25"
   },
   {
    "id": "el-chapo-isidro",
@@ -5740,7 +5835,9 @@ window.PULSE = {
      "text": "No new development on the Sinaloa cartel faction led by El Chapo Isidro.",
      "src": []
     }
-   ]
+   ],
+   "archived": false,
+   "last_news": "2026-11-24"
   },
   {
    "id": "killer-robots-talks",
@@ -5785,7 +5882,9 @@ window.PULSE = {
      "text": "Third scan with nothing new. Marked as gone quiet.",
      "src": []
     }
-   ]
+   ],
+   "archived": true,
+   "last_news": "2026-11-21"
   },
   {
    "id": "cop31-antalya",
@@ -5862,7 +5961,9 @@ window.PULSE = {
      "text": "Nothing new surfaced in this scan.",
      "src": []
     }
-   ]
+   ],
+   "archived": false,
+   "last_news": "2026-11-23"
   },
   {
    "id": "cyber-director-out",
@@ -5915,7 +6016,9 @@ window.PULSE = {
      "text": "Third scan with nothing new. Marked as gone quiet.",
      "src": []
     }
-   ]
+   ],
+   "archived": false,
+   "last_news": "2026-11-22"
   },
   {
    "id": "pentagon-ufo-files",
@@ -5964,7 +6067,9 @@ window.PULSE = {
      "text": "Third scan with nothing new. Marked as gone quiet.",
      "src": []
     }
-   ]
+   ],
+   "archived": false,
+   "last_news": "2026-11-22"
   },
   {
    "id": "jackson-ms-crash",
@@ -6009,7 +6114,9 @@ window.PULSE = {
      "text": "Third scan with nothing new. Marked as gone quiet. (A separate, confirmed crash off the Mississippi coast is a new story today.)",
      "src": []
     }
-   ]
+   ],
+   "archived": false,
+   "last_news": "2026-11-22"
   },
   {
    "id": "libya-warship-sunk",
@@ -6107,7 +6214,9 @@ window.PULSE = {
       ]
      ]
     }
-   ]
+   ],
+   "archived": false,
+   "last_news": "2026-11-28"
   },
   {
    "id": "nigeria-funeral-boat",
@@ -6192,7 +6301,9 @@ window.PULSE = {
      "text": "No new development. The death toll from the 20 November funeral-boat capsize in Bayelsa state stands at about 24.",
      "src": []
     }
-   ]
+   ],
+   "archived": false,
+   "last_news": "2026-11-25"
   },
   {
    "id": "vanuatu-quake",
@@ -6237,7 +6348,9 @@ window.PULSE = {
      "text": "No damage reports.",
      "src": []
     }
-   ]
+   ],
+   "archived": false,
+   "last_news": "2026-11-23"
   },
   {
    "id": "kepco-leak",
@@ -6287,7 +6400,9 @@ window.PULSE = {
      "text": "Still only the one SBS report on customer data. Korea Electric Power Corporation (KEPCO) says customer data is kept in a separate system.",
      "src": []
     }
-   ]
+   ],
+   "archived": false,
+   "last_news": "2026-11-23"
   },
   {
    "id": "fbi-ncic-hack",
@@ -6365,7 +6480,9 @@ window.PULSE = {
      "text": "No new development. The FBI is still investigating a suspected breach of the National Crime Information Center, reported on 21 November.",
      "src": []
     }
-   ]
+   ],
+   "archived": false,
+   "last_news": "2026-11-26"
   },
   {
    "id": "manchester-coop-live",
@@ -6444,7 +6561,9 @@ window.PULSE = {
      "text": "No new development. Tests on the substance released at the Don Toliver concert are still ongoing and no arrests have been reported.",
      "src": []
     }
-   ]
+   ],
+   "archived": false,
+   "last_news": "2026-11-27"
   },
   {
    "id": "thanksgiving-storms",
@@ -6532,7 +6651,9 @@ window.PULSE = {
       ]
      ]
     }
-   ]
+   ],
+   "archived": false,
+   "last_news": "2026-11-27"
   },
   {
    "id": "reunion-quake",
@@ -6581,7 +6702,9 @@ window.PULSE = {
      "text": "No new development or damage reports from the magnitude 6.4 earthquake in the Mauritius and Reunion region.",
      "src": []
     }
-   ]
+   ],
+   "archived": false,
+   "last_news": "2026-11-24"
   },
   {
    "id": "us-spy-treasury-hacks",
@@ -6665,7 +6788,9 @@ window.PULSE = {
       ]
      ]
     }
-   ]
+   ],
+   "archived": false,
+   "last_news": "2026-11-28"
   },
   {
    "id": "shenzhou-24",
@@ -6716,7 +6841,9 @@ window.PULSE = {
       ]
      ]
     }
-   ]
+   ],
+   "archived": false,
+   "last_news": "2026-11-27"
   },
   {
    "id": "cartagena-hostages",
@@ -6762,7 +6889,9 @@ window.PULSE = {
      "text": "No new development. Colombian forces freed all hostages from the Cartagena supermarket siege; one captor was killed.",
      "src": []
     }
-   ]
+   ],
+   "archived": false,
+   "last_news": "2026-11-25"
   },
   {
    "id": "mississippi-cessna",
@@ -6804,7 +6933,9 @@ window.PULSE = {
      "text": "No new development. All six aboard the Cessna 210 that crashed off Mississippi were confirmed dead; the National Transportation Safety Board is investigating.",
      "src": []
     }
-   ]
+   ],
+   "archived": false,
+   "last_news": "2026-11-25"
   },
   {
    "id": "spacex-million-satellites",
@@ -6848,7 +6979,9 @@ window.PULSE = {
       ]
      ]
     }
-   ]
+   ],
+   "archived": false,
+   "last_news": "2026-11-28"
   },
   {
    "id": "ukraine-laser-drone",
@@ -6888,7 +7021,9 @@ window.PULSE = {
       ]
      ]
     }
-   ]
+   ],
+   "archived": false,
+   "last_news": "2026-11-28"
   },
   {
    "id": "germany-iran-cell",
@@ -6916,7 +7051,9 @@ window.PULSE = {
       ]
      ]
     }
-   ]
+   ],
+   "archived": false,
+   "last_news": "2026-11-27"
   },
   {
    "id": "lloyds-outage",
@@ -6944,7 +7081,9 @@ window.PULSE = {
       ]
      ]
     }
-   ]
+   ],
+   "archived": false,
+   "last_news": "2026-11-28"
   }
  ],
  "editions": [
@@ -6955,13 +7094,14 @@ window.PULSE = {
    "links": [
     [
      "What is not normal (picture)",
-     "timelines/World-Events-Not-Normal-12-13Nov2026.svg"
+     "archive/timelines/World-Events-Not-Normal-12-13Nov2026.svg"
     ],
     [
      "Timeline 9 to 13 Nov (picture)",
-     "timelines/World-Events-Timeline-9-13Nov2026.svg"
+     "archive/timelines/World-Events-Timeline-9-13Nov2026.svg"
     ]
-   ]
+   ],
+   "archived": true
   },
   {
    "date": "2026-11-14",
@@ -6970,13 +7110,14 @@ window.PULSE = {
    "links": [
     [
      "World Desk page",
-     "World-Desk-14Nov2026.html"
+     "archive/World-Desk-14Nov2026.html"
     ],
     [
      "Timeline 9 to 14 Nov (picture)",
-     "timelines/World-Events-Timeline-Update-14Nov2026.svg"
+     "archive/timelines/World-Events-Timeline-Update-14Nov2026.svg"
     ]
-   ]
+   ],
+   "archived": true
   },
   {
    "date": "2026-11-15",
@@ -6985,13 +7126,14 @@ window.PULSE = {
    "links": [
     [
      "World Desk page",
-     "World-Desk-15Nov2026.html"
+     "archive/World-Desk-15Nov2026.html"
     ],
     [
      "Timeline 10 to 15 Nov (picture)",
-     "timelines/World-Events-Timeline-Update-15Nov2026.svg"
+     "archive/timelines/World-Events-Timeline-Update-15Nov2026.svg"
     ]
-   ]
+   ],
+   "archived": true
   },
   {
    "date": "2026-11-16",
@@ -7000,21 +7142,22 @@ window.PULSE = {
    "links": [
     [
      "World Desk page",
-     "World-Desk-16Nov2026.html"
+     "archive/World-Desk-16Nov2026.html"
     ],
     [
      "Timeline 11 to 16 Nov (picture)",
-     "timelines/World-Events-Timeline-Update-16Nov2026.svg"
+     "archive/timelines/World-Events-Timeline-Update-16Nov2026.svg"
     ],
     [
      "Afternoon US scan, 16 Nov (picture)",
-     "timelines/US-Afternoon-Scan-16Nov2026.svg"
+     "archive/timelines/US-Afternoon-Scan-16Nov2026.svg"
     ],
     [
      "Evening check, 16 Nov (picture)",
-     "timelines/US-Evening-Check-16Nov2026.svg"
+     "archive/timelines/US-Evening-Check-16Nov2026.svg"
     ]
-   ]
+   ],
+   "archived": true
   },
   {
    "date": "2026-11-17",
@@ -7023,17 +7166,18 @@ window.PULSE = {
    "links": [
     [
      "World Desk page",
-     "World-Desk-17Nov2026.html"
+     "archive/World-Desk-17Nov2026.html"
     ],
     [
      "Timeline 12 to 17 Nov (picture)",
-     "timelines/World-Events-Timeline-Update-17Nov2026.svg"
+     "archive/timelines/World-Events-Timeline-Update-17Nov2026.svg"
     ],
     [
      "Evening check, 17 Nov (picture)",
-     "timelines/World-Evening-Check-17Nov2026.svg"
+     "archive/timelines/World-Evening-Check-17Nov2026.svg"
     ]
-   ]
+   ],
+   "archived": true
   },
   {
    "date": "2026-11-18",
@@ -7042,13 +7186,14 @@ window.PULSE = {
    "links": [
     [
      "World Desk page",
-     "World-Desk-18Nov2026.html"
+     "archive/World-Desk-18Nov2026.html"
     ],
     [
      "Timeline 13 to 18 Nov (picture)",
-     "timelines/World-Events-Timeline-Update-18Nov2026.svg"
+     "archive/timelines/World-Events-Timeline-Update-18Nov2026.svg"
     ]
-   ]
+   ],
+   "archived": true
   },
   {
    "date": "2026-11-19",
@@ -7057,13 +7202,14 @@ window.PULSE = {
    "links": [
     [
      "World Desk page",
-     "World-Desk-19Nov2026.html"
+     "archive/World-Desk-19Nov2026.html"
     ],
     [
      "Timeline 14 to 19 Nov (picture)",
-     "timelines/World-Events-Timeline-Update-19Nov2026.svg"
+     "archive/timelines/World-Events-Timeline-Update-19Nov2026.svg"
     ]
-   ]
+   ],
+   "archived": true
   },
   {
    "date": "2026-11-20",
@@ -7072,13 +7218,14 @@ window.PULSE = {
    "links": [
     [
      "World Desk page",
-     "World-Desk-20Nov2026.html"
+     "archive/World-Desk-20Nov2026.html"
     ],
     [
      "Timeline 15 to 20 Nov (picture)",
-     "timelines/World-Events-Timeline-Update-20Nov2026.svg"
+     "archive/timelines/World-Events-Timeline-Update-20Nov2026.svg"
     ]
-   ]
+   ],
+   "archived": true
   },
   {
    "date": "2026-11-21",
@@ -7087,11 +7234,11 @@ window.PULSE = {
    "links": [
     [
      "World Desk page",
-     "World-Desk-21Nov2026.html"
+     "archive/World-Desk-21Nov2026.html"
     ],
     [
      "Timeline 16 to 21 Nov (picture)",
-     "timelines/World-Events-Timeline-Update-21Nov2026.svg"
+     "archive/timelines/World-Events-Timeline-Update-21Nov2026.svg"
     ],
     [
      "Full story: the Learjet crash near West Palm Beach",
@@ -7099,13 +7246,14 @@ window.PULSE = {
     ],
     [
      "Learjet crash story (picture)",
-     "timelines/Learjet-Greenacres-Crash-Story-21Nov2026.svg"
+     "archive/timelines/Learjet-Greenacres-Crash-Story-21Nov2026.svg"
     ],
     [
      "Midday check, 21 Nov (picture)",
-     "timelines/World-Midday-Check-21Nov2026.svg"
+     "archive/timelines/World-Midday-Check-21Nov2026.svg"
     ]
-   ]
+   ],
+   "archived": true
   },
   {
    "date": "2026-11-22",
@@ -7120,7 +7268,8 @@ window.PULSE = {
      "Timeline 17 to 22 Nov (picture)",
      "timelines/World-Events-Timeline-Update-22Nov2026.svg"
     ]
-   ]
+   ],
+   "archived": false
   },
   {
    "date": "2026-11-23",
@@ -7135,7 +7284,8 @@ window.PULSE = {
      "Timeline 18 to 23 Nov (picture)",
      "timelines/World-Events-Timeline-Update-23Nov2026.svg"
     ]
-   ]
+   ],
+   "archived": false
   },
   {
    "date": "2026-11-24",
@@ -7150,7 +7300,8 @@ window.PULSE = {
      "Timeline 19 to 24 Nov (picture)",
      "timelines/World-Events-Timeline-Update-24Nov2026.svg"
     ]
-   ]
+   ],
+   "archived": false
   },
   {
    "date": "2026-11-25",
@@ -7165,7 +7316,8 @@ window.PULSE = {
      "Timeline 20 to 25 Nov (picture)",
      "timelines/World-Events-Timeline-Update-25Nov2026.svg"
     ]
-   ]
+   ],
+   "archived": false
   },
   {
    "date": "2026-11-26",
@@ -7180,7 +7332,8 @@ window.PULSE = {
      "Timeline",
      "timelines/World-Events-Timeline-Update-26Nov2026.svg"
     ]
-   ]
+   ],
+   "archived": false
   },
   {
    "date": "2026-11-27",
@@ -7195,7 +7348,8 @@ window.PULSE = {
      "Timeline",
      "timelines/World-Events-Timeline-Update-27Nov2026.svg"
     ]
-   ]
+   ],
+   "archived": false
   },
   {
    "date": "2026-11-28",
@@ -7210,8 +7364,10 @@ window.PULSE = {
      "Timeline",
      "timelines/World-Events-Timeline-Update-28Nov2026.svg"
     ]
-   ]
+   ],
+   "archived": false
   }
  ],
- "built_utc": "2026-11-28T12:00:00Z"
+ "archive_cutoff": "2026-11-22",
+ "built_utc": "2026-11-28T15:24:38Z"
 };

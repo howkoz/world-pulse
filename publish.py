@@ -2,7 +2,7 @@
 
     py publish.py "<one-line summary of what changed>" [timeline.svg ...]
 
-1. Builds pulse/pulse-data.js (stops if the data has a problem).
+1. Moves pages older than one week into archive/ (pulse/archive_old.py), then builds pulse/pulse-data.js (stops if the data has a problem).
 2. Copies any timeline SVG files given into timelines/.
 3. Safety check over every site file: no local computer paths, no keys or tokens, no em or en dashes.
 4. Commits the changed site files BY NAME (never "add everything") and pushes to origin main.
@@ -15,7 +15,7 @@ import sys
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SITE_EXT = ('.html', '.js', '.json', '.md', '.svg', '.py', '.txt', '.css')
-SITE_DIRS = ('', 'pulse', 'timelines')
+SITE_DIRS = ('', 'pulse', 'timelines', 'archive', 'archive/timelines')
 EXTRA = ('.nojekyll', '.gitignore')
 BAD = [
     (re.compile(r'[A-Za-z]:[\\/]+Users[\\/]', re.I), 'a local computer path'),
@@ -37,6 +37,8 @@ def site_files():
     out = []
     for d in SITE_DIRS:
         folder = os.path.join(ROOT, d)
+        if not os.path.isdir(folder):
+            continue
         for name in sorted(os.listdir(folder)):
             p = os.path.join(folder, name)
             if os.path.isfile(p) and name.lower().endswith(SITE_EXT):
@@ -52,6 +54,8 @@ def main():
         dest = os.path.join(ROOT, 'timelines', os.path.basename(svg))
         shutil.copyfile(svg, dest)
         print('copied', os.path.basename(svg))
+    r = run([sys.executable, os.path.join('pulse', 'archive_old.py')])
+    print(r.stdout.strip())
     run([sys.executable, os.path.join('pulse', 'build_pulse.py')])
     problems = []
     files = site_files()
@@ -69,7 +73,7 @@ def main():
             print('  -', p)
         sys.exit(1)
     status = run(['git', 'status', '--porcelain', '--untracked-files=all', '--'] + files).stdout
-    changed = [line[3:].strip().strip('"') for line in status.splitlines() if line.strip()]
+    changed = [line[3:].split(' -> ')[-1].strip().strip('"') for line in status.splitlines() if line.strip()]
     if not changed:
         print('Nothing changed; nothing to publish.')
         return
